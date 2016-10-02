@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.Model", "Security.Model\Security.Model.csproj", "{CC428C6E-87C3-4FF4-B698-ADF244A31E38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC428C6E-87C3-4FF4-B698-ADF244A31E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC428C6E-87C3-4FF4-B698-ADF244A31E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC428C6E-87C3-4FF4-B698-ADF244A31E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC428C6E-87C3-4FF4-B698-ADF244A31E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
