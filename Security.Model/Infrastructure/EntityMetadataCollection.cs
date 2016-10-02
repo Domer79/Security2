@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Security.Model.Base;
+using Tools.Extensions;
 
 namespace Security.Model.Infrastructure
 {

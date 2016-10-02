@@ -16,9 +16,6 @@ namespace Security.Model.EntityConfigurations
             Property(e => e.Email)
                 .IsUnicode(false);
 
-            Property(e => e.Usersid)
-                .IsUnicode(false);
-
             MapToStoredProcedures(InsertConfiguration);
             MapToStoredProcedures(UpdateConfiguration);
             MapToStoredProcedures(DeleteConfiguration);

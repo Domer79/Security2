@@ -7,13 +7,18 @@ namespace Tools.Extensions
     {
         public static void SaveError(this Exception e)
         {
+            SaveError(e, null);
+        }
+
+        public static void SaveError(this Exception e, Action<Exception> saveErrorLog)
+        {
             if (e == null) 
                 throw new ArgumentNullException("e");
 
-            if (ApplicationCustomizer.SaveErrorLog != null)
+            if (saveErrorLog != null)
                 try
                 {
-                    ApplicationCustomizer.SaveErrorLog(e);
+                    saveErrorLog(e);
                 }
                 catch (Exception exc)
                 {

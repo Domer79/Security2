@@ -5,6 +5,8 @@ using System.Linq;
 using System.Reflection;
 using Security.Model.Base;
 using Security.Model.EntityConfigurations;
+using Security.Model.Infrastructure;
+using Tools.Extensions;
 
 namespace Security.Model.Entities
 {

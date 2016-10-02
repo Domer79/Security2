@@ -6,7 +6,7 @@ using Security.Model.Base;
 namespace Security.Model.Entities
 {
     [Table("sec.UserGroupsDetail")]
-    public class UserGroupsDetail : ModelBase, IUserGroupsDetail
+    public class UserGroupsDetail : ModelBase
     {
         [Key]
         [Column(Order = 0)]
@@ -29,26 +29,5 @@ namespace Security.Model.Entities
         public string GroupName { get; set; }
 
         public string GroupDescription { get; set; }
-
-        [NotMapped]
-        string IGroup.Description
-        {
-            get { return GroupDescription; }
-            set { GroupDescription = value; }
-        }
-
-        [NotMapped]
-        public int IdMember
-        {
-            get { throw new NotImplementedException();}
-            set { throw new NotImplementedException(); }
-        }
-
-        [NotMapped]
-        public string Name
-        {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
-        }
     }
 }
