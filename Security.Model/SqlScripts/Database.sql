@@ -161,12 +161,14 @@ CREATE procedure [sec].[AddUser]
 	@login varchar(200),
 	@password varbinary(16),
 	@displayName varchar(200),
-	@email varchar(300),
-	@usersid varchar(300)
+	@email varchar(300)
 as
 set nocount on
-insert into sec.Users(login, password, displayName, email, usersid) values(@login, @password, @displayName, @email, @usersid)
-select IDENT_CURRENT('sec.Member') as idMember
+
+declare @id int
+
+insert into Members
+
 GO
 /****** Object:  StoredProcedure [sec].[AddUserToGroup]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
@@ -279,18 +281,7 @@ GO
 create procedure [sec].[UpdateGrant]
 	@IdSecObject int,
 	@IdRole int,
-	@IdAccessType int,
-	@ObjectName varchar(500) = null,
-	@Type1 varchar(500) = NULL,
-	@Type2 varchar(500) = NULL,
-	@Type3 varchar(500) = NULL,
-	@Type4 varchar(500) = NULL,
-	@Type5 varchar(500) = NULL,
-	@Type6 varchar(500) = NULL,
-	@Type7 varchar(500) = NULL,
-	@RoleName varchar(500) = NULL,
-	@RoleDescription varchar(max)=NULL,
-	@AccessName varchar(500) = NULL
+	@IdAccessType int
 as
 set nocount on
 raiserror('not_modified', 16, 1)
@@ -482,7 +473,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [sec].[_Grant](
+CREATE TABLE [sec].[Grants](
 	[idSecObject] [int] NOT NULL,
 	[idRole] [int] NOT NULL,
 	[idAccessType] [int] NOT NULL,
@@ -502,10 +493,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [sec].[_Group](
-	[idMember] [int] NOT NULL,
+CREATE TABLE [sec].[Groups](
+	[idGroup] [int] NOT NULL PRIMARY KEY,
 	[description] [varchar](max) NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 
 GO
 SET ANSI_PADDING OFF
@@ -517,7 +508,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [sec].[_Role](
+CREATE TABLE [sec].[Roles](
 	[idRole] [int] IDENTITY(1,1) NOT NULL,
 	[name] [varchar](200) NOT NULL,
 	[description] [varchar](max) NULL
@@ -537,9 +528,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [sec].[_User](
-	[idMember] [int] NOT NULL,
-	[usersid] [varchar](300) NULL,
+CREATE TABLE [sec].[Users](
+	[idUser] [int] NOT NULL PRIMARY KEY,
 	[displayName] [varchar](200) NULL,
 	[email] [varchar](300) NULL,
 	[password] [varbinary](16) NULL
@@ -555,7 +545,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [sec].[AccessType](
+CREATE TABLE [sec].[AccessTypes](
 	[idAccessType] [int] IDENTITY(1,1) NOT NULL,
 	[name] [varchar](300) NULL,
 PRIMARY KEY CLUSTERED 
@@ -574,7 +564,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [sec].[email](
+CREATE TABLE [sec].[Emails](
 	[email] [varchar](300) NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -630,13 +620,7 @@ GO
 CREATE TABLE [sec].[SecObject](
 	[idSecObject] [int] IDENTITY(1,1) NOT NULL,
 	[ObjectName] [varchar](200) NOT NULL,
-	[type1] [varchar](100) NULL,
-	[type2] [varchar](100) NULL,
-	[type3] [varchar](100) NULL,
-	[type4] [varchar](100) NULL,
-	[type5] [varchar](100) NULL,
-	[type6] [varchar](100) NULL,
-	[type7] [varchar](100) NULL,
+	[Type] [varchar](100) NULL,
 	[Discriminator] [varchar](200) NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -738,8 +722,7 @@ select
 	m.name login,
 	u.password,
 	u.displayName,
-	u.email,
-	u.usersid
+	u.email
 from 
 	sec.Member m inner join sec._User u 
 on
@@ -783,39 +766,6 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
-
-
-CREATE view [sec].[Grants]
-as
-select
-	so.idSecObject,
-	so.ObjectName,
-	so.type1,
-	so.type2,
-	so.type3,
-	so.type4,
-	so.type5,
-	so.type6,
-	so.type7,
-	r.idRole,
-	r.name roleName,
-	r.description roleDescription,
-	at.idAccessType,
-	at.name accessName
-from 
-	sec._Grant gr inner join sec.SecObject so
-on
-	gr.idSecObject = so.idSecObject inner join sec._Role r
-on
-	gr.idRole = r.idRole inner join sec.AccessType at
-on
-	gr.idAccessType = at.idAccessType
-
-
-
-
-GO
 /****** Object:  View [sec].[Members]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
