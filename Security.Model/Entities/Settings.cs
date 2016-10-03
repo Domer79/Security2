@@ -5,7 +5,7 @@ using Security.Model.Base;
 namespace Security.Model.Entities
 {
     [Table("sec.Settings")]
-    internal class Settings : ModelBase
+    public class Settings : ModelBase
     {
         [Key]
         public int IdSettings { get; set; }

@@ -1,4 +1,6 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Configuration;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Tools.Extensions

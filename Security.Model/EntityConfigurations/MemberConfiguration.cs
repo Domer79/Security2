@@ -6,8 +6,7 @@ namespace Security.Model.EntityConfigurations
     {
         public MemberConfiguration()
         {
-            Property(e => e.Name)
-                .IsUnicode(false);
+            Property(e => e.Name).IsUnicode(false);
         }
     }
 }

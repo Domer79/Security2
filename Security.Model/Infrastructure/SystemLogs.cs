@@ -21,9 +21,9 @@ namespace Security.Model.Infrastructure
 
             try
             {
-                using (var connection = new SqlConnection(ApplicationCustomizer.ConnectionString))
+                using (var connection = new SqlConnection(Tools.ConnectionString))
                 {
-                    var command = new SqlCommand("Insert into SystemLog(log) values(@log)", connection);
+                    var command = new SqlCommand("Insert into sec.Log(message) values(@log)", connection);
                     var p = command.Parameters.Add("log", SqlDbType.NVarChar);
                     p.Value = log;
 

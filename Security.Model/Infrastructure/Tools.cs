@@ -4,10 +4,11 @@ using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 using System.Text.RegularExpressions;
 using Security.Model.Base;
+using Tools.Extensions;
 
 namespace Security.Model.Infrastructure
 {
-    static internal class Tools
+    internal static class Tools
     {
         public static string GetTableName<T>(DbContext context) where T : ModelBase
         {
@@ -43,6 +44,11 @@ namespace Security.Model.Infrastructure
                 return null;
 
             return match.Groups["databaseName"].Value;
+        }
+
+        public static string ConnectionString
+        {
+            get { return ConfigHelper.GetAppSettings<string>("SecurityConnectionName") ?? "SecurityStorage"; }
         }
     }
 }

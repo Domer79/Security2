@@ -13,7 +13,6 @@ namespace Security.Model.Infrastructure
     {
         private readonly RepositoryDataContext _context;
         private string _keyName;
-        private readonly EntityMetadata _entityMetadata;
 
         public EntityInfo(RepositoryDataContext context)
         {
@@ -21,7 +20,6 @@ namespace Security.Model.Infrastructure
                 throw new ArgumentNullException("context");
 
             _context = context;
-            _entityMetadata = new EntityMetadata(typeof(TEntity));
         }
 
         private ObjectContext ObjectContext
@@ -73,17 +71,7 @@ namespace Security.Model.Infrastructure
 
         public string EntityName 
         {
-            get { return _entityMetadata.EntityName; }
-        }
-
-        public string EntityAlias
-        {
-            get { return _entityMetadata.EntityAlias; }
-        }
-
-        public string EntityDescription
-        {
-            get { return _entityMetadata.EntityDescription; }
+            get { return typeof(TEntity).Name; }
         }
 
         #region GetTableName

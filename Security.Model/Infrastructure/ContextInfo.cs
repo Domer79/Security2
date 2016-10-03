@@ -8,8 +8,6 @@ namespace Security.Model.Infrastructure
 {
     public class ContextInfo
     {
-        private readonly EntityMetadataCollection _entityMetadataCollection;
-
         public ContextInfo(DbContext context)
             : this(context.GetType())
         {
@@ -18,12 +16,6 @@ namespace Security.Model.Infrastructure
 
         public ContextInfo(Type contextType)
         {
-            _entityMetadataCollection = new EntityMetadataCollection(contextType);
-        }
-
-        public EntityMetadataCollection EntityMetadataCollection
-        {
-            get { return _entityMetadataCollection; }
         }
 
         internal string DatabaseName { get; set; }
