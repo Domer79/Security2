@@ -54,6 +54,7 @@
     <Compile Include="Entities\AccessType.cs" />
     <Compile Include="Entities\Grant.cs" />
     <Compile Include="Entities\Group.cs" />
+    <Compile Include="Entities\Log.cs" />
     <Compile Include="Entities\Member.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\RoleOfMember.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="EntityConfigurations\BaseConfiguration.cs" />
     <Compile Include="EntityConfigurations\GrantConfiguration.cs" />
     <Compile Include="EntityConfigurations\GroupConfiguration.cs" />
+    <Compile Include="EntityConfigurations\LogConfiguration.cs" />
     <Compile Include="EntityConfigurations\MemberConfiguration.cs" />
     <Compile Include="EntityConfigurations\RoleConfiguration.cs" />
     <Compile Include="EntityConfigurations\RoleOfMemberConfiguration.cs" />
@@ -90,6 +92,9 @@
       <Project>{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}</Project>
       <Name>Tools</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlScripts\Database.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
