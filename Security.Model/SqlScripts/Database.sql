@@ -115,7 +115,7 @@ create procedure [sec].[AddGrant]
 	@IdAccessType int
 as
 set nocount on
-insert into sec._Grant(idSecObject, idRole, idAccessType) values(@IdSecObject, @IdRole, @IdAccessType)
+insert into sec.Grants(idSecObject, idRole, idAccessType) values(@IdSecObject, @IdRole, @IdAccessType)
 
 GO
 /****** Object:  StoredProcedure [sec].[AddGroup]    Script Date: 14.04.2015 11:08:44 ******/
@@ -129,8 +129,13 @@ create procedure [sec].[AddGroup]
 	@description varchar(max)
 as
 set nocount on
-insert into sec.Groups(name, description) values(@name, @description)
-select IDENT_CURRENT('sec.Member') as idMember
+
+declare @id int
+
+insert into Members(name) values(@name)
+select @id = SCOPE_IDENTITY()
+insert into Groups(idMember, description) values(@id, @description)
+select @id
 
 GO
 /****** Object:  StoredProcedure [sec].[AddMemberRole]    Script Date: 14.04.2015 11:08:44 ******/
@@ -141,11 +146,7 @@ GO
 
 CREATE procedure [sec].[AddMemberRole]
 	@idRole int,
-	@idMember int,
-	@roleName varchar(200) = null,
-	@RoleDescription varchar(max) = NULL,
-	@memberName varchar(200) = null,
-	@isUser bit = null
+	@idMember int
 as
 set nocount on
 insert into sec.MemberRole(idMember, idRole) values(@idMember, @idRole)
@@ -159,15 +160,16 @@ GO
 
 CREATE procedure [sec].[AddUser]
 	@login varchar(200),
-	@password varbinary(16),
-	@displayName varchar(200),
-	@email varchar(300)
+	@password varbinary(16)
 as
 set nocount on
 
 declare @id int
 
-insert into Members
+insert into Members(name) values(@login)
+select @id = SCOPE_IDENTITY()
+insert into Users(idMember, password) values(@id, @password)
+select @id
 
 GO
 /****** Object:  StoredProcedure [sec].[AddUserToGroup]    Script Date: 14.04.2015 11:08:44 ******/
@@ -178,13 +180,7 @@ GO
 
 create procedure [sec].[AddUserToGroup]
 	@idUser int,
-	@idGroup int,
-	@login varchar(200) = null,
-	@displayName varchar(200) = null,
-	@email varchar(100) = null,
-	@usersid varchar(100) = null,
-	@groupName varchar(200) = null,
-	@groupDescription varchar(max) = null
+	@idGroup int
 as
 set nocount on
 insert into sec.UserGroups(idUser, idGroup) values(@idUser, @idGroup)
@@ -202,7 +198,7 @@ CREATE procedure [sec].[DeleteGrant]
 	@IdAccessType int
 as
 set nocount on
-delete from sec._Grant where idSecObject = @IdSecObject and idRole = @IdRole and idAccessType = @IdAccessType
+delete from sec.Grants where idSecObject = @IdSecObject and idRole = @IdRole and idAccessType = @IdAccessType
 GO
 /****** Object:  StoredProcedure [sec].[DeleteGroup]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
@@ -211,10 +207,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 create procedure [sec].[DeleteGroup]
-	@idGroup int
+	@idMember int
 as
 set nocount on
-delete from sec.Groups where idGroup = @idGroup
+delete from sec.Members where idMember = @idMember
 GO
 /****** Object:  StoredProcedure [sec].[DeleteMemberRole]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
@@ -228,7 +224,7 @@ CREATE procedure [sec].[DeleteMemberRole]
 as
 set nocount on
 
-delete from sec.MemberRole where idMember = @idMember and idRole = @idRole
+delete from sec.MemberRoles where idMember = @idMember and idRole = @idRole
 
 GO
 /****** Object:  StoredProcedure [sec].[DeleteUser]    Script Date: 14.04.2015 11:08:44 ******/
@@ -238,10 +234,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 create procedure [sec].[DeleteUser]
-	@idUser int
+	@idMember int
 as
 set nocount on
-delete from sec.Users where idUser = @idUser
+delete from sec.Members where idMember = @idMember
 GO
 /****** Object:  StoredProcedure [sec].[DeleteUserFromGroup]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
@@ -294,12 +290,13 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 create procedure [sec].[UpdateGroup]
-	@idGroup int,
+	@idMember int,
 	@name varchar(200),
 	@description varchar(max)
 as
 set nocount on
-update sec.Groups set name = @name, description = @description where idGroup = @idGroup
+update sec.Members set name = @name where idMember = @idMember
+update sec.Groups set description = @description where idGroup = @idMember
 
 GO
 /****** Object:  StoredProcedure [sec].[UpdateMemberRole]    Script Date: 14.04.2015 11:08:44 ******/
@@ -310,11 +307,7 @@ GO
 
 CREATE procedure [sec].[UpdateMemberRole]
 	@idRole int,
-	@idMember int,
-	@roleName varchar(200),
-	@RoleDescription varchar(max) = NULL,
-	@memberName varchar(200),
-	@isUser bit
+	@idMember int
 as
 raiserror('is_not_modified', 16, 10)
 GO
@@ -325,15 +318,13 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 create procedure [sec].[UpdateUser]
-	@idUser int,
+	@idMember int,
 	@login varchar(200),
-	@password varbinary(16),
-	@displayName varchar(200),
-	@email varchar(300),
-	@usersid varchar(300)
+	@password varbinary(16)
 as
 set nocount on
-update sec.Users set login = @login, password = @password, displayName = @displayName, email = @email, usersid = @usersid where idUser = @idUser
+update sec.Members set name = @login where idMember = @idMember
+update sec.Users set password = @password where idUser = @idMember
 
 GO
 /****** Object:  StoredProcedure [sec].[UpdateUserGroup]    Script Date: 14.04.2015 11:08:44 ******/
@@ -348,7 +339,6 @@ create procedure [sec].[UpdateUserGroup]
 	@login varchar(200) = null,
 	@displayName varchar(200) = null,
 	@email varchar(100) = null,
-	@usersid varchar(100) = null,
 	@groupName varchar(200) = null,
 	@groupDescription varchar(max) = null
 as
@@ -407,9 +397,9 @@ begin
 					select
 						1
 					from
-						sec._Grant gr inner join sec.SecObject so 
+						sec.Grants gr inner join sec.SecObjects so 
 					on
-						gr.idSecObject = so.idSecObject inner join sec.RoleOfMember rof 
+						gr.idSecObject = so.idSecObject inner join sec.RoleOfMembers rof 
 					on
 						gr.idRole = rof.idRole 
 					where 
@@ -430,9 +420,9 @@ begin
 				select
 					1
 				from
-					sec._Grant gr inner join sec.SecObject so 
+					sec.Grants gr inner join sec.SecObjects so 
 				on
-					gr.idSecObject = so.idSecObject inner join sec.RoleOfMember rof 
+					gr.idSecObject = so.idSecObject inner join sec.RoleOfMembers rof 
 				on
 					gr.idRole = rof.idRole 
 				where 
@@ -460,15 +450,15 @@ CREATE function [sec].[IsAllowByName](@secObject varchar(200), @member varchar(2
 returns bit
 as
 begin
-declare @idSecObject int = (select idSecObject from sec.SecObject where ObjectName = @secObject)
-declare @idMember int = (select idMember from sec.Member where name = @member)
-declare @idAccessType int = (select idAccessType from sec.AccessType where name = @accessType)
+declare @idSecObject int = (select idSecObject from sec.SecObjects where ObjectName = @secObject)
+declare @idMember int = (select idMember from sec.Members where name = @member)
+declare @idAccessType int = (select idAccessType from sec.AccessTypes where name = @accessType)
 
 return sec.IsAllowById(@idSecObject, @idMember, @idAccessType)
 end
 
 GO
-/****** Object:  Table [sec].[_Grant]    Script Date: 14.04.2015 11:08:44 ******/
+/****** Object:  Table [sec].[Grants]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -486,7 +476,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [sec].[_Group]    Script Date: 14.04.2015 11:08:44 ******/
+/****** Object:  Table [sec].[Groups]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -494,14 +484,14 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [sec].[Groups](
-	[idGroup] [int] NOT NULL PRIMARY KEY,
+	[idMember] [int] NOT NULL PRIMARY KEY,
 	[description] [varchar](max) NULL
 ) ON [PRIMARY]
 
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [sec].[_Role]    Script Date: 14.04.2015 11:08:44 ******/
+/****** Object:  Table [sec].[Roles]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -521,7 +511,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [sec].[_User]    Script Date: 14.04.2015 11:08:44 ******/
+/****** Object:  Table [sec].[Users]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -529,16 +519,16 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [sec].[Users](
-	[idUser] [int] NOT NULL PRIMARY KEY,
-	[displayName] [varchar](200) NULL,
-	[email] [varchar](300) NULL,
-	[password] [varbinary](16) NULL
+	[idMember] [int] NOT NULL PRIMARY KEY,
+	--[displayName] [varchar](200) NULL,
+	--[email] [varchar](300) NULL,
+	[password] [varbinary](max) NULL
 ) ON [PRIMARY]
 
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [sec].[AccessType]    Script Date: 14.04.2015 11:08:44 ******/
+/****** Object:  Table [sec].[AccessTypes]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -557,34 +547,23 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [sec].[email]    Script Date: 14.04.2015 11:08:44 ******/
+/****** Object:  Table [sec].[Members]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [sec].[Emails](
-	[email] [varchar](300) NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[email] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [sec].[Member]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [sec].[Member](
+CREATE TABLE [sec].[Members](
 	[idMember] [int] IDENTITY(1,1) NOT NULL,
 	[name] [varchar](200) NOT NULL,
+
+    --todo: Ќачать отсюда
+	isUser as case
+		when exists(select 1 from sec.Users where idMember = sec.Members.idMember) then cast(1 as bit)
+		else cast(0 as bit)
+	end
+
 PRIMARY KEY CLUSTERED 
 (
 	[idMember] ASC
@@ -594,12 +573,12 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [sec].[MemberRole]    Script Date: 14.04.2015 11:08:44 ******/
+/****** Object:  Table [sec].[MemberRoles]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [sec].[MemberRole](
+CREATE TABLE [sec].[MemberRoles](
 	[idMember] [int] NOT NULL,
 	[idRole] [int] NOT NULL,
  CONSTRAINT [PK_MemberRole] PRIMARY KEY CLUSTERED 
@@ -610,14 +589,14 @@ CREATE TABLE [sec].[MemberRole](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [sec].[SecObject]    Script Date: 14.04.2015 11:08:44 ******/
+/****** Object:  Table [sec].[SecObjects]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [sec].[SecObject](
+CREATE TABLE [sec].[SecObjects](
 	[idSecObject] [int] IDENTITY(1,1) NOT NULL,
 	[ObjectName] [varchar](200) NOT NULL,
 	[Type] [varchar](100) NULL,
@@ -651,24 +630,6 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
---/****** Object:  Table [sec].[sid]    Script Date: 14.04.2015 11:08:44 ******/
---SET ANSI_NULLS ON
---GO
---SET QUOTED_IDENTIFIER ON
---GO
---SET ANSI_PADDING ON
---GO
---CREATE TABLE [sec].[sid](
---	[sid] [varchar](300) NOT NULL,
---PRIMARY KEY CLUSTERED 
---(
---	[sid] ASC
---)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
---) ON [PRIMARY]
-
---GO
---SET ANSI_PADDING OFF
---GO
 /****** Object:  Table [sec].[UserGroups]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
@@ -685,114 +646,14 @@ CREATE TABLE [sec].[UserGroups](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  View [sec].[Groups]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 
-
-create view [sec].[Groups]
-as
-select
-	m.idMember idGroup,
-	m.name,
-	g.description
-from
-	sec._Group g inner join sec.Member m
-on
-	g.idMember = m.idMember
-
-GO
-/****** Object:  View [sec].[Users]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-
-
-
-
-
-CREATE view [sec].[Users]
-as
-select
-	m.idMember idUser,
-	m.name login,
-	u.password,
-	u.displayName,
-	u.email
-from 
-	sec.Member m inner join sec._User u 
-on
-	m.idMember = u.idMember
-
-
-
-
-
-
-GO
-/****** Object:  View [sec].[UserGroupsDetail]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-create view [sec].[UserGroupsDetail]
-as
-select
-	u.idUser,
-	u.login,
-	u.displayName,
-	u.email,
-	u.usersid,
-	g.idGroup,
-	g.name as groupName,
-	g.description as groupDescription
-from
-	sec.Users u inner join sec.UserGroups ug
-on
-	u.idUser = ug.idUser inner join sec.Groups g
-on
-	ug.idGroup = g.idGroup
-
-
-GO
-/****** Object:  View [sec].[Grants]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-/****** Object:  View [sec].[Members]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-create view [sec].[Members]
-as
-select
-	*,
-	case
-		when exists(select 1 from sec._User where idMember = sec.Member.idMember) then cast(1 as bit)
-		else cast(0 as bit)
-	end as isUser
-from
-	sec.Member
-GO
 /****** Object:  View [sec].[RoleOfMember]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
-
-
-CREATE view [sec].[RoleOfMember]
+CREATE view [sec].[RoleOfMembers]
 as
 select
 	r.idRole,
@@ -800,65 +661,19 @@ select
 	r.description roleDescription,
 	m.idMember,
 	m.name memberName,
-	case
-		when exists(select 1 from sec._User where idMember = m.idMember) then cast(1 as bit)
-		else cast(0 as bit)
-	end as isUser
+	m.isUser
 from
-	sec._Role r inner join sec.MemberRole mr 
+	sec.Roles r inner join sec.MemberRoles mr 
 on 
-	r.idRole = mr.idRole inner join sec.Member m
+	r.idRole = mr.idRole inner join sec.Members m
 on
 	mr.idMember = m.idMember
 
 GO
 
-create view sec.UsersGrant
-as
-select 
-	m.idMember,
-	g.idSecObject,
-	rm.idRole,
-	g.idAccessType,
-	m.name,
-	g.ObjectName,
-	rm.roleName,
-	g.accessName
-from 
-	sec.Members m inner join sec.RoleOfMember rm 
-on 
-	m.idMember = rm.idMember inner join sec.Grants g 
-on 
-	rm.idRole = g.idRole 
-where
-	m.isUser = 1
-
-go
-
-create view sec.GroupsGrant
-as
-select 
-	m.idMember,
-	g.idSecObject,
-	rm.idRole,
-	g.idAccessType,
-	m.name,
-	g.ObjectName,
-	rm.roleName,
-	g.accessName
-from 
-	sec.Members m inner join sec.RoleOfMember rm 
-on 
-	m.idMember = rm.idMember inner join sec.Grants g 
-on 
-	rm.idRole = g.idRole 
-where
-	m.isUser = 0
-
-go
 
 /****** Object:  Index [UQ_Group_idMember]    Script Date: 14.04.2015 11:08:44 ******/
-CREATE UNIQUE NONCLUSTERED INDEX [UQ_Group_idMember] ON [sec].[_Group]
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_Group_idMember] ON [sec].[Groups]
 (
 	[idMember] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -867,13 +682,13 @@ SET ANSI_PADDING ON
 
 GO
 /****** Object:  Index [UQ_Role_Name]    Script Date: 14.04.2015 11:08:44 ******/
-CREATE UNIQUE NONCLUSTERED INDEX [UQ_Role_Name] ON [sec].[_Role]
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_Role_Name] ON [sec].[Roles]
 (
 	[name] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 /****** Object:  Index [UQ_User_idMember]    Script Date: 14.04.2015 11:08:44 ******/
-CREATE UNIQUE NONCLUSTERED INDEX [UQ_User_idMember] ON [sec].[_User]
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_User_idMember] ON [sec].[Users]
 (
 	[idMember] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -882,7 +697,7 @@ SET ANSI_PADDING ON
 
 GO
 /****** Object:  Index [UQ_AccessType_AccessName]    Script Date: 14.04.2015 11:08:44 ******/
-CREATE UNIQUE NONCLUSTERED INDEX [UQ_AccessType_AccessName] ON [sec].[AccessType]
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_AccessType_AccessName] ON [sec].[AccessTypes]
 (
 	[name] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -891,7 +706,7 @@ SET ANSI_PADDING ON
 
 GO
 /****** Object:  Index [UQ_Member_Name]    Script Date: 14.04.2015 11:08:44 ******/
-CREATE UNIQUE NONCLUSTERED INDEX [UQ_Member_Name] ON [sec].[Member]
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_Member_Name] ON [sec].[Members]
 (
 	[name] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -900,7 +715,7 @@ SET ANSI_PADDING ON
 
 GO
 /****** Object:  Index [UQ_SecObject_ObjectName]    Script Date: 14.04.2015 11:08:44 ******/
-CREATE UNIQUE NONCLUSTERED INDEX [UQ_SecObject_ObjectName] ON [sec].[SecObject]
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_SecObject_ObjectName] ON [sec].[SecObjects]
 (
 	[ObjectName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -914,64 +729,54 @@ CREATE UNIQUE NONCLUSTERED INDEX [UQ_Settings_Name] ON [sec].[Settings]
 	[name] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-ALTER TABLE [sec].[_Grant]  WITH CHECK ADD  CONSTRAINT [FK_Grant_AccessType] FOREIGN KEY([idAccessType])
-REFERENCES [sec].[AccessType] ([idAccessType])
+ALTER TABLE [sec].[Grants]  WITH CHECK ADD  CONSTRAINT [FK_Grants_AccessTypes] FOREIGN KEY([idAccessType])
+REFERENCES [sec].[AccessTypes] ([idAccessType])
 GO
-ALTER TABLE [sec].[_Grant] CHECK CONSTRAINT [FK_Grant_AccessType]
+ALTER TABLE [sec].[Grants] CHECK CONSTRAINT [FK_Grants_AccessTypes]
 GO
-ALTER TABLE [sec].[_Grant]  WITH CHECK ADD  CONSTRAINT [FK_Grant_Role] FOREIGN KEY([idRole])
-REFERENCES [sec].[_Role] ([idRole])
+ALTER TABLE [sec].[Grants]  WITH CHECK ADD  CONSTRAINT [FK_Grants_Roles] FOREIGN KEY([idRole])
+REFERENCES [sec].[Roles] ([idRole])
 ON DELETE CASCADE
 GO
-ALTER TABLE [sec].[_Grant] CHECK CONSTRAINT [FK_Grant_Role]
+ALTER TABLE [sec].[Grants] CHECK CONSTRAINT [FK_Grants_Roles]
 GO
-ALTER TABLE [sec].[_Grant]  WITH CHECK ADD  CONSTRAINT [FK_Grant_SecObject] FOREIGN KEY([idSecObject])
-REFERENCES [sec].[SecObject] ([idSecObject])
+ALTER TABLE [sec].[Grants]  WITH CHECK ADD  CONSTRAINT [FK_Grants_SecObjects] FOREIGN KEY([idSecObject])
+REFERENCES [sec].[SecObjects] ([idSecObject])
 ON DELETE CASCADE
 GO
-ALTER TABLE [sec].[_Grant] CHECK CONSTRAINT [FK_Grant_SecObject]
+ALTER TABLE [sec].[Grants] CHECK CONSTRAINT [FK_Grants_SecObjects]
 GO
-ALTER TABLE [sec].[_Group]  WITH CHECK ADD  CONSTRAINT [FK_Group_Member] FOREIGN KEY([idMember])
-REFERENCES [sec].[Member] ([idMember])
+ALTER TABLE [sec].[Groups]  WITH CHECK ADD  CONSTRAINT [FK_Groups_Members] FOREIGN KEY([idMember])
+REFERENCES [sec].[Members] ([idMember])
 ON DELETE CASCADE
 GO
-ALTER TABLE [sec].[_Group] CHECK CONSTRAINT [FK_Group_Member]
+ALTER TABLE [sec].[Groups] CHECK CONSTRAINT [FK_Groups_Members]
 GO
-ALTER TABLE [sec].[_User]  WITH CHECK ADD  CONSTRAINT [FK_User_Email] FOREIGN KEY([email])
-REFERENCES [sec].[email] ([email])
-GO
-ALTER TABLE [sec].[_User] CHECK CONSTRAINT [FK_User_Email]
-GO
-ALTER TABLE [sec].[_User]  WITH CHECK ADD  CONSTRAINT [FK_User_Member] FOREIGN KEY([idMember])
-REFERENCES [sec].[Member] ([idMember])
+ALTER TABLE [sec].[Users]  WITH CHECK ADD  CONSTRAINT [FK_Users_Members] FOREIGN KEY([idMember])
+REFERENCES [sec].[Members] ([idMember])
 ON DELETE CASCADE
 GO
-ALTER TABLE [sec].[_User] CHECK CONSTRAINT [FK_User_Member]
+ALTER TABLE [sec].[Users] CHECK CONSTRAINT [FK_Users_Members]
 GO
---ALTER TABLE [sec].[_User]  WITH CHECK ADD  CONSTRAINT [FK_User_Sid] FOREIGN KEY([usersid])
---REFERENCES [sec].[sid] ([sid])
---GO
---ALTER TABLE [sec].[_User] CHECK CONSTRAINT [FK_User_Sid]
---GO
-ALTER TABLE [sec].[MemberRole]  WITH CHECK ADD  CONSTRAINT [FK_MemberRole_Member] FOREIGN KEY([idMember])
-REFERENCES [sec].[Member] ([idMember])
+ALTER TABLE [sec].[MemberRoles]  WITH CHECK ADD  CONSTRAINT [FK_MemberRoles_Members] FOREIGN KEY([idMember])
+REFERENCES [sec].[Members] ([idMember])
 ON DELETE CASCADE
 GO
-ALTER TABLE [sec].[MemberRole] CHECK CONSTRAINT [FK_MemberRole_Member]
+ALTER TABLE [sec].[MemberRoles] CHECK CONSTRAINT [FK_MemberRoles_Members]
 GO
-ALTER TABLE [sec].[MemberRole]  WITH CHECK ADD  CONSTRAINT [FK_MemberRole_Role] FOREIGN KEY([idRole])
-REFERENCES [sec].[_Role] ([idRole])
+ALTER TABLE [sec].[MemberRoles]  WITH CHECK ADD  CONSTRAINT [FK_MemberRoles_Roles] FOREIGN KEY([idRole])
+REFERENCES [sec].[Roles] ([idRole])
 ON DELETE CASCADE
 GO
-ALTER TABLE [sec].[MemberRole] CHECK CONSTRAINT [FK_MemberRole_Role]
+ALTER TABLE [sec].[MemberRoles] CHECK CONSTRAINT [FK_MemberRoles_Roles]
 GO
 ALTER TABLE [sec].[UserGroups]  WITH CHECK ADD  CONSTRAINT [FK_UserGroups_Groups] FOREIGN KEY([idGroup])
-REFERENCES [sec].[_Group] ([idMember])
+REFERENCES [sec].[Groups] ([idMember])
 GO
 ALTER TABLE [sec].[UserGroups] CHECK CONSTRAINT [FK_UserGroups_Groups]
 GO
 ALTER TABLE [sec].[UserGroups]  WITH CHECK ADD  CONSTRAINT [FK_UserGroups_Users] FOREIGN KEY([idUser])
-REFERENCES [sec].[_User] ([idMember])
+REFERENCES [sec].[Users] ([idMember])
 ON DELETE CASCADE
 GO
 ALTER TABLE [sec].[UserGroups] CHECK CONSTRAINT [FK_UserGroups_Users]
@@ -982,13 +787,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE trigger [sec].[OnDeleteGroup] on [sec].[_Group]
+CREATE trigger [sec].[OnDeleteGroup] on [sec].[Groups]
 after delete
 as
 set nocount on
 
---ќграничение на удаление записи в sec._Groups, если не удалена запись в sec.Member
-if exists(select 1 from sec.Member where idMember in (select idMember from deleted))
+--ќграничение на удаление записи в sec.Groups, если не удалена запись в sec.Member
+if exists(select 1 from sec.Members where idMember in (select idMember from deleted))
 	begin
 		raiserror('fk_member_error', 16, 10)
 		rollback
@@ -1002,13 +807,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE trigger [sec].[OnDeleteUser] on [sec].[_User]
+CREATE trigger [sec].[OnDeleteUser] on [sec].[Users]
 after delete
 as
 set nocount on
 
---ќграничение на удаление записи в sec._User, если не удалена запись в sec.Member
-if exists(select 1 from sec.Member where idMember in (select idMember from deleted))
+--ќграничение на удаление записи в sec.Users, если не удалена запись в sec.Member
+if exists(select 1 from sec.Members where idMember in (select idMember from deleted))
 	begin
 		raiserror('fk_member_error', 16, 10)
 		rollback
@@ -1018,233 +823,233 @@ if exists(select 1 from sec.Member where idMember in (select idMember from delet
 
 GO
 
-/****** Object:  Trigger [sec].[OnAddGroups]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+--/****** Object:  Trigger [sec].[OnAddGroups]    Script Date: 14.04.2015 11:08:44 ******/
+--SET ANSI_NULLS ON
+--GO
+--SET QUOTED_IDENTIFIER ON
+--GO
 
 
-create trigger [sec].[OnAddGroups] on [sec].[Groups]
-instead of insert
-as
-set nocount on
-begin try
-	begin transaction
+--create trigger [sec].[OnAddGroups] on [sec].[Groups]
+--instead of insert
+--as
+--set nocount on
+--begin try
+--	begin transaction
 
-	insert into sec.Member(name) select name from inserted
-	insert into sec._Group(idMember, description)
-	select
-		idMember,
-		description
-	from
-		(
-			select
-				m.idMember,
-				ins.description
-			from
-				inserted ins inner join sec.Member m
-			on
-				ins.name = m.name
-		) s1
+--	insert into sec.Member(name) select name from inserted
+--	insert into sec._Group(idMember, description)
+--	select
+--		idMember,
+--		description
+--	from
+--		(
+--			select
+--				m.idMember,
+--				ins.description
+--			from
+--				inserted ins inner join sec.Member m
+--			on
+--				ins.name = m.name
+--		) s1
 
-	commit
-end try
-begin catch
-	rollback
-	declare @errorMessage nvarchar(max)
-	select @errorMessage = ERROR_MESSAGE()
-	raiserror(@errorMessage, 16, 10)
-end catch
+--	commit
+--end try
+--begin catch
+--	rollback
+--	declare @errorMessage nvarchar(max)
+--	select @errorMessage = ERROR_MESSAGE()
+--	raiserror(@errorMessage, 16, 10)
+--end catch
 
-GO
-/****** Object:  Trigger [sec].[OnDeleteGroups]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+--GO
+--/****** Object:  Trigger [sec].[OnDeleteGroups]    Script Date: 14.04.2015 11:08:44 ******/
+--SET ANSI_NULLS ON
+--GO
+--SET QUOTED_IDENTIFIER ON
+--GO
 
-CREATE trigger [sec].[OnDeleteGroups] on [sec].[Groups]
-instead of delete
-as
-set nocount on
-begin try
-	begin transaction
+--CREATE trigger [sec].[OnDeleteGroups] on [sec].[Groups]
+--instead of delete
+--as
+--set nocount on
+--begin try
+--	begin transaction
 
-	delete from sec.Member where idMember in (select idGroup from deleted)
+--	delete from sec.Member where idMember in (select idGroup from deleted)
 
-	commit
-end try
-begin catch
-	rollback
-	declare @errorMessage nvarchar(max)
-	select @errorMessage = ERROR_MESSAGE()
-	raiserror(@errorMessage, 16, 10)
-end catch
+--	commit
+--end try
+--begin catch
+--	rollback
+--	declare @errorMessage nvarchar(max)
+--	select @errorMessage = ERROR_MESSAGE()
+--	raiserror(@errorMessage, 16, 10)
+--end catch
 
-GO
-/****** Object:  Trigger [sec].[OnUpdateGroups]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-
-CREATE trigger [sec].[OnUpdateGroups] on [sec].[Groups]
-instead of update
-as
-set nocount on
-begin try
-	begin transaction
-
-	update sec.Member set name = ins.name from inserted ins where idMember = idGroup
-	update sec._Group set description = ins.description from inserted ins where idMember = ins.idGroup
-
-	commit
-end try
-begin catch
-	rollback
-	declare @errorMessage nvarchar(max)
-	select @errorMessage = ERROR_MESSAGE()
-	raiserror(@errorMessage, 16, 10)
-end catch
+--GO
+--/****** Object:  Trigger [sec].[OnUpdateGroups]    Script Date: 14.04.2015 11:08:44 ******/
+--SET ANSI_NULLS ON
+--GO
+--SET QUOTED_IDENTIFIER ON
+--GO
 
 
-GO
-/****** Object:  Trigger [sec].[OnAddUser]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+--CREATE trigger [sec].[OnUpdateGroups] on [sec].[Groups]
+--instead of update
+--as
+--set nocount on
+--begin try
+--	begin transaction
 
-CREATE trigger [sec].[OnAddUsers] on [sec].[Users]
-instead of insert
-as
-set nocount on
-begin try
-	begin transaction
+--	update sec.Member set name = ins.name from inserted ins where idMember = idGroup
+--	update sec._Group set description = ins.description from inserted ins where idMember = ins.idGroup
 
-	insert into sec.Member(name) select login from inserted
-	insert into sec.email(email) select email from inserted where email is not null
-	insert into sec.sid(sid) select usersid from inserted where usersid is not null
+--	commit
+--end try
+--begin catch
+--	rollback
+--	declare @errorMessage nvarchar(max)
+--	select @errorMessage = ERROR_MESSAGE()
+--	raiserror(@errorMessage, 16, 10)
+--end catch
 
-	insert into sec._User(idMember, usersid, displayName, email, password) 
-	select
-		idMember,
-		usersid,
-		displayName,
-		email,
-		password
-	from
-		(
-			select
-				m.idMember,
-				ins.usersid,
-				ins.displayName,
-				ins.email,
-				ins.password
-			from
-				inserted ins inner join sec.Member m
-			on
-				ins.login = m.name
-		) s1
 
-	commit
-end try
-begin catch
-	rollback
-	declare @errorMessage nvarchar(max)
-	select @errorMessage = ERROR_MESSAGE()
-	raiserror(@errorMessage, 16, 10)
-end catch
-GO
-/****** Object:  Trigger [sec].[OnDeleteUser]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+--GO
+--/****** Object:  Trigger [sec].[OnAddUser]    Script Date: 14.04.2015 11:08:44 ******/
+--SET ANSI_NULLS ON
+--GO
+--SET QUOTED_IDENTIFIER ON
+--GO
 
-CREATE trigger [sec].[OnDeleteUsers] on [sec].[Users]
-instead of delete
-as
-set nocount on
-begin try
-begin transaction
+--CREATE trigger [sec].[OnAddUsers] on [sec].[Users]
+--instead of insert
+--as
+--set nocount on
+--begin try
+--	begin transaction
+
+--	insert into sec.Member(name) select login from inserted
+--	insert into sec.email(email) select email from inserted where email is not null
+--	insert into sec.sid(sid) select usersid from inserted where usersid is not null
+
+--	insert into sec._User(idMember, usersid, displayName, email, password) 
+--	select
+--		idMember,
+--		usersid,
+--		displayName,
+--		email,
+--		password
+--	from
+--		(
+--			select
+--				m.idMember,
+--				ins.usersid,
+--				ins.displayName,
+--				ins.email,
+--				ins.password
+--			from
+--				inserted ins inner join sec.Member m
+--			on
+--				ins.login = m.name
+--		) s1
+
+--	commit
+--end try
+--begin catch
+--	rollback
+--	declare @errorMessage nvarchar(max)
+--	select @errorMessage = ERROR_MESSAGE()
+--	raiserror(@errorMessage, 16, 10)
+--end catch
+--GO
+--/****** Object:  Trigger [sec].[OnDeleteUser]    Script Date: 14.04.2015 11:08:44 ******/
+--SET ANSI_NULLS ON
+--GO
+--SET QUOTED_IDENTIFIER ON
+--GO
+
+--CREATE trigger [sec].[OnDeleteUsers] on [sec].[Users]
+--instead of delete
+--as
+--set nocount on
+--begin try
+--begin transaction
 	
-	delete from sec.Member where idMember in (select idUser from deleted)
-	delete from sec.email where email in (select email from deleted where email is not null)
-	delete from sec.sid where sid in (select usersid from deleted where usersid is not null)
+--	delete from sec.Member where idMember in (select idUser from deleted)
+--	delete from sec.email where email in (select email from deleted where email is not null)
+--	delete from sec.sid where sid in (select usersid from deleted where usersid is not null)
 
-commit
-end try
-begin catch
-	rollback
-	declare @errorMessage nvarchar(max)
-	select @errorMessage = ERROR_MESSAGE()
-	raiserror(@errorMessage, 16, 10)
-end catch
-GO
-/****** Object:  Trigger [sec].[OnUpdateUser]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+--commit
+--end try
+--begin catch
+--	rollback
+--	declare @errorMessage nvarchar(max)
+--	select @errorMessage = ERROR_MESSAGE()
+--	raiserror(@errorMessage, 16, 10)
+--end catch
+--GO
+--/****** Object:  Trigger [sec].[OnUpdateUser]    Script Date: 14.04.2015 11:08:44 ******/
+--SET ANSI_NULLS ON
+--GO
+--SET QUOTED_IDENTIFIER ON
+--GO
 
-CREATE trigger [sec].[OnUpdateUsers] on [sec].[Users]
-instead of update
-as
-set nocount on
-begin try
-begin transaction
+--CREATE trigger [sec].[OnUpdateUsers] on [sec].[Users]
+--instead of update
+--as
+--set nocount on
+--begin try
+--begin transaction
 
-	declare @changed table
-	(
-		idUser			int,
-		newLogin		varchar(200),
-		newPassword		varbinary(16),
-		newDisplayName	varchar(200),
-		newEmail		varchar(300),
-		newUsersid		varchar(300),
-		oldLogin		varchar(200),
-		oldPassword		varbinary(16),
-		oldDisplayName	varchar(200),
-		oldEmail		varchar(300),
-		oldUsersid		varchar(300)
-	)
+--	declare @changed table
+--	(
+--		idUser			int,
+--		newLogin		varchar(200),
+--		newPassword		varbinary(16),
+--		newDisplayName	varchar(200),
+--		newEmail		varchar(300),
+--		newUsersid		varchar(300),
+--		oldLogin		varchar(200),
+--		oldPassword		varbinary(16),
+--		oldDisplayName	varchar(200),
+--		oldEmail		varchar(300),
+--		oldUsersid		varchar(300)
+--	)
 
-	insert into @changed 
-	select
-		ins.idUser		idUser,		
-		ins.Login		newLogin,	
-		ins.Password	newPassword,
-		ins.DisplayName	newDisplayName,
-		ins.Email		newEmail,
-		ins.Usersid		newUsersid,
-		del.Login		oldLogin,
-		del.Password	oldPassword,
-		del.DisplayName	oldDisplayName,
-		del.Email		oldEmail,
-		del.Usersid		oldUsersid
-	from 
-		inserted ins inner join deleted del 
-	on 
-		ins.idUser = del.idUser
+--	insert into @changed 
+--	select
+--		ins.idUser		idUser,		
+--		ins.Login		newLogin,	
+--		ins.Password	newPassword,
+--		ins.DisplayName	newDisplayName,
+--		ins.Email		newEmail,
+--		ins.Usersid		newUsersid,
+--		del.Login		oldLogin,
+--		del.Password	oldPassword,
+--		del.DisplayName	oldDisplayName,
+--		del.Email		oldEmail,
+--		del.Usersid		oldUsersid
+--	from 
+--		inserted ins inner join deleted del 
+--	on 
+--		ins.idUser = del.idUser
 
-	update sec.Member set name = login from inserted where idMember = idUser
-	insert into sec.email(email) select newEmail from @changed where newEmail is not null and oldEmail is null
-	insert into sec.sid(sid) select newUsersid from @changed where newUsersid is not null and oldUsersid is null
-	update sec.email set sec.Email.email = changed.newEmail from @changed changed where sec.Email.email = changed.oldEmail and changed.oldEmail is not null and changed.newEmail is not null
-	update sec.sid set sec.sid.sid = changed.newUsersid from @changed changed where sec.sid.sid = changed.oldUsersid and changed.oldUsersid is not null and changed.newUsersid is not null
-	update sec._User set usersid = changed.newUsersid, displayName = changed.newDisplayName, email = changed.newEmail, password = changed.newPassword from @changed changed where idMember = changed.idUser
+--	update sec.Member set name = login from inserted where idMember = idUser
+--	insert into sec.email(email) select newEmail from @changed where newEmail is not null and oldEmail is null
+--	insert into sec.sid(sid) select newUsersid from @changed where newUsersid is not null and oldUsersid is null
+--	update sec.email set sec.Email.email = changed.newEmail from @changed changed where sec.Email.email = changed.oldEmail and changed.oldEmail is not null and changed.newEmail is not null
+--	update sec.sid set sec.sid.sid = changed.newUsersid from @changed changed where sec.sid.sid = changed.oldUsersid and changed.oldUsersid is not null and changed.newUsersid is not null
+--	update sec._User set usersid = changed.newUsersid, displayName = changed.newDisplayName, email = changed.newEmail, password = changed.newPassword from @changed changed where idMember = changed.idUser
 
-commit
-end try
-begin catch
-	rollback
-	declare @errorMessage nvarchar(max)
-	select @errorMessage = ERROR_MESSAGE()
-	raiserror(@errorMessage, 16, 10)
-end catch
+--commit
+--end try
+--begin catch
+--	rollback
+--	declare @errorMessage nvarchar(max)
+--	select @errorMessage = ERROR_MESSAGE()
+--	raiserror(@errorMessage, 16, 10)
+--end catch
 
 /*  онец копировани€ */
 
@@ -1253,3 +1058,8 @@ USE [master]
 GO
 ALTER DATABASE [$(DatabaseName)] SET  READ_WRITE 
 GO
+
+use master
+go
+
+drop database SecurityTest
