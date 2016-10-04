@@ -5,7 +5,7 @@ using Security.Model.Base;
 
 namespace Security.Model.Entities
 {
-    [Table("sec._Role")]
+    [Table("sec.Roles")]
     public class Role : ModelBase
     {
         /// <summary>
@@ -29,6 +29,6 @@ namespace Security.Model.Entities
 
         public HashSet<Grant> Grants { get; set; }
 
-        public HashSet<RoleOfMember> RoleOfMembers { get; set; }
+        public HashSet<Member> Members { get; set; }
     }
 }

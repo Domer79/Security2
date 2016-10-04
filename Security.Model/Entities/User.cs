@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.RegularExpressions;
@@ -8,25 +9,22 @@ using Tools.Extensions;
 namespace Security.Model.Entities
 {
     [Table("sec.Users")]
-    public class User : ModelBase
+    public class User : Member
     {
-        private string _usersid;
+        public User()
+        {
+            Groups = new HashSet<Group>();
+        }
 
-        [Key]
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdUser { get; set; }
-
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Необходимо указать логин!"), StringLength(200)]
-        public string Login { get; set; }
-
-        [StringLength(200)]
-        public string DisplayName { get; set; }
-
-        [StringLength(100)]
-        public string Email { get; set; }
-
+        [NotMapped]
+        public string Login
+        {
+            get { return Name; }
+            set { Name = value; }
+        }
 //        [Required]
         public byte[] Password { get; set; }
+
+        public HashSet<Group> Groups { get; set; }
     }
 }

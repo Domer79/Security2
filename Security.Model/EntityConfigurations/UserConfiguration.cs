@@ -7,18 +7,18 @@ namespace Security.Model.EntityConfigurations
     {
         public UserConfiguration()
         {
-            Property(e => e.Login)
-                .IsUnicode(false);
-
-            Property(e => e.DisplayName)
-                .IsUnicode(false);
-
-            Property(e => e.Email)
-                .IsUnicode(false);
+            Property(e => e.Login).IsUnicode(false);
 
             MapToStoredProcedures(InsertConfiguration);
             MapToStoredProcedures(UpdateConfiguration);
             MapToStoredProcedures(DeleteConfiguration);
+
+            HasMany(e => e.Groups).WithMany(e => e.Users).Map(cs =>
+            {
+                cs.MapLeftKey("idUser");
+                cs.MapRightKey("idGroup");
+                cs.ToTable("UserGroups");
+            });
         }
 
         private void DeleteConfiguration(ModificationStoredProceduresConfiguration<User> p)
@@ -33,7 +33,7 @@ namespace Security.Model.EntityConfigurations
 
         private void InsertConfiguration(ModificationStoredProceduresConfiguration<User> p)
         {
-            p.Insert(i => i.HasName("sec.AddUser").Result(r => r.IdUser, "idMember"));
+            p.Insert(i => i.HasName("sec.AddUser").Result(r => r.IdMember, "idMember"));
         }
     }
 }

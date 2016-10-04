@@ -5,7 +5,7 @@ using Security.Model.Base;
 
 namespace Security.Model.Entities
 {
-    [Table("sec.SecObject")]
+    [Table("sec.SecObjects")]
     public abstract class SecObject : ModelBase
     {
         [Key]

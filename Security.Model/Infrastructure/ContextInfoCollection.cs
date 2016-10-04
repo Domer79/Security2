@@ -27,9 +27,6 @@ namespace Security.Model.Infrastructure
         {
             get
             {
-                if (contextType == null || !contextType.Is<RepositoryDataContext>()) 
-                    throw new ArgumentException("contextType");
-
                 Add(contextType);
 
                 return _dictionary[contextType];

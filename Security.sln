@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.Model", "Security.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B3C03FF4-0B11-4598-93C1-0095BE0E5BA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.Model.Tests", "Security.Model.Tests\Security.Model.Tests.csproj", "{23F25416-D496-4E6A-9D0E-9F7365682628}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +25,15 @@ Global
 		{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23F25416-D496-4E6A-9D0E-9F7365682628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F25416-D496-4E6A-9D0E-9F7365682628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F25416-D496-4E6A-9D0E-9F7365682628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F25416-D496-4E6A-9D0E-9F7365682628}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{23F25416-D496-4E6A-9D0E-9F7365682628} = {B3C03FF4-0B11-4598-93C1-0095BE0E5BA6}
 	EndGlobalSection
 EndGlobal

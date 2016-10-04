@@ -5,7 +5,7 @@ using Security.Model.Base;
 
 namespace Security.Model.Entities
 {
-    [Table("sec.AccessType")]
+    [Table("sec.AccessTypes")]
     public class AccessType : ModelBase
     {
         [Key]

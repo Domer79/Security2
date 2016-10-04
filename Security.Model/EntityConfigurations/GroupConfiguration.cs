@@ -7,9 +7,6 @@ namespace Security.Model.EntityConfigurations
     {
         public GroupConfiguration()
         {
-            Property(e => e.GroupName)
-                .IsUnicode(false);
-
             Property(e => e.Description)
                 .IsUnicode(false);
 
@@ -29,7 +26,7 @@ namespace Security.Model.EntityConfigurations
 
         public void InsertConfiguration(ModificationStoredProceduresConfiguration<Group> p)
         {
-            p.Insert(i => i.HasName("sec.AddGroup").Result(r => r.IdGroup, "idMember"));
+            p.Insert(i => i.HasName("sec.AddGroup").Result(r => r.IdMember, "idMember"));
         }
     }
 }

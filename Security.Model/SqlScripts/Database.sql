@@ -1,7 +1,7 @@
 USE [master]
 GO
 
-:setvar DatabaseName "SecurityTest"
+:setvar DatabaseName "SecurityDev"
 
 /*
 Проверьте режим SQLCMD и отключите выполнение скрипта, если режим SQLCMD не поддерживается.
@@ -130,26 +130,12 @@ create procedure [sec].[AddGroup]
 as
 set nocount on
 
-declare @id int
+declare @idMember int
 
 insert into Members(name) values(@name)
-select @id = SCOPE_IDENTITY()
-insert into Groups(idMember, description) values(@id, @description)
-select @id
-
-GO
-/****** Object:  StoredProcedure [sec].[AddMemberRole]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE procedure [sec].[AddMemberRole]
-	@idRole int,
-	@idMember int
-as
-set nocount on
-insert into sec.MemberRole(idMember, idRole) values(@idMember, @idRole)
+select @idMember = SCOPE_IDENTITY()
+insert into Groups(idMember, description) values(@idMember, @description)
+select @idMember
 
 GO
 /****** Object:  StoredProcedure [sec].[AddUser]    Script Date: 14.04.2015 11:08:44 ******/
@@ -164,26 +150,12 @@ CREATE procedure [sec].[AddUser]
 as
 set nocount on
 
-declare @id int
+declare @idMember int
 
-insert into Members(name) values(@login)
-select @id = SCOPE_IDENTITY()
-insert into Users(idMember, password) values(@id, @password)
-select @id
-
-GO
-/****** Object:  StoredProcedure [sec].[AddUserToGroup]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-create procedure [sec].[AddUserToGroup]
-	@idUser int,
-	@idGroup int
-as
-set nocount on
-insert into sec.UserGroups(idUser, idGroup) values(@idUser, @idGroup)
+insert into Members(name, isUser) values(@login, 1)
+select @idMember = SCOPE_IDENTITY()
+insert into Users(idMember, password) values(@idMember, @password)
+select @idMember
 
 GO
 /****** Object:  StoredProcedure [sec].[DeleteGrant]    Script Date: 14.04.2015 11:08:44 ******/
@@ -212,21 +184,6 @@ as
 set nocount on
 delete from sec.Members where idMember = @idMember
 GO
-/****** Object:  StoredProcedure [sec].[DeleteMemberRole]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE procedure [sec].[DeleteMemberRole]
-	@idRole int,
-	@idMember int
-as
-set nocount on
-
-delete from sec.MemberRoles where idMember = @idMember and idRole = @idRole
-
-GO
 /****** Object:  StoredProcedure [sec].[DeleteUser]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
@@ -238,20 +195,6 @@ create procedure [sec].[DeleteUser]
 as
 set nocount on
 delete from sec.Members where idMember = @idMember
-GO
-/****** Object:  StoredProcedure [sec].[DeleteUserFromGroup]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-create procedure [sec].[DeleteUserFromGroup]
-	@idUser int,
-	@idGroup int
-as
-set nocount on
-delete from sec.UserGroups where idUser = @idUser and idGroup = @idGroup
-
 GO
 /****** Object:  StoredProcedure [sec].[SetIdentificationMode]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
@@ -296,20 +239,8 @@ create procedure [sec].[UpdateGroup]
 as
 set nocount on
 update sec.Members set name = @name where idMember = @idMember
-update sec.Groups set description = @description where idGroup = @idMember
+update sec.Groups set description = @description where idMember = @idMember
 
-GO
-/****** Object:  StoredProcedure [sec].[UpdateMemberRole]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE procedure [sec].[UpdateMemberRole]
-	@idRole int,
-	@idMember int
-as
-raiserror('is_not_modified', 16, 10)
 GO
 /****** Object:  StoredProcedure [sec].[UpdateUser]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
@@ -324,26 +255,8 @@ create procedure [sec].[UpdateUser]
 as
 set nocount on
 update sec.Members set name = @login where idMember = @idMember
-update sec.Users set password = @password where idUser = @idMember
+update sec.Users set password = @password where idMember = @idMember
 
-GO
-/****** Object:  StoredProcedure [sec].[UpdateUserGroup]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-create procedure [sec].[UpdateUserGroup]
-	@idUser int,
-	@idGroup int,
-	@login varchar(200) = null,
-	@displayName varchar(200) = null,
-	@email varchar(100) = null,
-	@groupName varchar(200) = null,
-	@groupDescription varchar(max) = null
-as
-set nocount on
-raiserror('is_not_modified', 16, 10)
 GO
 /****** Object:  UserDefinedFunction [sec].[GetIdentificationMode]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
@@ -390,7 +303,7 @@ begin
 	declare @result bit = 0
 
 	--Сначала проверяем доступ, если участником безопасности является группа
-	if not exists(select 1 from sec.Users where idUser  = @idMember)
+	if not exists(select 1 from sec.Users where idMember = @idMember)
 	begin
 		if exists
 				(
@@ -557,12 +470,7 @@ GO
 CREATE TABLE [sec].[Members](
 	[idMember] [int] IDENTITY(1,1) NOT NULL,
 	[name] [varchar](200) NOT NULL,
-
-    --todo: Начать отсюда
-	isUser as case
-		when exists(select 1 from sec.Users where idMember = sec.Members.idMember) then cast(1 as bit)
-		else cast(0 as bit)
-	end
+	[isUser] bit not null
 
 PRIMARY KEY CLUSTERED 
 (
@@ -573,6 +481,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
+
 /****** Object:  Table [sec].[MemberRoles]    Script Date: 14.04.2015 11:08:44 ******/
 SET ANSI_NULLS ON
 GO
@@ -652,6 +561,13 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+
+Create table sec.Logs
+(
+	idLog int not null primary key identity,
+	message nvarchar(max) not null
+)
+go
 
 CREATE view [sec].[RoleOfMembers]
 as
@@ -820,246 +736,15 @@ if exists(select 1 from sec.Members where idMember in (select idMember from dele
 		return
 	end
 
-
 GO
 
---/****** Object:  Trigger [sec].[OnAddGroups]    Script Date: 14.04.2015 11:08:44 ******/
---SET ANSI_NULLS ON
---GO
---SET QUOTED_IDENTIFIER ON
---GO
 
-
---create trigger [sec].[OnAddGroups] on [sec].[Groups]
---instead of insert
---as
---set nocount on
---begin try
---	begin transaction
-
---	insert into sec.Member(name) select name from inserted
---	insert into sec._Group(idMember, description)
---	select
---		idMember,
---		description
---	from
---		(
---			select
---				m.idMember,
---				ins.description
---			from
---				inserted ins inner join sec.Member m
---			on
---				ins.name = m.name
---		) s1
-
---	commit
---end try
---begin catch
---	rollback
---	declare @errorMessage nvarchar(max)
---	select @errorMessage = ERROR_MESSAGE()
---	raiserror(@errorMessage, 16, 10)
---end catch
-
---GO
---/****** Object:  Trigger [sec].[OnDeleteGroups]    Script Date: 14.04.2015 11:08:44 ******/
---SET ANSI_NULLS ON
---GO
---SET QUOTED_IDENTIFIER ON
---GO
-
---CREATE trigger [sec].[OnDeleteGroups] on [sec].[Groups]
---instead of delete
---as
---set nocount on
---begin try
---	begin transaction
-
---	delete from sec.Member where idMember in (select idGroup from deleted)
-
---	commit
---end try
---begin catch
---	rollback
---	declare @errorMessage nvarchar(max)
---	select @errorMessage = ERROR_MESSAGE()
---	raiserror(@errorMessage, 16, 10)
---end catch
-
---GO
---/****** Object:  Trigger [sec].[OnUpdateGroups]    Script Date: 14.04.2015 11:08:44 ******/
---SET ANSI_NULLS ON
---GO
---SET QUOTED_IDENTIFIER ON
---GO
-
-
---CREATE trigger [sec].[OnUpdateGroups] on [sec].[Groups]
---instead of update
---as
---set nocount on
---begin try
---	begin transaction
-
---	update sec.Member set name = ins.name from inserted ins where idMember = idGroup
---	update sec._Group set description = ins.description from inserted ins where idMember = ins.idGroup
-
---	commit
---end try
---begin catch
---	rollback
---	declare @errorMessage nvarchar(max)
---	select @errorMessage = ERROR_MESSAGE()
---	raiserror(@errorMessage, 16, 10)
---end catch
-
-
---GO
---/****** Object:  Trigger [sec].[OnAddUser]    Script Date: 14.04.2015 11:08:44 ******/
---SET ANSI_NULLS ON
---GO
---SET QUOTED_IDENTIFIER ON
---GO
-
---CREATE trigger [sec].[OnAddUsers] on [sec].[Users]
---instead of insert
---as
---set nocount on
---begin try
---	begin transaction
-
---	insert into sec.Member(name) select login from inserted
---	insert into sec.email(email) select email from inserted where email is not null
---	insert into sec.sid(sid) select usersid from inserted where usersid is not null
-
---	insert into sec._User(idMember, usersid, displayName, email, password) 
---	select
---		idMember,
---		usersid,
---		displayName,
---		email,
---		password
---	from
---		(
---			select
---				m.idMember,
---				ins.usersid,
---				ins.displayName,
---				ins.email,
---				ins.password
---			from
---				inserted ins inner join sec.Member m
---			on
---				ins.login = m.name
---		) s1
-
---	commit
---end try
---begin catch
---	rollback
---	declare @errorMessage nvarchar(max)
---	select @errorMessage = ERROR_MESSAGE()
---	raiserror(@errorMessage, 16, 10)
---end catch
---GO
---/****** Object:  Trigger [sec].[OnDeleteUser]    Script Date: 14.04.2015 11:08:44 ******/
---SET ANSI_NULLS ON
---GO
---SET QUOTED_IDENTIFIER ON
---GO
-
---CREATE trigger [sec].[OnDeleteUsers] on [sec].[Users]
---instead of delete
---as
---set nocount on
---begin try
---begin transaction
-	
---	delete from sec.Member where idMember in (select idUser from deleted)
---	delete from sec.email where email in (select email from deleted where email is not null)
---	delete from sec.sid where sid in (select usersid from deleted where usersid is not null)
-
---commit
---end try
---begin catch
---	rollback
---	declare @errorMessage nvarchar(max)
---	select @errorMessage = ERROR_MESSAGE()
---	raiserror(@errorMessage, 16, 10)
---end catch
---GO
---/****** Object:  Trigger [sec].[OnUpdateUser]    Script Date: 14.04.2015 11:08:44 ******/
---SET ANSI_NULLS ON
---GO
---SET QUOTED_IDENTIFIER ON
---GO
-
---CREATE trigger [sec].[OnUpdateUsers] on [sec].[Users]
---instead of update
---as
---set nocount on
---begin try
---begin transaction
-
---	declare @changed table
---	(
---		idUser			int,
---		newLogin		varchar(200),
---		newPassword		varbinary(16),
---		newDisplayName	varchar(200),
---		newEmail		varchar(300),
---		newUsersid		varchar(300),
---		oldLogin		varchar(200),
---		oldPassword		varbinary(16),
---		oldDisplayName	varchar(200),
---		oldEmail		varchar(300),
---		oldUsersid		varchar(300)
---	)
-
---	insert into @changed 
---	select
---		ins.idUser		idUser,		
---		ins.Login		newLogin,	
---		ins.Password	newPassword,
---		ins.DisplayName	newDisplayName,
---		ins.Email		newEmail,
---		ins.Usersid		newUsersid,
---		del.Login		oldLogin,
---		del.Password	oldPassword,
---		del.DisplayName	oldDisplayName,
---		del.Email		oldEmail,
---		del.Usersid		oldUsersid
---	from 
---		inserted ins inner join deleted del 
---	on 
---		ins.idUser = del.idUser
-
---	update sec.Member set name = login from inserted where idMember = idUser
---	insert into sec.email(email) select newEmail from @changed where newEmail is not null and oldEmail is null
---	insert into sec.sid(sid) select newUsersid from @changed where newUsersid is not null and oldUsersid is null
---	update sec.email set sec.Email.email = changed.newEmail from @changed changed where sec.Email.email = changed.oldEmail and changed.oldEmail is not null and changed.newEmail is not null
---	update sec.sid set sec.sid.sid = changed.newUsersid from @changed changed where sec.sid.sid = changed.oldUsersid and changed.oldUsersid is not null and changed.newUsersid is not null
---	update sec._User set usersid = changed.newUsersid, displayName = changed.newDisplayName, email = changed.newEmail, password = changed.newPassword from @changed changed where idMember = changed.idUser
-
---commit
---end try
---begin catch
---	rollback
---	declare @errorMessage nvarchar(max)
---	select @errorMessage = ERROR_MESSAGE()
---	raiserror(@errorMessage, 16, 10)
---end catch
-
-/* Конец копирования */
-
-GO
 USE [master]
 GO
 ALTER DATABASE [$(DatabaseName)] SET  READ_WRITE 
 GO
 
-use master
-go
+--use master
+--go
 
-drop database SecurityTest
+--drop database [$(DatabaseName)]

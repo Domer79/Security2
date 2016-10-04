@@ -57,12 +57,9 @@
     <Compile Include="Entities\Log.cs" />
     <Compile Include="Entities\Member.cs" />
     <Compile Include="Entities\Role.cs" />
-    <Compile Include="Entities\RoleOfMember.cs" />
     <Compile Include="Entities\SecObject.cs" />
-    <Compile Include="Entities\Settings.cs" />
+    <Compile Include="Entities\Setting.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\UserGroups.cs" />
-    <Compile Include="Entities\UserGroupsDetail.cs" />
     <Compile Include="EntityConfigurations\AccessTypeConfiguration.cs" />
     <Compile Include="EntityConfigurations\BaseConfiguration.cs" />
     <Compile Include="EntityConfigurations\GrantConfiguration.cs" />
@@ -70,10 +67,8 @@
     <Compile Include="EntityConfigurations\LogConfiguration.cs" />
     <Compile Include="EntityConfigurations\MemberConfiguration.cs" />
     <Compile Include="EntityConfigurations\RoleConfiguration.cs" />
-    <Compile Include="EntityConfigurations\RoleOfMemberConfiguration.cs" />
     <Compile Include="EntityConfigurations\SecObjectConfiguration.cs" />
     <Compile Include="EntityConfigurations\UserConfiguration.cs" />
-    <Compile Include="EntityConfigurations\UserGroupsDetailConfiguration.cs" />
     <Compile Include="Infrastructure\ContextInfo.cs" />
     <Compile Include="Infrastructure\ContextInfoCollection.cs" />
     <Compile Include="Infrastructure\EntityInfo.cs" />
@@ -84,7 +79,9 @@
     <Compile Include="SecurityContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

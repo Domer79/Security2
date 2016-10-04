@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Security.Model.Entities
 {
-    [Table("sec.Log")]
+    [Table("sec.Logs")]
     public class Log
     {
         [Key]

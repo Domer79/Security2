@@ -10,7 +10,7 @@ namespace Security.Model.EntityConfigurations
                 .IsUnicode(false);
 
             HasMany(e => e.Grants).WithRequired(e => e.Role);
-            HasMany(e => e.RoleOfMembers).WithRequired(e => e.Role);
+            HasMany(e => e.Members).WithMany(e => e.Roles);
         }
     }
 }
