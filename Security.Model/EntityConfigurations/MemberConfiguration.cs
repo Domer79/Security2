@@ -1,3 +1,4 @@
+using System.Data.Entity.ModelConfiguration.Configuration;
 using Security.Model.Entities;
 
 namespace Security.Model.EntityConfigurations
@@ -6,10 +7,6 @@ namespace Security.Model.EntityConfigurations
     {
         public MemberConfiguration()
         {
-            Map(e => e.ToTable("sec.Members"));
-            Map<User>(u => u.ToTable("sec.Users"));
-            Map<Group>(u => u.ToTable("sec.Groups"));
-
             Property(e => e.Name).IsUnicode(false);
             HasMany(e => e.Roles).WithMany(e => e.Members).Map(configuration =>
             {

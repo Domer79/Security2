@@ -135,7 +135,7 @@ declare @idMember int
 insert into Members(name) values(@name)
 select @idMember = SCOPE_IDENTITY()
 insert into Groups(idMember, description) values(@idMember, @description)
-select @idMember
+select @idMember as idMember
 
 GO
 /****** Object:  StoredProcedure [sec].[AddUser]    Script Date: 14.04.2015 11:08:44 ******/
@@ -152,10 +152,10 @@ set nocount on
 
 declare @idMember int
 
-insert into Members(name, isUser) values(@login, 1)
+insert into Members(name) values(@login)
 select @idMember = SCOPE_IDENTITY()
 insert into Users(idMember, password) values(@idMember, @password)
-select @idMember
+select @idMember as idMember
 
 GO
 /****** Object:  StoredProcedure [sec].[DeleteGrant]    Script Date: 14.04.2015 11:08:44 ******/
@@ -469,8 +469,7 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [sec].[Members](
 	[idMember] [int] IDENTITY(1,1) NOT NULL,
-	[name] [varchar](200) NOT NULL,
-	[isUser] bit not null
+	[name] [varchar](200) NOT NULL
 
 PRIMARY KEY CLUSTERED 
 (
@@ -556,18 +555,51 @@ CREATE TABLE [sec].[UserGroups](
 
 GO
 
-/****** Object:  View [sec].[RoleOfMember]    Script Date: 14.04.2015 11:08:44 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
 Create table sec.Logs
 (
 	idLog int not null primary key identity,
 	message nvarchar(max) not null
 )
 go
+
+/***** View sec.UsersView ******/
+if exists(select * from sys.views v inner join sys.schemas sch on v.schema_id = sch.schema_id where v.name = 'UsersView' and sch.name = 'sec')
+drop view sec.UsersView
+go
+
+create view sec.UsersView
+as
+select
+    m.idMember,
+    m.name as login,
+    u.password
+from 
+    sec.Users u 
+        inner join sec.Members m on u.idMember = m.idMember
+
+go
+
+/***** View sec.GroupsView ******/
+if exists(select * from sys.views v inner join sys.schemas sch on v.schema_id = sch.schema_id where v.name = 'GroupsView' and sch.name = 'sec')
+    drop view sec.GroupsView
+go
+
+create view sec.GroupsView
+as
+select
+    m.*,
+    g.description
+from 
+    sec.Groups g
+        inner join sec.Members m on g.idMember = m.idMember
+
+go
+
+/****** Object:  View [sec].[RoleOfMember]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 CREATE view [sec].[RoleOfMembers]
 as
@@ -576,8 +608,7 @@ select
 	r.name roleName,
 	r.description roleDescription,
 	m.idMember,
-	m.name memberName,
-	m.isUser
+	m.name memberName
 from
 	sec.Roles r inner join sec.MemberRoles mr 
 on 
@@ -738,6 +769,85 @@ if exists(select 1 from sec.Members where idMember in (select idMember from dele
 
 GO
 
+/*** Triggers instead of insert, update, delete on UsersView ***/
+
+if exists(select 1 from sys.triggers where name = 'OnInsertUsersView')
+    drop trigger sec.OnInsertUsersView
+go
+
+create trigger sec.OnInsertUsersView on sec.UsersView
+instead of insert
+as
+
+insert into sec.Members(name) select login from inserted
+insert into sec.Users(idMember, password) select m.idMember, ins.password from Members m inner join inserted ins on m.name = ins.login
+
+select SCOPE_IDENTITY()
+GO
+
+if exists(select 1 from sys.triggers where name = 'OnUpdateUsersView')
+    drop trigger sec.OnUpdateUsersView
+go
+
+create trigger sec.OnUpdateUsersView on sec.UsersView
+instead of update
+as
+
+update sec.Members set name = inserted.login from inserted where inserted.idMember = sec.Members.idMember 
+update sec.Users set password = inserted.password from inserted where inserted.idMember = sec.Users.idMember
+go
+
+if exists(select 1 from sys.triggers where name = 'OnDeleteUsersView')
+    drop trigger sec.OnDeleteUsersView
+go
+
+create trigger sec.OnDeleteUsersView on sec.UsersView
+instead of delete
+as
+
+delete from sec.Members where idMember in (select idMember from inserted)
+go
+
+/******/
+
+/*** Triggers instead of insert, update, delete on GroupsView ***/
+
+if exists(select 1 from sys.triggers where name = 'OnInsertGroupsView')
+    drop trigger sec.OnInsertGroupsView
+go
+
+if exists(select 1 from sys.triggers where name = 'OnUpdateGroupsView')
+    drop trigger sec.OnUpdateGroupsView
+go
+
+if exists(select 1 from sys.triggers where name = 'OnDeleteGroupsView')
+    drop trigger sec.OnDeleteGroupsView
+go
+
+create trigger OnInsertGroupsView on sec.GroupsView
+instead of insert
+as
+
+insert into sec.Members(name) select name from inserted
+insert into sec.Groups(idMember, description) select m.idMember, ins.description from Members m inner join inserted ins on m.name = ins.name
+go
+
+create trigger sec.OnUpdateGroupsView on sec.GroupsView
+instead of update
+as
+
+update sec.Members set name = inserted.name from inserted where inserted.idMember = sec.Members.idMember 
+update sec.Groups set description = inserted.description from inserted where inserted.idMember = sec.Groups.idMember
+go
+
+create trigger sec.OnDeleteGroupsView on sec.GroupsView
+instead of delete
+as
+
+delete from sec.Members where idMember in (select idMember from inserted)
+go
+
+/******/
 
 USE [master]
 GO

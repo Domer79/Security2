@@ -5,9 +5,15 @@ using Security.Model.Base;
 
 namespace Security.Model.Entities
 {
-    [Table("sec.Groups")]
-    public class Group : Member
+    [Table("sec.GroupsView")]
+    public class Group : ModelBase
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int IdMember { get; set; }
+
+        public string Name { get; set; }
+
         public string Description { get; set; }
 
         public HashSet<User> Users { get; set; }

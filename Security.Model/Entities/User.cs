@@ -8,21 +8,20 @@ using Tools.Extensions;
 
 namespace Security.Model.Entities
 {
-    [Table("sec.Users")]
-    public class User : Member
+    [Table("sec.UsersView")]
+    public class User : ModelBase
     {
         public User()
         {
             Groups = new HashSet<Group>();
         }
 
-        [NotMapped]
-        public string Login
-        {
-            get { return Name; }
-            set { Name = value; }
-        }
-//        [Required]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int IdMember { get; set; }
+
+        public string Login { get; set; }
+
         public byte[] Password { get; set; }
 
         public HashSet<Group> Groups { get; set; }

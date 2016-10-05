@@ -6,7 +6,7 @@ using Security.Model.Base;
 namespace Security.Model.Entities
 {
     [Table("sec.SecObjects")]
-    public abstract class SecObject : ModelBase
+    public class SecObject : ModelBase
     {
         [Key]
         public int IdSecObject { get; set; }

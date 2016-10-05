@@ -16,8 +16,6 @@ namespace Security.Model.Tests
             context.Dispose();
         }
 
-        //todo: Начать отсюда
-        //Ознакомиться с https://msdn.microsoft.com/en-us/data/jj591617.aspx
         [TestMethod]
         public void CreateUserTest()
         {
@@ -47,8 +45,49 @@ namespace Security.Model.Tests
                 }
 
                 context.SaveChanges();
-                Assert.IsTrue(context.Users.Any(e => e.Login == member + 1));
+                Assert.IsTrue(context.Users.Any(e => e.Login == member + i));
             }
+        }
+
+        [TestMethod]
+        public void CreateGroupTest()
+        {
+            using (var context = new SecurityContext())
+            {
+                const string member = "group";
+                const string description = "description";
+                var i = 0;
+
+                while (true)
+                {
+                    var groupName = member + i;
+                    var descriptionName = description + i;
+
+                    if (context.Groups.Any(e => e.Name == groupName))
+                    {
+                        i++;
+                        continue;
+                    }
+
+                    var group = new Group()
+                    {
+                        Name = groupName,
+                        Description = descriptionName
+                    };
+
+                    context.Groups.Add(group);
+                    break;
+                }
+
+                context.SaveChanges();
+                Assert.IsTrue(context.Groups.Any(e => e.Name == member + i));
+            }
+        }
+
+        [TestMethod]
+        public void CreateAndGetAccessTypeTest()
+        {
+            
         }
     }
 }

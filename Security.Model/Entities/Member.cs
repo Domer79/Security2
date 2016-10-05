@@ -8,20 +8,19 @@ namespace Security.Model.Entities
     [Table("sec.Members")]
     public class Member : ModelBase
     {
-        public Member()
+        protected Member()
         {
             Roles = new HashSet<Role>();
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdMember { get; set; }
 
         [Required]
         [Column("name")]
         [Index("IX_Member_Name", IsUnique = true)]
         public string Name { get; set; }
-
-        public bool IsUser { get; set; }
 
         public HashSet<Role> Roles { get; set; }
     }
