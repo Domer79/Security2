@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c01a93ac-8cea-4857-a91c-f681f5fb714c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="16238ba2-a497-494d-8d9c-b2abf7c49101" name="Security.Model">
+      <references>
+        <reference Id="54155f50-464f-4bda-9876-bb1aff4563fb" name="Security.Model">
+          <ArtifactNode Label="Security.Model" Category="CodeSchema_Project" Id="(Assembly=../Security.Model/Security.Model.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Security.Model)" Label="Security.Model.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="19ef4201-39c6-4f7c-8336-efd213b7615b" name="Security&#xD;&#xA;">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="2182e680-dc9d-4683-bda8-f58622a38459" direction="Forward">
+          <layerMoniker Id="16238ba2-a497-494d-8d9c-b2abf7c49101" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="c06aff9f-c030-4d2d-8315-cc98be420878" name="Security.Web">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="394cbe08-d7b6-4b3b-a23f-ebd0b2b1d725" direction="Forward">
+          <layerMoniker Id="19ef4201-39c6-4f7c-8336-efd213b7615b" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>
