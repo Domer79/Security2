@@ -1,12 +1,14 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Security.Interfaces.Model;
 using Security.Model.Base;
 
 namespace Security.Model.Entities
 {
     [Table("sec.Roles")]
-    public class Role : ModelBase
+    public class Role : ModelBase, IRole
     {
         /// <summary>
         /// »нициализирует новый экземпл€р класса <see cref="T:System.Object"/>.
@@ -30,5 +32,21 @@ namespace Security.Model.Entities
         public HashSet<Grant> Grants { get; set; }
 
         public HashSet<Member> Members { get; set; }
+
+        IList<IGrant> IRole.Grants
+        {
+            get
+            {
+                return new List<IGrant>(Grants);
+            }
+        }
+
+        IList<IMember> IRole.Members
+        {
+            get
+            {
+                return new List<IMember>(Members);
+            }
+        }
     }
 }

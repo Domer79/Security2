@@ -1,11 +1,13 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Security.Interfaces.Model;
 using Security.Model.Base;
 
 namespace Security.Model.Entities
 {
     [Table("sec.Grants")]
-    public class Grant : ModelBase
+    public class Grant : ModelBase, IGrant
     {
         [Key]
         [Column(Order = 0)]
@@ -25,5 +27,20 @@ namespace Security.Model.Entities
         public Role Role { get; set; }
         public AccessType AccessType { get; set; }
         public SecObject SecObject { get; set; }
+
+        IRole IGrant.Role
+        {
+            get { return Role; }
+        }
+
+        IAccessType IGrant.AccessType
+        {
+            get { return AccessType; }
+        }
+
+        ISecObject IGrant.SecObject
+        {
+            get { return SecObject; }
+        }
     }
 }

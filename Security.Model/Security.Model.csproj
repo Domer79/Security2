@@ -85,6 +85,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Security.Interfaces\Security.Interfaces.csproj">
+      <Project>{026352E5-2A65-4064-9848-FB60AB1046AC}</Project>
+      <Name>Security.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tools\Tools.csproj">
       <Project>{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}</Project>
       <Name>Tools</Name>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04F7BDFF-055E-41E4-AC54-18FD68D7678A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Itis.ProxyDataPlatform</RootNamespace>
+    <AssemblyName>Itis.ProxyDataPlatform</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\DataModelAttribute.cs" />
+    <Compile Include="Attributes\MapToAttribute.cs" />
+    <Compile Include="Base\Entity.cs" />
+    <Compile Include="Base\EntityBll.cs" />
+    <Compile Include="Base\EnumEntity.cs" />
+    <Compile Include="Base\EnumEntityBll.cs" />
+    <Compile Include="Base\NamedEntity.cs" />
+    <Compile Include="Base\NamedEntityBll.cs" />
+    <Compile Include="Converting\BaseConverter.cs" />
+    <Compile Include="Converting\Converter.cs" />
+    <Compile Include="Converting\ConverterCollection.cs" />
+    <Compile Include="Converting\DefaultConverter.cs" />
+    <Compile Include="DatabaseContext\ConnectionInfo.cs" />
+    <Compile Include="DatabaseContext\BaseContainer.cs" />
+    <Compile Include="DatabaseContext\ContainerConfiguration.cs" />
+    <Compile Include="Exceptions\EntityMapToBllMissingException.cs" />
+    <Compile Include="Exceptions\InvalidConvertOperationException.cs" />
+    <Compile Include="Exceptions\SequenceEmptyException.cs" />
+    <Compile Include="Exceptions\TypeMapMissingException.cs" />
+    <Compile Include="Infrastructure\EntityStack.cs" />
+    <Compile Include="Interfaces\IConverter.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Linq\IMapQueryable.cs" />
+    <Compile Include="Linq\MapQueryable.cs" />
+    <Compile Include="Linq\MapQueryableHelper.cs" />
+    <Compile Include="Linq\MemberTypeReplacement.cs" />
+    <Compile Include="Linq\SunoQueryable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProxyApi.cs" />
+    <Compile Include="SunoDbContextTransaction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Itis.Common\Itis.Common.csproj">
+      <Project>{367DD443-41E7-4C78-B673-B02C52AB714C}</Project>
+      <Name>Itis.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

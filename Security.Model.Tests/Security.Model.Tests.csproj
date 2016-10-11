@@ -65,6 +65,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Security.Interfaces\Security.Interfaces.csproj">
+      <Project>{026352e5-2a65-4064-9848-fb60ab1046ac}</Project>
+      <Name>Security.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Security.Model\Security.Model.csproj">
       <Project>{cc428c6e-87c3-4ff4-b698-adf244a31e38}</Project>
       <Name>Security.Model</Name>
