@@ -3,7 +3,7 @@ using Security.Interfaces.Model;
 
 namespace Security.Interfaces.Collections
 {
-    public interface IAccessTypeCollection : ICollection<IAccessType>
+    public interface IAccessTypeCollection : ICollection<IAccessType>, ISavedCollection
     {
         
     }

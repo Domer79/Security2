@@ -99,5 +99,10 @@ namespace Security.Infrastructure
         /// true if the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only; otherwise, false.
         /// </returns>
         public bool IsReadOnly { get; }
+
+        public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -3,20 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using Security.Interfaces.Collections;
 using Security.Interfaces.Model;
+using Security.Tests.Model;
 
-namespace Security.Infrastructure
+namespace Security.Tests.Collections
 {
-    internal class AccessTypeCollection : IAccessTypeCollection
+    internal class GrantCollection : IGrantCollection
     {
+        private List<IGrant> _grants = new List<IGrant>(Grant.FakeCollection);
+
         /// <summary>
         /// Returns an enumerator that iterates through the collection.
         /// </summary>
         /// <returns>
         /// A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
         /// </returns>
-        public IEnumerator<IAccessType> GetEnumerator()
+        public IEnumerator<IGrant> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return _grants.GetEnumerator();
         }
 
         /// <summary>
@@ -34,9 +37,9 @@ namespace Security.Infrastructure
         /// Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </summary>
         /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
-        public void Add(IAccessType item)
+        public void Add(IGrant item)
         {
-            throw new NotImplementedException();
+            _grants.Add(item);
         }
 
         /// <summary>
@@ -45,7 +48,7 @@ namespace Security.Infrastructure
         /// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. </exception>
         public void Clear()
         {
-            throw new NotImplementedException();
+            _grants.Clear();
         }
 
         /// <summary>
@@ -55,18 +58,18 @@ namespace Security.Infrastructure
         /// true if <paramref name="item"/> is found in the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
         /// </returns>
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
-        public bool Contains(IAccessType item)
+        public bool Contains(IGrant item)
         {
-            throw new NotImplementedException();
+            return _grants.Contains(item);
         }
 
         /// <summary>
         /// Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
         /// </summary>
         /// <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param><param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param><exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.</exception><exception cref="T:System.ArgumentException">The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.</exception>
-        public void CopyTo(IAccessType[] array, int arrayIndex)
+        public void CopyTo(IGrant[] array, int arrayIndex)
         {
-            throw new NotImplementedException();
+            _grants.CopyTo(array, arrayIndex);
         }
 
         /// <summary>
@@ -76,9 +79,9 @@ namespace Security.Infrastructure
         /// true if <paramref name="item"/> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </returns>
         /// <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
-        public bool Remove(IAccessType item)
+        public bool Remove(IGrant item)
         {
-            throw new NotImplementedException();
+            return _grants.Remove(item);
         }
 
         /// <summary>
@@ -87,7 +90,10 @@ namespace Security.Infrastructure
         /// <returns>
         /// The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </returns>
-        public int Count { get; }
+        public int Count
+        {
+            get { return _grants.Count; }
+        }
 
         /// <summary>
         /// Gets a value indicating whether the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
@@ -95,11 +101,14 @@ namespace Security.Infrastructure
         /// <returns>
         /// true if the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only; otherwise, false.
         /// </returns>
-        public bool IsReadOnly { get; }
+        public bool IsReadOnly
+        {
+            get { return true; }
+        }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Save!");
         }
     }
 }

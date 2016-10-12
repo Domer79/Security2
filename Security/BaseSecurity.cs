@@ -50,5 +50,15 @@ namespace Security
         {
             throw new NotImplementedException();
         }
+
+        public void AddGrant(string role, string secObject, Enum accessType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveGrant(string role, string secObject, Enum accessType)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

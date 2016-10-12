@@ -10,7 +10,7 @@ namespace Security.Interfaces.Collections
 {
     public interface ISet<T> : IEnumerable<T>, ISet
     {
-        
+        IEnumerable<T> GetData();
     }
 
     public interface ISet : IEnumerable

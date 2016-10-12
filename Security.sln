@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.Interfaces", "Secu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security", "Security\Security.csproj", "{556713E5-2ADB-4B4B-8D40-74DF9393D33D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.Tests", "Security.Tests\Security.Tests.csproj", "{4E95E862-D5D3-40DB-83E8-1E4CBABE9E06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,11 +61,16 @@ Global
 		{556713E5-2ADB-4B4B-8D40-74DF9393D33D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{556713E5-2ADB-4B4B-8D40-74DF9393D33D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{556713E5-2ADB-4B4B-8D40-74DF9393D33D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E95E862-D5D3-40DB-83E8-1E4CBABE9E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E95E862-D5D3-40DB-83E8-1E4CBABE9E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E95E862-D5D3-40DB-83E8-1E4CBABE9E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E95E862-D5D3-40DB-83E8-1E4CBABE9E06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{23F25416-D496-4E6A-9D0E-9F7365682628} = {B3C03FF4-0B11-4598-93C1-0095BE0E5BA6}
+		{4E95E862-D5D3-40DB-83E8-1E4CBABE9E06} = {B3C03FF4-0B11-4598-93C1-0095BE0E5BA6}
 	EndGlobalSection
 EndGlobal

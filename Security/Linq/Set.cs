@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using Security.Interfaces.Collections;
+using Security.Linq.Mapping;
 
 namespace Security.Linq
 {
@@ -61,14 +62,14 @@ namespace Security.Linq
 
         public static ISet<T> OfType<T>(this ISet filter) where T : class
         {
-            filter.Query = filter.Query.OfTypeWithFilter(Converter.BllTypeMap(typeof(T)));
-            return new SunoQueryable<T>(filter.Query);
+            filter.Query = filter.Query.OfTypeWithFilter(Mapper.Instance.GetEntityType(typeof(T)));
+            return new SecQueryable<T>(filter.Query);
         }
 
         public static T First<T>(this ISet<T> filter)
             where T : class
         {
-            return Converter.Convert<T>(filter.Query.FirstWithFilter());
+            return (T)filter.Query.FirstWithFilter();
         }
 
         public static T FirstOrDefault<T>(this ISet<T> filter)
@@ -78,13 +79,13 @@ namespace Security.Linq
             if (entity == null)
                 return null;
 
-            return Converter.Convert<T>(entity);
+            return (T)entity;
         }
 
         public static T First<T>(this ISet<T> filter, Expression<Func<T, bool>> wherePredicat)
             where T : class
         {
-            return Converter.Convert<T>(filter.Query.FirstWithFilter(wherePredicat));
+            return (T)filter.Query.FirstWithFilter(wherePredicat);
         }
 
         public static T FirstOrDefault<T>(this ISet<T> filter, Expression<Func<T, bool>> wherePredicat)
@@ -99,27 +100,7 @@ namespace Security.Linq
             if (entity == null)
                 return null;
 
-            return Converter.Convert(entity);
-        }
-
-        public static Firstable<T> FirstInQuery<T>(this ISet<T> filter)
-            where T : class
-        {
-            return new Firstable<T>(filter.Query);
-        }
-
-        public static Firstable<T> Include<T>(this Firstable<T> filter, string propertyName)
-            where T : class
-        {
-            filter.Query = filter.Query.IncludeWithFilter(propertyName);
-            return filter;
-        }
-
-        public static Firstable<T> Where<T>(this Firstable<T> filter, Expression<Func<T, bool>> predicat)
-            where T : class
-        {
-            filter.Query = filter.Query.WhereWithFilter(predicat);
-            return filter;
+            return entity;
         }
 
         public static ISet<TResult> SelectProxy<TSource, TResult>(this ISet<TSource> filter,
@@ -127,7 +108,7 @@ namespace Security.Linq
         {
             filter.Query = filter.Query.SelectWithFilter(selector);
 
-            return new SunoQueryable<TResult>(filter.Query);
+            return new SecQueryable<TResult>(filter.Query);
         }
 
         public static int Count<T>(this ISet<T> filter)
@@ -140,15 +121,15 @@ namespace Security.Linq
             return filter.Query.CountWithFilter(wherePredicate);
         }
 
-        public static ISet<TResult> Join<TOuter, TInner, TKey, TResult>(this ISet<TOuter> filter,
-            ISet<TInner> inner, Expression<Func<TOuter, TKey>> outKeySelector,
-            Expression<Func<TInner, TKey>> innerKeySeletor, Expression<Func<TOuter, TInner, TResult>> resultSelector)
-            where TResult : class
-        {
-            filter.Query = filter.Query.JoinWithFilter(inner, outKeySelector, innerKeySeletor, resultSelector);
-
-            return new SunoQueryable<TResult>(filter.Query);
-        }
+//        public static ISet<TResult> Join<TOuter, TInner, TKey, TResult>(this ISet<TOuter> filter,
+//            ISet<TInner> inner, Expression<Func<TOuter, TKey>> outKeySelector,
+//            Expression<Func<TInner, TKey>> innerKeySeletor, Expression<Func<TOuter, TInner, TResult>> resultSelector)
+//            where TResult : class
+//        {
+//            filter.Query = filter.Query.JoinWithFilter(inner, outKeySelector, innerKeySeletor, resultSelector);
+//
+//            return new SunoQueryable<TResult>(filter.Query);
+//        }
 
         public static bool Any<TSourceBll>(this ISet<TSourceBll> filter)
         {

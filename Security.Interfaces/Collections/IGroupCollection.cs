@@ -3,7 +3,7 @@ using Security.Interfaces.Model;
 
 namespace Security.Interfaces.Collections
 {
-    public interface IGroupCollection : ICollection<IGroup>
+    public interface IGroupCollection : ICollection<IGroup>, ISavedCollection
     {
         
     }

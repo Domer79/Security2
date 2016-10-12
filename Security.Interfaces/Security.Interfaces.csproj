@@ -44,11 +44,13 @@
     <Compile Include="Collections\IGrantCollection.cs" />
     <Compile Include="Collections\IGroupCollection.cs" />
     <Compile Include="Collections\IMemberCollection.cs" />
+    <Compile Include="Collections\ISavedCollection.cs" />
     <Compile Include="Collections\ISet.cs" />
     <Compile Include="Collections\IRoleCollection.cs" />
     <Compile Include="Collections\ISecObjectCollection.cs" />
     <Compile Include="Collections\IUserCollection.cs" />
     <Compile Include="ISecurity.cs" />
+    <Compile Include="ISecurityFactory.cs" />
     <Compile Include="Model\IAccessType.cs" />
     <Compile Include="Model\IGrant.cs" />
     <Compile Include="Model\IGroup.cs" />

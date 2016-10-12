@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using Security.Interfaces.Collections;
 using Security.Interfaces.Model;
 
-namespace Security.Infrastructure
+namespace Security.Tests.Collections
 {
     internal class AccessTypeCollection : IAccessTypeCollection
     {
+        private readonly List<IAccessType> _accessTypes = new List<IAccessType>();
         /// <summary>
         /// Returns an enumerator that iterates through the collection.
         /// </summary>
@@ -16,7 +17,7 @@ namespace Security.Infrastructure
         /// </returns>
         public IEnumerator<IAccessType> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return _accessTypes.GetEnumerator();
         }
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace Security.Infrastructure
         /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
         public void Add(IAccessType item)
         {
-            throw new NotImplementedException();
+            _accessTypes.Add(item);
         }
 
         /// <summary>
@@ -45,7 +46,7 @@ namespace Security.Infrastructure
         /// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. </exception>
         public void Clear()
         {
-            throw new NotImplementedException();
+            _accessTypes.Clear();
         }
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Security.Infrastructure
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         public bool Contains(IAccessType item)
         {
-            throw new NotImplementedException();
+            return _accessTypes.Contains(item);
         }
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Security.Infrastructure
         /// <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param><param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param><exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.</exception><exception cref="T:System.ArgumentException">The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.</exception>
         public void CopyTo(IAccessType[] array, int arrayIndex)
         {
-            throw new NotImplementedException();
+            _accessTypes.CopyTo(array, arrayIndex);
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Security.Infrastructure
         /// <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
         public bool Remove(IAccessType item)
         {
-            throw new NotImplementedException();
+            return _accessTypes.Remove(item);
         }
 
         /// <summary>
@@ -87,7 +88,10 @@ namespace Security.Infrastructure
         /// <returns>
         /// The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </returns>
-        public int Count { get; }
+        public int Count
+        {
+            get { return _accessTypes.Count; }
+        }
 
         /// <summary>
         /// Gets a value indicating whether the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
@@ -95,11 +99,14 @@ namespace Security.Infrastructure
         /// <returns>
         /// true if the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only; otherwise, false.
         /// </returns>
-        public bool IsReadOnly { get; }
+        public bool IsReadOnly
+        {
+            get { return true; }
+        }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Save!");
         }
     }
 }

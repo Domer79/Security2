@@ -3,7 +3,7 @@ using Security.Interfaces.Model;
 
 namespace Security.Interfaces.Collections
 {
-    public interface IRoleCollection : ICollection<IRole>
+    public interface IRoleCollection : ICollection<IRole>, ISavedCollection
     {
         
     }
