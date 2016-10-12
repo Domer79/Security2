@@ -53,6 +53,9 @@
     <Compile Include="Infrastructure\AccessTypeCollection.cs" />
     <Compile Include="Infrastructure\Exceptions\SequenceEmptyException.cs" />
     <Compile Include="Infrastructure\GrantCollection.cs" />
+    <Compile Include="Linq\Mapping\EntityMap.cs" />
+    <Compile Include="Linq\Mapping\EntityMapCollection.cs" />
+    <Compile Include="Linq\Mapping\Mapper.cs" />
     <Compile Include="Linq\MapQueryableHelper.cs" />
     <Compile Include="Linq\MemberTypeReplacement.cs" />
     <Compile Include="Linq\Set.cs" />

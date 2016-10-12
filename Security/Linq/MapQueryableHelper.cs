@@ -97,7 +97,7 @@ namespace Security.Linq
                 if (@object == null)
                     return null;
 
-                return Converter.Convert<T>(@object);
+                return (T)@object;
             }
             catch (SequenceEmptyException)
             {

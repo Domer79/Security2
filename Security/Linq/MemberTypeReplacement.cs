@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using Security.Linq.Mapping;
 
 namespace Security.Linq
 {
@@ -207,7 +208,7 @@ namespace Security.Linq
             if (node.Expression is ParameterExpression)
             {
 //                if (((ParameterExpression) parameterExpression).Type != _replaceType)
-                if (!Converter.EntityTypeMaps.Values.Contains(((ParameterExpression) expression).Type))
+                if (!Mapper.Instance.ContainsEntityType(((ParameterExpression) expression).Type))
                     return node;
             }
 
@@ -269,10 +270,10 @@ namespace Security.Linq
 //                if (Converter.BllTypeMap(node.Type) != _replaceType)
 //                    return node;
 
-                if (!Converter.EntityTypeMaps.ContainsKey(node.Type))
+                if (!Mapper.Instance.ContainsInterfaceType(node.Type))
                     return node;
 
-                var entityType = Converter.EntityTypeMaps[node.Type];
+                var entityType = Mapper.Instance.GetEntityType(node.Type);
 
 //                parameterExpression = Expression.Parameter(_replaceType, node.Name);
                 parameterExpression = Expression.Parameter(entityType, node.Name);
