@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Itis.Common.Extensions;
 using Security.Infrastructure.Exceptions;
+using Security.Linq.Mapping;
 
 namespace Security.Linq
 {
@@ -165,11 +166,17 @@ namespace Security.Linq
         {
             var replaceSelector = new MemberTypeReplacement(query.ElementType).Visit(selector);
             var resultType = typeof (TResult);
-            if (resultType.Is<EntityBll>())
-                resultType = Converter.BllTypeMap(resultType);
+            Expression callExpression;
+            if (resultType.IsInterface)
+            {
+                resultType = Mapper.Instance.GetEntityType(resultType);
+                callExpression = Expression.Call(typeof(Queryable), "Select", new[] { query.ElementType, resultType }, query.Expression, replaceSelector);
+                return query.Provider.CreateQuery(callExpression);
+            }
 
-            var callExpression = Expression.Call(typeof(Queryable), "Select", new[] { query.ElementType, resultType }, query.Expression, replaceSelector);
+            callExpression = Expression.Call(typeof(Queryable), "Select", new[] { query.ElementType, resultType }, query.Expression, replaceSelector);
             return query.Provider.CreateQuery(callExpression);
+
         }
 
         internal static int CountWithFilter(this IQueryable query)
@@ -187,23 +194,23 @@ namespace Security.Linq
             return query.Provider.Execute<int>(callExpression);
         }
 
-        internal static IQueryable<TResult> JoinWithFilter<TOuter, TInner, TKey, TResult>(this IQueryable outerQuery,
-            IMapQueryable<TInner> inner, Expression<Func<TOuter, TKey>> outerKeySelector,
-            Expression<Func<TInner, TKey>> innerKeySelector, Expression<Func<TOuter, TInner, TResult>> resultSelector)
-        {
-            var replaceOuterKeySelector = new MemberTypeReplacement(outerQuery.ElementType).Visit(outerKeySelector);
-            var replaceInnerKeySelector = new MemberTypeReplacement(inner.Query.ElementType).Visit(innerKeySelector);
-            var replacesResultSelector = new MemberTypeReplacement(outerQuery.ElementType).Visit(resultSelector);
-            replacesResultSelector = MemberTypeReplacement.ReplaceParameterType(inner.Query.ElementType,
-                replacesResultSelector);
-
-            var keyType = typeof (TKey).Is<EntityBll>() ? Converter.BllTypeMap(typeof (TKey)) : typeof (TKey);
-
-            var callExpression = Expression.Call(typeof (Queryable), "Join",
-                new[] {outerQuery.ElementType, inner.Query.ElementType, keyType, typeof (TResult)}, outerQuery.AsQueryable().Expression, inner.Query.Expression, replaceOuterKeySelector, replaceInnerKeySelector, replacesResultSelector);
-
-            return outerQuery.Provider.CreateQuery<TResult>(callExpression);
-        }
+//        internal static IQueryable<TResult> JoinWithFilter<TOuter, TInner, TKey, TResult>(this IQueryable outerQuery,
+//            Interfaces.Collections.ISet<TInner> inner, Expression<Func<TOuter, TKey>> outerKeySelector,
+//            Expression<Func<TInner, TKey>> innerKeySelector, Expression<Func<TOuter, TInner, TResult>> resultSelector)
+//        {
+//            var replaceOuterKeySelector = new MemberTypeReplacement(outerQuery.ElementType).Visit(outerKeySelector);
+//            var replaceInnerKeySelector = new MemberTypeReplacement(inner.Query.ElementType).Visit(innerKeySelector);
+//            var replacesResultSelector = new MemberTypeReplacement(outerQuery.ElementType).Visit(resultSelector);
+//            replacesResultSelector = MemberTypeReplacement.ReplaceParameterType(inner.Query.ElementType,
+//                replacesResultSelector);
+//
+//            var keyType = typeof (TKey).Is<EntityBll>() ? Converter.BllTypeMap(typeof (TKey)) : typeof (TKey);
+//
+//            var callExpression = Expression.Call(typeof (Queryable), "Join",
+//                new[] {outerQuery.ElementType, inner.Query.ElementType, keyType, typeof (TResult)}, outerQuery.AsQueryable().Expression, inner.Query.Expression, replaceOuterKeySelector, replaceInnerKeySelector, replacesResultSelector);
+//
+//            return outerQuery.Provider.CreateQuery<TResult>(callExpression);
+//        }
 
         internal static bool AnyWithFilter(this IQueryable query)
         {
@@ -219,21 +226,21 @@ namespace Security.Linq
             return query.Provider.Execute<bool>(callExpression);
         }
 
-        internal static IEnumerable<T> ConvertTo<T>(IEnumerable query)
-        {
-            return (from object item in query select item).ToList().Select(ConvertElement<T>).OfType<T>().ToList();
-        }
-
-        internal static object ConvertElement<T>(object item)
-        {
-            if (item == null)
-                return null;
-
-            if (item.GetType() == typeof (T))
-                return item;
-
-//            return _container.Converter.Convert<T>((Entity) item);
-            return Converter.Convert<EntityBll>((Entity) item);
-        }
+//        internal static IEnumerable<T> ConvertTo<T>(IEnumerable query)
+//        {
+//            return (from object item in query select item).ToList().Select(ConvertElement<T>).OfType<T>().ToList();
+//        }
+//
+//        internal static object ConvertElement<T>(object item)
+//        {
+//            if (item == null)
+//                return null;
+//
+//            if (item.GetType() == typeof (T))
+//                return item;
+//
+////            return _container.Converter.Convert<T>((Entity) item);
+//            return Converter.Convert<EntityBll>((Entity) item);
+//        }
     }
 }

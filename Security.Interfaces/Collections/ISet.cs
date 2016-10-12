@@ -15,6 +15,6 @@ namespace Security.Interfaces.Collections
 
     public interface ISet : IEnumerable
     {
-        IQueryable Query { get; }
+        IQueryable Query { get; set; }
     }
 }

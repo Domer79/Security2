@@ -8,7 +8,7 @@ using Security.Interfaces.Collections;
 
 namespace Security
 {
-    public class Security : ISecurity
+    public class BaseSecurity : ISecurity
     {
         public IUserCollection UserCollection { get; }
         public IGroupCollection GroupCollection { get; }
