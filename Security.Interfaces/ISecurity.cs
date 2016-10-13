@@ -14,7 +14,7 @@ namespace Security.Interfaces
         ISecObjectCollection SecObjectCollection { get; }
         IRoleCollection RoleCollection { get; }
         IMemberCollection MemberCollection { get; }
-
+        
         /// <summary>
         /// Проверка входа
         /// </summary>
@@ -32,9 +32,9 @@ namespace Security.Interfaces
         /// <returns></returns>
         bool CheckAccess(string login, string secObjectName, Enum accessType);
 
-        void AddGrant(string role, string secObject, Enum accessType);
+        void AddGrant(string roleName, string secObjectName, Enum accessType);
 
-        void RemoveGrant(string role, string secObject, Enum accessType);
+        void RemoveGrant(string roleName, string secObjectName, Enum accessType);
 
 
     }

@@ -18,16 +18,19 @@ namespace Security.Tests.Model
         IRole IGrant.Role
         {
             get { return Role; }
+            set { Role = (Role) value; }
         }
 
         IAccessType IGrant.AccessType
         {
             get { return AccessType; }
+            set { AccessType = (AccessType) value; }
         }
 
         ISecObject IGrant.SecObject
         {
             get { return SecObject; }
+            set { SecObject = (SecObject) value; }
         }
 
         public static IEnumerable<IGrant> FakeCollection { get; set; } = new List<IGrant>();

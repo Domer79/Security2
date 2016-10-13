@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Itis.Common.Extensions;
 using Ninject;
 using Ninject.Modules;
@@ -14,13 +11,21 @@ namespace Security.Configurations
 {
     public class Config
     {
-        private static readonly StandardKernel _kernel = new StandardKernel();
+        private static readonly StandardKernel Kernel = new StandardKernel();
 
+        internal static Type AccessType { get; private set; }
+
+        /// <summary>
+        /// Регистрация типов доступа.
+        /// </summary>
+        /// <param name="accessType"></param>
+        /// <exception cref="InvalidOperationException">Возникает, если присутствуют какие-либо выделенные разрешения</exception>
         public static void RegisterAccessTypes(Type accessType)
         {
             if (!accessType.Is<Enum>())
                 throw new InvalidOperationException("The accessType parameter must be Enumerator");
 
+            AccessType = accessType;
             RegisterAccessTypes(Enum.GetNames(accessType));
         }
 
@@ -48,13 +53,13 @@ namespace Security.Configurations
 
         internal static void RegisterCommonModule<TModule>() where TModule : INinjectModule, new()
         {
-            if (!_kernel.HasModule(typeof(TModule).FullName))
-                _kernel.Load<TModule>();
+            if (!Kernel.HasModule(typeof(TModule).FullName))
+                Kernel.Load<TModule>();
         }
 
         internal static T Get<T>()
         {
-            return _kernel.Get<T>();
+            return Kernel.Get<T>();
         }
     }
 }

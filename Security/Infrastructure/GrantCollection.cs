@@ -104,5 +104,15 @@ namespace Security.Infrastructure
         {
             throw new NotImplementedException();
         }
+
+        public void Add(IRole role, ISecObject secObject, IAccessType accessType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Remove(IRole role, ISecObject secObject, IAccessType accessType)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -110,5 +110,25 @@ namespace Security.Tests.Collections
         {
             Console.WriteLine("Save!");
         }
+
+        public void Add(IRole role, ISecObject secObject, IAccessType accessType)
+        {
+            var grant = (IGrant)new Grant();
+            grant.Role = role;
+            grant.SecObject = secObject;
+            grant.AccessType = accessType;
+
+            Add(grant);
+        }
+
+        public bool Remove(IRole role, ISecObject secObject, IAccessType accessType)
+        {
+            var grant = (IGrant)new Grant();
+            grant.Role = role;
+            grant.SecObject = secObject;
+            grant.AccessType = accessType;
+
+            return Remove(grant);
+        }
     }
 }

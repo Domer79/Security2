@@ -101,5 +101,16 @@ namespace Security.Tests.Collections
         {
             Console.WriteLine("Save!");
         }
+
+        /// <summary>
+        /// Идентификация пользователя
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public bool LogIn(string login, string password)
+        {
+            return true;
+        }
     }
 }

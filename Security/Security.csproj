@@ -55,7 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\Config.cs" />
+    <Compile Include="Exceptions\AccessTypeMissingException.cs" />
     <Compile Include="Exceptions\CannotModifyAccessTypeException.cs" />
+    <Compile Include="Exceptions\RoleMissingException.cs" />
+    <Compile Include="Exceptions\SecObjectMissingException.cs" />
     <Compile Include="GroupCollection.cs" />
     <Compile Include="Infrastructure\AccessTypeCollection.cs" />
     <Compile Include="Infrastructure\CommonModule.cs" />

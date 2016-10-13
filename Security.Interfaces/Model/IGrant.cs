@@ -5,8 +5,8 @@ namespace Security.Interfaces.Model
         int IdSecObject { get; }
         int IdRole { get; }
         int IdAccessType { get; }
-        IRole Role { get; }
-        IAccessType AccessType { get; }
-        ISecObject SecObject { get; }
+        IRole Role { get; set; }
+        IAccessType AccessType { get; set; }
+        ISecObject SecObject { get; set; }
     }
 }

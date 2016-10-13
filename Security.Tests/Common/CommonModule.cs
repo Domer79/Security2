@@ -1,4 +1,5 @@
 ﻿using Ninject.Modules;
+using Security.Interfaces;
 using Security.Interfaces.Collections;
 using Security.Tests.Collections;
 
@@ -18,6 +19,7 @@ namespace Security.Tests.Common
             Bind<IRoleCollection>().To<RoleCollection>();
             Bind<ISecObjectCollection>().To<SecObjectCollection>();
             Bind<IUserCollection>().To<UserCollection>();
+            Bind<ICheckAccess>().To<Tools>();
         }
     }
 }

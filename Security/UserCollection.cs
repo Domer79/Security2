@@ -101,5 +101,16 @@ namespace Security
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Идентификация пользователя
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public bool LogIn(string login, string password)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

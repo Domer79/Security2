@@ -31,16 +31,19 @@ namespace Security.Model.Entities
         IRole IGrant.Role
         {
             get { return Role; }
+            set { Role = (Role)value; }
         }
 
         IAccessType IGrant.AccessType
         {
             get { return AccessType; }
+            set { AccessType = (AccessType)value; }
         }
 
         ISecObject IGrant.SecObject
         {
             get { return SecObject; }
+            set { SecObject = (SecObject)value; }
         }
     }
 }
