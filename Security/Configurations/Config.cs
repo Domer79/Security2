@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
-using Itis.Common.Extensions;
 using Ninject;
 using Ninject.Modules;
 using Security.Exceptions;
 using Security.Interfaces.Collections;
-using Security.Model.Entities;
+using Security.Interfaces.Model;
+using Tools.Extensions;
 
 namespace Security.Configurations
 {
@@ -43,7 +43,7 @@ namespace Security.Configurations
 
             var accessTypeCollection = Get<IAccessTypeCollection>();
             accessTypeCollection.Clear();
-            foreach (var accessType in accessTypes.Select(a => new AccessType() {Name = a}))
+            foreach (var accessType in accessTypes.Select(GetAccessType))
             {
                 accessTypeCollection.Add(accessType);
             }
@@ -61,5 +61,17 @@ namespace Security.Configurations
         {
             return Kernel.Get<T>();
         }
+
+        #region Helpers
+
+        private static IAccessType GetAccessType(string a)
+        {
+            var accessType = Get<IAccessType>();
+            accessType.Name = a;
+            return accessType;
+        }
+
+        #endregion
+
     }
 }

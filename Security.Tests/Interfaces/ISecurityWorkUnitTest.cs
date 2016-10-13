@@ -1,90 +1,55 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Security.Tests.Interfaces;
-
-namespace Security.Tests.Tests
+﻿namespace Security.Tests.Interfaces
 {
-    [TestClass]
-    public class SecurityWorkUnitTest : ISecurityWorkUnitTest
+    public interface ISecurityWorkUnitTest
     {
         /// <summary>
         /// Первичная настройка параметров. Настройка интерфейсов, первичная установка типов доступа
         /// </summary>
-        public void SecurityInit()
-        {
-            throw new NotImplementedException();
-        }
+        void SecurityInit();
 
         /// <summary>
         /// Тест. Добавление пользователя
         /// </summary>
-        public void AddUserTest()
-        {
-            throw new NotImplementedException();
-        }
+        void AddUserTest();
 
         /// <summary>
         /// Тест. Добавление роли
         /// </summary>
-        public void AddRoleTest()
-        {
-            throw new NotImplementedException();
-        }
+        void AddRoleTest();
 
         /// <summary>
         /// Тест. Добавление объекта безопасности
         /// </summary>
-        public void AddSecObjectTest()
-        {
-            throw new NotImplementedException();
-        }
+        void AddSecObjectTest();
 
         /// <summary>
         /// Тест. Добавление разрешение на операцию Select для объекта на определенную роль
         /// </summary>
-        public void AddGrantSelectForSecObject1ToRole1()
-        {
-            throw new NotImplementedException();
-        }
+        void AddGrantSelectForSecObject1ToRole1();
 
         /// <summary>
         /// Тест. Предоставление роли пользователю
         /// </summary>
-        public void AddRole1ToUser1Test()
-        {
-            throw new NotImplementedException();
-        }
+        void AddRole1ToUser1Test();
 
         /// <summary>
         /// Тест. Проверка входа
         /// </summary>
-        public void LogInTest()
-        {
-            throw new NotImplementedException();
-        }
+        void LogInTest();
 
         /// <summary>
         /// Тест. Проверка входа с неверным паролем
         /// </summary>
-        public void LogInFailedTest()
-        {
-            throw new NotImplementedException();
-        }
+        void LogInFailedTest();
 
         /// <summary>
         /// Тест. Проверка доступа
         /// </summary>
-        public void CheckAccessTest()
-        {
-            throw new NotImplementedException();
-        }
+        void CheckAccessTest();
 
         /// <summary>
         /// Тест. Проверка запрещенного доступа
         /// </summary>
-        public void CheckAccessWrongTest()
-        {
-            throw new NotImplementedException();
-        }
+        void CheckAccessWrongTest();
     }
 }

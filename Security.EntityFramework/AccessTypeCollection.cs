@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Security.Interfaces.Collections;
 using Security.Interfaces.Model;
+using Security.Model;
+using Security.Model.Entities;
 
-namespace Security.Infrastructure
+namespace Security.EntityFramework
 {
-    internal class AccessTypeCollection : IAccessTypeCollection
+    public class AccessTypeCollection : IAccessTypeCollection, IDisposable
     {
+        private readonly SecurityContext _context = new SecurityContext();
+
         /// <summary>
         /// Returns an enumerator that iterates through the collection.
         /// </summary>
@@ -16,7 +21,7 @@ namespace Security.Infrastructure
         /// </returns>
         public IEnumerator<IAccessType> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return _context.AccessTypes.AsQueryable().GetEnumerator();
         }
 
         /// <summary>
@@ -36,7 +41,7 @@ namespace Security.Infrastructure
         /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
         public void Add(IAccessType item)
         {
-            throw new NotImplementedException();
+            _context.AccessTypes.Add((AccessType)item);
         }
 
         /// <summary>
@@ -45,7 +50,10 @@ namespace Security.Infrastructure
         /// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. </exception>
         public void Clear()
         {
-            throw new NotImplementedException();
+            foreach (var accessType in _context.AccessTypes)
+            {
+                _context.AccessTypes.Remove(accessType);
+            }
         }
 
         /// <summary>
@@ -57,7 +65,7 @@ namespace Security.Infrastructure
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         public bool Contains(IAccessType item)
         {
-            throw new NotImplementedException();
+            return _context.AccessTypes.Any(a => a.Name == item.Name);
         }
 
         /// <summary>
@@ -66,7 +74,7 @@ namespace Security.Infrastructure
         /// <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param><param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param><exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.</exception><exception cref="T:System.ArgumentException">The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.</exception>
         public void CopyTo(IAccessType[] array, int arrayIndex)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         /// <summary>
@@ -78,7 +86,8 @@ namespace Security.Infrastructure
         /// <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
         public bool Remove(IAccessType item)
         {
-            throw new NotImplementedException();
+            var accessType = _context.AccessTypes.Remove((AccessType) item);
+            return accessType != null;
         }
 
         /// <summary>
@@ -87,7 +96,7 @@ namespace Security.Infrastructure
         /// <returns>
         /// The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </returns>
-        public int Count { get; }
+        public int Count => _context.AccessTypes.Count();
 
         /// <summary>
         /// Gets a value indicating whether the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
@@ -95,11 +104,19 @@ namespace Security.Infrastructure
         /// <returns>
         /// true if the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only; otherwise, false.
         /// </returns>
-        public bool IsReadOnly { get; }
+        public bool IsReadOnly => true;
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
+        }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            _context.Dispose();
         }
     }
 }

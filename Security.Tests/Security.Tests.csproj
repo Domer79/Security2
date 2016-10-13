@@ -61,9 +61,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Collections\LinkDictionary.cs" />
     <Compile Include="Collections\MemberRoleDictionary.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="Infrastructure\LinkDictionary.cs" />
+    <Compile Include="Interfaces\ISecurityWorkUnitTest.cs" />
     <Compile Include="Model\RoleOfMember.cs" />
+    <Compile Include="Tests\FakeSecurityWorkUnitTest.cs" />
     <Compile Include="Tests\SecurityWorkUnitTest.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Collections\AccessTypeCollection.cs" />
@@ -73,7 +76,7 @@
     <Compile Include="Collections\RoleCollection.cs" />
     <Compile Include="Collections\SecObjectCollection.cs" />
     <Compile Include="Collections\UserCollection.cs" />
-    <Compile Include="Common\CommonModule.cs" />
+    <Compile Include="Common\FakeCommonModule.cs" />
     <Compile Include="Model\AccessType.cs" />
     <Compile Include="Model\Grant.cs" />
     <Compile Include="Model\Group.cs" />

@@ -1,11 +1,13 @@
 ﻿using Ninject.Modules;
 using Security.Interfaces;
 using Security.Interfaces.Collections;
+using Security.Interfaces.Model;
 using Security.Tests.Collections;
+using Security.Tests.Model;
 
 namespace Security.Tests.Common
 {
-    public class CommonModule : NinjectModule
+    public class FakeCommonModule : NinjectModule
     {
         /// <summary>
         /// Loads the module into the kernel.
@@ -20,6 +22,7 @@ namespace Security.Tests.Common
             Bind<ISecObjectCollection>().To<Collections.SecObjectCollection>();
             Bind<IUserCollection>().To<Collections.UserCollection>();
             Bind<ISecurityTools>().To<Tools>();
+            Bind<IAccessType>().To<AccessType>();
         }
     }
 }

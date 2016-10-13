@@ -1,36 +1,22 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Security.Interfaces.Collections;
+using Security.Interfaces.Model;
 
-namespace Security.Linq
+namespace Security.EntityFramework
 {
-    public class SecQueryable<T> : Interfaces.Collections.ISet<T>
+    public class MemberCollection : IMemberCollection
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
-        /// </summary>
-        public SecQueryable(IQueryable query)
-        {
-            Query = query;
-        }
-
-        public IEnumerable<T> GetData()
-        {
-            return (IEnumerable<T>) Query;
-        }
-
         /// <summary>
         /// Returns an enumerator that iterates through the collection.
         /// </summary>
         /// <returns>
         /// A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
         /// </returns>
-        public IEnumerator<T> GetEnumerator()
+        public IEnumerator<IMember> GetEnumerator()
         {
-            return GetData().GetEnumerator();
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -43,7 +29,5 @@ namespace Security.Linq
         {
             return GetEnumerator();
         }
-
-        public IQueryable Query { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace Security.Tests.Model
             get
             {
                 var roles = Data.MemberRoles[this];
-                return new HashSet<Role>((IEnumerable<Role>) roles);
+                return new HashSet<Role>(roles);
             }
             set { }
         }

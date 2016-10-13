@@ -1,15 +1,12 @@
-п»їusing System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Security.Interfaces.Collections;
 using Security.Interfaces.Model;
 
-namespace Security.Infrastructure
+namespace Security.EntityFramework
 {
-    internal class GrantCollection : IGrantCollection
+    public class UserCollection : IUserCollection
     {
         /// <summary>
         /// Returns an enumerator that iterates through the collection.
@@ -17,7 +14,7 @@ namespace Security.Infrastructure
         /// <returns>
         /// A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
         /// </returns>
-        public IEnumerator<IGrant> GetEnumerator()
+        public IEnumerator<IUser> GetEnumerator()
         {
             throw new NotImplementedException();
         }
@@ -37,7 +34,7 @@ namespace Security.Infrastructure
         /// Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </summary>
         /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
-        public void Add(IGrant item)
+        public void Add(IUser item)
         {
             throw new NotImplementedException();
         }
@@ -58,7 +55,7 @@ namespace Security.Infrastructure
         /// true if <paramref name="item"/> is found in the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
         /// </returns>
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
-        public bool Contains(IGrant item)
+        public bool Contains(IUser item)
         {
             throw new NotImplementedException();
         }
@@ -67,7 +64,7 @@ namespace Security.Infrastructure
         /// Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
         /// </summary>
         /// <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param><param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param><exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.</exception><exception cref="T:System.ArgumentException">The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.</exception>
-        public void CopyTo(IGrant[] array, int arrayIndex)
+        public void CopyTo(IUser[] array, int arrayIndex)
         {
             throw new NotImplementedException();
         }
@@ -79,7 +76,7 @@ namespace Security.Infrastructure
         /// true if <paramref name="item"/> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </returns>
         /// <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
-        public bool Remove(IGrant item)
+        public bool Remove(IUser item)
         {
             throw new NotImplementedException();
         }
@@ -105,12 +102,13 @@ namespace Security.Infrastructure
             throw new NotImplementedException();
         }
 
-        public void Add(IRole role, ISecObject secObject, IAccessType accessType)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Remove(IRole role, ISecObject secObject, IAccessType accessType)
+        /// <summary>
+        /// Идентификация пользователя
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public bool LogIn(string login, string password)
         {
             throw new NotImplementedException();
         }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Security.Exceptions;
 using Security.Interfaces;
 using Security.Interfaces.Collections;
-using Security.Model.Entities;
 using Security.Configurations;
 
 namespace Security
@@ -59,7 +58,8 @@ namespace Security
         /// <returns></returns>
         public bool CheckAccess(string login, string secObjectName, Enum accessType)
         {
-            return _securityTools.CheckAccess(login, secObjectName, accessType);
+            var accessTypeName = Enum.GetName(Config.AccessType, accessType);
+            return _securityTools.CheckAccess(login, secObjectName, accessTypeName);
         }
 
         public void AddGrant(string roleName, string secObjectName, Enum accessType)

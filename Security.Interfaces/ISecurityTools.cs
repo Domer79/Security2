@@ -7,11 +7,11 @@ namespace Security.Interfaces
         /// <summary>
         /// Проверка доступа
         /// </summary>
-        /// <param name="login">Логин</param>
+        /// <param name="member">Логин</param>
         /// <param name="secObjectName">Объект безопасности</param>
         /// <param name="accessType">Тип доступа</param>
         /// <returns></returns>
-        bool CheckAccess(string login, string secObjectName, Enum accessType);
+        bool CheckAccess(string member, string secObjectName, string accessType);
 
         /// <summary>
         /// Добавляет роль <see cref="roleName"/> участнику <see cref="memberName"/>

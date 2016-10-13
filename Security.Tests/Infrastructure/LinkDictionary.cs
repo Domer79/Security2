@@ -2,10 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Castle.Components.DictionaryAdapter;
-using Security.Tests.Model;
 
-namespace Security.Tests.Collections
+namespace Security.Tests.Infrastructure
 {
     public class LinkDictionary<T1, T2> : IEnumerable<Link<T1, T2>> 
         where T1 : class 

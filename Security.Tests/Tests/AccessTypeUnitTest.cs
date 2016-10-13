@@ -24,7 +24,7 @@ namespace Security.Tests.Tests
         /// </summary>
         public AccessTypeUnitTest()
         {
-            Config.RegisterCommonModule<CommonModule>();
+            Config.RegisterCommonModule<FakeCommonModule>();
         }
 
         [TestMethod]

@@ -17,17 +17,17 @@ namespace Security.Tests
         /// <summary>
         /// Проверка доступа
         /// </summary>
-        /// <param name="login">Логин</param>
+        /// <param name="member">Логин</param>
         /// <param name="secObjectName">Объект безопасности</param>
         /// <param name="accessType">Тип доступа</param>
         /// <returns></returns>
-        public bool CheckAccess(string login, string secObjectName, Enum accessType)
+        public bool CheckAccess(string member, string secObjectName, string accessType)
         {
             var grantCollection = Config.Get<IGrantCollection>();
             var memberCollection = Config.Get<IMemberCollection>();
 
-            var userRoles = memberCollection.First(e => e.Name == login).Roles;
-            var userAccessRoles = grantCollection.Where(e => e.SecObject.ObjectName == secObjectName && e.AccessType.Name == secObjectName).Select(e => e.Role);
+            var userRoles = memberCollection.First(e => e.Name == member).Roles;
+            var userAccessRoles = grantCollection.Where(e => e.SecObject.ObjectName == secObjectName && e.AccessType.Name == accessType).Select(e => e.Role);
 
             return userRoles.Intersect(userAccessRoles).Any();
         }
@@ -43,7 +43,7 @@ namespace Security.Tests
             if (member == null)
                 throw new MemberMissingException(memberName);
 
-            var role = (Role)Data.RoleCollection.FirstOrDefault(r => r.Name == roleName);
+            var role = (Role)Data.RoleCollection.FirstOrDefault(r => r.Name.Equals(roleName, StringComparison.OrdinalIgnoreCase));
             if (role == null)
                 throw new RoleMissingException(roleName);
 
