@@ -22,6 +22,6 @@ namespace Security.Interfaces
 
         IUserCollection CreateUserCollection();
 
-        ICheckAccess CreateCheckAccess();
+        ISecurityTools CreateCheckAccess();
     }
 }

@@ -55,7 +55,7 @@ namespace Security.Tests.Tests
         [ExpectedException(typeof(CannotModifyAccessTypeException))]
         public void RegisterAccessTypeWithGrantsTest()
         {
-            Grant.FakeCollection = new List<IGrant>() {new Grant()};
+            Data.GrantCollection.Add(new Grant());
             Config.RegisterAccessTypes(typeof(EAccessType));
         }
     }

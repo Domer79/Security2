@@ -1,20 +1,25 @@
 using System.Collections.Generic;
+using System.Linq;
 using Security.Interfaces.Model;
+using Security.Tests.Tests;
 
 namespace Security.Tests.Model
 {
     public class AccessType : IAccessType
     {
-        public AccessType()
-        {
-            Grants = new HashSet<Grant>();
-        }
-
         public int IdAccessType { get; set; }
 
         public string Name { get; set; }
 
-        public HashSet<Grant> Grants { get; set; }
+        public HashSet<Grant> Grants
+        {
+            get
+            {
+                var grants = Data.GrantCollection.Where(g => g.AccessType == this);
+                return new HashSet<Grant>((IEnumerable<Grant>) grants);
+            }
+            set { }
+        }
 
         IList<IGrant> IAccessType.Grants
         {

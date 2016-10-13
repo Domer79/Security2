@@ -14,12 +14,12 @@ namespace Security.Tests.Common
         {
             Bind<IAccessTypeCollection>().To<AccessTypeCollection>();
             Bind<IGrantCollection>().To<GrantCollection>();
-            Bind<IGroupCollection>().To<GroupCollection>();
-            Bind<IMemberCollection>().To<MemberCollection>();
-            Bind<IRoleCollection>().To<RoleCollection>();
-            Bind<ISecObjectCollection>().To<SecObjectCollection>();
-            Bind<IUserCollection>().To<UserCollection>();
-            Bind<ICheckAccess>().To<Tools>();
+            Bind<IGroupCollection>().To<Collections.GroupCollection>();
+            Bind<IMemberCollection>().To<Collections.MemberCollection>();
+            Bind<IRoleCollection>().To<Collections.RoleCollection>();
+            Bind<ISecObjectCollection>().To<Collections.SecObjectCollection>();
+            Bind<IUserCollection>().To<Collections.UserCollection>();
+            Bind<ISecurityTools>().To<Tools>();
         }
     }
 }

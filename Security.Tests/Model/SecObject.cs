@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using Security.Interfaces.Model;
+using Security.Tests.Tests;
 
 namespace Security.Tests.Model
 {
@@ -9,7 +11,16 @@ namespace Security.Tests.Model
 
         public string ObjectName { get; set; }
 
-        public HashSet<Grant> Grants { get; set; }
+        public HashSet<Grant> Grants
+        {
+            get
+            {
+                var grants = Data.GrantCollection.Where(g => g.SecObject == this);
+                return new HashSet<Grant>((IEnumerable<Grant>) grants);
+            }
+
+            set { }
+        }
 
         IList<IGrant> ISecObject.Grants
         {
@@ -25,7 +36,7 @@ namespace Security.Tests.Model
         /// <returns>
         /// Строка, представляющая текущий объект.
         /// </returns>
-        public override sealed string ToString()
+        public sealed override string ToString()
         {
             return ObjectName;
         }

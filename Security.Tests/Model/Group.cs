@@ -1,22 +1,42 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
 using Security.Interfaces.Model;
+using Security.Tests.Tests;
 
 namespace Security.Tests.Model
 {
-    public class Group : IGroup
+    public class Group : IGroup, IMember
     {
+        private readonly Member _member;
+
         public Group()
         {
-            Users = new HashSet<User>();
+            _member = new Member();
+            Data.MemberCollection.Add(_member);
         }
 
         public int IdMember { get; set; }
 
-        public string Name { get; set; }
+        public string Name
+        {
+            get { return _member.Name; }
+            set { _member.Name = value; }
+        }
+
+        public IList<IRole> Roles => ((IMember)_member).Roles;
 
         public string Description { get; set; }
 
-        public HashSet<User> Users { get; set; }
+        public HashSet<User> Users
+        {
+            get
+            {
+                var users = Data.UserGroups[this];
+                return new HashSet<User>((IEnumerable<User>) users);
+            }
+            set { }
+        }
 
         IList<IUser> IGroup.Users
         {

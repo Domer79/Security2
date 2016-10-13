@@ -1,8 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Security.Interfaces.Collections;
 using Security.Interfaces.Model;
+using Security.Tests.Model;
+using Security.Tests.Tests;
 
 namespace Security.Tests.Collections
 {
@@ -16,7 +17,7 @@ namespace Security.Tests.Collections
         /// </returns>
         public IEnumerator<IMember> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return Data.MemberCollection.GetEnumerator();
         }
 
         /// <summary>

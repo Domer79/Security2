@@ -36,6 +36,8 @@ namespace Security.Interfaces
 
         void RemoveGrant(string roleName, string secObjectName, Enum accessType);
 
+        void AddRole(string roleName, string memberName);
 
+        void DeleteRole(string roleName, string memberName);
     }
 }

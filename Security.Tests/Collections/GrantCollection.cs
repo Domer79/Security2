@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using Security.Interfaces.Collections;
 using Security.Interfaces.Model;
 using Security.Tests.Model;
+using Security.Tests.Tests;
 
 namespace Security.Tests.Collections
 {
     internal class GrantCollection : IGrantCollection
     {
-        private List<IGrant> _grants = new List<IGrant>(Grant.FakeCollection);
-
         /// <summary>
         /// Returns an enumerator that iterates through the collection.
         /// </summary>
@@ -19,7 +18,7 @@ namespace Security.Tests.Collections
         /// </returns>
         public IEnumerator<IGrant> GetEnumerator()
         {
-            return _grants.GetEnumerator();
+            return Data.GrantCollection.GetEnumerator();
         }
 
         /// <summary>
@@ -39,7 +38,7 @@ namespace Security.Tests.Collections
         /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
         public void Add(IGrant item)
         {
-            _grants.Add(item);
+            Data.GrantCollection.Add(item);
         }
 
         /// <summary>
@@ -48,7 +47,7 @@ namespace Security.Tests.Collections
         /// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. </exception>
         public void Clear()
         {
-            _grants.Clear();
+            Data.GrantCollection.Clear();
         }
 
         /// <summary>
@@ -60,7 +59,7 @@ namespace Security.Tests.Collections
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         public bool Contains(IGrant item)
         {
-            return _grants.Contains(item);
+            return Data.GrantCollection.Contains(item);
         }
 
         /// <summary>
@@ -69,7 +68,7 @@ namespace Security.Tests.Collections
         /// <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param><param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param><exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.</exception><exception cref="T:System.ArgumentException">The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.</exception>
         public void CopyTo(IGrant[] array, int arrayIndex)
         {
-            _grants.CopyTo(array, arrayIndex);
+            Data.GrantCollection.CopyTo(array, arrayIndex);
         }
 
         /// <summary>
@@ -81,7 +80,7 @@ namespace Security.Tests.Collections
         /// <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
         public bool Remove(IGrant item)
         {
-            return _grants.Remove(item);
+            return Data.GrantCollection.Remove(item);
         }
 
         /// <summary>
@@ -92,7 +91,7 @@ namespace Security.Tests.Collections
         /// </returns>
         public int Count
         {
-            get { return _grants.Count; }
+            get { return Data.GrantCollection.Count; }
         }
 
         /// <summary>

@@ -1,27 +1,37 @@
 using System.Collections.Generic;
+using System.Linq;
 using Security.Interfaces.Model;
+using Security.Tests.Tests;
 
 namespace Security.Tests.Model
 {
     public class Role : IRole
     {
-        /// <summary>
-        /// »нициализирует новый экземпл€р класса <see cref="T:System.Object"/>.
-        /// </summary>
-        public Role()
-        {
-            Grants = new HashSet<Grant>();
-        }
-
         public int IdRole { get; set; }
 
         public string Name { get; set; }
 
         public string Description { get; set; }
 
-        public HashSet<Grant> Grants { get; set; }
+        public HashSet<Grant> Grants
+        {
+            get
+            {
+                var grants = Data.GrantCollection.Where(g => g.Role == this);
+                return new HashSet<Grant>((IEnumerable<Grant>)grants);
+            }
+            set { }
+        }
 
-        public HashSet<Member> Members { get; set; }
+        public HashSet<Member> Members
+        {
+            get
+            {
+                var members = Data.MemberRoles[this];
+                return new HashSet<Member>((IEnumerable<Member>) members);
+            }
+            set { }
+        }
 
         IList<IGrant> IRole.Grants
         {

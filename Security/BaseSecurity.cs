@@ -13,7 +13,7 @@ namespace Security
 {
     public class BaseSecurity : ISecurity
     {
-        private readonly ICheckAccess _checkAccess;
+        private readonly ISecurityTools _securityTools;
         private readonly IGrantCollection _grantCollection;
         private readonly IAccessTypeCollection _accessTypeCollection;
 
@@ -24,7 +24,7 @@ namespace Security
         {
             _grantCollection = Config.Get<IGrantCollection>();
             _accessTypeCollection = Config.Get<IAccessTypeCollection>();
-            _checkAccess = Config.Get<ICheckAccess>();
+            _securityTools = Config.Get<ISecurityTools>();
 
             UserCollection = Config.Get<IUserCollection>();
             GroupCollection = Config.Get<IGroupCollection>();
@@ -59,7 +59,7 @@ namespace Security
         /// <returns></returns>
         public bool CheckAccess(string login, string secObjectName, Enum accessType)
         {
-            return _checkAccess.CheckAccess(login, secObjectName, accessType);
+            return _securityTools.CheckAccess(login, secObjectName, accessType);
         }
 
         public void AddGrant(string roleName, string secObjectName, Enum accessType)
@@ -98,6 +98,16 @@ namespace Security
 
             _grantCollection.Remove(role, secObject, access);
             _grantCollection.SaveChanges();
+        }
+
+        public void AddRole(string roleName, string memberName)
+        {
+            _securityTools.AddRoleToMember(roleName, memberName);
+        }
+
+        public void DeleteRole(string memberName, string roleName)
+        {
+            _securityTools.DeleteRoleFromMember(roleName, memberName);
         }
     }
 }

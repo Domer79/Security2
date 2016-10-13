@@ -49,7 +49,7 @@
     <Compile Include="Collections\IRoleCollection.cs" />
     <Compile Include="Collections\ISecObjectCollection.cs" />
     <Compile Include="Collections\IUserCollection.cs" />
-    <Compile Include="ICheckAccess.cs" />
+    <Compile Include="ISecurityTools.cs" />
     <Compile Include="ISecurity.cs" />
     <Compile Include="ISecurityFactory.cs" />
     <Compile Include="Model\IAccessType.cs" />

@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Security.Interfaces.Collections;
 using Security.Interfaces.Model;
+using Security.Tests.Tests;
 
 namespace Security.Tests.Collections
 {
     internal class AccessTypeCollection : IAccessTypeCollection
     {
-        private readonly List<IAccessType> _accessTypes = new List<IAccessType>();
         /// <summary>
         /// Returns an enumerator that iterates through the collection.
         /// </summary>
@@ -17,7 +17,7 @@ namespace Security.Tests.Collections
         /// </returns>
         public IEnumerator<IAccessType> GetEnumerator()
         {
-            return _accessTypes.GetEnumerator();
+            return Data.AccessTypeCollection.GetEnumerator();
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Security.Tests.Collections
         /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
         public void Add(IAccessType item)
         {
-            _accessTypes.Add(item);
+            Data.AccessTypeCollection.Add(item);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Security.Tests.Collections
         /// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. </exception>
         public void Clear()
         {
-            _accessTypes.Clear();
+            Data.AccessTypeCollection.Clear();
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Security.Tests.Collections
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         public bool Contains(IAccessType item)
         {
-            return _accessTypes.Contains(item);
+            return Data.AccessTypeCollection.Contains(item);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Security.Tests.Collections
         /// <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param><param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param><exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.</exception><exception cref="T:System.ArgumentException">The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.</exception>
         public void CopyTo(IAccessType[] array, int arrayIndex)
         {
-            _accessTypes.CopyTo(array, arrayIndex);
+            Data.AccessTypeCollection.CopyTo(array, arrayIndex);
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Security.Tests.Collections
         /// <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
         public bool Remove(IAccessType item)
         {
-            return _accessTypes.Remove(item);
+            return Data.AccessTypeCollection.Remove(item);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Security.Tests.Collections
         /// </returns>
         public int Count
         {
-            get { return _accessTypes.Count; }
+            get { return Data.AccessTypeCollection.Count; }
         }
 
         /// <summary>

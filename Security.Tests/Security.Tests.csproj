@@ -61,7 +61,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Tests\UnitTest1.cs" />
+    <Compile Include="Collections\LinkDictionary.cs" />
+    <Compile Include="Collections\MemberRoleDictionary.cs" />
+    <Compile Include="Model\RoleOfMember.cs" />
+    <Compile Include="Tests\SecurityWorkUnitTest.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Collections\AccessTypeCollection.cs" />
     <Compile Include="Collections\GrantCollection.cs" />
@@ -89,6 +92,10 @@
     <ProjectReference Include="..\Security\Security.csproj">
       <Project>{556713e5-2adb-4b4b-8d40-74df9393d33d}</Project>
       <Name>Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{2F1F6E24-1FA5-412B-8949-0A7888B9BE71}</Project>
+      <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

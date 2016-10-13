@@ -32,7 +32,5 @@ namespace Security.Tests.Model
             get { return SecObject; }
             set { SecObject = (SecObject) value; }
         }
-
-        public static IEnumerable<IGrant> FakeCollection { get; set; } = new List<IGrant>();
     }
 }
