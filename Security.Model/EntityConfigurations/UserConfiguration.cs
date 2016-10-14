@@ -17,7 +17,7 @@ namespace Security.Model.EntityConfigurations
             {
                 cs.MapLeftKey("idUser");
                 cs.MapRightKey("idGroup");
-                cs.ToTable("UserGroups");
+                cs.ToTable("UserGroups", "sec");
             });
         }
 

@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using Security.Interfaces.Base;
 using Security.Interfaces.Model;
 
 namespace Security.Interfaces.Collections
 {
-    public interface IGrantCollection : ICollection<IGrant>, ISavedCollection
+    public interface IGrantCollection : IQueryableCollection<IGrant>, ISavedCollection
     {
-        void Add(IRole role, ISecObject secObject, IAccessType accessType);
-        bool Remove(IRole role, ISecObject secObject, IAccessType accessType);
+        void Add(string roleName, string secObjectName, string accessTypeName);
+        bool Remove(string roleName, string secObjectName, string accessTypeName);
     }
 }

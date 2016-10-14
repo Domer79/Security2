@@ -36,22 +36,56 @@ namespace Security.Configurations
         /// <exception cref="InvalidOperationException">Возникает, если присутствуют какие-либо выделенные разрешения</exception>
         public static void RegisterAccessTypes(string[] accessTypes)
         {
-            var grantCollection = Get<IGrantCollection>();
+            SetNewAccessTypes(accessTypes);
+        }
 
-            if (grantCollection.Count > 0)
-                throw new CannotModifyAccessTypeException("You cannot modify accessType because there is data in Grants");
-
-            var accessTypeCollection = Get<IAccessTypeCollection>();
-            accessTypeCollection.Clear();
-            foreach (var accessType in accessTypes.Select(GetAccessType))
+        public static void SetNewAccessTypes(string[] accessNames)
+        {
+            foreach (var accessName in accessNames)
             {
-                accessTypeCollection.Add(accessType);
+                AddAccessType(accessName);
             }
 
+            var accessTypeCollection = Get<IAccessTypeCollection>();
+            var exceptAccessNames = accessTypeCollection.Select(at => at.Name).Except(accessNames).ToList();
+            foreach (var accessName in exceptAccessNames)
+            {
+                TryDeleteAccessName(accessName);
+            }
+        }
+
+        private static void AddAccessType(string accessName)
+        {
+            var accessTypeCollection = Get<IAccessTypeCollection>();
+            if (string.IsNullOrEmpty(accessName))
+                throw new AccessTypeValidException(accessName);
+
+            if (accessTypeCollection.Any(at => at.Name == accessName))
+                return;
+
+            accessTypeCollection.Add(GetAccessType(accessName));
             accessTypeCollection.SaveChanges();
         }
 
-        internal static void RegisterCommonModule<TModule>() where TModule : INinjectModule, new()
+        private static void TryDeleteAccessName(string accessName)
+        {
+            var accessTypeCollection = Get<IAccessTypeCollection>();
+            try
+            {
+                var accessType = accessTypeCollection.FirstOrDefault(at => at.Name == accessName);
+                if (accessType == null)
+                    throw new AccessTypeMissingException(accessName);
+
+                accessTypeCollection.Remove(accessType);
+                accessTypeCollection.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new AccessTypeDeleteException(e.Message, accessName);
+            }
+        }
+
+        public static void RegisterCommonModule<TModule>() where TModule : INinjectModule, new()
         {
             if (!Kernel.HasModule(typeof(TModule).FullName))
                 Kernel.Load<TModule>();

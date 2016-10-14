@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Security.Interfaces.Collections;
 using Security.Interfaces.Model;
 using Security.Model;
@@ -111,18 +112,23 @@ namespace Security.EntityFramework
             _context.SaveChanges();
         }
 
-        public void Add(IRole role, ISecObject secObject, IAccessType accessType)
+        public void Add(string roleName, string secObjectName, string accessTypeName)
         {
             var grant = new Grant();
-            grant.SecObject = (SecObject) secObject;
-            grant.Role = (Role) role;
-            grant.AccessType = (AccessType) accessType;
+            grant.SecObject = _context.SecObjects.First(so => so.ObjectName.Equals(secObjectName, StringComparison.OrdinalIgnoreCase));
+            grant.Role = _context.Roles.First(r => r.Name.Equals(roleName, StringComparison.OrdinalIgnoreCase));
+            grant.AccessType = _context.AccessTypes.First(a => a.Name.Equals(accessTypeName, StringComparison.OrdinalIgnoreCase));
             _context.Grants.Add(grant);
         }
 
-        public bool Remove(IRole role, ISecObject secObject, IAccessType accessType)
+        public bool Remove(string roleName, string secObjectName, string accessTypeName)
         {
-            var grant = _context.Grants.Find(secObject.IdSecObject, role.IdRole, accessType.IdAccessType);
+            var grant = _context.Grants.First(g => g.Role.Name.Equals(roleName, StringComparison.OrdinalIgnoreCase)
+                                                        &&
+                                                        g.SecObject.ObjectName.Equals(secObjectName, StringComparison.OrdinalIgnoreCase)
+                                                        &&
+                                                        g.AccessType.Name.Equals(accessTypeName, StringComparison.OrdinalIgnoreCase));
+
             return _context.Grants.Remove(grant) != null;
         }
 
@@ -133,5 +139,29 @@ namespace Security.EntityFramework
         {
             _context.Dispose();
         }
+
+        /// <summary>
+        /// Gets the expression tree that is associated with the instance of <see cref="T:System.Linq.IQueryable"/>.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="T:System.Linq.Expressions.Expression"/> that is associated with this instance of <see cref="T:System.Linq.IQueryable"/>.
+        /// </returns>
+        public Expression Expression => ((IQueryable<Grant>) _context.Grants).Expression;
+
+        /// <summary>
+        /// Gets the type of the element(s) that are returned when the expression tree associated with this instance of <see cref="T:System.Linq.IQueryable"/> is executed.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="T:System.Type"/> that represents the type of the element(s) that are returned when the expression tree associated with this object is executed.
+        /// </returns>
+        public Type ElementType => ((IQueryable<Grant>) _context.Grants).ElementType;
+
+        /// <summary>
+        /// Gets the query provider that is associated with this data source.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="T:System.Linq.IQueryProvider"/> that is associated with this data source.
+        /// </returns>
+        public IQueryProvider Provider => ((IQueryable<Grant>) _context.Grants).Provider;
     }
 }

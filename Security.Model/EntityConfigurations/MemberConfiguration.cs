@@ -10,7 +10,7 @@ namespace Security.Model.EntityConfigurations
             Property(e => e.Name).IsUnicode(false);
             HasMany(e => e.Roles).WithMany(e => e.Members).Map(configuration =>
             {
-                configuration.ToTable("MemberRoles");
+                configuration.ToTable("MemberRoles", "sec");
                 configuration.MapLeftKey("idMember");
                 configuration.MapRightKey("idRole");
             });

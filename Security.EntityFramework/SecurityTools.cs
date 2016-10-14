@@ -1,4 +1,6 @@
 using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using Security.Exceptions;
 using Security.Interfaces;
@@ -19,15 +21,7 @@ namespace Security.EntityFramework
         /// <returns></returns>
         public bool CheckAccess(string member, string secObjectName, string accessType)
         {
-//            var res = new SqlParameter()
-//            {
-//                ParameterName = "@res",
-//                SqlDbType = SqlDbType.Int,
-//                Direction = ParameterDirection.ReturnValue
-//            };
-
-            var result = _context.Database.SqlQuery<int>("select sec.IsAllowByName({0}, {1}, {2})", secObjectName, member, accessType).FirstOrDefault();
-            return result == 1;
+            return _context.Database.SqlQuery<bool>("select sec.IsAllowByName(@p0, @p1, @p2)", secObjectName, member, accessType).FirstOrDefault();
         }
 
         /// <summary>

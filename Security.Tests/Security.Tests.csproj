@@ -61,13 +61,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Collections\MemberRoleDictionary.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Infrastructure\LinkDictionary.cs" />
-    <Compile Include="Interfaces\ISecurityWorkUnitTest.cs" />
     <Compile Include="Model\RoleOfMember.cs" />
     <Compile Include="Tests\FakeSecurityWorkUnitTest.cs" />
-    <Compile Include="Tests\SecurityWorkUnitTest.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Collections\AccessTypeCollection.cs" />
     <Compile Include="Collections\GrantCollection.cs" />
@@ -103,6 +100,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

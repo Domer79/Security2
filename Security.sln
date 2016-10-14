@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.Tests", "Security.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.EntityFramework", "Security.EntityFramework\Security.EntityFramework.csproj", "{F5028574-9BC6-454B-8C89-3B51B35808FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.EntityFramework.Tests", "Security.EntityFramework.Tests\Security.EntityFramework.Tests.csproj", "{1CF19C75-9845-44E1-9429-43030FCC0099}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{F5028574-9BC6-454B-8C89-3B51B35808FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5028574-9BC6-454B-8C89-3B51B35808FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5028574-9BC6-454B-8C89-3B51B35808FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CF19C75-9845-44E1-9429-43030FCC0099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CF19C75-9845-44E1-9429-43030FCC0099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CF19C75-9845-44E1-9429-43030FCC0099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CF19C75-9845-44E1-9429-43030FCC0099}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,5 +84,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{23F25416-D496-4E6A-9D0E-9F7365682628} = {B3C03FF4-0B11-4598-93C1-0095BE0E5BA6}
 		{4E95E862-D5D3-40DB-83E8-1E4CBABE9E06} = {B3C03FF4-0B11-4598-93C1-0095BE0E5BA6}
+		{1CF19C75-9845-44E1-9429-43030FCC0099} = {B3C03FF4-0B11-4598-93C1-0095BE0E5BA6}
 	EndGlobalSection
 EndGlobal

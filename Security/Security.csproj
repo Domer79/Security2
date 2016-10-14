@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\Config.cs" />
+    <Compile Include="Exceptions\AccessTypeDeleteException.cs" />
     <Compile Include="Exceptions\AccessTypeMissingException.cs" />
+    <Compile Include="Exceptions\AccessTypeValidException.cs" />
+    <Compile Include="Exceptions\BaseException.cs" />
     <Compile Include="Exceptions\CannotModifyAccessTypeException.cs" />
     <Compile Include="Exceptions\MemberMissingException.cs" />
     <Compile Include="Exceptions\RoleMissingException.cs" />

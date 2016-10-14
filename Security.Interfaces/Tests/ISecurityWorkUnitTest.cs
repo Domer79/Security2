@@ -1,4 +1,4 @@
-﻿namespace Security.Tests.Interfaces
+﻿namespace Security.Interfaces.Tests
 {
     public interface ISecurityWorkUnitTest
     {

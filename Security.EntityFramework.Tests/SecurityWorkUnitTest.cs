@@ -1,44 +1,46 @@
-﻿using System.Dynamic;
+﻿using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Security.Configurations;
-using Security.Interfaces.Collections;
 using Security.Interfaces.Tests;
-using Security.Tests.Collections;
-using Security.Tests.Common;
-using Security.Tests.Model;
+using Security.Model;
+using Security.Model.Entities;
 using Tools.Extensions;
 
-namespace Security.Tests.Tests
+namespace Security.EntityFramework.Tests
 {
     [TestClass]
-    public class FakeSecurityWorkUnitTest : ISecurityWorkUnitTest
+    public class SecurityWorkUnitTest : ISecurityWorkUnitTest
     {
         private BaseSecurity _security;
+        private readonly SecurityContext _context = new SecurityContext();
 
-        public FakeSecurityWorkUnitTest()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
+        /// </summary>
+        public SecurityWorkUnitTest()
         {
             SecurityInit();
         }
 
+        /// <summary>
+        /// Первичная настройка параметров. Настройка интерфейсов, первичная установка типов доступа
+        /// </summary>
+        [TestMethod]
         public void SecurityInit()
         {
-            if (Data.AccessTypeCollection.Count == 0)
-            {
-                Config.RegisterCommonModule<FakeCommonModule>();
-                Config.RegisterAccessTypes(typeof (EAccessType));
-            }
-
+            Config.RegisterCommonModule<CommonModule>();
+            Config.RegisterAccessTypes(typeof(EAccessType));
             _security = new BaseSecurity();
         }
 
         /// <summary>
-        /// Добавление пользователя
+        /// Тест. Добавление пользователя
         /// </summary>
         [TestMethod]
         public void AddUserTest()
         {
-            _security.UserCollection.Add(new User() {Login = "User1", Password = "password".GetHashBytes()});
+            _security.UserCollection.Add(new User() { Login = "User1", Password = "password".GetHashBytes() });
             _security.UserCollection.SaveChanges();
             var user1 = _security.UserCollection.First(e => e.Login == "User1");
 
@@ -51,7 +53,7 @@ namespace Security.Tests.Tests
         [TestMethod]
         public void AddRoleTest()
         {
-            _security.RoleCollection.Add(new Role() {Name = "Role1"});
+            _security.RoleCollection.Add(new Role() { Name = "Role1" });
             _security.RoleCollection.SaveChanges();
             var role = _security.RoleCollection.First(e => e.Name == "Role1");
 
@@ -64,7 +66,7 @@ namespace Security.Tests.Tests
         [TestMethod]
         public void AddSecObjectTest()
         {
-            _security.SecObjectCollection.Add(new SecObject() {ObjectName = "SecObject1"});
+            _security.SecObjectCollection.Add(new SecObject() { ObjectName = "SecObject1" });
             _security.SecObjectCollection.SaveChanges();
             var secObject = _security.SecObjectCollection.First(e => e.ObjectName == "SecObject1");
 
@@ -79,9 +81,9 @@ namespace Security.Tests.Tests
         {
             _security.AddGrant("Role1", "SecObject1", EAccessType.Select);
 
-            Assert.AreEqual("Role1", Data.GrantCollection.First().Role.Name);
-            Assert.AreEqual("SecObject1", Data.GrantCollection.First().SecObject.ObjectName);
-            Assert.AreEqual("Select", Data.GrantCollection.First().AccessType.Name);
+            Assert.AreEqual("Role1", _context.Grants.Include("Role").First().Role.Name);
+            Assert.AreEqual("SecObject1", _context.Grants.Include("SecObject").First().SecObject.ObjectName);
+            Assert.AreEqual("Select", _context.Grants.Include("AccessType").First().AccessType.Name);
         }
 
         /// <summary>
@@ -92,8 +94,8 @@ namespace Security.Tests.Tests
         {
             _security.AddRole("Role1", "User1");
 
-            Assert.AreEqual("Role1", _security.MemberCollection.First().Roles.First().Name);
-            Assert.AreEqual("User1", _security.RoleCollection.First().Members.First().Name);
+            Assert.AreEqual("Role1", _context.Roles.First().Name);
+            Assert.AreEqual("User1", _context.Members.First().Name);
         }
 
         /// <summary>
@@ -137,7 +139,7 @@ namespace Security.Tests.Tests
         {
             _security.RemoveGrant("Role1", "SecObject1", EAccessType.Select);
 
-            Assert.AreEqual(0, Data.GrantCollection.Count);
+            Assert.AreEqual(0, _context.Grants.Count());
         }
     }
 }

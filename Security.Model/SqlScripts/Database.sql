@@ -719,6 +719,7 @@ ALTER TABLE [sec].[MemberRoles] CHECK CONSTRAINT [FK_MemberRoles_Roles]
 GO
 ALTER TABLE [sec].[UserGroups]  WITH CHECK ADD  CONSTRAINT [FK_UserGroups_Groups] FOREIGN KEY([idGroup])
 REFERENCES [sec].[Groups] ([idMember])
+
 GO
 ALTER TABLE [sec].[UserGroups] CHECK CONSTRAINT [FK_UserGroups_Groups]
 GO
@@ -746,6 +747,8 @@ if exists(select 1 from sec.Members where idMember in (select idMember from dele
 		rollback
 		return
 	end
+
+delete from sec.UserGroups where idGroup in (select idGroup from deleted)
 
 GO
 /****** Object:  Trigger [sec].[OnDeleteGroup]    Script Date: 29.04.2015 8:51:56 ******/

@@ -40,12 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\IQueryableCollection.cs" />
+    <Compile Include="Base\ISavedCollection.cs" />
     <Compile Include="Collections\IAccessTypeCollection.cs" />
     <Compile Include="Collections\IGrantCollection.cs" />
     <Compile Include="Collections\IGroupCollection.cs" />
     <Compile Include="Collections\IMemberCollection.cs" />
-    <Compile Include="Collections\ISavedCollection.cs" />
-    <Compile Include="Collections\ISet.cs" />
     <Compile Include="Collections\IRoleCollection.cs" />
     <Compile Include="Collections\ISecObjectCollection.cs" />
     <Compile Include="Collections\IUserCollection.cs" />
@@ -60,6 +60,7 @@
     <Compile Include="Model\ISecObject.cs" />
     <Compile Include="Model\IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\ISecurityWorkUnitTest.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

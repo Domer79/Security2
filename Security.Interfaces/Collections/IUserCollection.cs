@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using Security.Interfaces.Base;
 using Security.Interfaces.Model;
 
 namespace Security.Interfaces.Collections
 {
-    public interface IUserCollection : ICollection<IUser>, ISavedCollection
+    public interface IUserCollection : IQueryableCollection<IUser>, ISavedCollection
     {
         /// <summary>
         /// Идентификация пользователя
