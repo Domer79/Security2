@@ -41,9 +41,21 @@
     </Validate>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Security.EntityFramework\Security.EntityFramework.csproj">
+      <Name>Security.EntityFramework</Name>
+      <Project>{f5028574-9bc6-454b-8c89-3b51b35808fe}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Security.Interfaces\Security.Interfaces.csproj">
+      <Name>Security.Interfaces</Name>
+      <Project>{026352e5-2a65-4064-9848-fb60ab1046ac}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Security.Model\Security.Model.csproj">
       <Name>Security.Model</Name>
       <Project>{cc428c6e-87c3-4ff4-b698-adf244a31e38}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Security.csproj">
+      <Name>Security</Name>
+      <Project>{556713e5-2adb-4b4b-8d40-74df9393d33d}</Project>
     </ProjectReference>
   </ItemGroup>
 </Project>

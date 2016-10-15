@@ -14,7 +14,6 @@ namespace Security
     {
         private readonly ISecurityTools _securityTools;
         private readonly IGrantCollection _grantCollection;
-        private readonly IAccessTypeCollection _accessTypeCollection;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
@@ -22,7 +21,6 @@ namespace Security
         public BaseSecurity()
         {
             _grantCollection = Config.Get<IGrantCollection>();
-            _accessTypeCollection = Config.Get<IAccessTypeCollection>();
             _securityTools = Config.Get<ISecurityTools>();
 
             UserCollection = Config.Get<IUserCollection>();
@@ -64,18 +62,7 @@ namespace Security
 
         public void AddGrant(string roleName, string secObjectName, Enum accessType)
         {
-//            var role = RoleCollection.FirstOrDefault(r => r.Name == roleName);
-//            if (role == null)
-//                throw new RoleMissingException(roleName);
-//
-//            var secObject = SecObjectCollection.FirstOrDefault(so => so.ObjectName == secObjectName);
-//            if (secObject == null)
-//                throw new SecObjectMissingException(secObjectName);
-//
             var accessTypeName = Enum.GetName(Config.AccessType, accessType);
-//            var access = _accessTypeCollection.FirstOrDefault(a => a.Name == accessTypeName);
-//            if (access == null)
-//                throw new AccessTypeMissingException(accessTypeName);
 //
             _grantCollection.Add(roleName, secObjectName, accessTypeName);
             _grantCollection.SaveChanges();
@@ -83,18 +70,7 @@ namespace Security
 
         public void RemoveGrant(string roleName, string secObjectName, Enum accessType)
         {
-//            var role = RoleCollection.FirstOrDefault(r => r.Name == roleName);
-//            if (role == null)
-//                throw new RoleMissingException(roleName);
-//
-//            var secObject = SecObjectCollection.FirstOrDefault(so => so.ObjectName == secObjectName);
-//            if (secObject == null)
-//                throw new SecObjectMissingException(secObjectName);
-//
             var accessTypeName = Enum.GetName(Config.AccessType, accessType);
-//            var access = _accessTypeCollection.FirstOrDefault(a => a.Name == accessTypeName);
-//            if (access == null)
-//                throw new AccessTypeMissingException(accessTypeName);
 
             _grantCollection.Remove(roleName, secObjectName, accessTypeName);
             _grantCollection.SaveChanges();
