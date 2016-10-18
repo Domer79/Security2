@@ -30,14 +30,14 @@ namespace Security.Tests.Tests
         [TestMethod]
         public void CreateCollectionTest()
         {
-            var accessTypeCollection = Config.Get<IAccessTypeCollection>(); ;
+            var accessTypeCollection = Config.Get<IAccessTypeCollection>(); 
             Assert.IsNotNull(accessTypeCollection);
         }
 
         [TestMethod]
         public void AddItemToCollectionTest()
         {
-            var accessTypeCollection = Config.Get<IAccessTypeCollection>(); ;
+            var accessTypeCollection = Config.Get<IAccessTypeCollection>();
             var accessType = new AccessType {Name = "add"};
 
             accessTypeCollection.Add(accessType);

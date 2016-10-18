@@ -1,0 +1,22 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Вход в систему</title>
+</head>
+<body>
+<div>
+    <form action="@Url.Action("Login")" method="post">
+        <input type="text" placeholder="Логин" name="login"/>
+        <input type="password" name="password"/>
+        <input type="submit" value="Войти"/>
+    </form>
+</div>
+</body>
+</html>
