@@ -1,12 +1,91 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = "~/Views/Shared/_SecurityLayout.cshtml";
+}
 
-<html>
-<head>
-    <title>Настройка безопасности</title>
-</head>
-<body>
-    <div>
+<style>
+    .admin-panel {
+        max-width: 1100px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .itemselected {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        background-color: #007799;
+        border: black dotted 1px;
+        color: white;
+    }
+</style>
 
+<script type="text/javascript">
+    testapp.controller("AdminCtrl", function ($scope) {
+        $scope.items = [
+            {name: "name1"},
+            {name: "name2"},
+            {name: "name3"},
+            {name: "name4"}
+        ];
+
+        $scope.selectItem = function (item, $event) {
+            if (!$event.ctrlKey)
+                allItemsUnSelect();
+
+            if (typeof item.selected === "undefined") {
+                item.selected = true;
+                return;
+            }
+
+            item.selected = !item.selected;
+        }
+
+        function allItemsUnSelect() {
+            $scope.items.forEach(function(item) {
+                item.selected = false;
+            });
+        }
+    });
+</script>
+
+<div>
+    <div ng-controller="AdminCtrl as ctrl" class="admin-panel">
+        <md-content>
+            <md-toolbar class="md-hue-2">
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                    </md-button>
+                    <h2>
+                        <span>Toolbar with Disabled/Enabled Icon Buttons</span>
+                    </h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="More">
+                        <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <div>
+
+                <div layout="row">
+                    <div flex="40">
+                        <md-list>
+                            <md-list-item ng-repeat="item in items" ng-click="selectItem(item, $event)" ng-class="{itemselected:item.selected}">
+                                <span>{{item.name}}</span>
+                            </md-list-item>
+                        </md-list>
+                    </div>
+                    <md-divider vertical></md-divider>
+                    <div flex>
+                        Second Column
+                    </div>
+                </div>
+            </div>
+        </md-content>
     </div>
-</body>
-</html>
+</div>

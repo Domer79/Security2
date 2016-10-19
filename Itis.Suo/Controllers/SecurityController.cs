@@ -13,5 +13,11 @@ namespace Itis.Suo.Controllers
         {
             return View();
         }
+
+        public ActionResult Hello()
+        {
+            ViewBag.Title = "Hello";
+            return View();
+        }
     }
 }
