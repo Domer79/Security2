@@ -10,12 +10,10 @@
         margin-left: auto;
         margin-right: auto;
     }
+
     .itemselected {
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
         background-color: #007799;
-        border: black dotted 1px;
+        border: black inset 1px;
         color: white;
     }
 </style>
@@ -23,10 +21,10 @@
 <script type="text/javascript">
     testapp.controller("AdminCtrl", function ($scope) {
         $scope.items = [
-            {name: "name1"},
-            {name: "name2"},
-            {name: "name3"},
-            {name: "name4"}
+            { name: "name1" },
+            { name: "name2" },
+            { name: "name3" },
+            { name: "name4" }
         ];
 
         $scope.selectItem = function (item, $event) {
@@ -42,7 +40,7 @@
         }
 
         function allItemsUnSelect() {
-            $scope.items.forEach(function(item) {
+            $scope.items.forEach(function (item) {
                 item.selected = false;
             });
         }
@@ -58,7 +56,7 @@
                         <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
                     </md-button>
                     <h2>
-                        <span>Toolbar with Disabled/Enabled Icon Buttons</span>
+                        <span>Панель администрирования правами доступа</span>
                     </h2>
                     <span flex></span>
                     <md-button class="md-icon-button" aria-label="Favorite">
@@ -70,20 +68,33 @@
                 </div>
             </md-toolbar>
 
-            <div>
+            <div layout="row">
+                <div flex="40">
+                    <md-tabs md-dynamic-height md-border-bottom>
+                        <md-tab label="Пользователи">
+                            <md-content class="md-padding">
+                                <md-list>
+                                    <md-list-item ng-repeat="item in items" ng-click="selectItem(item, $event)" ng-class="{itemselected:item.selected}">
+                                        <span>{{item.name}}</span>
+                                    </md-list-item>
+                                </md-list>
+                            </md-content>
+                        </md-tab>
+                        <md-tab label="Группы">
+                            <md-content class="md-padding">
 
-                <div layout="row">
-                    <div flex="40">
-                        <md-list>
-                            <md-list-item ng-repeat="item in items" ng-click="selectItem(item, $event)" ng-class="{itemselected:item.selected}">
-                                <span>{{item.name}}</span>
-                            </md-list-item>
-                        </md-list>
-                    </div>
-                    <md-divider vertical></md-divider>
-                    <div flex>
-                        Second Column
-                    </div>
+                            </md-content>
+                        </md-tab>
+                        <md-tab label="Роли">
+                            <md-content class="md-padding">
+
+                            </md-content>
+                        </md-tab>
+                    </md-tabs>
+                </div>
+                <md-divider vertical></md-divider>
+                <div flex>
+                    Second Column
                 </div>
             </div>
         </md-content>
