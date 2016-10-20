@@ -1,0 +1,30 @@
+﻿@using System.Web.Optimization
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    @Styles.Render("~/styles/angular-material")
+
+    <title>Настройка безопасности</title>
+    @Scripts.Render("~/scripts/angular-material-package")
+    @Scripts.Render("~/scripts/angular-ui-router")
+
+    <script type="text/javascript">
+        var testapp = angular.module("testapp", ['ngMaterial']);
+        testapp.controller("AppCtrl", ['$scope', function($scope) {
+        }]);
+    </script>
+</head>
+<body ng-app="testapp" ng-controller="AppCtrl">
+<div>
+    @RenderBody()
+</div>
+</body>
+</html>
