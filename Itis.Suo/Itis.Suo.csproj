@@ -153,46 +153,21 @@
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
-    <Content Include="scripts\angular-animate.js" />
-    <Content Include="scripts\angular-animate.min.js" />
+    <Content Include="scripts\angapp\security\components\adminpanel.js" />
     <Content Include="scripts\angular-animate\angular-animate.js" />
     <Content Include="scripts\angular-animate\angular-animate.min.js" />
-    <Content Include="scripts\angular-aria.js" />
-    <Content Include="scripts\angular-aria.min.js" />
     <Content Include="scripts\angular-aria\angular-aria.js" />
     <Content Include="scripts\angular-aria\angular-aria.min.js" />
-    <Content Include="scripts\angular-cookies.js" />
-    <Content Include="scripts\angular-cookies.min.js" />
-    <Content Include="scripts\angular-csp.css" />
-    <Content Include="scripts\angular-loader.js" />
-    <Content Include="scripts\angular-loader.min.js" />
     <Content Include="scripts\angular-material\angular-material-mocks.js" />
     <Content Include="scripts\angular-material\angular-material.js" />
     <Content Include="scripts\angular-material\angular-material.min.js" />
-    <Content Include="scripts\angular-message-format.js" />
-    <Content Include="scripts\angular-message-format.min.js" />
     <Content Include="scripts\angular-messages.js" />
     <Content Include="scripts\angular-messages.min.js" />
-    <Content Include="scripts\angular-mocks.js" />
-    <Content Include="scripts\angular-parse-ext.js" />
-    <Content Include="scripts\angular-parse-ext.min.js" />
-    <Content Include="scripts\angular-resource.js" />
-    <Content Include="scripts\angular-resource.min.js" />
-    <Content Include="scripts\angular-route.js" />
-    <Content Include="scripts\angular-route.min.js" />
-    <Content Include="scripts\angular-sanitize.js" />
-    <Content Include="scripts\angular-sanitize.min.js" />
-    <Content Include="scripts\angular-scenario.js" />
-    <Content Include="scripts\angular-touch.js" />
-    <Content Include="scripts\angular-touch.min.js" />
     <Content Include="scripts\angular-ui-router.js" />
     <Content Include="scripts\angular-ui-router.min.js" />
-    <Content Include="scripts\angular.js" />
-    <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\angular\angular.js" />
     <Content Include="scripts\angular\angular.min.js" />
-    <Content Include="scripts\i18n\angular-locale_ru-ru.js" />
-    <Content Include="scripts\i18n\angular-locale_ru.js" />
+    <Content Include="scripts\exports.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +178,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
+    <Compile Include="Controllers\TemplatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,24 +195,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Security\Index.cshtml" />
-    <Content Include="scripts\version.json" />
-    <Content Include="scripts\errors.json" />
-    <Content Include="scripts\angular.min.js.map" />
-    <Content Include="scripts\angular-touch.min.js.map" />
-    <Content Include="scripts\angular-sanitize.min.js.map" />
-    <Content Include="scripts\angular-route.min.js.map" />
-    <Content Include="scripts\angular-resource.min.js.map" />
-    <Content Include="scripts\angular-parse-ext.min.js.map" />
-    <Content Include="scripts\angular-messages.min.js.map" />
-    <Content Include="scripts\angular-message-format.min.js.map" />
-    <Content Include="scripts\angular-loader.min.js.map" />
-    <Content Include="scripts\angular-cookies.min.js.map" />
-    <Content Include="scripts\angular-aria.min.js.map" />
-    <Content Include="scripts\angular-animate.min.js.map" />
     <Content Include="Views\Security\Hello.cshtml" />
     <Content Include="scripts\angular-aria\angular-aria.min.js.map" />
     <Content Include="scripts\angular-animate\angular-animate.min.js.map" />
     <Content Include="Views\Shared\_SecurityLayout.cshtml" />
+    <Content Include="Views\Templates\Security\AdminPanel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
