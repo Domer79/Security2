@@ -20,7 +20,13 @@
     <div layout="row">
         <div flex="40">
             <md-tabs md-dynamic-height md-border-bottom>
-                <ui-view name="users"></ui-view>
+                <md-tab label="Пользователи" md-on-select="alert()" md-active="true">
+                    <md-content class="md-padding">
+                        <md-list>
+                            <md-list-item ng-repeat="user in $ctrl.users">{{user.Login}}</md-list-item>
+                        </md-list>
+                    </md-content>
+                </md-tab>
                 <md-tab label="Группы">
                     <md-content class="md-padding">
 

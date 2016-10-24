@@ -23,6 +23,7 @@
     @Styles.Render("~/styles/angular-material")
     @Scripts.Render("~/scripts/angular-material-package")
     @Scripts.Render("~/scripts/angular-ui-router")
+    @Scripts.Render("~/scripts/security")
 
     <script type="text/javascript">
         "use strict";
@@ -34,11 +35,6 @@
                     name: 'adminpanel',
                     url: '/adminpanel',
                     templateUrl: "/Templates/AdminPanel"
-                },
-                {
-                    name: 'adminpanel.users',
-                    url: '/adminpanel/users',
-                    templateUrl: 'Templates/AdminPanelUsers'
                 }
             ];
 
@@ -46,6 +42,8 @@
                 $stateProvider.state(state);
             });
         });
+
+        securityApp.controller("AdminPanelController", exports.controllers.AdminPanelController);
 
         securityApp.run(function ($state) {
             $state.go('adminpanel');

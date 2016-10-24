@@ -27,6 +27,8 @@ namespace Itis.Suo.App_Start
                 "~/scripts/angular-material/angular-material.js"
                 ));
 
+            bundles.Add(new ScriptBundle("~/scripts/security").IncludeDirectory("~/scripts/angapp/security", "*.js", true));
+
             bundles.Add(new StyleBundle("~/styles/angular-material").Include(
                 "~/content/angular-material.css"
                 ));
