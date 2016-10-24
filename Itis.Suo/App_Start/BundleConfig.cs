@@ -19,7 +19,8 @@ namespace Itis.Suo.App_Start
                 ));
 
             bundles.Add(new ScriptBundle("~/scripts/angular-material-package").Include(
-                "~/scripts/angular/angular.js",
+//                "~/scripts/angular/angular.js",
+                "~/scripts/angular.min.js",
                 "~/scripts/angular-animate/angular-animate.js",
                 "~/scripts/angular-aria/angular-aria.js",
                 "~/scripts/angular-messages.js",

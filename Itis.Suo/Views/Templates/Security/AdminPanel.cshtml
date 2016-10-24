@@ -20,15 +20,7 @@
     <div layout="row">
         <div flex="40">
             <md-tabs md-dynamic-height md-border-bottom>
-                <md-tab label="Пользователи">
-                    <md-content class="md-padding">
-                        <md-list>
-                            <md-list-item>
-
-                            </md-list-item>
-                        </md-list>
-                    </md-content>
-                </md-tab>
+                <ui-view name="users"></ui-view>
                 <md-tab label="Группы">
                     <md-content class="md-padding">
 
@@ -43,7 +35,9 @@
         </div>
         <md-divider vertical></md-divider>
         <div flex>
-            Second Column
+            <ui-view name="tab1"></ui-view>
+            <ui-view name="tab2"></ui-view>
+            <ui-view name="tab3"></ui-view>
         </div>
     </div>
 </md-content>
