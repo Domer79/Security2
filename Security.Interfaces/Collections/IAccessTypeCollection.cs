@@ -4,7 +4,7 @@ using Security.Interfaces.Model;
 
 namespace Security.Interfaces.Collections
 {
-    public interface IAccessTypeCollection : IQueryableCollection<IAccessType>, ISavedCollection
+    public interface IAccessTypeCollection : IQueryableCollection<IAccessType>
     {
     }
 }

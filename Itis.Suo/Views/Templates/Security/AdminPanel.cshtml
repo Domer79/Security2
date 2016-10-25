@@ -2,17 +2,17 @@
     <md-toolbar class="md-hue-2">
         <div class="md-toolbar-tools">
             <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
-                <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                <md-icon md-svg-icon="navigation:menu"></md-icon>
             </md-button>
             <h2>
                 <span>Панель администрирования правами доступа</span>
             </h2>
             <span flex></span>
             <md-button class="md-icon-button" aria-label="Favorite">
-                <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+                <md-icon md-svg-icon="/img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
             </md-button>
             <md-button class="md-icon-button" aria-label="More">
-                <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+                <md-icon md-svg-icon="/img/icons/more_vert.svg"></md-icon>
             </md-button>
         </div>
     </md-toolbar>
@@ -20,19 +20,15 @@
     <div layout="row">
         <div flex="40">
             <md-tabs md-dynamic-height md-border-bottom>
-                <md-tab label="Пользователи" md-on-select="alert()" md-active="true">
-                    <md-content class="md-padding">
-                        <md-list>
-                            <md-list-item ng-repeat="user in $ctrl.users">{{user.Login}}</md-list-item>
-                        </md-list>
-                    </md-content>
+                <md-tab label="Пользователи" md-on-select="userTabSelect()" md-active="true">
+                    <ui-view name="users"></ui-view>
                 </md-tab>
-                <md-tab label="Группы">
+                <md-tab label="Группы" md-on-select="tabSelect()">
                     <md-content class="md-padding">
 
                     </md-content>
                 </md-tab>
-                <md-tab label="Роли">
+                <md-tab label="Роли" md-on-select="tabSelect()">
                     <md-content class="md-padding">
 
                     </md-content>
@@ -41,9 +37,23 @@
         </div>
         <md-divider vertical></md-divider>
         <div flex>
-            <ui-view name="tab1"></ui-view>
-            <ui-view name="tab2"></ui-view>
-            <ui-view name="tab3"></ui-view>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="{{tab1}}" md-active="true">
+                    <md-content class="md-padding">
+                        <ui-view name="tab1"></ui-view>
+                    </md-content>
+                </md-tab>
+                <md-tab label="{{tab2}}" md-on-select="tabSelect()">
+                    <md-content class="md-padding">
+                        <ui-view name="tab2"></ui-view>
+                    </md-content>
+                </md-tab>
+                <md-tab label="{{tab3}}" md-on-select="tabSelect()">
+                    <md-content class="md-padding">
+                        <ui-view name="tab3"></ui-view>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
         </div>
     </div>
 </md-content>

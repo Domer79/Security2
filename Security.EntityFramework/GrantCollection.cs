@@ -10,7 +10,7 @@ using Security.Model.Entities;
 
 namespace Security.EntityFramework
 {
-    public class GrantCollection : IGrantCollection, IDisposable
+    public class GrantCollection : IGrantCollection
     {
         private readonly SecurityContext _context = new SecurityContext();
 

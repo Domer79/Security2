@@ -10,7 +10,7 @@ using Security.Model.Entities;
 
 namespace Security.EntityFramework
 {
-    public class GroupCollection : IGroupCollection, IDisposable
+    public class GroupCollection : IGroupCollection
     {
         private readonly SecurityContext _context = new SecurityContext();
 

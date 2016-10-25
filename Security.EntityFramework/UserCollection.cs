@@ -12,9 +12,17 @@ using Tools.Extensions;
 
 namespace Security.EntityFramework
 {
-    public class UserCollection : IUserCollection, IDisposable
+    public class UserCollection : IUserCollection
     {
-        private readonly SecurityContext _context = new SecurityContext();
+        private readonly SecurityContext _context;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
+        /// </summary>
+        public UserCollection()
+        {
+            _context = new SecurityContext();
+        }
 
         /// <summary>
         /// Returns an enumerator that iterates through the collection.

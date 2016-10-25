@@ -4,7 +4,7 @@ using Security.Interfaces.Model;
 
 namespace Security.Interfaces.Collections
 {
-    public interface IRoleCollection : IQueryableCollection<IRole>, ISavedCollection
+    public interface IRoleCollection : IQueryableCollection<IRole>
     {
         
     }

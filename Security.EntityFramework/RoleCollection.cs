@@ -10,7 +10,7 @@ using Security.Model.Entities;
 
 namespace Security.EntityFramework
 {
-    public class RoleCollection : IRoleCollection, IDisposable
+    public class RoleCollection : IRoleCollection
     {
         private readonly SecurityContext _context = new SecurityContext();
 

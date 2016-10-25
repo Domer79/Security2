@@ -13,28 +13,20 @@ namespace Security
     public class BaseSecurity : ISecurity
     {
         private readonly ISecurityTools _securityTools;
-        private readonly IGrantCollection _grantCollection;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         public BaseSecurity()
         {
-            _grantCollection = Config.Get<IGrantCollection>();
             _securityTools = Config.Get<ISecurityTools>();
-
-            UserCollection = Config.Get<IUserCollection>();
-            GroupCollection = Config.Get<IGroupCollection>();
-            SecObjectCollection = Config.Get<ISecObjectCollection>();
-            RoleCollection = Config.Get<IRoleCollection>();
-            MemberCollection = Config.Get<IMemberCollection>();
         }
 
-        public IUserCollection UserCollection { get; }
-        public IGroupCollection GroupCollection { get; }
-        public ISecObjectCollection SecObjectCollection { get; }
-        public IRoleCollection RoleCollection { get; }
-        public IMemberCollection MemberCollection { get; }
+        public IUserCollection UserCollection => Config.Get<IUserCollection>();
+        public IGroupCollection GroupCollection => Config.Get<IGroupCollection>();
+        public ISecObjectCollection SecObjectCollection => Config.Get<ISecObjectCollection>();
+        public IRoleCollection RoleCollection => Config.Get<IRoleCollection>();
+        public IMemberCollection MemberCollection => Config.Get<IMemberCollection>();
 
         /// <summary>
         /// Проверка входа
@@ -64,16 +56,18 @@ namespace Security
         {
             var accessTypeName = Enum.GetName(Config.AccessType, accessType);
 //
-            _grantCollection.Add(roleName, secObjectName, accessTypeName);
-            _grantCollection.SaveChanges();
+            var grantCollection = Config.Get<IGrantCollection>();
+            grantCollection.Add(roleName, secObjectName, accessTypeName);
+            grantCollection.SaveChanges();
         }
 
         public void RemoveGrant(string roleName, string secObjectName, Enum accessType)
         {
             var accessTypeName = Enum.GetName(Config.AccessType, accessType);
 
-            _grantCollection.Remove(roleName, secObjectName, accessTypeName);
-            _grantCollection.SaveChanges();
+            var grantCollection = Config.Get<IGrantCollection>();
+            grantCollection.Remove(roleName, secObjectName, accessTypeName);
+            grantCollection.SaveChanges();
         }
 
         public void AddRole(string roleName, string memberName)

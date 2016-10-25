@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Ninject;
 using Security.Configurations;
 using Security.Exceptions;
-using Security.Interfaces;
+using Security.FakeData;
+using Security.FakeData.Common;
+using Security.FakeData.Model;
 using Security.Interfaces.Collections;
-using Security.Interfaces.Model;
-using Security.Tests.Collections;
-using Security.Tests.Common;
-using Security.Tests.Model;
 
 namespace Security.Tests.Tests
 {

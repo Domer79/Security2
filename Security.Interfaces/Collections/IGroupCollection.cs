@@ -4,7 +4,7 @@ using Security.Interfaces.Model;
 
 namespace Security.Interfaces.Collections
 {
-    public interface IGroupCollection : IQueryableCollection<IGroup>, ISavedCollection
+    public interface IGroupCollection : IQueryableCollection<IGroup>
     {
         
     }

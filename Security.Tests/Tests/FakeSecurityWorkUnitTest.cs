@@ -1,12 +1,10 @@
-﻿using System.Dynamic;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Security.Configurations;
-using Security.Interfaces.Collections;
+using Security.FakeData;
+using Security.FakeData.Common;
+using Security.FakeData.Model;
 using Security.Interfaces.Tests;
-using Security.Tests.Collections;
-using Security.Tests.Common;
-using Security.Tests.Model;
 using Tools.Extensions;
 
 namespace Security.Tests.Tests

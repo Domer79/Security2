@@ -59,5 +59,13 @@ namespace Security.EntityFramework
         /// The <see cref="T:System.Linq.IQueryProvider"/> that is associated with this data source.
         /// </returns>
         public IQueryProvider Provider => ((IQueryable<Member>) _context.Members).Provider;
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
     }
 }

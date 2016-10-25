@@ -4,7 +4,7 @@ using Security.Interfaces.Model;
 
 namespace Security.Interfaces.Collections
 {
-    public interface IUserCollection : IQueryableCollection<IUser>, ISavedCollection
+    public interface IUserCollection : IQueryableCollection<IUser>
     {
         /// <summary>
         /// Идентификация пользователя
