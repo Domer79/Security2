@@ -61,9 +61,16 @@
                             templateUrl: "/Templates/AdminPanelUsers",
                             controller: 'UsersController'
                         }
-                        //                        "details@adminpanel": {
-                        //                            templateUrl: "/Templates/UserDetails"
-                        //                        }
+                    },
+                    bindings: {
+                        users: '<'
+                    },
+                    resolve: {
+                        users: function (UserProvider) {
+                            debugger;
+                            var allUsers = UserProvider.getAllUsers();
+                            return allUsers;
+                        }
                     }
                 },
                 {
@@ -91,28 +98,29 @@
         //        securityApp.controller("AdminPanelController", exports.controllers.AdminPanelController);
 
         securityApp.controller('UsersController', [
-            '$scope', '$http', '$state', 'tabs',
-            function ($scope, $http, $state, tabs) {
+            '$scope', '$http', '$state', 'tabs', 'users', function($scope, $http, $state, tabs, users) {
 
                 debugger;
+
+                $scope.users = users;
 
                 tabs[0] = "Профиль";
                 tabs[1] = "Группы";
                 tabs[2] = "Роли";
 
-                $scope.getUserList = function () {
-                    $http.get("/Security/GetUserList").then(function (data) {
-                        $scope.users = data.data;
-                    }, function (err) {
-                        throw new Error(err);
-                    });
-                };
+//                $scope.getUserList = function () {
+//                    $http.get("/Security/GetUserList").then(function (data) {
+//                        $scope.users = data.data;
+//                    }, function (err) {
+//                        throw new Error(err);
+//                    });
+//                };
 
-                $scope.stateInit = function () {
-                    $scope.getUserList();
+                $scope.stateInit = function() {
+//                    $scope.getUserList();
                 }
 
-                $scope.itemClick = function ($event) {
+                $scope.itemClick = function($event) {
                     $state.go('users.detail');
                 }
             }
@@ -121,6 +129,8 @@
         securityApp.controller('UsersDetailController', ['$scope', function ($scope) {
             $scope.name = 'Привет';
         }]);
+
+        securityApp.provider("UserProvider", exports.providers.UserProvider);
 
         securityApp.run(function ($state) {
             $state.go('adminpanel');
