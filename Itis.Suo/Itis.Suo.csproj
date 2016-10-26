@@ -237,6 +237,7 @@
     <Content Include="Views\Shared\_SecurityLayout.cshtml" />
     <Content Include="Views\Templates\Security\AdminPanel.cshtml" />
     <Content Include="Views\Templates\Security\AdminPanel\_users.cshtml" />
+    <Content Include="Views\Templates\Security\AdminPanel\_UserDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

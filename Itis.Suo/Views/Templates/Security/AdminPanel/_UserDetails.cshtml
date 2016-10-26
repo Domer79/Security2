@@ -1,0 +1,17 @@
+﻿<md-tabs md-dynamic-height md-border-bottom>
+    <md-tab label="{{tab1}}" md-active="true">
+        <md-content class="md-padding">
+            <ui-view name="tab1"></ui-view>
+        </md-content>
+    </md-tab>
+    <md-tab label="{{tab2}}" md-on-select="tabSelect()">
+        <md-content class="md-padding">
+            <ui-view name="tab2"></ui-view>
+        </md-content>
+    </md-tab>
+    <md-tab label="{{tab3}}" md-on-select="tabSelect()">
+        <md-content class="md-padding">
+            <ui-view name="tab3"></ui-view>
+        </md-content>
+    </md-tab>
+</md-tabs>

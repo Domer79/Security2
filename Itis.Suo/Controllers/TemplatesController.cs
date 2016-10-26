@@ -17,5 +17,10 @@ namespace Itis.Suo.Controllers
         {
             return PartialView("Security/AdminPanel/_users");
         }
+
+        public ActionResult UserDetails()
+        {
+            return PartialView("Security/AdminPanel/_UserDetails");
+        }
     }
 }

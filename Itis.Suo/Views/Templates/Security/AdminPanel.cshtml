@@ -38,22 +38,13 @@
         <md-divider vertical></md-divider>
         <div flex>
             <md-tabs md-dynamic-height md-border-bottom>
-                <md-tab label="{{tab1}}" md-active="true">
+                <md-tab label="{{tab}}" md-active="true" ng-repeat="tab in tabs">
                     <md-content class="md-padding">
-                        <ui-view name="tab1"></ui-view>
-                    </md-content>
-                </md-tab>
-                <md-tab label="{{tab2}}" md-on-select="tabSelect()">
-                    <md-content class="md-padding">
-                        <ui-view name="tab2"></ui-view>
-                    </md-content>
-                </md-tab>
-                <md-tab label="{{tab3}}" md-on-select="tabSelect()">
-                    <md-content class="md-padding">
-                        <ui-view name="tab3"></ui-view>
+                        <ui-view name="tab{{$index}}"></ui-view>
                     </md-content>
                 </md-tab>
             </md-tabs>
+            @*            <ui-view name="details"></ui-view>*@
         </div>
     </div>
 </md-content>

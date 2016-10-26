@@ -39,11 +39,15 @@
                     views: {
                         "main": {
                             templateUrl: "/Templates/AdminPanel",
-                            controller: exports.controllers.AdminPanelController,
-                            resolve: {
-                                tab1: "tab1",
-                                tab2: "tab2",
-                                tab3: "tab3"
+                            controller: exports.controllers.AdminPanelController
+                        }
+                    },
+                    resolve: {
+                        tabs: function () {
+                            return {
+                                0: "tab0" ,
+                                1: "tab1" ,
+                                2: "tab2" 
                             }
                         }
                     }
@@ -54,25 +58,26 @@
                     url: '/users',
                     views: {
                         "users": {
-                            template: "<md-content class='md-padding' ng-init='stateInit()'><md-list><md-list-item ng-repeat='user in users' ng-click='null'>{{user.Login}}</md-list-item></md-list></md-content>",
+                            templateUrl: "/Templates/AdminPanelUsers",
                             controller: 'UsersController'
                         }
+                        //                        "details@adminpanel": {
+                        //                            templateUrl: "/Templates/UserDetails"
+                        //                        }
                     }
-//                    controller: 'UsersController'
                 },
                 {
                     name: 'users.detail',
-//                    parent: 'users',
                     url: '/detail',
                     views: {
+                        "tab0@adminpanel": {
+                            template: "<h1>Tab0</h1>"
+                        },
                         "tab1@adminpanel": {
-                            template: "<div ng-controller='UsersDetailController'><h1>Tab1 {{name}}</h1></div>"
+                            template: "<h1>Tab1</h1>"
                         },
                         "tab2@adminpanel": {
-                            template: "<div><h1>Tab2</h1></div>"
-                        },
-                        "tab3@adminpanel": {
-                            template: "<div><h1>Tab3</h1></div>"
+                            template: "<h1>Tab2</h1>"
                         }
                     }
                 }
@@ -85,24 +90,33 @@
 
         //        securityApp.controller("AdminPanelController", exports.controllers.AdminPanelController);
 
-        securityApp.controller('UsersController', ['$scope', '$http', '$state', function ($scope, $http, $state) {
-            debugger;
-            $scope.tab1 = 'Профиль';
-            $scope.tab2 = 'Роли';
-            $scope.tab3 = 'Группы';
+        securityApp.controller('UsersController', [
+            '$scope', '$http', '$state', 'tabs',
+            function ($scope, $http, $state, tabs) {
 
-            $scope.getUserList = function () {
-                $http.get("/Security/GetUserList").then(function (data) {
-                    $scope.users = data.data;
-                }, function (err) {
-                    throw new Error(err);
-                });
-            }
+                debugger;
 
-            $scope.stateInit = function () {
-                $scope.getUserList();
+                tabs[0] = "Профиль";
+                tabs[1] = "Группы";
+                tabs[2] = "Роли";
+
+                $scope.getUserList = function () {
+                    $http.get("/Security/GetUserList").then(function (data) {
+                        $scope.users = data.data;
+                    }, function (err) {
+                        throw new Error(err);
+                    });
+                };
+
+                $scope.stateInit = function () {
+                    $scope.getUserList();
+                }
+
+                $scope.itemClick = function ($event) {
+                    $state.go('users.detail');
+                }
             }
-        }]);
+        ]);
 
         securityApp.controller('UsersDetailController', ['$scope', function ($scope) {
             $scope.name = 'Привет';
