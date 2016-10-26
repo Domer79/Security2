@@ -36,6 +36,7 @@
                 {
                     name: 'adminpanel',
                     url: '/adminpanel',
+                    abstract: true,
                     views: {
                         "main": {
                             templateUrl: "/Templates/AdminPanel",
@@ -133,7 +134,7 @@
         securityApp.provider("UserProvider", exports.providers.UserProvider);
 
         securityApp.run(function ($state) {
-            $state.go('adminpanel');
+            $state.go('users');
         });
 
     </script>

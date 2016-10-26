@@ -28,6 +28,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.EntityFramework.Tests", "Security.EntityFramework.Tests\Security.EntityFramework.Tests.csproj", "{1CF19C75-9845-44E1-9429-43030FCC0099}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itis.Suo", "Itis.Suo\Itis.Suo.csproj", "{C090D941-2315-45B8-BAC6-277FCD7B2ABA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{975A544B-8F70-4D5C-8171-6F0575D4F70D} = {975A544B-8F70-4D5C-8171-6F0575D4F70D}
+		{F5028574-9BC6-454B-8C89-3B51B35808FE} = {F5028574-9BC6-454B-8C89-3B51B35808FE}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itis.Suo.Tests", "Itis.Suo.Tests\Itis.Suo.Tests.csproj", "{C07811DC-B49B-4978-913A-AA8537D17DDA}"
 EndProject
