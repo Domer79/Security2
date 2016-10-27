@@ -15,12 +15,12 @@ namespace Itis.Suo.App_Start
                 ));
 
             bundles.Add(new ScriptBundle("~/scripts/angular-ui-router").Include(
-                "~/scripts/angular-ui-router.js"
+                "~/scripts/angular-ui-router.1.0.0.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/scripts/angular-material-package").Include(
 //                "~/scripts/angular/angular.js",
-                "~/scripts/angular.min.js",
+                "~/scripts/angular/angular.js",
                 "~/scripts/angular-animate/angular-animate.js",
                 "~/scripts/angular-aria/angular-aria.js",
                 "~/scripts/angular-messages.js",

@@ -185,6 +185,9 @@
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="scripts\angapp\security\Components\AdminpanelComponent.js" />
+    <Content Include="scripts\angapp\security\Components\UserProfileComponent.js" />
+    <Content Include="scripts\angapp\security\Components\UsersComponent.js" />
     <Content Include="scripts\angapp\security\Controllers\AdminPanelController.js" />
     <Content Include="scripts\angapp\security\Providers\UserProvider.js" />
     <Content Include="scripts\angular-animate\angular-animate.js" />
@@ -196,13 +199,14 @@
     <Content Include="scripts\angular-material\angular-material.min.js" />
     <Content Include="scripts\angular-messages.js" />
     <Content Include="scripts\angular-messages.min.js" />
+    <Content Include="scripts\angular-ui-router-1.0.0.beta.3.js" />
     <Content Include="scripts\angular-ui-router.1.0.0.js" />
     <Content Include="scripts\angular-ui-router.js" />
     <Content Include="scripts\angular-ui-router.min.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\angular\angular.js" />
     <Content Include="scripts\angular\angular.min.js" />
-    <Content Include="scripts\exports.js" />
+    <Content Include="scripts\itisExports.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

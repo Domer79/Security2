@@ -1,6 +1,6 @@
-﻿function AdminPanelController($scope, $http, $state, tabs) {
+﻿function AdminPanelController($scope, $http, $state) {
 
-    $scope.tabs = tabs;
+    $scope.tabs = $state.current.data.tabs2;
 
     $scope.tabSelect = function() {
     }
@@ -10,6 +10,6 @@
     }
 }
 
-AdminPanelController.$inject = ['$scope', '$http', '$state', 'tabs'];
+AdminPanelController.$inject = ['$scope', '$http', '$state'];
 
-exports.controllers.AdminPanelController = AdminPanelController;
+itisExports.controllers.AdminPanelController = AdminPanelController;

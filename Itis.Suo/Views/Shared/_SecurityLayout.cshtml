@@ -10,7 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Angular Material style sheet -->
-    <script src="~/scripts/exports.js" type="text/javascript"></script>
+    <script src="~/scripts/itisExports.js" type="text/javascript"></script>
 
     <title>Настройка безопасности</title>
 
@@ -39,17 +39,14 @@
                     abstract: true,
                     views: {
                         "main": {
-                            templateUrl: "/Templates/AdminPanel",
-                            controller: exports.controllers.AdminPanelController
+                            component: "adminpanel"
                         }
                     },
-                    resolve: {
-                        tabs: function () {
-                            return {
-                                0: "tab0" ,
-                                1: "tab1" ,
-                                2: "tab2" 
-                            }
+                    data: {
+                        tabs2: {
+                            0: "tab0",
+                            1: "tab1",
+                            2: "tab2"
                         }
                     }
                 },
@@ -59,33 +56,39 @@
                     url: '/users',
                     views: {
                         "users": {
-                            templateUrl: "/Templates/AdminPanelUsers",
-                            controller: 'UsersController'
+                            component: 'users'
                         }
-                    },
-                    bindings: {
-                        users: '<'
                     },
                     resolve: {
                         users: function (UserProvider) {
-                            debugger;
                             var allUsers = UserProvider.getAllUsers();
                             return allUsers;
                         }
-                    }
+                    },
+                    params: { login: null }
                 },
                 {
-                    name: 'users.detail',
-                    url: '/detail',
+                    name: 'detail',
+                    parent: 'users',
+                    url: '/{login}',
+                    params: {login: null},
                     views: {
                         "tab0@adminpanel": {
-                            template: "<h1>Tab0</h1>"
+                            component: 'userProfile'
                         },
                         "tab1@adminpanel": {
-                            template: "<h1>Tab1</h1>"
+                            component: "userProfile"
                         },
                         "tab2@adminpanel": {
-                            template: "<h1>Tab2</h1>"
+                            component: "userProfile"
+                        }
+                    },
+                    resolve: {
+                        user: function (users, $stateParams) {
+                            debugger;
+                            return users.find(function(user) {
+                                return user.Login === $stateParams.login;
+                            });
                         }
                     }
                 }
@@ -99,30 +102,29 @@
         //        securityApp.controller("AdminPanelController", exports.controllers.AdminPanelController);
 
         securityApp.controller('UsersController', [
-            '$scope', '$http', '$state', 'tabs', 'users', function($scope, $http, $state, tabs, users) {
+            '$scope', '$http', '$state', function($scope, $http, $state) {
 
                 debugger;
 
-                $scope.users = users;
-
+                var tabs = $state.current.data.tabs2;
                 tabs[0] = "Профиль";
                 tabs[1] = "Группы";
                 tabs[2] = "Роли";
 
-//                $scope.getUserList = function () {
-//                    $http.get("/Security/GetUserList").then(function (data) {
-//                        $scope.users = data.data;
-//                    }, function (err) {
-//                        throw new Error(err);
-//                    });
-//                };
+                //$scope.users = users;
 
-                $scope.stateInit = function() {
+//                tabs[0] = "Профиль";
+//                tabs[1] = "Группы";
+//                tabs[2] = "Роли";
+
+                $scope.stateInit = function () {
+                    debugger;
 //                    $scope.getUserList();
                 }
 
-                $scope.itemClick = function($event) {
-                    $state.go('users.detail');
+                $scope.itemClick = function ($event, user) {
+                    debugger;
+                    $state.go('detail', {login: user.Login});
                 }
             }
         ]);
@@ -130,8 +132,13 @@
         securityApp.controller('UsersDetailController', ['$scope', function ($scope) {
             $scope.name = 'Привет';
         }]);
+        securityApp.controller('AdminPanelController', itisExports.controllers.AdminPanelController);
 
-        securityApp.provider("UserProvider", exports.providers.UserProvider);
+
+        securityApp.provider("UserProvider", itisExports.providers.UserProvider);
+        securityApp.component('users', new itisExports.components.usersComponent());
+        securityApp.component('userProfile', new itisExports.components.userProfileComponent());
+        securityApp.component('adminpanel', new itisExports.components.adminpanelComponent());
 
         securityApp.run(function ($state) {
             $state.go('users');

@@ -1,5 +1,5 @@
-﻿<md-content class='md-padding' ng-init='stateInit()'>
+﻿<md-content class='md-padding'>
     <md-list>
-        <md-list-item ng-repeat='user in users' ng-click='itemClick($event)'>{{user.Login}}</md-list-item>
+        <md-list-item ng-repeat='user in $ctrl.users' ng-click='itemClick($event, user)'>{{user.Login}}</md-list-item>
     </md-list>
 </md-content>

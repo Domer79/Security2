@@ -16,4 +16,4 @@
 
 //UserProvider.$inject = ['$http'];
 
-exports.providers.UserProvider = UserProvider;
+itisExports.providers.UserProvider = UserProvider;
