@@ -1,10 +1,13 @@
 ﻿function UserProvider() {
     function UserFactory($http) {
-        this.getAllUsers = function () {
-            return $http.get("/Security/GetUserList").then(function (resp) {
+
+        this.getAllUsers = function() {
+            return $http.get("/Security/GetUserList").then(function(resp) {
                 return resp.data;
             });
-        }
+        };
+
+
     }
 
     return {

@@ -99,8 +99,6 @@
             });
         });
 
-        //        securityApp.controller("AdminPanelController", exports.controllers.AdminPanelController);
-
         securityApp.controller('UsersController', [
             '$scope', '$http', '$state', function($scope, $http, $state) {
 
@@ -111,19 +109,7 @@
                 tabs[1] = "Группы";
                 tabs[2] = "Роли";
 
-                //$scope.users = users;
-
-//                tabs[0] = "Профиль";
-//                tabs[1] = "Группы";
-//                tabs[2] = "Роли";
-
-                $scope.stateInit = function () {
-                    debugger;
-//                    $scope.getUserList();
-                }
-
                 $scope.itemClick = function ($event, user) {
-                    debugger;
                     $state.go('detail', {login: user.Login});
                 }
             }
@@ -132,15 +118,13 @@
         securityApp.controller('UsersDetailController', ['$scope', function ($scope) {
             $scope.name = 'Привет';
         }]);
-        securityApp.controller('AdminPanelController', itisExports.controllers.AdminPanelController);
 
-
-        securityApp.provider("UserProvider", itisExports.providers.UserProvider);
-        securityApp.component('users', new itisExports.components.usersComponent());
-        securityApp.component('userProfile', new itisExports.components.userProfileComponent());
-        securityApp.component('adminpanel', new itisExports.components.adminpanelComponent());
+        itisExports.controllers.registerFeatures(securityApp);
+        itisExports.components.registerFeatures(securityApp);
+        itisExports.providers.registerFeatures(securityApp);
 
         securityApp.run(function ($state) {
+            debugger;
             $state.go('users');
         });
 

@@ -3,6 +3,7 @@
 
 # Custom for Visual Studio
 *.cs     diff=csharp
+*.js	diff=astextplain
 
 # Standard to msysgit
 *.doc	 diff=astextplain
