@@ -85,9 +85,14 @@ namespace Security.Model.Tests
         }
 
         [TestMethod]
-        public void CreateAndGetAccessTypeTest()
+        public void GetRolesByUserTest()
         {
-            
+            using (var context = new SecurityContext())
+            {
+                var roles = context.Members.Include("Roles").Where(m => m.Name == "User1").ToList();
+
+                Assert.AreEqual(1, roles.Count());
+            }
         }
     }
 }

@@ -17,6 +17,4 @@
     };
 }
 
-//UserProvider.$inject = ['$http'];
-
 itisExports.providers.UserProvider = UserProvider;

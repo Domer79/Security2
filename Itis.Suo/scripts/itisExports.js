@@ -47,15 +47,15 @@ AbstractFeature.prototype.__getFeatureName = function(ctor) {
     return funcName;
 }
 
-AbstractFeature.prototype.registerFeatures = function(angularApp) {
+AbstractFeature.prototype.register = function(angularApp) {
     var featureNames = Object.getOwnPropertyNames(this);
     for (var i = 0; i < featureNames.length ; i++) {
         var feature = this[featureNames[i]];
-        this.registerFeature(angularApp, featureNames[i], feature);
+        this.__register(angularApp, featureNames[i], feature);
     }
 }
 
-AbstractFeature.prototype.registerFeature = function (angularApp, featureName, feature) {
+AbstractFeature.prototype.__register = function (angularApp, featureName, feature) {
     throw new NotImplementedException();
 }
 
@@ -64,7 +64,7 @@ function Components() { }
 Components.prototype = Object.create(AbstractFeature.prototype);
 Components.prototype.constructor = Components;
 
-Components.prototype.registerFeature = function (angularApp, componentName, component) {
+Components.prototype.__register = function (angularApp, componentName, component) {
     componentName = componentName.substr(0, componentName.lastIndexOf("Component"));
     angularApp.component(componentName, new component());
 }
@@ -74,7 +74,7 @@ function Controllers() { }
 Controllers.prototype = Object.create(AbstractFeature.prototype);
 Controllers.prototype.constructor = Controllers;
 
-Controllers.prototype.registerFeature = function (angularApp, controllerName, controller) {
+Controllers.prototype.__register = function (angularApp, controllerName, controller) {
     angularApp.controller(controllerName, controller);
 }
 
@@ -83,7 +83,7 @@ function Providers() { }
 Providers.prototype = Object.create(AbstractFeature.prototype);
 Providers.prototype.constructor = Providers;
 
-Providers.prototype.registerFeature = function(angularApp, providerName, provider) {
+Providers.prototype.__register = function(angularApp, providerName, provider) {
     angularApp.provider(providerName, provider);
 }
 

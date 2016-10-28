@@ -22,7 +22,7 @@ namespace Security.EntityFramework
         /// </returns>
         public IEnumerator<IGrant> GetEnumerator()
         {
-            return _context.Grants.AsQueryable().GetEnumerator();
+            return ((IQueryable<Grant>)_context.Grants).GetEnumerator();
         }
 
         /// <summary>

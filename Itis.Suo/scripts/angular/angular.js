@@ -2222,7 +2222,7 @@ function setupModuleLoader(window) {
            * })
            * ```
            *
-           * See {@link ng.$animateProvider#register $animateProvider.register()} and
+           * See {@link ng.$animateProvider#register $animateProvider.__register()} and
            * {@link ngAnimate ngAnimate module} for more information.
            */
           animation: invokeLaterAndSetModuleName('$animateProvider', 'register'),
@@ -2234,7 +2234,7 @@ function setupModuleLoader(window) {
            * @param {string} name Filter name - this must be a valid angular expression identifier
            * @param {Function} filterFactory Factory function for creating new instance of filter.
            * @description
-           * See {@link ng.$filterProvider#register $filterProvider.register()}.
+           * See {@link ng.$filterProvider#register $filterProvider.__register()}.
            *
            * <div class="alert alert-warning">
            * **Note:** Filter names must be valid angular {@link expression} identifiers, such as `uppercase` or `orderBy`.
@@ -2253,7 +2253,7 @@ function setupModuleLoader(window) {
            *    keys are the names and the values are the constructors.
            * @param {Function} constructor Controller constructor function.
            * @description
-           * See {@link ng.$controllerProvider#register $controllerProvider.register()}.
+           * See {@link ng.$controllerProvider#register $controllerProvider.__register()}.
            */
           controller: invokeLaterAndSetModuleName('$controllerProvider', 'register'),
 
@@ -10228,7 +10228,7 @@ function identifierForController(controller, ident) {
  * controllers.
  *
  * This provider allows controller registration via the
- * {@link ng.$controllerProvider#register register} method.
+ * {@link ng.$controllerProvider#register __register} method.
  */
 function $ControllerProvider() {
   var controllers = {},

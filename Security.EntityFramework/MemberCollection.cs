@@ -22,7 +22,7 @@ namespace Security.EntityFramework
         /// </returns>
         public IEnumerator<IMember> GetEnumerator()
         {
-            return _context.Members.AsQueryable().GetEnumerator();
+            return ((IQueryable<Member>)_context.Members).GetEnumerator();
         }
 
         /// <summary>

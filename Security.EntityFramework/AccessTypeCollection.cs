@@ -22,7 +22,7 @@ namespace Security.EntityFramework
         /// </returns>
         public IEnumerator<IAccessType> GetEnumerator()
         {
-            return _context.AccessTypes.AsQueryable().GetEnumerator();
+            return ((IQueryable<AccessType>)_context.AccessTypes).GetEnumerator();
         }
 
         /// <summary>

@@ -10,7 +10,7 @@ using Security.Configurations;
 
 namespace Security
 {
-    public class BaseSecurity : ISecurity
+    public class BaseSecurity : ISecurity, IDisposable
     {
         private readonly ISecurityTools _securityTools;
 
@@ -78,6 +78,18 @@ namespace Security
         public void DeleteRole(string memberName, string roleName)
         {
             _securityTools.DeleteRoleFromMember(roleName, memberName);
+        }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            UserCollection.Dispose();
+            GroupCollection.Dispose();
+            SecObjectCollection.Dispose();
+            RoleCollection.Dispose();
+            MemberCollection.Dispose();
         }
     }
 }

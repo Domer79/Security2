@@ -27,5 +27,15 @@ namespace Itis.Suo.Controllers
         {
             return PartialView("Security/AdminPanel/_UserProfile");
         }
+
+        public ActionResult AdminPanelGroups()
+        {
+            return PartialView("Security/AdminPanel/_Groups");
+        }
+
+        public ActionResult RoleList()
+        {
+            return PartialView("Security/AdminPanel/_RoleList");
+        }
     }
 }

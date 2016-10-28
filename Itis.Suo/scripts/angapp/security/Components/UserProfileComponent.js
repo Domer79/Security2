@@ -1,5 +1,8 @@
 ﻿function userProfileComponent() {
-    this.bindings = { user: "<" };
+    this.bindings = {
+        user: "<",
+        userInfoCollection: "<"
+    };
     this.templateUrl = "/Templates/UserProfile";
     this.controller = 'UsersDetailController';
 }

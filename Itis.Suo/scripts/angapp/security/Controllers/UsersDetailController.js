@@ -1,7 +1,7 @@
-﻿function UsersDetailController($scope) {
-    
+﻿function UsersDetailController($scope, $state) {
+    debugger;
 }
 
-UsersDetailController.$inject = ['$scope'];
+UsersDetailController.$inject = ['$scope', '$state'];
 
 itisExports.controllers.UsersDetailController = UsersDetailController;

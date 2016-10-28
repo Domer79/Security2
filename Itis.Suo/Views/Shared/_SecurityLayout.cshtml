@@ -77,18 +77,47 @@
                             component: 'userProfile'
                         },
                         "tab1@adminpanel": {
-                            component: "userProfile"
+                            component: "groupProfile"
                         },
                         "tab2@adminpanel": {
-                            component: "userProfile"
+                            component: "roleProfile"
                         }
                     },
                     resolve: {
                         user: function (users, $stateParams) {
-                            debugger;
                             return users.find(function(user) {
                                 return user.Login === $stateParams.login;
                             });
+                        },
+                        groups: function ($stateParams, GroupProvider) {
+                            var allGroupsByUser = GroupProvider.getAllGroupsByUser($stateParams.login);
+                            return allGroupsByUser;
+                        },
+                        roles: function($stateParams, RoleProvider) {
+                            var roles = RoleProvider.getRolesByUser($stateParams.login);
+                            return roles;
+                        },
+                        userInfoCollection: function(users, $stateParams) {
+                            function link(key, value) {
+                                this.key = key;
+                                this.value = value;
+                            }
+
+                            var linkCollection = [];
+
+                            var user = users.find(function (user) {
+                                return user.Login === $stateParams.login;
+                            });
+
+                            if (user == null)
+                                user.info = `User ${$stateParams.login} is not found`;
+
+                            var keys = Object.getOwnPropertyNames(user);
+                            for (var i = 0; i < keys.length; i++) {
+                                linkCollection.push(new link(keys[i], user[keys[i]]));
+                            }
+
+                            return linkCollection;
                         }
                     }
                 }
@@ -99,32 +128,11 @@
             });
         });
 
-        securityApp.controller('UsersController', [
-            '$scope', '$http', '$state', function($scope, $http, $state) {
-
-                debugger;
-
-                var tabs = $state.current.data.tabs2;
-                tabs[0] = "Профиль";
-                tabs[1] = "Группы";
-                tabs[2] = "Роли";
-
-                $scope.itemClick = function ($event, user) {
-                    $state.go('detail', {login: user.Login});
-                }
-            }
-        ]);
-
-        securityApp.controller('UsersDetailController', ['$scope', function ($scope) {
-            $scope.name = 'Привет';
-        }]);
-
-        itisExports.controllers.registerFeatures(securityApp);
-        itisExports.components.registerFeatures(securityApp);
-        itisExports.providers.registerFeatures(securityApp);
+        itisExports.controllers.register(securityApp);
+        itisExports.components.register(securityApp);
+        itisExports.providers.register(securityApp);
 
         securityApp.run(function ($state) {
-            debugger;
             $state.go('users');
         });
 
