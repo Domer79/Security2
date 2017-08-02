@@ -1,0 +1,18 @@
+﻿<div ng-controller="GroupUsersController">
+
+    <section layout="row">
+        <md-button ng-click="showAddUsersDialog($event)">
+            Добавить
+        </md-button>
+        <md-button ng-click="confirm($event)" ng-if="selectedExist()">
+            Удалить
+        </md-button>
+    </section>
+
+    <md-content class='md-padding'>
+        <md-list flex>
+            <md-list-item class="" ng-repeat="item in items" ng-click='itemClick($event, item)' ng-class="{itemselected:item.selected}">{{item.Login}}</md-list-item>
+        </md-list>
+    </md-content>
+
+</div>

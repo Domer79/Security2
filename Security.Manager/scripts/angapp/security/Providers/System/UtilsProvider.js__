@@ -1,0 +1,419 @@
+﻿//#region Функция bind является дополнением к стандарту ECMA-262 5-го издания; поэтому она может присутствовать не во всех браузерах. 
+//Cледующий код, позволяет использовать большую часть возможностей bind() в реализациях, не имеющих его родной поддержки.
+//Взято: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+
+if (!Function.prototype.bind) {
+    Function.prototype.bind = function (oThis) {
+        if (typeof this !== 'function') {
+            // ближайший аналог внутренней функции
+            // IsCallable в ECMAScript 5
+            throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
+        }
+
+        var aArgs = Array.prototype.slice.call(arguments, 1),
+            fToBind = this,
+            fNOP = function () { },
+            fBound = function () {
+                return fToBind.apply(this instanceof fNOP && oThis
+                       ? this
+                       : oThis,
+                       aArgs.concat(Array.prototype.slice.call(arguments)));
+            };
+
+        fNOP.prototype = this.prototype;
+        fBound.prototype = new fNOP();
+
+        return fBound;
+    };
+}
+
+//#endregion
+
+function UtilsProvider() {
+    debugger;
+    var promise;
+
+    //#region Exceptions
+
+    function BaseException(message) {
+        this.message = message;
+    }
+
+    function ArgumentNullException() {
+        BaseException.apply(this, arguments);
+    }
+
+    function ArgumentException() {
+        BaseException.apply(this, arguments);
+    }
+
+    ArgumentNullException.prototype = Object.create(BaseException.prototype);
+    ArgumentNullException.prototype.constructor = ArgumentNullException;
+
+    ArgumentException.prototype = Object.create(BaseException);
+    ArgumentException.prototype.constructor = ArgumentException;
+
+    //#endregion
+
+    function undefinedOrNull(item) {
+        return typeof item === "undefined" || item === null;
+    }
+
+    function ObjectItem(index, obj) {
+        this.index = index;
+        this.obj = obj;
+    }
+
+    /**
+     * Запрос на сервер, используя AjaxHelper, с возвращением promise
+     * @param {options.url - обязательно, options.data - объект или функция возвращающая объект, options.async - false, если надо выполнить синхронно, по умолчанию true} options 
+     * @param {Метод запроса: post или get} method 
+     * @returns {Promise запроса} 
+     */
+    function doRequest(options, method) {
+        if (undefinedOrNull(options.url))
+            throw new ArgumentNullException("options.url");
+
+        var data;
+        if (typeof options.data === "function")
+            data = options.data();
+        else if (typeof options.data === "object")
+            data = options.data;
+
+
+        var url = options.url;
+        var async = (typeof options.async === "undefined") ? true : options.async;
+
+        var defer = promise.defer();
+
+        AjaxHelper.LoadContent({
+            loadUrl: url,
+            async: async,
+            postedData: data,
+            method: method,
+            successFunc: function(ajaxResult) {
+                if (Enums.hasFlag(ajaxResult.ReturnViewType, Enums.ReturnViewType.OperationFailed)) {
+                    defer.reject(ajaxResult);
+                    return;
+                }
+
+                defer.resolve(ajaxResult);
+            },
+            errorFunc: function(error) {
+                defer.reject(error);
+            }
+        });
+
+        return defer.promise;
+    }
+
+    /**
+     * Post - запрос на сервер, используя AjaxHelper, с возвращением promise
+     * @param {options.url - обязательно, options.data - объект или функция возвращающая объект, options.async - false, если надо выполнить синхронно, по умолчанию true} options 
+     * @returns {Promise запроса} 
+     */
+    function post(options) {
+        return doRequest(options, "POST");
+    }
+
+    /**
+     * Get - запрос на сервер, используя AjaxHelper, с возвращением promise
+     * @param {options.url - обязательно, options.data - объект или функция возвращающая объект, options.async - false, если надо выполнить синхронно, по умолчанию true} options 
+     * @returns {Promise запроса} 
+     */
+    function get(options) {
+        return doRequest(options, "GET");
+    }
+
+    /**
+     * Конвертация json-объекта, полученного с сервера и сформированного с помощью библиотеки NewtonsoftJson в нормальный javascript-объект
+     * @param {} json 
+     * @returns {} 
+     */
+    function FixObjectFromNewtonsoftJson(json) {
+        if (typeof json === "undefined" || json === null)
+            return null;
+
+        var json = json;
+        var rawObject = angular.fromJson(json);
+        var items = new Array();
+
+        function getObjectByIndex(index) {
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].index === index)
+                    return items[i].obj;
+            }
+
+            throw new Error("Index " + index + " out of range");
+        }
+
+        function searchForItems(raw) {
+            if (raw === null)
+                return;
+
+            var properties = Object.getOwnPropertyNames(raw);
+
+            properties.forEach(function(property) {
+                if (property === "$id") {
+                    items.push(new ObjectItem(raw[property], raw));
+                    return;
+                }
+
+                if (Array.isArray(raw[property])) {
+                    raw[property].forEach(function(item) {
+                        searchForItems(item);
+                    });
+                    return;
+                }
+
+                if (typeof raw[property] === "object") {
+                    searchForItems(raw[property]);
+                    return;
+                }
+            });
+        };
+
+        function setItemsToReferences(raw) {
+            if (raw == null)
+                throw new Error("Raw object must be not null");
+
+            var properties = Object.getOwnPropertyNames(raw);
+            properties.forEach(function(property) {
+                if (Array.isArray(raw[property])) {
+                    raw[property].forEach(function(item) {
+                        setItemsToReferences(item);
+                    });
+
+                    return;
+                }
+
+                if (typeof raw[property] === "object") {
+                    if (raw[property] == null)
+                        return;
+
+                    if (isReference(raw[property])) {
+                        var index = raw[property].$ref;
+                        raw[property] = getObjectByIndex(index);
+                        return;
+                    }
+
+                    setItemsToReferences(raw[property]);
+                }
+            });
+        }
+
+        function isReference(obj) {
+            if (obj == null)
+                return false;
+
+            var properties = Object.getOwnPropertyNames(obj);
+            return properties[0] === "$ref" && properties.length === 1;
+        }
+
+        searchForItems(rawObject);
+        setItemsToReferences(rawObject);
+
+        return rawObject;
+    }
+
+    /**
+     * Конвертация javascript-объекта в объект формата NewtonsoftJson
+     * @param {} raw 
+     * @returns {} 
+     */
+    function FixObjectToNewtonsoftJson(obj) {
+        var items = new Array();
+
+        function fix(obj) {
+//            if (!obj.hasOwnProperty("$id"))
+//                return obj;
+
+            if (items.indexOf(obj) !== -1) {
+                return {
+                    $ref: obj.$id
+                };
+            }
+            if (obj.hasOwnProperty("$id"))
+                items.push(obj);
+
+            var properties = Object.getOwnPropertyNames(obj);
+            properties.forEach(function(property) {
+                if (obj[property] == null)
+                    return;
+
+                if (Array.isArray(obj[property])) {
+                    obj[property].forEach(function(item, index, arr) {
+                        arr[index] = fix(item);
+                    });
+
+                    return;
+                }
+
+                if (typeof obj[property] === "object") {
+                    obj[property] = fix(obj[property]);
+                }
+            });
+
+            return obj;
+        }
+
+        return fix(obj);
+    }
+
+    /**
+     * Полное клонирование объекта
+     * @param {} obj 
+     * @returns {} 
+     */
+    function cloneObject(obj) {
+        var clonedObjects = [];
+
+        function ClonedObject(obj, clone) {
+            this.obj = obj;
+            this.clone = clone;
+        }
+
+        function getFromCache(obj) {
+            for (var i = 0; i < clonedObjects.length; i++) {
+                if (clonedObjects[i].obj == obj)
+                    return clonedObjects[i].clone;
+            }
+
+            return null;
+        }
+
+        function cloneRecursiveObject(obj) {
+            if (undefinedOrNull(obj))
+                return null;
+
+            if (typeof obj == "boolean" || typeof obj == "number" || typeof obj == "string") {
+                return obj;
+            }
+
+            if (Array.isArray(obj)) {
+                var clone = [];
+                for (var i = 0; i < obj.length; i++) {
+                    clone.push(cloneRecursiveObject(obj[i]));
+                }
+
+                return clone;
+            }
+            var cloneFromCache = getFromCache(obj);
+            if (cloneFromCache != null)
+                return cloneFromCache;
+
+            var clone = {};
+            clonedObjects.push(new ClonedObject(obj, clone));
+            for (var item in obj) {
+                //            if (!obj.hasOwnProperty(item))
+                //                continue;
+
+                clone[item] = cloneRecursiveObject(obj[item]);
+            }
+
+            return clone;
+        }
+
+        return cloneRecursiveObject(obj);
+    }
+
+    /**
+     * Сравнение двух объектов любого типа. Не означает, что объект obj1 не обязательно должен быть абсолютно равен объекту obj2, 
+     * главное, чтобы в obj2 имелись такие же свойства как и в obj1 и имели такое же значение.
+     * @param {} obj1 
+     * @param {} obj2 
+     * @returns {Возвращает true, если obj1 идентичен obj2. } 
+     */
+    function objectEquals(obj1, obj2) {
+        var checkedObjects = [];
+
+        /**
+         * Проверка (по ссылке), что объект уже содержится в кеше проверенных объектов
+         * @param {} obj 
+         * @returns {} 
+         */
+        function isCheckedObject(obj) {
+            for (var i = 0; i < checkedObjects.length; i++) {
+                if (checkedObjects[i] == obj)
+                    return true;
+            }
+
+            return false;
+        }
+
+        /**
+         * Рекурсивное сравнение двух объектов
+         * @param {} obj1 
+         * @param {} obj2 
+         * @returns {} 
+         */
+        function recursiveObjectEquals(obj1, obj2) {
+            if (typeof obj1 == "undefined" || typeof obj2 == "undefined")
+                return false;
+
+            if (obj1 == null)
+                if (obj2 == null)
+                    return true;
+                else {
+                    return false;
+                }
+
+            if (typeof obj1 == "function")
+                if (typeof obj2 == "function")
+                    return obj1.toString() === obj2.toString();
+                else {
+                    return false;
+                }
+
+            if (typeof obj1 == "number" || typeof obj1 == "boolean" || typeof obj1 == "string")
+                return obj1 === obj2;
+
+            if (isCheckedObject(obj1))
+                return true;
+
+            checkedObjects.push(obj1);
+            for (var item in obj1) {
+                if (obj1.hasOwnProperty(item)) {
+                    if (!recursiveObjectEquals(obj1[item], obj2[item]))
+                        return false;
+                }
+            }
+
+            return true;
+        }
+
+        return recursiveObjectEquals(obj1, obj2);
+    }
+
+    return {
+        $get: ["$q", function(q) {
+            promise = q;
+            return {
+                FixObjectFromJson: function(json) {
+                    return FixObjectFromNewtonsoftJson(json);
+                },
+                FixCircularReferenceAsNewtonsoftJson: function(obj) {
+                    return FixObjectToNewtonsoftJson(obj);
+                },
+                undefinedOrNull: undefinedOrNull,
+                post: post,
+                get: get,
+                throw: {
+                    ArgumentNullException: function() {
+//                        throw new ArgumentNullException(arguments);
+                        throw new (ArgumentNullException.bind.apply(arguments));
+                    },
+                    ArgumentException: function() {
+//                        throw new ArgumentException(arguments);
+                        throw new (ArgumentException.bind.apply(arguments));
+                    }
+                },
+                cloneObject: cloneObject,
+                objectEquals: objectEquals,
+                angularpromise: promise
+            };
+        }]
+    };
+};
+
+itisExports.providers.UtilsProvider = UtilsProvider;

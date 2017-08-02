@@ -1,0 +1,25 @@
+﻿<div ng-controller="AdminPanelController">
+        <div layout="row">
+            <div flex="40">
+           
+                <md-nav-bar nav-bar-aria-label="leftpanel" md-selected-nav-item="selectedNavItem">
+                    <md-nav-item md-nav-sref="users" name="users">Пользователи</md-nav-item>
+                    <md-nav-item md-nav-sref="groups" name="groups">Группы</md-nav-item>
+                    <md-nav-item md-nav-sref="roles" name="roles">Роли</md-nav-item>
+                </md-nav-bar>
+                
+                <ui-view></ui-view>
+            </div>
+            <md-divider vertical></md-divider>
+            <div flex>
+                <md-nav-bar nav-bar-aria-label="rightpanel" md-selected-nav-item="profileSelectedNavItem">
+                    <md-nav-item md-nav-click="profileTabSelect(tab)" ng-repeat="tab in tabs.current">{{tab.name}}</md-nav-item>
+                </md-nav-bar>
+                <div>
+                    <md-content class="md-padding">
+                        <ui-view ng-repeat="tab in tabs.current" name="tab{{$index}}" ng-if="tab.active"></ui-view>
+                    </md-content>
+                </div>
+            </div>
+        </div>       
+</div>

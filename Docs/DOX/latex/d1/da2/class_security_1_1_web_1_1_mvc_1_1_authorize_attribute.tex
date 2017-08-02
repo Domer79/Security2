@@ -1,0 +1,199 @@
+\hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute}{}\section{Класс Security.\+Web.\+Mvc.\+Authorize\+Attribute}
+\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute}\index{Security.\+Web.\+Mvc.\+Authorize\+Attribute@{Security.\+Web.\+Mvc.\+Authorize\+Attribute}}
+
+
+Абстрактный класс атрибута авторизации. Осуществляет проверку авторизации пользователя  
+
+
+Граф наследования\+:Security.\+Web.\+Mvc.\+Authorize\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.537765cm]{d1/da2/class_security_1_1_web_1_1_mvc_1_1_authorize_attribute}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_ae216cd1b433a5b95fd9d3cefbc32cf31}{On\+Authorization} (Authorization\+Context filter\+Context)
+\begin{DoxyCompactList}\small\item\em Вызывается, когда для запроса требуется авторизация. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a78be6f5f0073324063ec70c0e850d61c}{Get\+Object\+Name} (string controller)
+\begin{DoxyCompactList}\small\item\em Формирует наименование \char`\"{}объекта безопасности\char`\"{} по умолчанию \char`\"{}\+Controller\+Name\char`\"{} \end{DoxyCompactList}\item 
+static string \hyperlink{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a41f2910783bad96b5201ad207ffe5e1f}{Get\+Object\+Name} (string controller, string action)
+\begin{DoxyCompactList}\small\item\em Формирует наименование \char`\"{}объекта безопасности\char`\"{} по умолчанию \char`\"{}\+Controller\+Name + Action\+Name\char`\"{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a7291b9af182ab5b7437ca6c8c4935af4}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a7291b9af182ab5b7437ca6c8c4935af4}} 
+{\bfseries Authorize\+Attribute} (string application\+Name)
+\item 
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a07769e4ae4f7aa1d86083ede194da833}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a07769e4ae4f7aa1d86083ede194da833}} 
+{\bfseries Authorize\+Attribute} (Assembly call\+Assembly)
+\item 
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_ac7b8810d26197ea93667aafe8e51a583}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_ac7b8810d26197ea93667aafe8e51a583}} 
+override bool {\bfseries Authorize\+Core} (Http\+Context\+Base http\+Context)
+\item 
+abstract Action\+Result \hyperlink{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a43392ad3d231ebb4f2e6aff6fe177029}{Get\+Not\+Allow\+View\+Result} ()
+\begin{DoxyCompactList}\small\item\em Возвращает страницу с сообщением об ошибке на обычный http запрос \end{DoxyCompactList}\item 
+abstract Action\+Result \hyperlink{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a380e0f412224bcd403e951faf3bae577}{Get\+Not\+Allow\+Ajax\+Result} ()
+\begin{DoxyCompactList}\small\item\em Возвращает сообщение об ошибки на A\+J\+AX запрос, задействуется только если в заголовке запроса присутствует атрибут Xml\+Http\+Request \end{DoxyCompactList}\item 
+override Http\+Validation\+Status \hyperlink{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a4f2d79c5650a37b2ca66c70924cce936}{On\+Cache\+Authorization} (Http\+Context\+Base http\+Context)
+\begin{DoxyCompactList}\small\item\em Called when the caching module requests authorization. Реализовать в случае необходимости \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a40d355c64a1d66cbab8b54f1fb67ad4f}{Object\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Наименование объекта безопасности, для которого требуется запрашивать разрешение на доступ \end{DoxyCompactList}\item 
+string \hyperlink{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a7bc431c58d3c8410ba8d3e32972eca39}{Access\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Тип доступа для объекта безопасности \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Абстрактный класс атрибута авторизации. Осуществляет проверку авторизации пользователя 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a380e0f412224bcd403e951faf3bae577}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a380e0f412224bcd403e951faf3bae577}} 
+\index{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}!Get\+Not\+Allow\+Ajax\+Result@{Get\+Not\+Allow\+Ajax\+Result}}
+\index{Get\+Not\+Allow\+Ajax\+Result@{Get\+Not\+Allow\+Ajax\+Result}!Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{Get\+Not\+Allow\+Ajax\+Result()}{GetNotAllowAjaxResult()}}
+{\footnotesize\ttfamily abstract Action\+Result Security.\+Web.\+Mvc.\+Authorize\+Attribute.\+Get\+Not\+Allow\+Ajax\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Возвращает сообщение об ошибки на A\+J\+AX запрос, задействуется только если в заголовке запроса присутствует атрибут Xml\+Http\+Request 
+
+\begin{DoxyReturn}{Возвращает}
+Сообщение в формате J\+S\+ON, X\+ML или в любых других форматах
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_manager_1_1_attributes_1_1_security_authorize_attribute_a714bab2b66d43e8266323741eb6c9853}{Security.\+Manager.\+Attributes.\+Security\+Authorize\+Attribute}.
+
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a43392ad3d231ebb4f2e6aff6fe177029}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a43392ad3d231ebb4f2e6aff6fe177029}} 
+\index{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}!Get\+Not\+Allow\+View\+Result@{Get\+Not\+Allow\+View\+Result}}
+\index{Get\+Not\+Allow\+View\+Result@{Get\+Not\+Allow\+View\+Result}!Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{Get\+Not\+Allow\+View\+Result()}{GetNotAllowViewResult()}}
+{\footnotesize\ttfamily abstract Action\+Result Security.\+Web.\+Mvc.\+Authorize\+Attribute.\+Get\+Not\+Allow\+View\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Возвращает страницу с сообщением об ошибке на обычный http запрос 
+
+\begin{DoxyReturn}{Возвращает}
+Action\+Result
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_manager_1_1_attributes_1_1_security_authorize_attribute_a49eb91d14a4298c341d6afd66a5848ff}{Security.\+Manager.\+Attributes.\+Security\+Authorize\+Attribute}.
+
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a78be6f5f0073324063ec70c0e850d61c}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a78be6f5f0073324063ec70c0e850d61c}} 
+\index{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}!Get\+Object\+Name@{Get\+Object\+Name}}
+\index{Get\+Object\+Name@{Get\+Object\+Name}!Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{Get\+Object\+Name()}{GetObjectName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static string Security.\+Web.\+Mvc.\+Authorize\+Attribute.\+Get\+Object\+Name (\begin{DoxyParamCaption}\item[{string}]{controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Формирует наименование \char`\"{}объекта безопасности\char`\"{} по умолчанию \char`\"{}\+Controller\+Name\char`\"{} 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em controller} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a41f2910783bad96b5201ad207ffe5e1f}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a41f2910783bad96b5201ad207ffe5e1f}} 
+\index{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}!Get\+Object\+Name@{Get\+Object\+Name}}
+\index{Get\+Object\+Name@{Get\+Object\+Name}!Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{Get\+Object\+Name()}{GetObjectName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static string Security.\+Web.\+Mvc.\+Authorize\+Attribute.\+Get\+Object\+Name (\begin{DoxyParamCaption}\item[{string}]{controller,  }\item[{string}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Формирует наименование \char`\"{}объекта безопасности\char`\"{} по умолчанию \char`\"{}\+Controller\+Name + Action\+Name\char`\"{} 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em controller} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_ae216cd1b433a5b95fd9d3cefbc32cf31}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_ae216cd1b433a5b95fd9d3cefbc32cf31}} 
+\index{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}!On\+Authorization@{On\+Authorization}}
+\index{On\+Authorization@{On\+Authorization}!Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{On\+Authorization()}{OnAuthorization()}}
+{\footnotesize\ttfamily override void Security.\+Web.\+Mvc.\+Authorize\+Attribute.\+On\+Authorization (\begin{DoxyParamCaption}\item[{Authorization\+Context}]{filter\+Context }\end{DoxyParamCaption})}
+
+
+
+Вызывается, когда для запроса требуется авторизация. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filter\+Context} & The filter context, which encapsulates information for using T\+:\+System.\+Web.\+Mvc.\+Authorize\+Attribute.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Argument\+Null\+Exception} & The {\itshape filter\+Context}  parameter is null.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a4f2d79c5650a37b2ca66c70924cce936}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a4f2d79c5650a37b2ca66c70924cce936}} 
+\index{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}!On\+Cache\+Authorization@{On\+Cache\+Authorization}}
+\index{On\+Cache\+Authorization@{On\+Cache\+Authorization}!Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{On\+Cache\+Authorization()}{OnCacheAuthorization()}}
+{\footnotesize\ttfamily override Http\+Validation\+Status Security.\+Web.\+Mvc.\+Authorize\+Attribute.\+On\+Cache\+Authorization (\begin{DoxyParamCaption}\item[{Http\+Context\+Base}]{http\+Context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Called when the caching module requests authorization. Реализовать в случае необходимости 
+
+\begin{DoxyReturn}{Возвращает}
+A reference to the validation status. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em http\+Context} & The H\+T\+TP context, which encapsulates all H\+T\+T\+P-\/specific information about an individual H\+T\+TP request.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Argument\+Null\+Exception} & The {\itshape http\+Context}  parameter is null.\\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a7bc431c58d3c8410ba8d3e32972eca39}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a7bc431c58d3c8410ba8d3e32972eca39}} 
+\index{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}!Access\+Type@{Access\+Type}}
+\index{Access\+Type@{Access\+Type}!Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{Access\+Type}{AccessType}}
+{\footnotesize\ttfamily string Security.\+Web.\+Mvc.\+Authorize\+Attribute.\+Access\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Тип доступа для объекта безопасности 
+
+\mbox{\Hypertarget{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a40d355c64a1d66cbab8b54f1fb67ad4f}\label{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute_a40d355c64a1d66cbab8b54f1fb67ad4f}} 
+\index{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}!Object\+Name@{Object\+Name}}
+\index{Object\+Name@{Object\+Name}!Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Mvc\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{Object\+Name}{ObjectName}}
+{\footnotesize\ttfamily string Security.\+Web.\+Mvc.\+Authorize\+Attribute.\+Object\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Наименование объекта безопасности, для которого требуется запрашивать разрешение на доступ 
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Web/\+Mvc/Authorize\+Attribute.\+cs\end{DoxyCompactItemize}

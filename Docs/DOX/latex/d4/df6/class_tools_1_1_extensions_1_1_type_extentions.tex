@@ -1,0 +1,156 @@
+\hypertarget{class_tools_1_1_extensions_1_1_type_extentions}{}\section{Класс Tools.\+Extensions.\+Type\+Extentions}
+\label{class_tools_1_1_extensions_1_1_type_extentions}\index{Tools.\+Extensions.\+Type\+Extentions@{Tools.\+Extensions.\+Type\+Extentions}}
+\subsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static I\+Enumerable$<$ Type $>$ \hyperlink{class_tools_1_1_extensions_1_1_type_extentions_ac6091e29fcbbba209a3d8cd7777ff9b1}{Get\+Parent\+Types} (this Type type)
+\begin{DoxyCompactList}\small\item\em Возвращает иерархию типов в виде коллекции, от которой унаследован исходный тип \end{DoxyCompactList}\item 
+static bool \hyperlink{class_tools_1_1_extensions_1_1_type_extentions_a017a96cb151575a7764579ca8e229361}{Is} (this Type type, Type parent\+Type)
+\begin{DoxyCompactList}\small\item\em Проверяет наследствие типов \end{DoxyCompactList}\item 
+static bool \hyperlink{class_tools_1_1_extensions_1_1_type_extentions_abc962196a457621d9b9bad1498cd0903}{Is} (this object @object, Type parent\+Type)
+\begin{DoxyCompactList}\small\item\em Проверяет наследствие типов для исходного объекта \end{DoxyCompactList}\item 
+static bool \hyperlink{class_tools_1_1_extensions_1_1_type_extentions_a180b1ab0f9c050aac47501f8c4973936}{Is$<$ T $>$} (this Type type)
+\begin{DoxyCompactList}\small\item\em Проверяет наследствие типов \end{DoxyCompactList}\item 
+static bool \hyperlink{class_tools_1_1_extensions_1_1_type_extentions_a7b5dcdb969ae0f6b19dedbfd4f21df64}{Is$<$ T $>$} (this object @object)
+\begin{DoxyCompactList}\small\item\em Проверяет наследствие типов для исходного объекта \end{DoxyCompactList}\item 
+static T \hyperlink{class_tools_1_1_extensions_1_1_type_extentions_afebefec48afd27496ef33e4428cdd632}{As$<$ T $>$} (this object @object)
+\begin{DoxyCompactList}\small\item\em Приводит исходный объект к заданному типу \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_type_extentions_afebefec48afd27496ef33e4428cdd632}\label{class_tools_1_1_extensions_1_1_type_extentions_afebefec48afd27496ef33e4428cdd632}} 
+\index{Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}!As$<$ T $>$@{As$<$ T $>$}}
+\index{As$<$ T $>$@{As$<$ T $>$}!Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}}
+\subsubsection{\texorpdfstring{As$<$ T $>$()}{As< T >()}}
+{\footnotesize\ttfamily static T Tools.\+Extensions.\+Type\+Extentions.\+As$<$ T $>$ (\begin{DoxyParamCaption}\item[{this object @}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Приводит исходный объект к заданному типу 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип, к которому предлагается привести объект\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em object} & Исходный объект\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Если тип заданного объекта не принадлежит к заданному возвращается null
+\end{DoxyReturn}
+\begin{Desc}
+\item[Согласование типов]\begin{description}
+\item[{\em T} : {\em class}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_type_extentions_ac6091e29fcbbba209a3d8cd7777ff9b1}\label{class_tools_1_1_extensions_1_1_type_extentions_ac6091e29fcbbba209a3d8cd7777ff9b1}} 
+\index{Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}!Get\+Parent\+Types@{Get\+Parent\+Types}}
+\index{Get\+Parent\+Types@{Get\+Parent\+Types}!Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}}
+\subsubsection{\texorpdfstring{Get\+Parent\+Types()}{GetParentTypes()}}
+{\footnotesize\ttfamily static I\+Enumerable$<$Type$>$ Tools.\+Extensions.\+Type\+Extentions.\+Get\+Parent\+Types (\begin{DoxyParamCaption}\item[{this Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Возвращает иерархию типов в виде коллекции, от которой унаследован исходный тип 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em type} & Исходный тип\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_type_extentions_a017a96cb151575a7764579ca8e229361}\label{class_tools_1_1_extensions_1_1_type_extentions_a017a96cb151575a7764579ca8e229361}} 
+\index{Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}!Is@{Is}}
+\index{Is@{Is}!Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}}
+\subsubsection{\texorpdfstring{Is()}{Is()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Tools.\+Extensions.\+Type\+Extentions.\+Is (\begin{DoxyParamCaption}\item[{this Type}]{type,  }\item[{Type}]{parent\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Проверяет наследствие типов 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em type} & Исходный тип\\
+\hline
+{\em parent\+Type} & Преполагаемый родительский тип\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_type_extentions_abc962196a457621d9b9bad1498cd0903}\label{class_tools_1_1_extensions_1_1_type_extentions_abc962196a457621d9b9bad1498cd0903}} 
+\index{Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}!Is@{Is}}
+\index{Is@{Is}!Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}}
+\subsubsection{\texorpdfstring{Is()}{Is()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Tools.\+Extensions.\+Type\+Extentions.\+Is (\begin{DoxyParamCaption}\item[{this object @}]{object,  }\item[{Type}]{parent\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Проверяет наследствие типов для исходного объекта 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em object} & Исходный объект\\
+\hline
+{\em parent\+Type} & Преполагаемый родительский тип\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_type_extentions_a180b1ab0f9c050aac47501f8c4973936}\label{class_tools_1_1_extensions_1_1_type_extentions_a180b1ab0f9c050aac47501f8c4973936}} 
+\index{Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}!Is$<$ T $>$@{Is$<$ T $>$}}
+\index{Is$<$ T $>$@{Is$<$ T $>$}!Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}}
+\subsubsection{\texorpdfstring{Is$<$ T $>$()}{Is< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool \hyperlink{class_tools_1_1_extensions_1_1_type_extentions_a017a96cb151575a7764579ca8e229361}{Tools.\+Extensions.\+Type\+Extentions.\+Is}$<$ T $>$ (\begin{DoxyParamCaption}\item[{this Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Проверяет наследствие типов 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em type} & Исходный тип\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Преполагаемый родительский тип\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_type_extentions_a7b5dcdb969ae0f6b19dedbfd4f21df64}\label{class_tools_1_1_extensions_1_1_type_extentions_a7b5dcdb969ae0f6b19dedbfd4f21df64}} 
+\index{Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}!Is$<$ T $>$@{Is$<$ T $>$}}
+\index{Is$<$ T $>$@{Is$<$ T $>$}!Tools\+::\+Extensions\+::\+Type\+Extentions@{Tools\+::\+Extensions\+::\+Type\+Extentions}}
+\subsubsection{\texorpdfstring{Is$<$ T $>$()}{Is< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool \hyperlink{class_tools_1_1_extensions_1_1_type_extentions_a017a96cb151575a7764579ca8e229361}{Tools.\+Extensions.\+Type\+Extentions.\+Is}$<$ T $>$ (\begin{DoxyParamCaption}\item[{this object @}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Проверяет наследствие типов для исходного объекта 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em object} & Исходный объект\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Преполагаемый родительский тип\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Tools/\+Extensions/Type\+Extentions.\+cs\end{DoxyCompactItemize}

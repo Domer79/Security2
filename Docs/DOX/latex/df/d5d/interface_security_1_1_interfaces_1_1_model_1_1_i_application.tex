@@ -1,0 +1,92 @@
+\hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{}\section{Интерфейс Security.\+Interfaces.\+Model.\+I\+Application}
+\label{interface_security_1_1_interfaces_1_1_model_1_1_i_application}\index{Security.\+Interfaces.\+Model.\+I\+Application@{Security.\+Interfaces.\+Model.\+I\+Application}}
+
+
+Приложение  
+
+
+Граф наследования\+:Security.\+Interfaces.\+Model.\+I\+Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{df/d5d/interface_security_1_1_interfaces_1_1_model_1_1_i_application}
+\end{center}
+\end{figure}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_application_ad01f3322f6125fb88e359ec483c686a4}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_application_ad01f3322f6125fb88e359ec483c686a4}} 
+int {\bfseries Id\+Application}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application_a9bd4a564a9e6a2d8a74256392dcdfbaa}{App\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Имя приложения. Является первичным ключов в БД \end{DoxyCompactList}\item 
+string \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application_a7f35957643f86f7839c00703c8b918d1}{Description}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Описание \end{DoxyCompactList}\item 
+I\+List$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_role}{I\+Role} $>$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application_a0be854668c5fa137e9be605ab726adea}{Roles}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Список ролей приложения \end{DoxyCompactList}\item 
+I\+List$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_sec_object}{I\+Sec\+Object} $>$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application_ac70d468d5bc97965451c57ccf8d79faa}{Sec\+Objects}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Список объектов безопасности приложения \end{DoxyCompactList}\item 
+I\+List$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{I\+Access\+Type} $>$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application_ae568bb4ca755567fe1ef6bea84f9c979}{Access\+Types}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Список типов доступа приложения \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Приложение 
+
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_application_ae568bb4ca755567fe1ef6bea84f9c979}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_application_ae568bb4ca755567fe1ef6bea84f9c979}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application}!Access\+Types@{Access\+Types}}
+\index{Access\+Types@{Access\+Types}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Application@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application}}
+\subsubsection{\texorpdfstring{Access\+Types}{AccessTypes}}
+{\footnotesize\ttfamily I\+List$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{I\+Access\+Type}$>$ Security.\+Interfaces.\+Model.\+I\+Application.\+Access\+Types\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Список типов доступа приложения 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_application_a9bd4a564a9e6a2d8a74256392dcdfbaa}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_application_a9bd4a564a9e6a2d8a74256392dcdfbaa}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application}!App\+Name@{App\+Name}}
+\index{App\+Name@{App\+Name}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Application@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application}}
+\subsubsection{\texorpdfstring{App\+Name}{AppName}}
+{\footnotesize\ttfamily string Security.\+Interfaces.\+Model.\+I\+Application.\+App\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Имя приложения. Является первичным ключов в БД 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_application_a7f35957643f86f7839c00703c8b918d1}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_application_a7f35957643f86f7839c00703c8b918d1}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application}!Description@{Description}}
+\index{Description@{Description}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Application@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application}}
+\subsubsection{\texorpdfstring{Description}{Description}}
+{\footnotesize\ttfamily string Security.\+Interfaces.\+Model.\+I\+Application.\+Description\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Описание 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_application_a0be854668c5fa137e9be605ab726adea}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_application_a0be854668c5fa137e9be605ab726adea}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application}!Roles@{Roles}}
+\index{Roles@{Roles}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Application@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application}}
+\subsubsection{\texorpdfstring{Roles}{Roles}}
+{\footnotesize\ttfamily I\+List$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_role}{I\+Role}$>$ Security.\+Interfaces.\+Model.\+I\+Application.\+Roles\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Список ролей приложения 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_application_ac70d468d5bc97965451c57ccf8d79faa}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_application_ac70d468d5bc97965451c57ccf8d79faa}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application}!Sec\+Objects@{Sec\+Objects}}
+\index{Sec\+Objects@{Sec\+Objects}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Application@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Application}}
+\subsubsection{\texorpdfstring{Sec\+Objects}{SecObjects}}
+{\footnotesize\ttfamily I\+List$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_sec_object}{I\+Sec\+Object}$>$ Security.\+Interfaces.\+Model.\+I\+Application.\+Sec\+Objects\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Список объектов безопасности приложения 
+
+
+
+Объявления и описания членов интерфейса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Interfaces/\+Model/I\+Application.\+cs\end{DoxyCompactItemize}

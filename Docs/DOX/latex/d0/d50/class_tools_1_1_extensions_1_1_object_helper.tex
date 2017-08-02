@@ -1,0 +1,143 @@
+\hypertarget{class_tools_1_1_extensions_1_1_object_helper}{}\section{Класс Tools.\+Extensions.\+Object\+Helper}
+\label{class_tools_1_1_extensions_1_1_object_helper}\index{Tools.\+Extensions.\+Object\+Helper@{Tools.\+Extensions.\+Object\+Helper}}
+\subsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{class_tools_1_1_extensions_1_1_object_helper_abd2c46ca419822530e491486a73cd0e4}{Serialize} (this object @object)
+\begin{DoxyCompactList}\small\item\em Сериализует объект в бинарный формат \end{DoxyCompactList}\item 
+static string \hyperlink{class_tools_1_1_extensions_1_1_object_helper_ac2cdaa919baa35f0cc0e69761e04c86b}{Serialize\+To\+String} (this object @object)
+\begin{DoxyCompactList}\small\item\em Сериализует объект в бинарный формат и возвращает полученный массив байтов в виде строки \end{DoxyCompactList}\item 
+static T \hyperlink{class_tools_1_1_extensions_1_1_object_helper_a504eb45071b2c1ed166f7901d8f24b4f}{Deserialize\+From\+String$<$ T $>$} (string data)
+\begin{DoxyCompactList}\small\item\em Десериализует объект из входной строки \end{DoxyCompactList}\item 
+static object \hyperlink{class_tools_1_1_extensions_1_1_object_helper_a2dd94da1024292cb58b13470fa6098ea}{Deserialize\+From\+String} (string data)
+\begin{DoxyCompactList}\small\item\em Десериализует объект из входной строки \end{DoxyCompactList}\item 
+static T \hyperlink{class_tools_1_1_extensions_1_1_object_helper_a02cf5ec56eebde420b8baa225a04e83d}{Deserialize$<$ T $>$} (byte\mbox{[}$\,$\mbox{]} data)
+\begin{DoxyCompactList}\small\item\em Десериализует объект из массива байтов \end{DoxyCompactList}\item 
+static object \hyperlink{class_tools_1_1_extensions_1_1_object_helper_a1f1a9f90cbeb2e866dd5cf84c454240d}{Deserialize} (byte\mbox{[}$\,$\mbox{]} data)
+\begin{DoxyCompactList}\small\item\em Десериализует объект из массива байтов \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_object_helper_a1f1a9f90cbeb2e866dd5cf84c454240d}\label{class_tools_1_1_extensions_1_1_object_helper_a1f1a9f90cbeb2e866dd5cf84c454240d}} 
+\index{Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily static object Tools.\+Extensions.\+Object\+Helper.\+Deserialize (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Десериализует объект из массива байтов 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Массив байтов\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_object_helper_a02cf5ec56eebde420b8baa225a04e83d}\label{class_tools_1_1_extensions_1_1_object_helper_a02cf5ec56eebde420b8baa225a04e83d}} 
+\index{Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}!Deserialize$<$ T $>$@{Deserialize$<$ T $>$}}
+\index{Deserialize$<$ T $>$@{Deserialize$<$ T $>$}!Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}}
+\subsubsection{\texorpdfstring{Deserialize$<$ T $>$()}{Deserialize< T >()}}
+{\footnotesize\ttfamily static T \hyperlink{class_tools_1_1_extensions_1_1_object_helper_a1f1a9f90cbeb2e866dd5cf84c454240d}{Tools.\+Extensions.\+Object\+Helper.\+Deserialize}$<$ T $>$ (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Десериализует объект из массива байтов 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип объектка\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Массив байтов\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_object_helper_a2dd94da1024292cb58b13470fa6098ea}\label{class_tools_1_1_extensions_1_1_object_helper_a2dd94da1024292cb58b13470fa6098ea}} 
+\index{Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}!Deserialize\+From\+String@{Deserialize\+From\+String}}
+\index{Deserialize\+From\+String@{Deserialize\+From\+String}!Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}}
+\subsubsection{\texorpdfstring{Deserialize\+From\+String()}{DeserializeFromString()}}
+{\footnotesize\ttfamily static object Tools.\+Extensions.\+Object\+Helper.\+Deserialize\+From\+String (\begin{DoxyParamCaption}\item[{string}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Десериализует объект из входной строки 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Входная строка -\/ объект, представленный в виде строки\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Экземпляр объекта
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_object_helper_a504eb45071b2c1ed166f7901d8f24b4f}\label{class_tools_1_1_extensions_1_1_object_helper_a504eb45071b2c1ed166f7901d8f24b4f}} 
+\index{Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}!Deserialize\+From\+String$<$ T $>$@{Deserialize\+From\+String$<$ T $>$}}
+\index{Deserialize\+From\+String$<$ T $>$@{Deserialize\+From\+String$<$ T $>$}!Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}}
+\subsubsection{\texorpdfstring{Deserialize\+From\+String$<$ T $>$()}{DeserializeFromString< T >()}}
+{\footnotesize\ttfamily static T \hyperlink{class_tools_1_1_extensions_1_1_object_helper_a2dd94da1024292cb58b13470fa6098ea}{Tools.\+Extensions.\+Object\+Helper.\+Deserialize\+From\+String}$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Десериализует объект из входной строки 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип объекта\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Входная строка -\/ объект, представленный в виде строки\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Экземпляр объекта
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_object_helper_abd2c46ca419822530e491486a73cd0e4}\label{class_tools_1_1_extensions_1_1_object_helper_abd2c46ca419822530e491486a73cd0e4}} 
+\index{Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} Tools.\+Extensions.\+Object\+Helper.\+Serialize (\begin{DoxyParamCaption}\item[{this object @}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Сериализует объект в бинарный формат 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em object} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Массив байтов
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_object_helper_ac2cdaa919baa35f0cc0e69761e04c86b}\label{class_tools_1_1_extensions_1_1_object_helper_ac2cdaa919baa35f0cc0e69761e04c86b}} 
+\index{Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}!Serialize\+To\+String@{Serialize\+To\+String}}
+\index{Serialize\+To\+String@{Serialize\+To\+String}!Tools\+::\+Extensions\+::\+Object\+Helper@{Tools\+::\+Extensions\+::\+Object\+Helper}}
+\subsubsection{\texorpdfstring{Serialize\+To\+String()}{SerializeToString()}}
+{\footnotesize\ttfamily static string Tools.\+Extensions.\+Object\+Helper.\+Serialize\+To\+String (\begin{DoxyParamCaption}\item[{this object @}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Сериализует объект в бинарный формат и возвращает полученный массив байтов в виде строки 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em object} & Объект для сериализации\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Сериализованная строка
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Tools/\+Extensions/Object\+Helper.\+cs\end{DoxyCompactItemize}

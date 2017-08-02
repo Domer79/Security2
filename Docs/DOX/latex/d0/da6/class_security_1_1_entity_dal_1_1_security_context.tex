@@ -1,0 +1,141 @@
+\hypertarget{class_security_1_1_entity_dal_1_1_security_context}{}\section{Класс Security.\+Entity\+Dal.\+Security\+Context}
+\label{class_security_1_1_entity_dal_1_1_security_context}\index{Security.\+Entity\+Dal.\+Security\+Context@{Security.\+Entity\+Dal.\+Security\+Context}}
+Граф наследования\+:Security.\+Entity\+Dal.\+Security\+Context\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d0/da6/class_security_1_1_entity_dal_1_1_security_context}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+override int \hyperlink{class_security_1_1_entity_dal_1_1_security_context_a61ee472223cdf5feb7372ca5e9813412}{Save\+Changes} ()
+\begin{DoxyCompactList}\small\item\em Производит сохранение всех изменений контекста в базу данных \end{DoxyCompactList}\item 
+override Task$<$ int $>$ \hyperlink{class_security_1_1_entity_dal_1_1_security_context_acaeaf0c56dcf6802fb8c0a9bd1d6cf76}{Save\+Changes\+Async} (Cancellation\+Token cancellation\+Token)
+\begin{DoxyCompactList}\small\item\em Производит асинхронное сохранение всех изменений контекста в базу данных \end{DoxyCompactList}\item 
+I\+Queryable$<$ string $>$ \hyperlink{class_security_1_1_entity_dal_1_1_security_context_a5a36dad07c6c54b8ec86c6674ed8fa24}{Get\+Security\+Objects\+For\+User\+By\+Access\+Type} (string access\+Type, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Возвращает все объекты безопасности для указанного типа доступа и приложения \end{DoxyCompactList}\item 
+I\+Queryable$<$ string $>$ \hyperlink{class_security_1_1_entity_dal_1_1_security_context_a7e1fcf7450b038382dc13d16c8a06a47}{Get\+Security\+Objects\+For\+User\+By\+Access\+Type} (string login, string access\+Type, string app\+Name, bool allow\+All)
+\begin{DoxyCompactList}\small\item\em Возвращает разрешенные для пользователя объекты безопасности для указанного типа доступа и приложения \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a827b16f5e931901bbd85eb92ad4708dd}\label{class_security_1_1_entity_dal_1_1_security_context_a827b16f5e931901bbd85eb92ad4708dd}} 
+override void {\bfseries On\+Model\+Creating} (Db\+Model\+Builder model\+Builder)
+\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_adb10fca400bb159eec181d48c708e792}\label{class_security_1_1_entity_dal_1_1_security_context_adb10fca400bb159eec181d48c708e792}} 
+virtual Db\+Set$<$ \hyperlink{class_security_1_1_model_1_1_role}{Role} $>$ {\bfseries Roles}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a9c5345e879a2ddf7bf096756df49dd92}\label{class_security_1_1_entity_dal_1_1_security_context_a9c5345e879a2ddf7bf096756df49dd92}} 
+virtual Db\+Set$<$ \hyperlink{class_security_1_1_model_1_1_access_type}{Access\+Type} $>$ {\bfseries Access\+Types}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_aad078cdcd30fa0380d0b735bc86749a8}\label{class_security_1_1_entity_dal_1_1_security_context_aad078cdcd30fa0380d0b735bc86749a8}} 
+virtual Db\+Set$<$ \hyperlink{class_security_1_1_model_1_1_sec_object}{Sec\+Object} $>$ {\bfseries Sec\+Objects}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a1af48431be3e24d90f6625e7d1470310}\label{class_security_1_1_entity_dal_1_1_security_context_a1af48431be3e24d90f6625e7d1470310}} 
+virtual Db\+Set$<$ \hyperlink{class_security_1_1_model_1_1_grant}{Grant} $>$ {\bfseries Grants}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a15da857bba0affb008518815e98910b9}\label{class_security_1_1_entity_dal_1_1_security_context_a15da857bba0affb008518815e98910b9}} 
+virtual Db\+Set$<$ \hyperlink{class_security_1_1_model_1_1_group}{Group} $>$ {\bfseries Groups}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_ab84aa6557e9dd07244e7e418be92dae9}\label{class_security_1_1_entity_dal_1_1_security_context_ab84aa6557e9dd07244e7e418be92dae9}} 
+virtual Db\+Set$<$ \hyperlink{class_security_1_1_model_1_1_user}{User} $>$ {\bfseries Users}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a6ba92c17d2f0862948f2f7b481c6edea}\label{class_security_1_1_entity_dal_1_1_security_context_a6ba92c17d2f0862948f2f7b481c6edea}} 
+virtual Db\+Set$<$ \hyperlink{class_security_1_1_model_1_1_member}{Member} $>$ {\bfseries Members}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a89d47f5c1a600d725a911fa065963a4c}\label{class_security_1_1_entity_dal_1_1_security_context_a89d47f5c1a600d725a911fa065963a4c}} 
+virtual Db\+Set$<$ \hyperlink{class_security_1_1_model_1_1_setting}{Setting} $>$ {\bfseries Settings}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a233f3335765f01d835c27d0d49c67400}\label{class_security_1_1_entity_dal_1_1_security_context_a233f3335765f01d835c27d0d49c67400}} 
+virtual Db\+Set$<$ \hyperlink{class_security_1_1_model_1_1_log}{Log} $>$ {\bfseries Logs}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a25812740fc0b48060b1f8d9e8d9b36ac}\label{class_security_1_1_entity_dal_1_1_security_context_a25812740fc0b48060b1f8d9e8d9b36ac}} 
+virtual Db\+Set$<$ \hyperlink{class_security_1_1_model_1_1_application}{Application} $>$ {\bfseries Applications}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a5a36dad07c6c54b8ec86c6674ed8fa24}\label{class_security_1_1_entity_dal_1_1_security_context_a5a36dad07c6c54b8ec86c6674ed8fa24}} 
+\index{Security\+::\+Entity\+Dal\+::\+Security\+Context@{Security\+::\+Entity\+Dal\+::\+Security\+Context}!Get\+Security\+Objects\+For\+User\+By\+Access\+Type@{Get\+Security\+Objects\+For\+User\+By\+Access\+Type}}
+\index{Get\+Security\+Objects\+For\+User\+By\+Access\+Type@{Get\+Security\+Objects\+For\+User\+By\+Access\+Type}!Security\+::\+Entity\+Dal\+::\+Security\+Context@{Security\+::\+Entity\+Dal\+::\+Security\+Context}}
+\subsubsection{\texorpdfstring{Get\+Security\+Objects\+For\+User\+By\+Access\+Type()}{GetSecurityObjectsForUserByAccessType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+Queryable$<$string$>$ Security.\+Entity\+Dal.\+Security\+Context.\+Get\+Security\+Objects\+For\+User\+By\+Access\+Type (\begin{DoxyParamCaption}\item[{string}]{access\+Type,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Возвращает все объекты безопасности для указанного типа доступа и приложения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em access\+Type} & Тип доступа\\
+\hline
+{\em app\+Name} & Имя приложения\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a7e1fcf7450b038382dc13d16c8a06a47}\label{class_security_1_1_entity_dal_1_1_security_context_a7e1fcf7450b038382dc13d16c8a06a47}} 
+\index{Security\+::\+Entity\+Dal\+::\+Security\+Context@{Security\+::\+Entity\+Dal\+::\+Security\+Context}!Get\+Security\+Objects\+For\+User\+By\+Access\+Type@{Get\+Security\+Objects\+For\+User\+By\+Access\+Type}}
+\index{Get\+Security\+Objects\+For\+User\+By\+Access\+Type@{Get\+Security\+Objects\+For\+User\+By\+Access\+Type}!Security\+::\+Entity\+Dal\+::\+Security\+Context@{Security\+::\+Entity\+Dal\+::\+Security\+Context}}
+\subsubsection{\texorpdfstring{Get\+Security\+Objects\+For\+User\+By\+Access\+Type()}{GetSecurityObjectsForUserByAccessType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+Queryable$<$string$>$ Security.\+Entity\+Dal.\+Security\+Context.\+Get\+Security\+Objects\+For\+User\+By\+Access\+Type (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{access\+Type,  }\item[{string}]{app\+Name,  }\item[{bool}]{allow\+All }\end{DoxyParamCaption})}
+
+
+
+Возвращает разрешенные для пользователя объекты безопасности для указанного типа доступа и приложения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя\\
+\hline
+{\em access\+Type} & Тип доступа\\
+\hline
+{\em app\+Name} & Имя приложения\\
+\hline
+{\em allow\+All} & Если установлено true, возвращает все объекты безопасности для указанного типа доступа и приложения, иначе только те, которые разрешены для пользователя\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_a61ee472223cdf5feb7372ca5e9813412}\label{class_security_1_1_entity_dal_1_1_security_context_a61ee472223cdf5feb7372ca5e9813412}} 
+\index{Security\+::\+Entity\+Dal\+::\+Security\+Context@{Security\+::\+Entity\+Dal\+::\+Security\+Context}!Save\+Changes@{Save\+Changes}}
+\index{Save\+Changes@{Save\+Changes}!Security\+::\+Entity\+Dal\+::\+Security\+Context@{Security\+::\+Entity\+Dal\+::\+Security\+Context}}
+\subsubsection{\texorpdfstring{Save\+Changes()}{SaveChanges()}}
+{\footnotesize\ttfamily override int Security.\+Entity\+Dal.\+Security\+Context.\+Save\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Производит сохранение всех изменений контекста в базу данных 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_security_context_acaeaf0c56dcf6802fb8c0a9bd1d6cf76}\label{class_security_1_1_entity_dal_1_1_security_context_acaeaf0c56dcf6802fb8c0a9bd1d6cf76}} 
+\index{Security\+::\+Entity\+Dal\+::\+Security\+Context@{Security\+::\+Entity\+Dal\+::\+Security\+Context}!Save\+Changes\+Async@{Save\+Changes\+Async}}
+\index{Save\+Changes\+Async@{Save\+Changes\+Async}!Security\+::\+Entity\+Dal\+::\+Security\+Context@{Security\+::\+Entity\+Dal\+::\+Security\+Context}}
+\subsubsection{\texorpdfstring{Save\+Changes\+Async()}{SaveChangesAsync()}}
+{\footnotesize\ttfamily override Task$<$int$>$ Security.\+Entity\+Dal.\+Security\+Context.\+Save\+Changes\+Async (\begin{DoxyParamCaption}\item[{Cancellation\+Token}]{cancellation\+Token }\end{DoxyParamCaption})}
+
+
+
+Производит асинхронное сохранение всех изменений контекста в базу данных 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em cancellation\+Token} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Entity\+Dal/Security\+Context.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{}\section{Интерфейс Security.\+Interfaces.\+Model.\+I\+Access\+Type}
+\label{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}\index{Security.\+Interfaces.\+Model.\+I\+Access\+Type@{Security.\+Interfaces.\+Model.\+I\+Access\+Type}}
+
+
+Тип доступа  
+
+
+Граф наследования\+:Security.\+Interfaces.\+Model.\+I\+Access\+Type\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/d50/interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}
+\end{center}
+\end{figure}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a87940a53a901cc03f83ec53030a88085}{Id\+Access\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Идентификатор типа доступа в БД \end{DoxyCompactList}\item 
+string \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_aa8be0e16d6b2256ce78150b742149bfa}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Наименование типа доступа, сопоставляется с наименованием перечислителя в клиентском ПО \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a54a86f65464f7fbbd4943377eb988b73}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a54a86f65464f7fbbd4943377eb988b73}} 
+int {\bfseries Id\+Application}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+I\+List$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} $>$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_aaf491bad6936ef7fb306fee95a7104ac}{Grants}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Список разрешений \end{DoxyCompactList}\item 
+I\+List$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_sec_object}{I\+Sec\+Object} $>$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a75b1473ae6aa9a3746aa1ebb3b1d1489}{Sec\+Objects}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Привязанные к типу доступа объекты безопасности \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a787fd183b3ad07f0e5476bebaec332cc}{Application}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Приложение \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Тип доступа 
+
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a787fd183b3ad07f0e5476bebaec332cc}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a787fd183b3ad07f0e5476bebaec332cc}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type}!Application@{Application}}
+\index{Application@{Application}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type}}
+\subsubsection{\texorpdfstring{Application}{Application}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} Security.\+Interfaces.\+Model.\+I\+Access\+Type.\+Application\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Приложение 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_aaf491bad6936ef7fb306fee95a7104ac}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_aaf491bad6936ef7fb306fee95a7104ac}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type}!Grants@{Grants}}
+\index{Grants@{Grants}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type}}
+\subsubsection{\texorpdfstring{Grants}{Grants}}
+{\footnotesize\ttfamily I\+List$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}$>$ Security.\+Interfaces.\+Model.\+I\+Access\+Type.\+Grants\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Список разрешений 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a87940a53a901cc03f83ec53030a88085}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a87940a53a901cc03f83ec53030a88085}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type}!Id\+Access\+Type@{Id\+Access\+Type}}
+\index{Id\+Access\+Type@{Id\+Access\+Type}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type}}
+\subsubsection{\texorpdfstring{Id\+Access\+Type}{IdAccessType}}
+{\footnotesize\ttfamily int Security.\+Interfaces.\+Model.\+I\+Access\+Type.\+Id\+Access\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Идентификатор типа доступа в БД 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_aa8be0e16d6b2256ce78150b742149bfa}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_aa8be0e16d6b2256ce78150b742149bfa}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type}!Name@{Name}}
+\index{Name@{Name}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily string Security.\+Interfaces.\+Model.\+I\+Access\+Type.\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Наименование типа доступа, сопоставляется с наименованием перечислителя в клиентском ПО 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a75b1473ae6aa9a3746aa1ebb3b1d1489}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type_a75b1473ae6aa9a3746aa1ebb3b1d1489}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type}!Sec\+Objects@{Sec\+Objects}}
+\index{Sec\+Objects@{Sec\+Objects}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Access\+Type}}
+\subsubsection{\texorpdfstring{Sec\+Objects}{SecObjects}}
+{\footnotesize\ttfamily I\+List$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_sec_object}{I\+Sec\+Object}$>$ Security.\+Interfaces.\+Model.\+I\+Access\+Type.\+Sec\+Objects\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Привязанные к типу доступа объекты безопасности 
+
+
+
+Объявления и описания членов интерфейса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Interfaces/\+Model/I\+Access\+Type.\+cs\end{DoxyCompactItemize}

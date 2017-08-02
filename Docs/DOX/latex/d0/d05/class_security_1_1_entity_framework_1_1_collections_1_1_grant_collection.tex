@@ -1,0 +1,561 @@
+\hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection}{}\section{Класс Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection}
+\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection}\index{Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection@{Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection}}
+
+
+Класс, представляющий собой коллекцию разрешений  
+
+
+Граф наследования\+:Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.245989cm]{d0/d05/class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+I\+Enumerator$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a87a2ed224fd199be1cedb85272fd49ef}{Get\+Enumerator} ()
+\begin{DoxyCompactList}\small\item\em Returns an enumerator that iterates through the collection. \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a5862e7e9a12c92f3657c9cc9f2757c6d}{Add} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} item)
+\begin{DoxyCompactList}\small\item\em Adds an item to the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a5364c2e3da4aeff4ae4526d368f8f6ad}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Removes all items from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_ac455a6ad4f139cd24c65ae720860118b}{Get} (string sec\+Object, string role, string access\+Type, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Возвращает объект разрешения по наименованию объекта безопасности, роли, типа доступа и приложения \end{DoxyCompactList}\item 
+async Task$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_aa5fe3b6f85d147ddfc0c2f0c5ff8aac0}{Get\+Async} (string sec\+Object, string role, string access\+Type, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Асинхронно Возвращает объект разрешения по наименованию объекта безопасности, роли, типа доступа и приложения \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_aa167ba66c0a65434f852eb11fbec7ec3}{Contains} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} item)
+\begin{DoxyCompactList}\small\item\em Determines whether the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 contains a specific value. \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_acb9fb91aac8d155a18c407f8f14dd99d}{Copy\+To} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}\mbox{[}$\,$\mbox{]} array, int array\+Index)
+\begin{DoxyCompactList}\small\item\em Copies the elements of the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 to an T\+:\+System.\+Array, starting at a particular T\+:\+System.\+Array index. \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a95e929659c16750c32fdd468d319f311}{Remove} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} item)
+\begin{DoxyCompactList}\small\item\em Removes the first occurrence of a specific object from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. \end{DoxyCompactList}\item 
+int \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a54731a4ca3c561b54b788c834149392d}{Save\+Changes} ()
+\begin{DoxyCompactList}\small\item\em Производит сохранение всех изменений в базу данных \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a7ebc4e3c1d4acadbf2ce58565888e7e4}{Add} (string role\+Name, string sec\+Object\+Name, string access\+Type\+Name, string application\+Name)
+\begin{DoxyCompactList}\small\item\em Добавляет новое разрешение в базу данных \end{DoxyCompactList}\item 
+I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_abc7cd27b59cacbce219d901cf7b68855}{Add\+Range} (string role\+Name, \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_sec_object}{I\+Sec\+Object}\mbox{[}$\,$\mbox{]} sec\+Objects, \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{I\+Access\+Type}\mbox{[}$\,$\mbox{]} access\+Types, string application\+Name)
+\begin{DoxyCompactList}\small\item\em Добавляет новое разрешение в базу данных \end{DoxyCompactList}\item 
+async Task$<$ bool $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a383a8579fd834bb06c7eb19140a07371}{Remove\+Async} (string role\+Name, string sec\+Object\+Name, string access\+Type\+Name, string application\+Name)
+\begin{DoxyCompactList}\small\item\em Удаляет разрешение из базы данных \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a22e80b37be968a99e10b00c8b67f2172}{Remove} (string role\+Name, string sec\+Object\+Name, string access\+Type\+Name, string application\+Name)
+\begin{DoxyCompactList}\small\item\em Удаляет разрешение из базы данных \end{DoxyCompactList}\item 
+I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_ae7657aa18e3d6ef6a1848e8521f7e8e7}{Remove\+Range} (string\mbox{[}$\,$\mbox{]} role\+Names, string\mbox{[}$\,$\mbox{]} sec\+Objects, string\mbox{[}$\,$\mbox{]} access\+Types, string application\+Name)
+\begin{DoxyCompactList}\small\item\em Производит удаление множества элементов \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a090549d86ff2ce4ad4ddd53d6c95e3f7}{Add} (string role\+Name, string sec\+Object\+Name, Enum access\+Type, string application\+Name)
+\begin{DoxyCompactList}\small\item\em Добавляет новое разрешение в базу данных \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a072f7e7af7afde3c8754c96c7ebd2f6b}{Remove} (string role\+Name, string sec\+Object\+Name, Enum access\+Type, string application\+Name)
+\begin{DoxyCompactList}\small\item\em Удаляет разрешение из базы данных \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_adc5d41b1b7dbc11165c1fa980a923230}{Update} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} item)
+\begin{DoxyCompactList}\small\item\em Производит обновление элемента в БД \end{DoxyCompactList}\item 
+I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a6ba4b048500c75d42eaf11881cbf7023}{Remove\+Range} (I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} $>$ items)
+\begin{DoxyCompactList}\small\item\em Производит удаление элементов представленных коллекцией items \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_afd4afe16b57405f81ff84ee7aeb92021}{Count} =$>$ Context.\+Grants.\+Count()
+\begin{DoxyCompactList}\small\item\em Gets the number of elements contained in the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_af456c4626259b99e823d1ec4c17359a5}{Is\+Read\+Only} =$>$ false
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only. \end{DoxyCompactList}\item 
+Expression \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_aa08b5ab575562a16149a4a2ffef6dbbd}{Expression} =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_grant}{Grant}$>$) Context.\+Grants).Expression
+\begin{DoxyCompactList}\small\item\em Gets the expression tree that is associated with the instance of T\+:\+System.\+Linq.\+I\+Queryable. \end{DoxyCompactList}\item 
+Type \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_ae55be1ee2addfb47c9571f51331afaa4}{Element\+Type} =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_grant}{Grant}$>$) Context.\+Grants).Element\+Type
+\begin{DoxyCompactList}\small\item\em Gets the type of the element(s) that are returned when the expression tree associated with this instance of T\+:\+System.\+Linq.\+I\+Queryable is executed. \end{DoxyCompactList}\item 
+I\+Query\+Provider \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a65cbd1cfdc8df59f288fec61a9637942}{Provider} =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_grant}{Grant}$>$) Context.\+Grants).Provider
+\begin{DoxyCompactList}\small\item\em Gets the query provider that is associated with this data source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Класс, представляющий собой коллекцию разрешений 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a5862e7e9a12c92f3657c9cc9f2757c6d}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a5862e7e9a12c92f3657c9cc9f2757c6d}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Add@{Add}}
+\index{Add@{Add}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Add (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}}]{item }\end{DoxyParamCaption})}
+
+
+
+Adds an item to the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & The object to add to the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Not\+Supported\+Exception} & The T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a7ebc4e3c1d4acadbf2ce58565888e7e4}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a7ebc4e3c1d4acadbf2ce58565888e7e4}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Add@{Add}}
+\index{Add@{Add}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Add (\begin{DoxyParamCaption}\item[{string}]{role\+Name,  }\item[{string}]{sec\+Object\+Name,  }\item[{string}]{access\+Type\+Name,  }\item[{string}]{application\+Name }\end{DoxyParamCaption})}
+
+
+
+Добавляет новое разрешение в базу данных 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em role\+Name} & Имя роль\\
+\hline
+{\em sec\+Object\+Name} & Наименование объекта безопасности\\
+\hline
+{\em access\+Type\+Name} & Наименование типа доступа\\
+\hline
+{\em application\+Name} & \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection_a2cdefefae74247f9bdf9ff4445941466}{Security.\+Interfaces.\+Collections.\+I\+Grant\+Collection}.
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a090549d86ff2ce4ad4ddd53d6c95e3f7}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a090549d86ff2ce4ad4ddd53d6c95e3f7}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Add@{Add}}
+\index{Add@{Add}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Add (\begin{DoxyParamCaption}\item[{string}]{role\+Name,  }\item[{string}]{sec\+Object\+Name,  }\item[{Enum}]{access\+Type,  }\item[{string}]{application\+Name }\end{DoxyParamCaption})}
+
+
+
+Добавляет новое разрешение в базу данных 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em role\+Name} & Имя роль\\
+\hline
+{\em sec\+Object\+Name} & Наименование объекта безопасности\\
+\hline
+{\em access\+Type} & Тип доступа, представленный в виде Enum\\
+\hline
+{\em application\+Name} & \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection_a34810ab8c30b3562faf5a948a4367cfc}{Security.\+Interfaces.\+Collections.\+I\+Grant\+Collection}.
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_abc7cd27b59cacbce219d901cf7b68855}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_abc7cd27b59cacbce219d901cf7b68855}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Add\+Range@{Add\+Range}}
+\index{Add\+Range@{Add\+Range}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Add\+Range()}{AddRange()}}
+{\footnotesize\ttfamily I\+Enumerable$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}$>$ Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Add\+Range (\begin{DoxyParamCaption}\item[{string}]{role\+Name,  }\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_sec_object}{I\+Sec\+Object} \mbox{[}$\,$\mbox{]}}]{sec\+Objects,  }\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{I\+Access\+Type} \mbox{[}$\,$\mbox{]}}]{access\+Types,  }\item[{string}]{application\+Name }\end{DoxyParamCaption})}
+
+
+
+Добавляет новое разрешение в базу данных 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em role\+Name} & Имя роль\\
+\hline
+{\em sec\+Object\+Name} & Наименование объекта безопасности\\
+\hline
+{\em access\+Type\+Name} & Наименование типа доступа\\
+\hline
+{\em application\+Name} & \\
+\hline
+\end{DoxyParams}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection_afe2d893821ee31b43c864517764fd0c3}{Security.\+Interfaces.\+Collections.\+I\+Grant\+Collection}.
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a5364c2e3da4aeff4ae4526d368f8f6ad}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a5364c2e3da4aeff4ae4526d368f8f6ad}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Clear@{Clear}}
+\index{Clear@{Clear}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes all items from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Not\+Supported\+Exception} & The T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_aa167ba66c0a65434f852eb11fbec7ec3}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_aa167ba66c0a65434f852eb11fbec7ec3}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Contains@{Contains}}
+\index{Contains@{Contains}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Contains (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}}]{item }\end{DoxyParamCaption})}
+
+
+
+Determines whether the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 contains a specific value. 
+
+\begin{DoxyReturn}{Возвращает}
+true if {\itshape item}  is found in the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1; otherwise, false. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & The object to locate in the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_acb9fb91aac8d155a18c407f8f14dd99d}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_acb9fb91aac8d155a18c407f8f14dd99d}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Copy\+To@{Copy\+To}}
+\index{Copy\+To@{Copy\+To}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Copy\+To()}{CopyTo()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Copy\+To (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} \mbox{[}$\,$\mbox{]}}]{array,  }\item[{int}]{array\+Index }\end{DoxyParamCaption})}
+
+
+
+Copies the elements of the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 to an T\+:\+System.\+Array, starting at a particular T\+:\+System.\+Array index. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em array} & The one-\/dimensional T\+:\+System.\+Array that is the destination of the elements copied from T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. The T\+:\+System.\+Array must have zero-\/based indexing.\\
+\hline
+{\em array\+Index} & The zero-\/based index in {\itshape array}  at which copying begins.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Argument\+Null\+Exception} & {\itshape array}  is null.\\
+\hline
+{\em T\+:\+System.\+Argument\+Out\+Of\+Range\+Exception} & {\itshape array\+Index}  is less than 0.\\
+\hline
+{\em T\+:\+System.\+Argument\+Exception} & The number of elements in the source T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is greater than the available space from {\itshape array\+Index}  to the end of the destination {\itshape array} .\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_ac455a6ad4f139cd24c65ae720860118b}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_ac455a6ad4f139cd24c65ae720860118b}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Get@{Get}}
+\index{Get@{Get}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Get (\begin{DoxyParamCaption}\item[{string}]{sec\+Object,  }\item[{string}]{role,  }\item[{string}]{access\+Type,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Возвращает объект разрешения по наименованию объекта безопасности, роли, типа доступа и приложения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em sec\+Object} & Объект безопасности\\
+\hline
+{\em role} & Роль\\
+\hline
+{\em access\+Type} & Тип доступа\\
+\hline
+{\em app\+Name} & Имя приложения\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Grant\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection_a7fd330bfc10e8019ac67cd3639d914f5}{Security.\+Interfaces.\+Collections.\+I\+Grant\+Collection}.
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_aa5fe3b6f85d147ddfc0c2f0c5ff8aac0}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_aa5fe3b6f85d147ddfc0c2f0c5ff8aac0}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Get\+Async@{Get\+Async}}
+\index{Get\+Async@{Get\+Async}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Get\+Async()}{GetAsync()}}
+{\footnotesize\ttfamily async Task$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}$>$ Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Get\+Async (\begin{DoxyParamCaption}\item[{string}]{sec\+Object,  }\item[{string}]{role,  }\item[{string}]{access\+Type,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Асинхронно Возвращает объект разрешения по наименованию объекта безопасности, роли, типа доступа и приложения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em sec\+Object} & \\
+\hline
+{\em role} & \\
+\hline
+{\em access\+Type} & \\
+\hline
+{\em app\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Grant\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection_a6a22b973fa4b30b1972f2cca5ce3c805}{Security.\+Interfaces.\+Collections.\+I\+Grant\+Collection}.
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a87a2ed224fd199be1cedb85272fd49ef}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a87a2ed224fd199be1cedb85272fd49ef}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Get\+Enumerator@{Get\+Enumerator}}
+\index{Get\+Enumerator@{Get\+Enumerator}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Get\+Enumerator()}{GetEnumerator()}}
+{\footnotesize\ttfamily I\+Enumerator$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}$>$ Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Get\+Enumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an enumerator that iterates through the collection. 
+
+\begin{DoxyReturn}{Возвращает}
+A T\+:\+System.\+Collections.\+Generic.\+I\+Enumerator`1 that can be used to iterate through the collection. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a95e929659c16750c32fdd468d319f311}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a95e929659c16750c32fdd468d319f311}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Remove@{Remove}}
+\index{Remove@{Remove}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Remove()}{Remove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Remove (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}}]{item }\end{DoxyParamCaption})}
+
+
+
+Removes the first occurrence of a specific object from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+
+\begin{DoxyReturn}{Возвращает}
+true if {\itshape item}  was successfully removed from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1; otherwise, false. This method also returns false if {\itshape item}  is not found in the original T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & The object to remove from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Not\+Supported\+Exception} & The T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a22e80b37be968a99e10b00c8b67f2172}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a22e80b37be968a99e10b00c8b67f2172}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Remove@{Remove}}
+\index{Remove@{Remove}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Remove()}{Remove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Remove (\begin{DoxyParamCaption}\item[{string}]{role\+Name,  }\item[{string}]{sec\+Object\+Name,  }\item[{string}]{access\+Type\+Name,  }\item[{string}]{application\+Name }\end{DoxyParamCaption})}
+
+
+
+Удаляет разрешение из базы данных 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em role\+Name} & Имя роль\\
+\hline
+{\em sec\+Object\+Name} & Наименование объекта безопасности\\
+\hline
+{\em access\+Type\+Name} & Наименование типа доступа\\
+\hline
+{\em application\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Количество удаленных элементов
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection_a871aa197789be27f8d1b9e102abcba93}{Security.\+Interfaces.\+Collections.\+I\+Grant\+Collection}.
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a072f7e7af7afde3c8754c96c7ebd2f6b}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a072f7e7af7afde3c8754c96c7ebd2f6b}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Remove@{Remove}}
+\index{Remove@{Remove}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Remove()}{Remove()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Remove (\begin{DoxyParamCaption}\item[{string}]{role\+Name,  }\item[{string}]{sec\+Object\+Name,  }\item[{Enum}]{access\+Type,  }\item[{string}]{application\+Name }\end{DoxyParamCaption})}
+
+
+
+Удаляет разрешение из базы данных 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em role\+Name} & Имя роль\\
+\hline
+{\em sec\+Object\+Name} & Наименование объекта безопасности\\
+\hline
+{\em access\+Type} & Тип доступа, представленный в виде Enum\\
+\hline
+{\em application\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Количество удаленных элементов
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection_a8574918e9d609f37a3359a1f0dbd68a7}{Security.\+Interfaces.\+Collections.\+I\+Grant\+Collection}.
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a383a8579fd834bb06c7eb19140a07371}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a383a8579fd834bb06c7eb19140a07371}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Remove\+Async@{Remove\+Async}}
+\index{Remove\+Async@{Remove\+Async}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Remove\+Async()}{RemoveAsync()}}
+{\footnotesize\ttfamily async Task$<$bool$>$ Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Remove\+Async (\begin{DoxyParamCaption}\item[{string}]{role\+Name,  }\item[{string}]{sec\+Object\+Name,  }\item[{string}]{access\+Type\+Name,  }\item[{string}]{application\+Name }\end{DoxyParamCaption})}
+
+
+
+Удаляет разрешение из базы данных 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em role\+Name} & Имя роль\\
+\hline
+{\em sec\+Object\+Name} & Наименование объекта безопасности\\
+\hline
+{\em access\+Type\+Name} & Наименование типа доступа\\
+\hline
+{\em application\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Количество удаленных элементов
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection_a9cd84f3f6a51d9ec7c9f49bfc61ce55e}{Security.\+Interfaces.\+Collections.\+I\+Grant\+Collection}.
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_ae7657aa18e3d6ef6a1848e8521f7e8e7}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_ae7657aa18e3d6ef6a1848e8521f7e8e7}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Remove\+Range@{Remove\+Range}}
+\index{Remove\+Range@{Remove\+Range}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Remove\+Range()}{RemoveRange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+Enumerable$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}$>$ Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Remove\+Range (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{role\+Names,  }\item[{string \mbox{[}$\,$\mbox{]}}]{sec\+Objects,  }\item[{string \mbox{[}$\,$\mbox{]}}]{access\+Types,  }\item[{string}]{application\+Name }\end{DoxyParamCaption})}
+
+
+
+Производит удаление множества элементов 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em role\+Names} & \\
+\hline
+{\em sec\+Objects} & \\
+\hline
+{\em access\+Types} & \\
+\hline
+{\em application\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection_a7b70f5669576f49ce394c008552f38b7}{Security.\+Interfaces.\+Collections.\+I\+Grant\+Collection}.
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a6ba4b048500c75d42eaf11881cbf7023}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a6ba4b048500c75d42eaf11881cbf7023}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Remove\+Range@{Remove\+Range}}
+\index{Remove\+Range@{Remove\+Range}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Remove\+Range()}{RemoveRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+Enumerable$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}$>$ Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Remove\+Range (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} $>$}]{items }\end{DoxyParamCaption})}
+
+
+
+Производит удаление элементов представленных коллекцией items 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em items} & Коллекция удаляемых элементов\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Коллекцию удаленных элементов
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a54731a4ca3c561b54b788c834149392d}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a54731a4ca3c561b54b788c834149392d}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Save\+Changes@{Save\+Changes}}
+\index{Save\+Changes@{Save\+Changes}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Save\+Changes()}{SaveChanges()}}
+{\footnotesize\ttfamily int Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Save\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Производит сохранение всех изменений в базу данных 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_adc5d41b1b7dbc11165c1fa980a923230}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_adc5d41b1b7dbc11165c1fa980a923230}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Update@{Update}}
+\index{Update@{Update}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Update (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}}]{item }\end{DoxyParamCaption})}
+
+
+
+Производит обновление элемента в БД 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & Элемент T\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Данные класса}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_afd4afe16b57405f81ff84ee7aeb92021}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_afd4afe16b57405f81ff84ee7aeb92021}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Count@{Count}}
+\index{Count@{Count}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Count}{Count}}
+{\footnotesize\ttfamily int Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Count =$>$ Context.\+Grants.\+Count()}
+
+
+
+Gets the number of elements contained in the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+
+\begin{DoxyReturn}{Возвращает}
+The number of elements contained in the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_ae55be1ee2addfb47c9571f51331afaa4}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_ae55be1ee2addfb47c9571f51331afaa4}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Element\+Type@{Element\+Type}}
+\index{Element\+Type@{Element\+Type}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Element\+Type}{ElementType}}
+{\footnotesize\ttfamily Type Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Element\+Type =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_grant}{Grant}$>$) Context.\+Grants).Element\+Type}
+
+
+
+Gets the type of the element(s) that are returned when the expression tree associated with this instance of T\+:\+System.\+Linq.\+I\+Queryable is executed. 
+
+\begin{DoxyReturn}{Возвращает}
+A T\+:\+System.\+Type that represents the type of the element(s) that are returned when the expression tree associated with this object is executed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_aa08b5ab575562a16149a4a2ffef6dbbd}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_aa08b5ab575562a16149a4a2ffef6dbbd}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Expression@{Expression}}
+\index{Expression@{Expression}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Expression}{Expression}}
+{\footnotesize\ttfamily Expression Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Expression =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_grant}{Grant}$>$) Context.\+Grants).Expression}
+
+
+
+Gets the expression tree that is associated with the instance of T\+:\+System.\+Linq.\+I\+Queryable. 
+
+\begin{DoxyReturn}{Возвращает}
+The T\+:\+System.\+Linq.\+Expressions.\+Expression that is associated with this instance of T\+:\+System.\+Linq.\+I\+Queryable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_af456c4626259b99e823d1ec4c17359a5}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_af456c4626259b99e823d1ec4c17359a5}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Is\+Read\+Only@{Is\+Read\+Only}}
+\index{Is\+Read\+Only@{Is\+Read\+Only}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Is\+Read\+Only}{IsReadOnly}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Is\+Read\+Only =$>$ false}
+
+
+
+Gets a value indicating whether the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only. 
+
+\begin{DoxyReturn}{Возвращает}
+true if the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only; otherwise, false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a65cbd1cfdc8df59f288fec61a9637942}\label{class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection_a65cbd1cfdc8df59f288fec61a9637942}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}!Provider@{Provider}}
+\index{Provider@{Provider}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Grant\+Collection}}
+\subsubsection{\texorpdfstring{Provider}{Provider}}
+{\footnotesize\ttfamily I\+Query\+Provider Security.\+Entity\+Framework.\+Collections.\+Grant\+Collection.\+Provider =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_grant}{Grant}$>$) Context.\+Grants).Provider}
+
+
+
+Gets the query provider that is associated with this data source. 
+
+\begin{DoxyReturn}{Возвращает}
+The T\+:\+System.\+Linq.\+I\+Query\+Provider that is associated with this data source. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Entity\+Framework/\+Collections/Grant\+Collection.\+cs\end{DoxyCompactItemize}

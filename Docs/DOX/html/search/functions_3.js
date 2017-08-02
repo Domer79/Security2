@@ -1,0 +1,13 @@
+var searchData=
+[
+  ['decompress',['DeCompress',['../d5/d96/class_tools_1_1_extensions_1_1_stream_extensions.html#a22c19f0b95ef6910c8645aab213e3524',1,'Tools::Extensions::StreamExtensions']]],
+  ['deletegroupsfromuser',['DeleteGroupsFromUser',['../d4/df5/interface_security_1_1_interfaces_1_1_i_security_tools.html#added0cc516586d965fbed16d84d1b97f',1,'Security::Interfaces::ISecurityTools']]],
+  ['deletemembersfromrole',['DeleteMembersFromRole',['../d4/df5/interface_security_1_1_interfaces_1_1_i_security_tools.html#acc5d44efa581c891fed28548fc95a4dc',1,'Security::Interfaces::ISecurityTools']]],
+  ['deleterolesfrommember',['DeleteRolesFromMember',['../d4/df5/interface_security_1_1_interfaces_1_1_i_security_tools.html#a0e167725f3e0ca5f4e8c23a742c8e8f4',1,'Security::Interfaces::ISecurityTools']]],
+  ['deleteusersfromgroup',['DeleteUsersFromGroup',['../d4/df5/interface_security_1_1_interfaces_1_1_i_security_tools.html#ab485af1bb5beed54b2e0979cdde89bf3',1,'Security::Interfaces::ISecurityTools']]],
+  ['deserialize',['Deserialize',['../d0/d50/class_tools_1_1_extensions_1_1_object_helper.html#a1f1a9f90cbeb2e866dd5cf84c454240d',1,'Tools::Extensions::ObjectHelper']]],
+  ['deserialize_3c_20t_20_3e',['Deserialize&lt; T &gt;',['../d0/d50/class_tools_1_1_extensions_1_1_object_helper.html#a02cf5ec56eebde420b8baa225a04e83d',1,'Tools::Extensions::ObjectHelper']]],
+  ['deserializefromstring',['DeserializeFromString',['../d0/d50/class_tools_1_1_extensions_1_1_object_helper.html#a2dd94da1024292cb58b13470fa6098ea',1,'Tools::Extensions::ObjectHelper']]],
+  ['deserializefromstring_3c_20t_20_3e',['DeserializeFromString&lt; T &gt;',['../d0/d50/class_tools_1_1_extensions_1_1_object_helper.html#a504eb45071b2c1ed166f7901d8f24b4f',1,'Tools::Extensions::ObjectHelper']]],
+  ['dispose',['Dispose',['../d8/daf/class_security_1_1_core_security.html#ae04c044fdd2706f7002c94da9924c2eb',1,'Security.CoreSecurity.Dispose()'],['../d2/d27/class_security_1_1_entity_framework_1_1_collections_1_1_application_collection.html#adef85e538bfbe1df288513c241b3c199',1,'Security.EntityFramework.Collections.ApplicationCollection.Dispose()'],['../dc/d09/class_security_1_1_entity_framework_1_1_collections_1_1_user_collection.html#a5eef1e189b4f4de73b3850cad7eb708b',1,'Security.EntityFramework.Collections.UserCollection.Dispose()'],['../d3/dd8/class_security_1_1_entity_framework_1_1_security_factory.html#a2c2ceec2782dd947137009027aace70b',1,'Security.EntityFramework.SecurityFactory.Dispose()'],['../df/d67/class_security_1_1_entity_framework_1_1_security_transaction.html#ae89d12f6a50b38dc368e98dac4c9ee7f',1,'Security.EntityFramework.SecurityTransaction.Dispose()']]]
+];

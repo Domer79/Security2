@@ -1,0 +1,62 @@
+﻿<md-content layout="column" style="padding: 10px;">
+
+    <style>
+        .user-active {
+            background-color: rgb(0, 169, 11) !important;
+        }
+
+    </style>
+
+    <md-card md-theme-watch>
+        <md-card-title>
+        </md-card-title>
+        
+        <md-input-container>
+            <label>Логин</label>
+            <input ng-model="item.Login" required ng-change="saveProfile()" ng-model-options="{updateOn: 'blur'}"/>
+            <div ng-messages="item.Login.$error">
+                <div ng-message="required">Обязательно для заполнения</div>
+            </div>
+        </md-input-container> <br />
+        <md-input-container>
+            <label>Имя</label>
+            <input ng-model="item.FirstName" required ng-change="saveProfile()" ng-model-options="{updateOn: 'blur'}"/>
+            <div ng-messages="item.FirstName.$error">
+                <div ng-message="required">Обязательно для заполнения</div>
+            </div>
+        </md-input-container> <br />
+        <md-input-container>
+            <label>Фамилия</label>
+            <input ng-model="item.LastName" required ng-change="saveProfile()" ng-model-options="{updateOn: 'blur'}"/>
+            <div ng-messages="item.LirstName.$error">
+                <div ng-message="required">Обязательно для заполнения</div>
+            </div>
+        </md-input-container> <br />
+        <md-input-container>
+            <label>Отчество</label>
+            <input ng-model="item.MiddleName" ng-change="saveProfile()" ng-model-options="{updateOn: 'blur'}"/>
+        </md-input-container> <br />
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="item.Email" type="email" required ng-change="saveProfile()" ng-model-options="{updateOn: 'blur'}"/>
+        </md-input-container> 
+
+        <md-input-container>
+            <md-button class="md-raised" ng-class="{'md-warn': !item.Status, 'md-primary user-active': item.Status}" ng-click="item.Status = !item.Status; saveProfile()" >
+                Статус {{item.Status ? 'активен' : 'заблокирован'}}
+            </md-button>
+        </md-input-container>
+
+        <md-divider></md-divider>
+
+        <p></p>
+        <form name="pwdForm" ng-submit="changePassword()">
+            <md-input-container>
+                <label>Пароль</label>
+                <input ng-model="password" type="password"/>
+                <md-button type="submit" ng-disabled="!canSavePassword()">Сменить пароль</md-button>
+            </md-input-container>
+        </form>
+    </md-card>
+
+</md-content>

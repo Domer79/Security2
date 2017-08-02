@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['load',['Load',['../de/d04/class_security_1_1_entity_framework_1_1_common_module.html#ada75feb8b9cdec12647a11ad42f05bab',1,'Security::EntityFramework::CommonModule']]],
+  ['log',['Log',['../d4/df5/interface_security_1_1_interfaces_1_1_i_security_tools.html#aaf51a25b2c2a0e2242b6dca221638de5',1,'Security::Interfaces::ISecurityTools']]],
+  ['logasync',['LogAsync',['../d4/df5/interface_security_1_1_interfaces_1_1_i_security_tools.html#a43d1289cbb80b392be815479e48b9764',1,'Security::Interfaces::ISecurityTools']]],
+  ['login',['LogIn',['../d8/daf/class_security_1_1_core_security.html#a87672cfd35522b393c3139daa4960258',1,'Security.CoreSecurity.LogIn()'],['../d9/d58/interface_security_1_1_interfaces_1_1_i_security.html#a85a48460a5d327c495647539670049f8',1,'Security.Interfaces.ISecurity.LogIn()']]],
+  ['login_5fcheckauthentication_5fexpectedfalse',['LogIn_CheckAuthentication_ExpectedFalse',['../d4/d73/class_security_1_1_entity_framework_1_1_tests_1_1_security_work_unit_test.html#af0b11e43f67cf2a27b038c61a45fd8aa',1,'Security.EntityFramework.Tests.SecurityWorkUnitTest.LogIn_CheckAuthentication_ExpectedFalse()'],['../dc/ddf/interface_security_1_1_interfaces_1_1_tests_1_1_i_security_work_unit_test.html#ab9261306b37909690ca44c01231e7987',1,'Security.Interfaces.Tests.ISecurityWorkUnitTest.LogIn_CheckAuthentication_ExpectedFalse()']]],
+  ['login_5fcheckauthentication_5fexpectedtrue',['LogIn_CheckAuthentication_ExpectedTrue',['../d4/d73/class_security_1_1_entity_framework_1_1_tests_1_1_security_work_unit_test.html#a7fa1055e919319077b7507ac458a954e',1,'Security.EntityFramework.Tests.SecurityWorkUnitTest.LogIn_CheckAuthentication_ExpectedTrue()'],['../dc/ddf/interface_security_1_1_interfaces_1_1_tests_1_1_i_security_work_unit_test.html#a5353dbe8f678db00b4a49d946cf517f7',1,'Security.Interfaces.Tests.ISecurityWorkUnitTest.LogIn_CheckAuthentication_ExpectedTrue()']]],
+  ['loginfailedtest',['LogInFailedTest',['../de/db0/class_security_1_1_tests_1_1_tests_1_1_fake_security_work_unit_test.html#a3a372a8eb2f3791650eb21a061e15224',1,'Security::Tests::Tests::FakeSecurityWorkUnitTest']]],
+  ['logintest',['LogInTest',['../de/db0/class_security_1_1_tests_1_1_tests_1_1_fake_security_work_unit_test.html#a09dc978215ce2558edcb78ea380c6b2a',1,'Security::Tests::Tests::FakeSecurityWorkUnitTest']]]
+];

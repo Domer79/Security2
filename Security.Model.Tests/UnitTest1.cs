@@ -1,8 +1,9 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
+using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Security.Model.Entities;
+using Security.EntityDal;
 using Tools.Extensions;
+using System.Diagnostics;
 
 namespace Security.Model.Tests
 {
@@ -22,7 +23,7 @@ namespace Security.Model.Tests
             using (var context = new SecurityContext())
             {
                 const string member = "user";
-                var password = "password".GetHashBytes();
+                var password = "password".GetMD5HashBytes();
                 var i = 0;
 
                 while (true)
@@ -36,8 +37,7 @@ namespace Security.Model.Tests
 
                     var user = new User()
                     {
-                        Login = userName,
-                        Password = password
+                        Login = userName
                     };
 
                     context.Users.Add(user);
@@ -47,6 +47,14 @@ namespace Security.Model.Tests
                 context.SaveChanges();
                 Assert.IsTrue(context.Users.Any(e => e.Login == member + i));
             }
+        }
+
+        [TestMethod]
+        public void PasswordHashToString()
+        {
+            var hashBytes = "password".GetMD5HashBytes();
+            var hashString = hashBytes.GetString();
+            Debug.WriteLine(hashString);
         }
 
         [TestMethod]
@@ -92,6 +100,26 @@ namespace Security.Model.Tests
                 var roles = context.Members.Include("Roles").Where(m => m.Name == "User1").ToList();
 
                 Assert.AreEqual(1, roles.Count());
+            }
+        }
+
+        [TestMethod]
+        public void GetFirstUserTest()
+        {
+            using (var context = new SecurityContext())
+            {
+                var user = context.Users.First();
+                Assert.IsNotNull(user);
+            }
+        }
+
+        [TestMethod]
+        public void GetGrantListTest()
+        {
+            using (var context = new SecurityContext())
+            {
+                var grants = context.Grants.Include("SecObject").Include("Role").Include("AccessType").ToList();
+                Assert.AreEqual(1, grants.Count);
             }
         }
     }

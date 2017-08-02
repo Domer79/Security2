@@ -1,0 +1,59 @@
+\hypertarget{class_security_1_1_web_1_1_exec_security_objects}{}\section{Класс Security.\+Web.\+Exec\+Security\+Objects}
+\label{class_security_1_1_web_1_1_exec_security_objects}\index{Security.\+Web.\+Exec\+Security\+Objects@{Security.\+Web.\+Exec\+Security\+Objects}}
+
+
+Осуществляет поиск контроллеров и его действий, помеченных атрибутом \hyperlink{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute}{Security.\+Web.\+Mvc.\+Authorize\+Attribute} и преобразует эти атрибуты в объекты I\+Security\+Object, для последующей передачи в метод Config.\+Register\+Application(\+Security.\+Interfaces.\+I\+Security\+Objects\mbox{[}$\,$\mbox{]})  
+
+
+Граф наследования\+:Security.\+Web.\+Exec\+Security\+Objects\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d4/d8b/class_security_1_1_web_1_1_exec_security_objects}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_security_1_1_web_1_1_exec_security_objects_ac4684f99a5b5b39fd677eb74c741a0af}{Exec\+Security\+Objects} (I\+Enumerable$<$ Assembly $>$ assemblies)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the T\+:\+System.\+Object class. \end{DoxyCompactList}\item 
+I\+Enumerator$<$ \hyperlink{interface_security_1_1_interfaces_1_1_i_security_object}{I\+Security\+Object} $>$ \hyperlink{class_security_1_1_web_1_1_exec_security_objects_ab850ef8580c7aba16657c2711e67f883}{Get\+Enumerator} ()
+\begin{DoxyCompactList}\small\item\em Returns an enumerator that iterates through the collection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Осуществляет поиск контроллеров и его действий, помеченных атрибутом \hyperlink{class_security_1_1_web_1_1_mvc_1_1_authorize_attribute}{Security.\+Web.\+Mvc.\+Authorize\+Attribute} и преобразует эти атрибуты в объекты I\+Security\+Object, для последующей передачи в метод Config.\+Register\+Application(\+Security.\+Interfaces.\+I\+Security\+Objects\mbox{[}$\,$\mbox{]}) 
+
+{\ttfamily  Config.\+Register\+Application(new \hyperlink{class_security_1_1_web_1_1_exec_security_objects}{Exec\+Security\+Objects}(new \mbox{[}\mbox{]}\{Assembly.\+Get\+Executing\+Assembly()\})); } 
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_exec_security_objects_ac4684f99a5b5b39fd677eb74c741a0af}\label{class_security_1_1_web_1_1_exec_security_objects_ac4684f99a5b5b39fd677eb74c741a0af}} 
+\index{Security\+::\+Web\+::\+Exec\+Security\+Objects@{Security\+::\+Web\+::\+Exec\+Security\+Objects}!Exec\+Security\+Objects@{Exec\+Security\+Objects}}
+\index{Exec\+Security\+Objects@{Exec\+Security\+Objects}!Security\+::\+Web\+::\+Exec\+Security\+Objects@{Security\+::\+Web\+::\+Exec\+Security\+Objects}}
+\subsubsection{\texorpdfstring{Exec\+Security\+Objects()}{ExecSecurityObjects()}}
+{\footnotesize\ttfamily Security.\+Web.\+Exec\+Security\+Objects.\+Exec\+Security\+Objects (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ Assembly $>$}]{assemblies }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the T\+:\+System.\+Object class. 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_exec_security_objects_ab850ef8580c7aba16657c2711e67f883}\label{class_security_1_1_web_1_1_exec_security_objects_ab850ef8580c7aba16657c2711e67f883}} 
+\index{Security\+::\+Web\+::\+Exec\+Security\+Objects@{Security\+::\+Web\+::\+Exec\+Security\+Objects}!Get\+Enumerator@{Get\+Enumerator}}
+\index{Get\+Enumerator@{Get\+Enumerator}!Security\+::\+Web\+::\+Exec\+Security\+Objects@{Security\+::\+Web\+::\+Exec\+Security\+Objects}}
+\subsubsection{\texorpdfstring{Get\+Enumerator()}{GetEnumerator()}}
+{\footnotesize\ttfamily I\+Enumerator$<$\hyperlink{interface_security_1_1_interfaces_1_1_i_security_object}{I\+Security\+Object}$>$ Security.\+Web.\+Exec\+Security\+Objects.\+Get\+Enumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an enumerator that iterates through the collection. 
+
+\begin{DoxyReturn}{Возвращает}
+A T\+:\+System.\+Collections.\+Generic.\+I\+Enumerator`1 that can be used to iterate through the collection. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Web/Exec\+Security\+Objects.\+cs\end{DoxyCompactItemize}

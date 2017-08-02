@@ -1,8 +1,11 @@
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
 namespace Security.Exceptions
 {
+    /// <summary>
+    /// Базовый класс исключения. Применяется в некоторых случаях
+    /// </summary>
     public class BaseException : Exception
     {
         public BaseException()

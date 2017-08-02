@@ -1,0 +1,325 @@
+\hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory}{}\section{Интерфейс Security.\+Interfaces.\+I\+Security\+Factory}
+\label{interface_security_1_1_interfaces_1_1_i_security_factory}\index{Security.\+Interfaces.\+I\+Security\+Factory@{Security.\+Interfaces.\+I\+Security\+Factory}}
+
+
+Интерфейс фабрики для предоставления всех необходимых компонентов для работы ядра \hyperlink{interface_security_1_1_interfaces_1_1_i_security}{I\+Security}  
+
+
+Граф наследования\+:Security.\+Interfaces.\+I\+Security\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{de/ded/interface_security_1_1_interfaces_1_1_i_security_factory}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_access_type_collection}{I\+Access\+Type\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_a1b9629f58201d2335c7027f1f3653718}{Create\+Access\+Type\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Создает коллекцию типов доступа \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection}{I\+Grant\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_aaf6f0d74a597fc683462caa7900c363b}{Create\+Grant\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Создает коллекцию разрешений \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_group_collection}{I\+Group\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_a40b900dd3f5097db8ac77610cbc54e58}{Create\+Group\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Создает коллекцию групп пользователей \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_member_collection}{I\+Member\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_af51be7d74fbdd43fe5970ab28359ef2a}{Create\+Member\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Создает коллекцию участников безопасности \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_role_collection}{I\+Role\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_a7c007d1bc58724fb8a546ac67a4ad649}{Create\+Role\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Создает коллекцию ролей \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_sec_object_collection}{I\+Sec\+Object\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_aa03c6ad65ac4dcf14f35f8ed659cf930}{Create\+Sec\+Object\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Создает коллекцию объектов безопасности \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_user_collection}{I\+User\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_af7bc3e5089a1611eea69ea5c4c8735c9}{Create\+User\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Создает коллекцию пользователей \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_application_collection}{I\+Application\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_a95eea08cd755ed6596a8896cb5c2910e}{Create\+Application\+Collection} ()
+\begin{DoxyCompactList}\small\item\em Создает коллекцию приложений \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools}{I\+Security\+Tools} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_acf1eb07cd7264db66304340e9196b2af}{Create\+Security\+Tools} ()
+\begin{DoxyCompactList}\small\item\em Создает эзкемпляр класса \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools}{I\+Security\+Tools} \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{I\+Access\+Type} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_a0e9cedfa313829d1f3d74b5c439ad285}{Get\+Access\+Type} ()
+\begin{DoxyCompactList}\small\item\em Создает тип доступа \end{DoxyCompactList}\item 
+int \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_a2af6dff231f7099ba7d02e2bc569683a}{Save\+Changes} ()
+\begin{DoxyCompactList}\small\item\em Производит сохранение всех сделанных изменений в базу данных \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_aa5611993ac7216131ceac9f21dae9ca9}\label{interface_security_1_1_interfaces_1_1_i_security_factory_aa5611993ac7216131ceac9f21dae9ca9}} 
+Task$<$ int $>$ {\bfseries Save\+Changes\+Async} ()
+\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_i_security_transaction}{I\+Security\+Transaction} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_a7c6e1914da204e43cc140647f4c2b384}{Begin\+Transaction} ()
+\begin{DoxyCompactList}\small\item\em Создает новую транзакцию \hyperlink{interface_security_1_1_interfaces_1_1_i_security_transaction}{I\+Security\+Transaction} \end{DoxyCompactList}\item 
+void \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_a4a9f62d7a54b60c31bb8243cccafa1c5}{Create\+App\+If\+No\+Exists} (\hyperlink{interface_security_1_1_interfaces_1_1_i_security_application_info}{I\+Security\+Application\+Info} security\+Application\+Info)
+\begin{DoxyCompactList}\small\item\em Создает приложение, если его нет \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_ada601a36a0c0a5dfc55a9433fb617055}{Application\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Наименование приложения \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_i_security_settings}{I\+Security\+Settings} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_a46941edf494ff525d842a665548b59f4}{Settings}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Настройки для системы доступа \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_factory_a83db1d288369e763449e69b6c1bc992f}{Current\+Application}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Текущее приложение \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Интерфейс фабрики для предоставления всех необходимых компонентов для работы ядра \hyperlink{interface_security_1_1_interfaces_1_1_i_security}{I\+Security} 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_a7c6e1914da204e43cc140647f4c2b384}\label{interface_security_1_1_interfaces_1_1_i_security_factory_a7c6e1914da204e43cc140647f4c2b384}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Begin\+Transaction@{Begin\+Transaction}}
+\index{Begin\+Transaction@{Begin\+Transaction}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Begin\+Transaction()}{BeginTransaction()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_i_security_transaction}{I\+Security\+Transaction} Security.\+Interfaces.\+I\+Security\+Factory.\+Begin\+Transaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает новую транзакцию \hyperlink{interface_security_1_1_interfaces_1_1_i_security_transaction}{I\+Security\+Transaction} 
+
+\begin{DoxyReturn}{Возвращает}
+Объект \hyperlink{interface_security_1_1_interfaces_1_1_i_security_transaction}{I\+Security\+Transaction}
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_a5405f1e0c85e32a61afab9026170a114}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_a1b9629f58201d2335c7027f1f3653718}\label{interface_security_1_1_interfaces_1_1_i_security_factory_a1b9629f58201d2335c7027f1f3653718}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Create\+Access\+Type\+Collection@{Create\+Access\+Type\+Collection}}
+\index{Create\+Access\+Type\+Collection@{Create\+Access\+Type\+Collection}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Access\+Type\+Collection()}{CreateAccessTypeCollection()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_access_type_collection}{I\+Access\+Type\+Collection} Security.\+Interfaces.\+I\+Security\+Factory.\+Create\+Access\+Type\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает коллекцию типов доступа 
+
+\begin{DoxyReturn}{Возвращает}
+Коллекцию типов доступа
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_aa952c6d768a5219de923e06f2c7a6def}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_a4a9f62d7a54b60c31bb8243cccafa1c5}\label{interface_security_1_1_interfaces_1_1_i_security_factory_a4a9f62d7a54b60c31bb8243cccafa1c5}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Create\+App\+If\+No\+Exists@{Create\+App\+If\+No\+Exists}}
+\index{Create\+App\+If\+No\+Exists@{Create\+App\+If\+No\+Exists}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Create\+App\+If\+No\+Exists()}{CreateAppIfNoExists()}}
+{\footnotesize\ttfamily void Security.\+Interfaces.\+I\+Security\+Factory.\+Create\+App\+If\+No\+Exists (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_i_security_application_info}{I\+Security\+Application\+Info}}]{security\+Application\+Info }\end{DoxyParamCaption})}
+
+
+
+Создает приложение, если его нет 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em application\+Name} & \\
+\hline
+{\em description} & \\
+\hline
+\end{DoxyParams}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_af1122c2628a47f986b80bdb99fdfb39c}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_a95eea08cd755ed6596a8896cb5c2910e}\label{interface_security_1_1_interfaces_1_1_i_security_factory_a95eea08cd755ed6596a8896cb5c2910e}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Create\+Application\+Collection@{Create\+Application\+Collection}}
+\index{Create\+Application\+Collection@{Create\+Application\+Collection}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Application\+Collection()}{CreateApplicationCollection()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_application_collection}{I\+Application\+Collection} Security.\+Interfaces.\+I\+Security\+Factory.\+Create\+Application\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает коллекцию приложений 
+
+\begin{DoxyReturn}{Возвращает}
+Коллекцию приложений
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_a7aa2131411cce5dd03bdea9e615be18d}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_aaf6f0d74a597fc683462caa7900c363b}\label{interface_security_1_1_interfaces_1_1_i_security_factory_aaf6f0d74a597fc683462caa7900c363b}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Create\+Grant\+Collection@{Create\+Grant\+Collection}}
+\index{Create\+Grant\+Collection@{Create\+Grant\+Collection}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Grant\+Collection()}{CreateGrantCollection()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection}{I\+Grant\+Collection} Security.\+Interfaces.\+I\+Security\+Factory.\+Create\+Grant\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает коллекцию разрешений 
+
+\begin{DoxyReturn}{Возвращает}
+Коллекцию разрешений
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_a63112a33e799949f653a7b3420bb5a83}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_a40b900dd3f5097db8ac77610cbc54e58}\label{interface_security_1_1_interfaces_1_1_i_security_factory_a40b900dd3f5097db8ac77610cbc54e58}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Create\+Group\+Collection@{Create\+Group\+Collection}}
+\index{Create\+Group\+Collection@{Create\+Group\+Collection}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Group\+Collection()}{CreateGroupCollection()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_group_collection}{I\+Group\+Collection} Security.\+Interfaces.\+I\+Security\+Factory.\+Create\+Group\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает коллекцию групп пользователей 
+
+\begin{DoxyReturn}{Возвращает}
+Коллекцию групп пользователей
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_ad08ab6dc0f55eba7bc8adfc3a982ae1b}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_af51be7d74fbdd43fe5970ab28359ef2a}\label{interface_security_1_1_interfaces_1_1_i_security_factory_af51be7d74fbdd43fe5970ab28359ef2a}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Create\+Member\+Collection@{Create\+Member\+Collection}}
+\index{Create\+Member\+Collection@{Create\+Member\+Collection}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Member\+Collection()}{CreateMemberCollection()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_member_collection}{I\+Member\+Collection} Security.\+Interfaces.\+I\+Security\+Factory.\+Create\+Member\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает коллекцию участников безопасности 
+
+\begin{DoxyReturn}{Возвращает}
+Коллекцию участников безопасности
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_a46e859ae40869883722f3475a35f6eeb}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_a7c007d1bc58724fb8a546ac67a4ad649}\label{interface_security_1_1_interfaces_1_1_i_security_factory_a7c007d1bc58724fb8a546ac67a4ad649}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Create\+Role\+Collection@{Create\+Role\+Collection}}
+\index{Create\+Role\+Collection@{Create\+Role\+Collection}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Role\+Collection()}{CreateRoleCollection()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_role_collection}{I\+Role\+Collection} Security.\+Interfaces.\+I\+Security\+Factory.\+Create\+Role\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает коллекцию ролей 
+
+\begin{DoxyReturn}{Возвращает}
+Коллекцию ролей
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_aec7cc1f83c7aed01e98f853a5ddf618e}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_aa03c6ad65ac4dcf14f35f8ed659cf930}\label{interface_security_1_1_interfaces_1_1_i_security_factory_aa03c6ad65ac4dcf14f35f8ed659cf930}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Create\+Sec\+Object\+Collection@{Create\+Sec\+Object\+Collection}}
+\index{Create\+Sec\+Object\+Collection@{Create\+Sec\+Object\+Collection}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Sec\+Object\+Collection()}{CreateSecObjectCollection()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_sec_object_collection}{I\+Sec\+Object\+Collection} Security.\+Interfaces.\+I\+Security\+Factory.\+Create\+Sec\+Object\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает коллекцию объектов безопасности 
+
+\begin{DoxyReturn}{Возвращает}
+Коллекцию объектов безопасности
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_a6b5b70d573343faaf80fe95ff0e52ced}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_acf1eb07cd7264db66304340e9196b2af}\label{interface_security_1_1_interfaces_1_1_i_security_factory_acf1eb07cd7264db66304340e9196b2af}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Create\+Security\+Tools@{Create\+Security\+Tools}}
+\index{Create\+Security\+Tools@{Create\+Security\+Tools}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Security\+Tools()}{CreateSecurityTools()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools}{I\+Security\+Tools} Security.\+Interfaces.\+I\+Security\+Factory.\+Create\+Security\+Tools (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает эзкемпляр класса \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools}{I\+Security\+Tools} 
+
+\begin{DoxyReturn}{Возвращает}
+Объект \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools}{I\+Security\+Tools}
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_a7d14f76fcb34ef137f2d4f425585d5ee}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_af7bc3e5089a1611eea69ea5c4c8735c9}\label{interface_security_1_1_interfaces_1_1_i_security_factory_af7bc3e5089a1611eea69ea5c4c8735c9}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Create\+User\+Collection@{Create\+User\+Collection}}
+\index{Create\+User\+Collection@{Create\+User\+Collection}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Create\+User\+Collection()}{CreateUserCollection()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_user_collection}{I\+User\+Collection} Security.\+Interfaces.\+I\+Security\+Factory.\+Create\+User\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает коллекцию пользователей 
+
+\begin{DoxyReturn}{Возвращает}
+Коллекцию пользователей
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_a9b16e937fcec0adc84622f5823d83a30}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_a0e9cedfa313829d1f3d74b5c439ad285}\label{interface_security_1_1_interfaces_1_1_i_security_factory_a0e9cedfa313829d1f3d74b5c439ad285}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Get\+Access\+Type@{Get\+Access\+Type}}
+\index{Get\+Access\+Type@{Get\+Access\+Type}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Get\+Access\+Type()}{GetAccessType()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{I\+Access\+Type} Security.\+Interfaces.\+I\+Security\+Factory.\+Get\+Access\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает тип доступа 
+
+\begin{DoxyReturn}{Возвращает}
+Экземпляр I\+Access\+Type
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_ad96cae2f018cdbb3245b2c00c0f37db2}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_a2af6dff231f7099ba7d02e2bc569683a}\label{interface_security_1_1_interfaces_1_1_i_security_factory_a2af6dff231f7099ba7d02e2bc569683a}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Save\+Changes@{Save\+Changes}}
+\index{Save\+Changes@{Save\+Changes}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Save\+Changes()}{SaveChanges()}}
+{\footnotesize\ttfamily int Security.\+Interfaces.\+I\+Security\+Factory.\+Save\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Производит сохранение всех сделанных изменений в базу данных 
+
+\begin{DoxyReturn}{Возвращает}
+Количество затронутых изменений
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_entity_framework_1_1_security_factory_a638532b6e8fd71f5f82170abee4ae433}{Security.\+Entity\+Framework.\+Security\+Factory}.
+
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_ada601a36a0c0a5dfc55a9433fb617055}\label{interface_security_1_1_interfaces_1_1_i_security_factory_ada601a36a0c0a5dfc55a9433fb617055}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Application\+Name@{Application\+Name}}
+\index{Application\+Name@{Application\+Name}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Application\+Name}{ApplicationName}}
+{\footnotesize\ttfamily string Security.\+Interfaces.\+I\+Security\+Factory.\+Application\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Наименование приложения 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_a83db1d288369e763449e69b6c1bc992f}\label{interface_security_1_1_interfaces_1_1_i_security_factory_a83db1d288369e763449e69b6c1bc992f}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Current\+Application@{Current\+Application}}
+\index{Current\+Application@{Current\+Application}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Current\+Application}{CurrentApplication}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} Security.\+Interfaces.\+I\+Security\+Factory.\+Current\+Application\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Текущее приложение 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_factory_a46941edf494ff525d842a665548b59f4}\label{interface_security_1_1_interfaces_1_1_i_security_factory_a46941edf494ff525d842a665548b59f4}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}!Settings@{Settings}}
+\index{Settings@{Settings}!Security\+::\+Interfaces\+::\+I\+Security\+Factory@{Security\+::\+Interfaces\+::\+I\+Security\+Factory}}
+\subsubsection{\texorpdfstring{Settings}{Settings}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_i_security_settings}{I\+Security\+Settings} Security.\+Interfaces.\+I\+Security\+Factory.\+Settings\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Настройки для системы доступа 
+
+
+
+Объявления и описания членов интерфейса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Interfaces/I\+Security\+Factory.\+cs\end{DoxyCompactItemize}

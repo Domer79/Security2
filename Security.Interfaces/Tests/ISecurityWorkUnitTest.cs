@@ -25,22 +25,29 @@
         /// <summary>
         /// Тест. Добавление разрешение на операцию Select для объекта на определенную роль
         /// </summary>
-        void AddGrantSelectForSecObject1ToRole1();
+        void AddGrant_CheckGrantAfterInsert_ExpectedRole1SecObject1Exec();
 
         /// <summary>
         /// Тест. Предоставление роли пользователю
         /// </summary>
-        void AddRole1ToUser1Test();
+        void AddRolesToMember_CheckRelationShip_ExpectedValue(string user, string[] roles, string app);
+
+        /// <summary>
+        /// Тест добавления пользователей в группу. Проверка наличия добавленных пользователей в группе
+        /// </summary>
+        /// <param name="group"></param>
+        /// <param name="users"></param>
+        void AddUsersToGroup_CheckRelationship(string group, string[] users);
 
         /// <summary>
         /// Тест. Проверка входа
         /// </summary>
-        void LogInTest();
+        void LogIn_CheckAuthentication_ExpectedTrue(string user, string password);
 
         /// <summary>
         /// Тест. Проверка входа с неверным паролем
         /// </summary>
-        void LogInFailedTest();
+        void LogIn_CheckAuthentication_ExpectedFalse(string user, string password);
 
         /// <summary>
         /// Тест. Проверка доступа

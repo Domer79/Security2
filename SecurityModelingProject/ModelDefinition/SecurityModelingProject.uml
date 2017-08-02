@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="6a2f0c22-5b15-451b-8485-d26c8f9f5f3b"
   name="SecurityModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -17,28 +17,1740 @@
         name="StandardProfileL3" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <component
+        Id="e8d0ca65-2455-4e6c-94ee-27937a4038cb"
+        name="Security"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="44bf674b-c255-41e1-ad64-100ce583bed1"
+        name="Component1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="ff06b3cc-f21b-4e7a-ad75-f81c4727e164"
+        name="Security.EntityDal"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="10c22c3e-b23d-438e-ba98-607d5408b8d2"
+        name="Security"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="7483b469-9746-47d3-9514-1419b004a280"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <suppliersInternal>
+              <dependency
+                Id="91b20c7a-6175-4b6a-bddc-e74eb5ca0cd2">
+                <providedInterfaceMoniker
+                  Id="35f09d6b-206a-4348-9eca-61bfb09f9625"
+                  LastKnownName="Port1"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="9751facb-0e8a-45d2-a1d7-10dc64a4ce31"
+                LastKnownName="Interface3"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="34515486-869f-48fa-8e62-2369ea0827d5"
+        name="Security.EntityDal"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="489c4c45-20c2-4bd6-ab87-4a0526b20e26"
+        name="Security.EntityFramework"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="a104432c-dda9-4925-81d3-6c513467f0c1">
+            <componentMoniker
+              Id="90f9206b-166c-4377-955a-c4b88cc22b99"
+              LastKnownName="Security.Model"
+              LastKnownLocation="SecurityModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="19d5c405-98c6-492e-9b5a-6397bbb8484a">
+            <componentMoniker
+              Id="34515486-869f-48fa-8e62-2369ea0827d5"
+              LastKnownName="Security.EntityDal"
+              LastKnownLocation="SecurityModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="0f7a7709-668c-47ee-8c03-4450092b60d6"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <suppliersInternal>
+              <dependency
+                Id="436db646-b506-47ee-9507-c47009b9401b">
+                <providedInterfaceMoniker
+                  Id="35f09d6b-206a-4348-9eca-61bfb09f9625"
+                  LastKnownName="Port1"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="f46b12b9-658f-4e52-ba5d-6f5149e95dc3"
+                LastKnownName="Interface1"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="227eebda-ecd5-42a6-a3d6-1e66d5c50948"
+        name="Security.Interfaces"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="35f09d6b-206a-4348-9eca-61bfb09f9625"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="d555d39c-e484-4ab5-99ff-2b1afa6e2a72"
+                LastKnownName="Interface2"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="90f9206b-166c-4377-955a-c4b88cc22b99"
+        name="Security.Model"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="a3c80f60-a172-405d-be2a-8340e647ab22"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <suppliersInternal>
+              <dependency
+                Id="a92a0135-7a17-4651-ab01-8f0badcd32df">
+                <providedInterfaceMoniker
+                  Id="35f09d6b-206a-4348-9eca-61bfb09f9625"
+                  LastKnownName="Port1"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="30267a46-20c1-4d9a-ab3d-a92af25b46d2"
+                LastKnownName="Interface5"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="0961ec0c-8731-43b7-9d2c-5a42736ba19f"
+        name="Security.Web"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="739b93a0-9b1b-499c-ac2d-6eee75e9d1c9">
+            <componentMoniker
+              Id="10c22c3e-b23d-438e-ba98-607d5408b8d2"
+              LastKnownName="Security"
+              LastKnownLocation="SecurityModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="8241f9a3-e7bf-49e6-aaf1-7c5389ca5dd4"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <suppliersInternal>
+              <dependency
+                Id="f5098de0-b9bb-401e-acd6-3f678794d924">
+                <providedInterfaceMoniker
+                  Id="35f09d6b-206a-4348-9eca-61bfb09f9625"
+                  LastKnownName="Port1"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="6b088f2e-ca7e-47a1-9226-20f9838f7876"
+                LastKnownName="Interface4"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="60bfab69-d5b6-4c21-98fd-30b2a9ce00c4"
+        name="Security.Manager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="55008bee-ffa8-4bb0-8562-93d294d94d16">
+            <componentMoniker
+              Id="90f9206b-166c-4377-955a-c4b88cc22b99"
+              LastKnownName="Security.Model"
+              LastKnownLocation="SecurityModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="6e6f658d-fdcc-4115-a269-eca926a5879e">
+            <componentMoniker
+              Id="227eebda-ecd5-42a6-a3d6-1e66d5c50948"
+              LastKnownName="Security.Interfaces"
+              LastKnownLocation="SecurityModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="21e2f359-cf83-4c7f-8baa-fa1e346c2e1d">
+            <componentMoniker
+              Id="0961ec0c-8731-43b7-9d2c-5a42736ba19f"
+              LastKnownName="Security.Web"
+              LastKnownLocation="SecurityModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="b8ea3ac0-1859-4789-86bd-7c43750ac5bf">
+            <componentMoniker
+              Id="10c22c3e-b23d-438e-ba98-607d5408b8d2"
+              LastKnownName="Security"
+              LastKnownLocation="SecurityModelingProject.uml" />
+          </dependency>
+          <dependency
+            Id="9fef7075-496e-4df9-af16-3bb3f91a63be">
+            <componentMoniker
+              Id="489c4c45-20c2-4bd6-ab87-4a0526b20e26"
+              LastKnownName="Security.EntityFramework"
+              LastKnownLocation="SecurityModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="f46b12b9-658f-4e52-ba5d-6f5149e95dc3"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="d555d39c-e484-4ab5-99ff-2b1afa6e2a72"
+        name="Interface2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="9751facb-0e8a-45d2-a1d7-10dc64a4ce31"
+        name="Interface3"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="6b088f2e-ca7e-47a1-9226-20f9838f7876"
+        name="Interface4"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="30267a46-20c1-4d9a-ab3d-a92af25b46d2"
+        name="Interface5"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="95979219-c21d-4c99-929c-df8cb727c4b2"
+        name="Interface6"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bf9512ec-b396-4631-a6af-19bcb1256cd3"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="3d0a6c9c-b46d-49fa-bfea-d72d24051535"
+        name="Sequence1"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="29be7f0d-236d-446c-a470-ac4bb8bbada4"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="583f7cf3-4bc0-4b2f-8f4d-3053e389eaa1"
+                LastKnownName="Security.LogIn"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="bf3f08c5-2968-4a59-ada3-fdcde5ebbe6a"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="a884ce9f-0a9d-448a-a66c-20633b199de6"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="f79601a1-ef70-41f1-851b-d013277e0089"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="3a1333b9-262f-4443-8c69-28cef417eca0"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="a7f87c30-e97b-4a21-bbc0-1191f969c4c8"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="88ed2e3c-787e-403f-bedb-52bce8520223"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="a884ce9f-0a9d-448a-a66c-20633b199de6"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="5ea9c351-9505-41b6-a593-ea8ce341daab"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="583f7cf3-4bc0-4b2f-8f4d-3053e389eaa1"
+                LastKnownName="Security.LogIn"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="35e28281-0f13-40b6-9afe-a6395de9e56b"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="0a1d66f5-1a4d-46c6-b2a4-7bd541a47cda"
+                LastKnownName="Submit login, password"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f79601a1-ef70-41f1-851b-d013277e0089"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="583f7cf3-4bc0-4b2f-8f4d-3053e389eaa1"
+                LastKnownName="Security.LogIn"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="578d4ad1-9df3-4214-8f3e-cecf4976bb7a"
+            name="BehaviorExecutionSpecification5">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5bc33790-23de-4a19-a170-2b3c520975b6"
+                LastKnownName="SecurityTools.UserValidate"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="96dad6e6-c1f7-4e2b-a631-e63c72626155"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="42615afd-0219-47ab-9376-4fb1f2c21201"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="759a136b-dbd0-49b2-a6a8-2b579772643f"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="bdd263eb-68a7-48ae-9fd4-88b2ff5de242"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="42615afd-0219-47ab-9376-4fb1f2c21201"
+            name="ExecutionOccurrenceSpecification9">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="b2d751ad-d4e5-4a09-8dc7-619995476870"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5bc33790-23de-4a19-a170-2b3c520975b6"
+                LastKnownName="SecurityTools.UserValidate"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3a1333b9-262f-4443-8c69-28cef417eca0"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="583f7cf3-4bc0-4b2f-8f4d-3053e389eaa1"
+                LastKnownName="Security.LogIn"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="759a136b-dbd0-49b2-a6a8-2b579772643f"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="5bc33790-23de-4a19-a170-2b3c520975b6"
+                LastKnownName="SecurityTools.UserValidate"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bdd263eb-68a7-48ae-9fd4-88b2ff5de242"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="5bc33790-23de-4a19-a170-2b3c520975b6"
+                LastKnownName="SecurityTools.UserValidate"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a7f87c30-e97b-4a21-bbc0-1191f969c4c8"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="583f7cf3-4bc0-4b2f-8f4d-3053e389eaa1"
+                LastKnownName="Security.LogIn"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="96dad6e6-c1f7-4e2b-a631-e63c72626155"
+            name="ExecutionOccurrenceSpecification10">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="db81da67-d55b-4925-acb5-069ccc217c32"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5bc33790-23de-4a19-a170-2b3c520975b6"
+                LastKnownName="SecurityTools.UserValidate"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="88ed2e3c-787e-403f-bedb-52bce8520223"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="583f7cf3-4bc0-4b2f-8f4d-3053e389eaa1"
+                LastKnownName="Security.LogIn"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e40ed263-a31e-43ac-9c83-c8e387b6efe8"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="0a1d66f5-1a4d-46c6-b2a4-7bd541a47cda"
+                LastKnownName="Submit login, password"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="bf3f08c5-2968-4a59-ada3-fdcde5ebbe6a"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="efe82178-0821-47a9-8eec-317b72746333"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="583f7cf3-4bc0-4b2f-8f4d-3053e389eaa1"
+                LastKnownName="Security.LogIn"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="0a1d66f5-1a4d-46c6-b2a4-7bd541a47cda"
+            name="Submit login, password"
+            isActor="false"
+            lifelineDisplayName="Submit login, password">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="35e28281-0f13-40b6-9afe-a6395de9e56b"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="e40ed263-a31e-43ac-9c83-c8e387b6efe8"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="583f7cf3-4bc0-4b2f-8f4d-3053e389eaa1"
+            name="Security.LogIn"
+            isActor="false"
+            lifelineDisplayName="Security.LogIn">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="a884ce9f-0a9d-448a-a66c-20633b199de6"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="bf3f08c5-2968-4a59-ada3-fdcde5ebbe6a"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="5bc33790-23de-4a19-a170-2b3c520975b6"
+            name="SecurityTools.UserValidate"
+            isActor="false"
+            lifelineDisplayName="SecurityTools.UserValidate">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="42615afd-0219-47ab-9376-4fb1f2c21201"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="96dad6e6-c1f7-4e2b-a631-e63c72626155"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="4c6fbc35-9d05-41af-97ec-25bf8f4dd0f0"
+            name="login, password"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="35e28281-0f13-40b6-9afe-a6395de9e56b"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f79601a1-ef70-41f1-851b-d013277e0089"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="31c01cc2-55fa-4a3f-81f5-73532707b777"
+            name="login, pasword"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="3a1333b9-262f-4443-8c69-28cef417eca0"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="759a136b-dbd0-49b2-a6a8-2b579772643f"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="5f28e0e6-a7eb-47c3-b5bd-257a901974f1"
+            name="true/false"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bdd263eb-68a7-48ae-9fd4-88b2ff5de242"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a7f87c30-e97b-4a21-bbc0-1191f969c4c8"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="812a268b-a11b-4ebf-af9b-16d50a963a3d"
+            name="true/false"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="88ed2e3c-787e-403f-bedb-52bce8520223"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e40ed263-a31e-43ac-9c83-c8e387b6efe8"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="5ea9c351-9505-41b6-a593-ea8ce341daab"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="efe82178-0821-47a9-8eec-317b72746333"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="b2d751ad-d4e5-4a09-8dc7-619995476870"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="db81da67-d55b-4925-acb5-069ccc217c32"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="d6ff5d9f-e195-453b-a5bb-bbfcfe616e70"
+        name="UMLSettingsProcess"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="57f5c8d9-de51-4ca3-9336-b964aeddc929"
+            name="BehaviorExecutionSpecification6">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="a1662f7b-740d-447c-8b38-c27bbac79e24"
+                LastKnownName="Создание роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="6c3e937d-23c0-4728-9ccf-67ae9dea6457"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="dfe47cd2-ce88-4ef5-b049-241ef9a150e0"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="448856a3-880f-4f0c-bda9-888a5b36bc16"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="e870ef59-c7d6-46c3-9c96-08dff116ca86"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="dfe47cd2-ce88-4ef5-b049-241ef9a150e0"
+            name="ExecutionOccurrenceSpecification11">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="72dd0c4e-6968-4d61-8bcf-002be74b5570"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="a1662f7b-740d-447c-8b38-c27bbac79e24"
+                LastKnownName="Создание роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2d84da90-ba63-4b83-8cf4-39ee5793b022"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="dd431ba6-b0ea-4e40-97bd-5bd6aa03d510"
+                LastKnownName="Конфигурирование, системы"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="448856a3-880f-4f0c-bda9-888a5b36bc16"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="a1662f7b-740d-447c-8b38-c27bbac79e24"
+                LastKnownName="Создание роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e870ef59-c7d6-46c3-9c96-08dff116ca86"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="a1662f7b-740d-447c-8b38-c27bbac79e24"
+                LastKnownName="Создание роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ffad5842-2531-4aea-afb2-f3bf05bb6584"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="dd431ba6-b0ea-4e40-97bd-5bd6aa03d510"
+                LastKnownName="Конфигурирование, системы"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="6c3e937d-23c0-4728-9ccf-67ae9dea6457"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f0e80166-5799-4e19-8b4e-6ff2406c5486"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="a1662f7b-740d-447c-8b38-c27bbac79e24"
+                LastKnownName="Создание роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="e0a2a4ec-2805-4027-af4a-e6bad849e0c5"
+            name="BehaviorExecutionSpecification9">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="e5f7b5df-9e7d-4f9b-b2ed-04aada85a17d"
+                LastKnownName="Создание пользователя безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="3e884493-0e1d-4ebf-89e6-88e0904e27be"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="3f9ae58c-9030-48e3-bfdb-8e588bc08c90"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="7ab1b70c-2554-49d0-b883-8438d05c11b0"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="1096581b-81dd-4366-b9b8-b2a5a33aaf55"
+                LastKnownName="MessageOccurrenceSpecification39"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d6c02fb0-0500-4967-98d0-dbd8cc964adb"
+                LastKnownName="MessageOccurrenceSpecification42"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="6e28d451-4754-49da-9a0f-393e9fb0c152"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="3f9ae58c-9030-48e3-bfdb-8e588bc08c90"
+            name="ExecutionOccurrenceSpecification17">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="feb11f82-256a-439f-9fc2-7c1b483bc0c1"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e5f7b5df-9e7d-4f9b-b2ed-04aada85a17d"
+                LastKnownName="Создание пользователя безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7ab1b70c-2554-49d0-b883-8438d05c11b0"
+            name="MessageOccurrenceSpecification26">
+            <covered>
+              <lifelineMoniker
+                Id="e5f7b5df-9e7d-4f9b-b2ed-04aada85a17d"
+                LastKnownName="Создание пользователя безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="da18df79-16ff-4d90-b617-fe2176b03259"
+            name="MessageOccurrenceSpecification25">
+            <covered>
+              <lifelineMoniker
+                Id="a1662f7b-740d-447c-8b38-c27bbac79e24"
+                LastKnownName="Создание роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="c95446ea-f7de-4c68-8843-5e9e470656f6"
+            name="BehaviorExecutionSpecification13">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="fb3ea97b-0fe6-49d4-873c-55359eadfb61"
+                LastKnownName="Назначение ему роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="28d92aaf-5280-4963-bfc5-e812de4fda3f"
+                LastKnownName="ExecutionOccurrenceSpecification26"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="aeedd604-3cad-4030-8aa6-22f8558cab90"
+                LastKnownName="ExecutionOccurrenceSpecification25"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="dbd53a27-c2a6-4c3b-834d-fefa73f4b140"
+                LastKnownName="MessageOccurrenceSpecification40"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="14a85c67-3b41-48ee-9f33-a843891ab998"
+                LastKnownName="MessageOccurrenceSpecification43"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="3b4b55af-327c-4c23-97d4-64bcd48fd4fd"
+                LastKnownName="MessageOccurrenceSpecification46"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="83ef2f2d-c3fb-4a16-9203-ce7bec9304a3"
+                LastKnownName="MessageOccurrenceSpecification41"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="aeedd604-3cad-4030-8aa6-22f8558cab90"
+            name="ExecutionOccurrenceSpecification25">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="07f0a57b-e01d-40a1-9fcc-cc0d3d5d526a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="fb3ea97b-0fe6-49d4-873c-55359eadfb61"
+                LastKnownName="Назначение ему роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="dbd53a27-c2a6-4c3b-834d-fefa73f4b140"
+            name="MessageOccurrenceSpecification40">
+            <covered>
+              <lifelineMoniker
+                Id="fb3ea97b-0fe6-49d4-873c-55359eadfb61"
+                LastKnownName="Назначение ему роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1096581b-81dd-4366-b9b8-b2a5a33aaf55"
+            name="MessageOccurrenceSpecification39">
+            <covered>
+              <lifelineMoniker
+                Id="e5f7b5df-9e7d-4f9b-b2ed-04aada85a17d"
+                LastKnownName="Создание пользователя безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="bc6da4ac-dc07-44fb-a59c-a7a86b8d47ad"
+            name="BehaviorExecutionSpecification14">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="aa3d05c6-8574-4666-8b09-44991e51c03f"
+                LastKnownName="Закрыть доступ к системе безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="ae237896-c86a-47a3-9f2b-0567b466439f"
+                LastKnownName="ExecutionOccurrenceSpecification28"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="3fa5a8af-d94b-4770-85b1-72734e26b4a7"
+                LastKnownName="ExecutionOccurrenceSpecification27"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="9606743f-de41-4bbb-b4ac-39528d3a3969"
+                LastKnownName="MessageOccurrenceSpecification44"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="f362d047-946d-45b0-9541-8551bec07845"
+                LastKnownName="MessageOccurrenceSpecification45"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="3fa5a8af-d94b-4770-85b1-72734e26b4a7"
+            name="ExecutionOccurrenceSpecification27">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4377666f-a9d5-4a25-8f9e-fa1f7ec36267"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="aa3d05c6-8574-4666-8b09-44991e51c03f"
+                LastKnownName="Закрыть доступ к системе безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="14a85c67-3b41-48ee-9f33-a843891ab998"
+            name="MessageOccurrenceSpecification43">
+            <covered>
+              <lifelineMoniker
+                Id="fb3ea97b-0fe6-49d4-873c-55359eadfb61"
+                LastKnownName="Назначение ему роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9606743f-de41-4bbb-b4ac-39528d3a3969"
+            name="MessageOccurrenceSpecification44">
+            <covered>
+              <lifelineMoniker
+                Id="aa3d05c6-8574-4666-8b09-44991e51c03f"
+                LastKnownName="Закрыть доступ к системе безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f362d047-946d-45b0-9541-8551bec07845"
+            name="MessageOccurrenceSpecification45">
+            <covered>
+              <lifelineMoniker
+                Id="aa3d05c6-8574-4666-8b09-44991e51c03f"
+                LastKnownName="Закрыть доступ к системе безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3b4b55af-327c-4c23-97d4-64bcd48fd4fd"
+            name="MessageOccurrenceSpecification46">
+            <covered>
+              <lifelineMoniker
+                Id="fb3ea97b-0fe6-49d4-873c-55359eadfb61"
+                LastKnownName="Назначение ему роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="ae237896-c86a-47a3-9f2b-0567b466439f"
+            name="ExecutionOccurrenceSpecification28">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="79e39748-923e-4253-8fd3-fdb834a7df6f"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="aa3d05c6-8574-4666-8b09-44991e51c03f"
+                LastKnownName="Закрыть доступ к системе безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="44c3a495-7c13-4383-9d1a-32df5044e34a"
+            name="BehaviorExecutionSpecification15">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="22f83160-de25-4536-a108-6839ae66138c"
+                LastKnownName="Настройка остальных параметров"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="801c37fe-01ef-48cd-ac2a-06e0a5820315"
+                LastKnownName="ExecutionOccurrenceSpecification30"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="63c9de1d-8a72-4e22-93bb-c63bf149b8d8"
+                LastKnownName="ExecutionOccurrenceSpecification29"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="7015c89a-1d7f-444b-8e67-3105f4bdd022"
+                LastKnownName="MessageOccurrenceSpecification48"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="63c9de1d-8a72-4e22-93bb-c63bf149b8d8"
+            name="ExecutionOccurrenceSpecification29">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="106ecb94-bd8d-463a-93a5-4ce4effd76e9"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="22f83160-de25-4536-a108-6839ae66138c"
+                LastKnownName="Настройка остальных параметров"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5a487195-6617-473c-846d-c603ea2e73b6"
+            name="MessageOccurrenceSpecification47">
+            <covered>
+              <lifelineMoniker
+                Id="aa3d05c6-8574-4666-8b09-44991e51c03f"
+                LastKnownName="Закрыть доступ к системе безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7015c89a-1d7f-444b-8e67-3105f4bdd022"
+            name="MessageOccurrenceSpecification48">
+            <covered>
+              <lifelineMoniker
+                Id="22f83160-de25-4536-a108-6839ae66138c"
+                LastKnownName="Настройка остальных параметров"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="83ef2f2d-c3fb-4a16-9203-ce7bec9304a3"
+            name="MessageOccurrenceSpecification41">
+            <covered>
+              <lifelineMoniker
+                Id="fb3ea97b-0fe6-49d4-873c-55359eadfb61"
+                LastKnownName="Назначение ему роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d6c02fb0-0500-4967-98d0-dbd8cc964adb"
+            name="MessageOccurrenceSpecification42">
+            <covered>
+              <lifelineMoniker
+                Id="e5f7b5df-9e7d-4f9b-b2ed-04aada85a17d"
+                LastKnownName="Создание пользователя безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="28d92aaf-5280-4963-bfc5-e812de4fda3f"
+            name="ExecutionOccurrenceSpecification26">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="415fc381-f537-4f7f-ae4f-3dcf32f2ed46"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="fb3ea97b-0fe6-49d4-873c-55359eadfb61"
+                LastKnownName="Назначение ему роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="801c37fe-01ef-48cd-ac2a-06e0a5820315"
+            name="ExecutionOccurrenceSpecification30">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="2e4b1db1-447f-4a81-bb26-218c645f44e2"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="22f83160-de25-4536-a108-6839ae66138c"
+                LastKnownName="Настройка остальных параметров"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="6e28d451-4754-49da-9a0f-393e9fb0c152"
+            name="MessageOccurrenceSpecification27">
+            <covered>
+              <lifelineMoniker
+                Id="e5f7b5df-9e7d-4f9b-b2ed-04aada85a17d"
+                LastKnownName="Создание пользователя безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5d6a6e22-5ab5-410f-99ac-02bdd135ea67"
+            name="MessageOccurrenceSpecification28">
+            <covered>
+              <lifelineMoniker
+                Id="a1662f7b-740d-447c-8b38-c27bbac79e24"
+                LastKnownName="Создание роли администратора безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="3e884493-0e1d-4ebf-89e6-88e0904e27be"
+            name="ExecutionOccurrenceSpecification18">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="e10d7ece-17ec-45b0-ae58-637da974198e"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e5f7b5df-9e7d-4f9b-b2ed-04aada85a17d"
+                LastKnownName="Создание пользователя безопасности"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="dd431ba6-b0ea-4e40-97bd-5bd6aa03d510"
+            name="Конфигурирование, системы"
+            isActor="false"
+            lifelineDisplayName="Конфигурирование, системы">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="2d84da90-ba63-4b83-8cf4-39ee5793b022"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="ffad5842-2531-4aea-afb2-f3bf05bb6584"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="a1662f7b-740d-447c-8b38-c27bbac79e24"
+            name="Создание роли администратора безопасности"
+            isActor="false"
+            lifelineDisplayName="Создание роли администратора безопасности">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="dfe47cd2-ce88-4ef5-b049-241ef9a150e0"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="6c3e937d-23c0-4728-9ccf-67ae9dea6457"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="da18df79-16ff-4d90-b617-fe2176b03259"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="5d6a6e22-5ab5-410f-99ac-02bdd135ea67"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="e5f7b5df-9e7d-4f9b-b2ed-04aada85a17d"
+            name="Создание пользователя безопасности"
+            isActor="false"
+            lifelineDisplayName="Создание пользователя безопасности">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="3f9ae58c-9030-48e3-bfdb-8e588bc08c90"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="3e884493-0e1d-4ebf-89e6-88e0904e27be"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="fb3ea97b-0fe6-49d4-873c-55359eadfb61"
+            name="Назначение ему роли администратора безопасности"
+            isActor="false"
+            lifelineDisplayName="Назначение ему роли администратора безопасности">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="aeedd604-3cad-4030-8aa6-22f8558cab90"
+                LastKnownName="ExecutionOccurrenceSpecification25"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="28d92aaf-5280-4963-bfc5-e812de4fda3f"
+                LastKnownName="ExecutionOccurrenceSpecification26"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="aa3d05c6-8574-4666-8b09-44991e51c03f"
+            name="Закрыть доступ к системе безопасности"
+            isActor="false"
+            lifelineDisplayName="Закрыть доступ к системе безопасности">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="3fa5a8af-d94b-4770-85b1-72734e26b4a7"
+                LastKnownName="ExecutionOccurrenceSpecification27"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="ae237896-c86a-47a3-9f2b-0567b466439f"
+                LastKnownName="ExecutionOccurrenceSpecification28"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="5a487195-6617-473c-846d-c603ea2e73b6"
+                LastKnownName="MessageOccurrenceSpecification47"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="22f83160-de25-4536-a108-6839ae66138c"
+            name="Настройка остальных параметров"
+            isActor="false"
+            lifelineDisplayName="Настройка остальных параметров">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="63c9de1d-8a72-4e22-93bb-c63bf149b8d8"
+                LastKnownName="ExecutionOccurrenceSpecification29"
+                LastKnownLocation="SecurityModelingProject.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="801c37fe-01ef-48cd-ac2a-06e0a5820315"
+                LastKnownName="ExecutionOccurrenceSpecification30"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="0e23dd2a-9218-41f0-a338-a095074e6026"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2d84da90-ba63-4b83-8cf4-39ee5793b022"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="448856a3-880f-4f0c-bda9-888a5b36bc16"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="6105b974-71e1-4afc-a781-da21bc8c632b"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e870ef59-c7d6-46c3-9c96-08dff116ca86"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ffad5842-2531-4aea-afb2-f3bf05bb6584"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="203177a0-6a37-4ed9-85f5-e7aaa270f8b4"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="da18df79-16ff-4d90-b617-fe2176b03259"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7ab1b70c-2554-49d0-b883-8438d05c11b0"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="bb1447f4-1723-41f1-a21e-b0559ae034f3"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1096581b-81dd-4366-b9b8-b2a5a33aaf55"
+                LastKnownName="MessageOccurrenceSpecification39"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="dbd53a27-c2a6-4c3b-834d-fefa73f4b140"
+                LastKnownName="MessageOccurrenceSpecification40"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="3e3310f0-822a-4add-8eb8-c5ab97b44dca"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="14a85c67-3b41-48ee-9f33-a843891ab998"
+                LastKnownName="MessageOccurrenceSpecification43"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9606743f-de41-4bbb-b4ac-39528d3a3969"
+                LastKnownName="MessageOccurrenceSpecification44"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="f4d6324c-6ca8-4adc-b602-14672fb9c778"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f362d047-946d-45b0-9541-8551bec07845"
+                LastKnownName="MessageOccurrenceSpecification45"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="3b4b55af-327c-4c23-97d4-64bcd48fd4fd"
+                LastKnownName="MessageOccurrenceSpecification46"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="9700c40f-c3fd-4125-befd-a0a4b4cf1526"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5a487195-6617-473c-846d-c603ea2e73b6"
+                LastKnownName="MessageOccurrenceSpecification47"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7015c89a-1d7f-444b-8e67-3105f4bdd022"
+                LastKnownName="MessageOccurrenceSpecification48"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="7f92ecd0-e58e-4628-a8b0-dd05b527fc78"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="83ef2f2d-c3fb-4a16-9203-ce7bec9304a3"
+                LastKnownName="MessageOccurrenceSpecification41"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d6c02fb0-0500-4967-98d0-dbd8cc964adb"
+                LastKnownName="MessageOccurrenceSpecification42"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="f5f5f2d4-9ff3-4062-a740-4d2fc311f465"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="6e28d451-4754-49da-9a0f-393e9fb0c152"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5d6a6e22-5ab5-410f-99ac-02bdd135ea67"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="SecurityModelingProject.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="72dd0c4e-6968-4d61-8bcf-002be74b5570"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f0e80166-5799-4e19-8b4e-6ff2406c5486"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="ff24e8ae-233f-4970-bc94-b6869d078694"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="ae8654bb-65cf-4f3b-8731-6e5bd0113f15"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2c51b7cf-41b6-4e3d-8399-1ef416c02f7f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="052f4d9e-ec9d-4596-9c63-793a0976d229"
+                  LastKnownName="Аутентификация"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="052f4d9e-ec9d-4596-9c63-793a0976d229"
+            name="Аутентификация"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a0aa69ec-1cc4-4d52-9cdc-a34dc934cd01"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c667379d-9bd2-4394-8d4b-df80cb739be4"
+                  LastKnownName="Проверка доступа"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c667379d-9bd2-4394-8d4b-df80cb739be4"
+            name="Проверка доступа"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="87d3a6fd-b9e0-43c8-86a0-855b8b39254f"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="1ba0d222-beea-4cff-a4c5-f203aed1adf8"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="1ba0d222-beea-4cff-a4c5-f203aed1adf8"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8a29f16f-587c-48ea-b0b1-6396bf63f028"
+                guard="Yes"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2caea60d-2b16-432c-a891-8b1c70b75288"
+                  LastKnownName="Запрашиваемая страница"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="b45c0788-2eef-4843-88ac-fc4d10b66443"
+                guard="No"
+                name="No"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="3e26dad9-e5c3-41d6-be79-bc92c9ee0fcb"
+                  LastKnownName="Login"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+                <description>No</description>
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="2caea60d-2b16-432c-a891-8b1c70b75288"
+            name="Запрашиваемая страница"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="08add10f-41fd-4ee1-9ea3-58252dc52991"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="e7f82b15-982a-4b62-a627-76285549f05d"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="3e26dad9-e5c3-41d6-be79-bc92c9ee0fcb"
+            name="Login"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b68b7595-b321-44e9-9596-c23e5879cf13"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="e7f82b15-982a-4b62-a627-76285549f05d"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="SecurityModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="e7f82b15-982a-4b62-a627-76285549f05d"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="feb11f82-256a-439f-9fc2-7c1b483bc0c1"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="e10d7ece-17ec-45b0-ae58-637da974198e"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="07f0a57b-e01d-40a1-9fcc-cc0d3d5d526a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="415fc381-f537-4f7f-ae4f-3dcf32f2ed46"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4377666f-a9d5-4a25-8f9e-fa1f7ec36267"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="79e39748-923e-4253-8fd3-fdb834a7df6f"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="106ecb94-bd8d-463a-93a5-4ce4effd76e9"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="2e4b1db1-447f-4a81-bb26-218c645f44e2"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
     name="Integer"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
     name="Boolean"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
     name="String"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
     name="UnlimitedNatural"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
 </modelStoreModel>

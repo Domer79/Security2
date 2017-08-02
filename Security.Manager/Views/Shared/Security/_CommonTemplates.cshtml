@@ -1,0 +1,79 @@
+﻿<script type="text/ng-template" id="selectitems.tmpl.html">
+    <md-dialog>
+        <md-dialog-content style="padding: 10px">
+            <md-list flex>
+                <md-list-item class="" ng-repeat="item in items" ng-click='itemClick($event, item)' ng-class="{itemselected:item.selected}">
+                    {{item.Name}}
+                </md-list-item>
+            </md-list>
+            <md-dialog-actions layout="row">
+                <span flex></span>
+                <md-button ng-click="dialogCancel()">Отмена</md-button>
+                <md-button ng-click="answer()">Сохранить</md-button>
+            </md-dialog-actions>
+        </md-dialog-content>
+    </md-dialog>
+</script>
+
+<script type="text/ng-template" id="grants-dialog.tmpl.html">
+    <md-dialog style="width: 500px">
+        <md-dialog-content>
+            <div layout="row" style="padding-left:10px">
+                <h1 class="md-title ng-binding" style="padding: 10px; font-weight:bold;">Установка разрешений</h1>
+            </div>
+            <div layout="row">
+                <md-list flex ng-controller="SelectGrantByAccessController">
+                    <md-list-item ng-repeat="item in items" ng-click='itemClick($event, item)' ng-class="{itemselected:item.selected}">
+                        {{item.ObjectName}}
+                    </md-list-item>
+                </md-list>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="dialogCancel()">Отмена</md-button>
+            <md-button ng-click="answer()" ng-disabled="!saveAllow">Сохранить</md-button>
+        </md-dialog-actions>
+    </md-dialog>
+</script>
+
+
+<script type="text/ng-template" id="createapp.tmpl.html">
+    <md-dialog style="width: 300px" ng-controller="AddApplicationDialogController">
+        <form name="addApplication" ng-submit="submit()">
+            <md-dialog-content>
+                <div layout="row" style="padding-left:10px">
+                    <h1 class="md-title ng-binding" style="padding: 10px; font-weight:bold;">Создание приложения</h1>
+                </div>
+                <div layout="column">
+                    <md-input-container>
+                        <label>Имя приложения</label>
+                        <input ng-model="item.appname" name="appname" required ng-pattern="regex"/>
+                        <md-toolbar class="md-warn" ng-show="addApplication.appname.$error.required || addApplication.appname.$error.pattern">
+                            <div>
+                                <span ng-show="addApplication.appname.$error.required">Обязательно для заполнения</span>
+                                <span ng-show="addApplication.appname.$error.pattern">Имя приложения не соответствует требуемому шаблону</span>
+                            </div>
+                        </md-toolbar>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Краткое описание</label>
+                        <input ng-model="item.description" name="description" required />
+                        <md-toolbar class="md-warn" ng-show="addApplication.description.$error.required">
+                            <div>
+                                <span ng-show="addApplication.description.$error.required">Обязательно для заполнения</span>
+                            </div>
+                        </md-toolbar>
+                    </md-input-container>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <span flex></span>
+                <md-button ng-click="dialogCancel()">Отмена</md-button>
+                <md-button type="submit">Сохранить</md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>

@@ -1,0 +1,133 @@
+\hypertarget{class_security_1_1_configurations_1_1_config}{}\section{Класс Security.\+Configurations.\+Config}
+\label{class_security_1_1_configurations_1_1_config}\index{Security.\+Configurations.\+Config@{Security.\+Configurations.\+Config}}
+
+
+Предназначен для регистрации сборки, к которой будет применен механизм ограничения доступа  
+
+
+\subsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_security_1_1_configurations_1_1_config_a014e79b3f4d0bf2fada22d715df9c849}{Register\+Common\+Module$<$ T\+Module $>$} ()
+\begin{DoxyCompactList}\small\item\em Регистрация модуля Ninject \end{DoxyCompactList}\item 
+static void \hyperlink{class_security_1_1_configurations_1_1_config_a4f0405cc257b3cd627c58d215aad3fdf}{Register\+Application} (params \hyperlink{interface_security_1_1_interfaces_1_1_i_security_objects}{I\+Security\+Objects}\mbox{[}$\,$\mbox{]} security\+Objectes)
+\begin{DoxyCompactList}\small\item\em Регистрация приложения с передачей списка его объектов безопасности. Наименование приложения ищется в сборке вызывающей данный метод \end{DoxyCompactList}\item 
+static void \hyperlink{class_security_1_1_configurations_1_1_config_a6e83390ad4628a39588e4987b7acb1b8}{Register\+Application} (Type access\+Type, params \hyperlink{interface_security_1_1_interfaces_1_1_i_security_objects}{I\+Security\+Objects}\mbox{[}$\,$\mbox{]} security\+Objectes)
+\begin{DoxyCompactList}\small\item\em Регистрация приложения с передачей типов доступа, которые необходимо зарегистрировать и списка его объектов безопасности. Наименование приложения ищется в сборке вызывающей данный метод \end{DoxyCompactList}\item 
+static void \hyperlink{class_security_1_1_configurations_1_1_config_a78ec86a8de51d6bf724e3a2a63a2ad8f}{Register\+Application} (Assembly security\+Assembly, params \hyperlink{interface_security_1_1_interfaces_1_1_i_security_objects}{I\+Security\+Objects}\mbox{[}$\,$\mbox{]} security\+Objectes)
+\begin{DoxyCompactList}\small\item\em Регистрация приложения с передачей сборки и списка его объектов безопасности. \end{DoxyCompactList}\item 
+static void \hyperlink{class_security_1_1_configurations_1_1_config_a3678c65f12c9c31d2a1aa035e5432d60}{Register\+Application} (Assembly security\+Assembly, Type access\+Type, params \hyperlink{interface_security_1_1_interfaces_1_1_i_security_objects}{I\+Security\+Objects}\mbox{[}$\,$\mbox{]} security\+Objectes)
+\begin{DoxyCompactList}\small\item\em Регистрация приложения с передачей сборкиб, типов доступа, которые необходимо зарегистрировать и списка его объектов безопасности. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_security_1_1_configurations_1_1_config_a772d1bb22322c96ac127ff25ff5344e0}\label{class_security_1_1_configurations_1_1_config_a772d1bb22322c96ac127ff25ff5344e0}} 
+const string {\bfseries Exec} = \char`\"{}Exec\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Предназначен для регистрации сборки, к которой будет применен механизм ограничения доступа 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_configurations_1_1_config_a4f0405cc257b3cd627c58d215aad3fdf}\label{class_security_1_1_configurations_1_1_config_a4f0405cc257b3cd627c58d215aad3fdf}} 
+\index{Security\+::\+Configurations\+::\+Config@{Security\+::\+Configurations\+::\+Config}!Register\+Application@{Register\+Application}}
+\index{Register\+Application@{Register\+Application}!Security\+::\+Configurations\+::\+Config@{Security\+::\+Configurations\+::\+Config}}
+\subsubsection{\texorpdfstring{Register\+Application()}{RegisterApplication()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static void Security.\+Configurations.\+Config.\+Register\+Application (\begin{DoxyParamCaption}\item[{params \hyperlink{interface_security_1_1_interfaces_1_1_i_security_objects}{I\+Security\+Objects} \mbox{[}$\,$\mbox{]}}]{security\+Objectes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Регистрация приложения с передачей списка его объектов безопасности. Наименование приложения ищется в сборке вызывающей данный метод 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em security\+Objectes} & Список объектов безопасности\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_configurations_1_1_config_a6e83390ad4628a39588e4987b7acb1b8}\label{class_security_1_1_configurations_1_1_config_a6e83390ad4628a39588e4987b7acb1b8}} 
+\index{Security\+::\+Configurations\+::\+Config@{Security\+::\+Configurations\+::\+Config}!Register\+Application@{Register\+Application}}
+\index{Register\+Application@{Register\+Application}!Security\+::\+Configurations\+::\+Config@{Security\+::\+Configurations\+::\+Config}}
+\subsubsection{\texorpdfstring{Register\+Application()}{RegisterApplication()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Security.\+Configurations.\+Config.\+Register\+Application (\begin{DoxyParamCaption}\item[{Type}]{access\+Type,  }\item[{params \hyperlink{interface_security_1_1_interfaces_1_1_i_security_objects}{I\+Security\+Objects} \mbox{[}$\,$\mbox{]}}]{security\+Objectes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Регистрация приложения с передачей типов доступа, которые необходимо зарегистрировать и списка его объектов безопасности. Наименование приложения ищется в сборке вызывающей данный метод 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em access\+Type} & Типы доступа, должны быть определены как тип Enum\\
+\hline
+{\em security\+Objectes} & Список объектов безопасности\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_configurations_1_1_config_a78ec86a8de51d6bf724e3a2a63a2ad8f}\label{class_security_1_1_configurations_1_1_config_a78ec86a8de51d6bf724e3a2a63a2ad8f}} 
+\index{Security\+::\+Configurations\+::\+Config@{Security\+::\+Configurations\+::\+Config}!Register\+Application@{Register\+Application}}
+\index{Register\+Application@{Register\+Application}!Security\+::\+Configurations\+::\+Config@{Security\+::\+Configurations\+::\+Config}}
+\subsubsection{\texorpdfstring{Register\+Application()}{RegisterApplication()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily static void Security.\+Configurations.\+Config.\+Register\+Application (\begin{DoxyParamCaption}\item[{Assembly}]{security\+Assembly,  }\item[{params \hyperlink{interface_security_1_1_interfaces_1_1_i_security_objects}{I\+Security\+Objects} \mbox{[}$\,$\mbox{]}}]{security\+Objectes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Регистрация приложения с передачей сборки и списка его объектов безопасности. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em security\+Assembly} & Сборка, помеченная атрибутом \hyperlink{class_security_1_1_assembly_security_application_info_attribute}{Assembly\+Security\+Application\+Info\+Attribute}\\
+\hline
+{\em security\+Objectes} & Список объектов безопасности\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_configurations_1_1_config_a3678c65f12c9c31d2a1aa035e5432d60}\label{class_security_1_1_configurations_1_1_config_a3678c65f12c9c31d2a1aa035e5432d60}} 
+\index{Security\+::\+Configurations\+::\+Config@{Security\+::\+Configurations\+::\+Config}!Register\+Application@{Register\+Application}}
+\index{Register\+Application@{Register\+Application}!Security\+::\+Configurations\+::\+Config@{Security\+::\+Configurations\+::\+Config}}
+\subsubsection{\texorpdfstring{Register\+Application()}{RegisterApplication()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void Security.\+Configurations.\+Config.\+Register\+Application (\begin{DoxyParamCaption}\item[{Assembly}]{security\+Assembly,  }\item[{Type}]{access\+Type,  }\item[{params \hyperlink{interface_security_1_1_interfaces_1_1_i_security_objects}{I\+Security\+Objects} \mbox{[}$\,$\mbox{]}}]{security\+Objectes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Регистрация приложения с передачей сборкиб, типов доступа, которые необходимо зарегистрировать и списка его объектов безопасности. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em security\+Assembly} & Сборка, помеченная атрибутом \hyperlink{class_security_1_1_assembly_security_application_info_attribute}{Assembly\+Security\+Application\+Info\+Attribute}\\
+\hline
+{\em access\+Type} & Типы доступа, должны быть определены как тип Enum\\
+\hline
+{\em security\+Objectes} & Список объектов безопасности\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Access\+Type\+Missing\+Exception} & Возникает при синхронизации типов доступа, при удалении более не нужных типов, в случае их отсутствия\\
+\hline
+{\em Access\+Type\+Valid\+Exception} & Возникакет при попытке добавить тип доступа, значение строки которого является пустым или null\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_configurations_1_1_config_a014e79b3f4d0bf2fada22d715df9c849}\label{class_security_1_1_configurations_1_1_config_a014e79b3f4d0bf2fada22d715df9c849}} 
+\index{Security\+::\+Configurations\+::\+Config@{Security\+::\+Configurations\+::\+Config}!Register\+Common\+Module$<$ T\+Module $>$@{Register\+Common\+Module$<$ T\+Module $>$}}
+\index{Register\+Common\+Module$<$ T\+Module $>$@{Register\+Common\+Module$<$ T\+Module $>$}!Security\+::\+Configurations\+::\+Config@{Security\+::\+Configurations\+::\+Config}}
+\subsubsection{\texorpdfstring{Register\+Common\+Module$<$ T\+Module $>$()}{RegisterCommonModule< TModule >()}}
+{\footnotesize\ttfamily static void Security.\+Configurations.\+Config.\+Register\+Common\+Module$<$ T\+Module $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Регистрация модуля Ninject 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Module} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Согласование типов]\begin{description}
+\item[{\em T\+Module} : {\em I\+Ninject\+Module}]\item[{\em T\+Module} : {\em new()}]\end{description}
+\end{Desc}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security/\+Configurations/Config.\+cs\end{DoxyCompactItemize}

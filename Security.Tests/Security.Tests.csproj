@@ -66,10 +66,6 @@
     <Compile Include="Tests\AccessTypeUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Security.FakeData\Security.FakeData.csproj">
-      <Project>{975a544b-8f70-4d5c-8171-6f0575d4f70d}</Project>
-      <Name>Security.FakeData</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Security.Interfaces\Security.Interfaces.csproj">
       <Project>{026352e5-2a65-4064-9848-fb60ab1046ac}</Project>
       <Name>Security.Interfaces</Name>

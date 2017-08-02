@@ -1,0 +1,203 @@
+\hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context}{}\section{Класс Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context}
+\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context}\index{Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context@{Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context}}
+
+
+Базовый класс контекста базы данных  
+
+
+Граф наследования\+:Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d9/d5a/class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{[}$\,$\mbox{]} \hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a969e07d6e4ba25b186f85f37481238f7}{Get\+Table\+Names} ()
+\begin{DoxyCompactList}\small\item\em Возвращает список имен всех сущностей, т.\+к. как они представлены в БД \end{DoxyCompactList}\item 
+string \hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a53f442bd751680668b83cc07d95fd1d1}{Get\+Table\+Name} (Type type)
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_ab6b0dcc0a5350196f0a42bdce91b62c0}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_ab6b0dcc0a5350196f0a42bdce91b62c0}} 
+string {\bfseries Get\+Key\+Name$<$ T\+Entity $>$} ()
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a01f13400d6c0ff93a6a694602e84b6c3}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a01f13400d6c0ff93a6a694602e84b6c3}} 
+\hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{Entity\+Info}$<$ T\+Entity $>$ {\bfseries Get\+Entity\+Info$<$ T\+Entity $>$} ()
+\end{DoxyCompactItemize}
+\subsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a31dac417f97f23f2f604306682e13c7d}{Repository\+Data\+Context} ()
+\begin{DoxyCompactList}\small\item\em Создает новый экземпляр контекста с использованием соглашений для создания имени базы данных, с которой будет установлено соединение.\+Имя по соглашению представляет собой полное имя (пространство имен + имя класса) производного класса контекста.\+Как это используется при создании соединения, см. в примечаниях к классу. \end{DoxyCompactList}\item 
+\hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_abe2285d215c5e1ecf7d1f80a511b771a}{Repository\+Data\+Context} (Db\+Compiled\+Model model)
+\begin{DoxyCompactList}\small\item\em Создает новый экземпляр контекста с использованием соглашений для создания имени базы данных, с которой будет установлено соединение, и инициализирует его из заданной модели.\+Имя по соглашению представляет собой полное имя (пространство имен + имя класса) производного класса контекста.\+Как это используется при создании соединения, см. в примечаниях к классу. \end{DoxyCompactList}\item 
+\hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_ae6e3c338a6998c7770cafedc4c6f4706}{Repository\+Data\+Context} (string name\+Or\+Connection\+String)
+\begin{DoxyCompactList}\small\item\em Создает новый экземпляр контекста с использованием соглашений для создания имени или строки подключения базы данных, с которой будет установлено соединение.\+Как это используется при создании соединения, см. в примечаниях к классу. \end{DoxyCompactList}\item 
+\hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_ac7983fdf9c6abc654fb960466636a1c2}{Repository\+Data\+Context} (string name\+Or\+Connection\+String, Db\+Compiled\+Model model)
+\begin{DoxyCompactList}\small\item\em Создает новый экземпляр контекста с использованием указанной строки в качестве имени или строки подключения с базой данных, с которой будет установлено соединение, и инициализирует его из заданной модели.\+Как это используется при создании соединения, см. в примечаниях к классу. \end{DoxyCompactList}\item 
+\hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a99df09b09d77220fe39076a525de2008}{Repository\+Data\+Context} (Db\+Connection existing\+Connection, bool context\+Owns\+Connection)
+\begin{DoxyCompactList}\small\item\em Создает новый экземпляр контекста с использованием существующего соединения с базой данных.\+Соединение не будет освобождено при освобождении контекста, если {\itshape context\+Owns\+Connection}  является false. \end{DoxyCompactList}\item 
+\hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_abdd838c185df21475f09e9beca06bb82}{Repository\+Data\+Context} (Db\+Connection existing\+Connection, Db\+Compiled\+Model model, bool context\+Owns\+Connection)
+\begin{DoxyCompactList}\small\item\em Создает новый экземпляр контекста с использованием существующего соединения с базой данных и инициализирует его из заданной модели.\+Соединение не будет освобождено при освобождении контекста, если {\itshape context\+Owns\+Connection}  является false. \end{DoxyCompactList}\item 
+\hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a57c71a0b2e0268654012be65ac1156e5}{Repository\+Data\+Context} (Object\+Context object\+Context, bool db\+Context\+Owns\+Object\+Context)
+\begin{DoxyCompactList}\small\item\em Создает новый экземпляр контекста на основе существующего объекта Object\+Context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a245fe7a39f471745e62faffca1ce6489}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a245fe7a39f471745e62faffca1ce6489}} 
+virtual bool {\bfseries Should\+Validate} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Базовый класс контекста базы данных 
+
+
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a31dac417f97f23f2f604306682e13c7d}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a31dac417f97f23f2f604306682e13c7d}} 
+\index{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}!Repository\+Data\+Context@{Repository\+Data\+Context}}
+\index{Repository\+Data\+Context@{Repository\+Data\+Context}!Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}}
+\subsubsection{\texorpdfstring{Repository\+Data\+Context()}{RepositoryDataContext()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context.\+Repository\+Data\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает новый экземпляр контекста с использованием соглашений для создания имени базы данных, с которой будет установлено соединение.\+Имя по соглашению представляет собой полное имя (пространство имен + имя класса) производного класса контекста.\+Как это используется при создании соединения, см. в примечаниях к классу. 
+
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_abe2285d215c5e1ecf7d1f80a511b771a}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_abe2285d215c5e1ecf7d1f80a511b771a}} 
+\index{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}!Repository\+Data\+Context@{Repository\+Data\+Context}}
+\index{Repository\+Data\+Context@{Repository\+Data\+Context}!Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}}
+\subsubsection{\texorpdfstring{Repository\+Data\+Context()}{RepositoryDataContext()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context.\+Repository\+Data\+Context (\begin{DoxyParamCaption}\item[{Db\+Compiled\+Model}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает новый экземпляр контекста с использованием соглашений для создания имени базы данных, с которой будет установлено соединение, и инициализирует его из заданной модели.\+Имя по соглашению представляет собой полное имя (пространство имен + имя класса) производного класса контекста.\+Как это используется при создании соединения, см. в примечаниях к классу. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em model} & Модель, которая будет поддерживать данный контекст.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_ae6e3c338a6998c7770cafedc4c6f4706}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_ae6e3c338a6998c7770cafedc4c6f4706}} 
+\index{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}!Repository\+Data\+Context@{Repository\+Data\+Context}}
+\index{Repository\+Data\+Context@{Repository\+Data\+Context}!Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}}
+\subsubsection{\texorpdfstring{Repository\+Data\+Context()}{RepositoryDataContext()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context.\+Repository\+Data\+Context (\begin{DoxyParamCaption}\item[{string}]{name\+Or\+Connection\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает новый экземпляр контекста с использованием соглашений для создания имени или строки подключения базы данных, с которой будет установлено соединение.\+Как это используется при создании соединения, см. в примечаниях к классу. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name\+Or\+Connection\+String} & Имя базы данных или строка подключения.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_ac7983fdf9c6abc654fb960466636a1c2}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_ac7983fdf9c6abc654fb960466636a1c2}} 
+\index{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}!Repository\+Data\+Context@{Repository\+Data\+Context}}
+\index{Repository\+Data\+Context@{Repository\+Data\+Context}!Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}}
+\subsubsection{\texorpdfstring{Repository\+Data\+Context()}{RepositoryDataContext()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context.\+Repository\+Data\+Context (\begin{DoxyParamCaption}\item[{string}]{name\+Or\+Connection\+String,  }\item[{Db\+Compiled\+Model}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает новый экземпляр контекста с использованием указанной строки в качестве имени или строки подключения с базой данных, с которой будет установлено соединение, и инициализирует его из заданной модели.\+Как это используется при создании соединения, см. в примечаниях к классу. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name\+Or\+Connection\+String} & Имя базы данных или строка подключения.\\
+\hline
+{\em model} & Модель, которая будет поддерживать данный контекст.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a99df09b09d77220fe39076a525de2008}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a99df09b09d77220fe39076a525de2008}} 
+\index{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}!Repository\+Data\+Context@{Repository\+Data\+Context}}
+\index{Repository\+Data\+Context@{Repository\+Data\+Context}!Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}}
+\subsubsection{\texorpdfstring{Repository\+Data\+Context()}{RepositoryDataContext()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context.\+Repository\+Data\+Context (\begin{DoxyParamCaption}\item[{Db\+Connection}]{existing\+Connection,  }\item[{bool}]{context\+Owns\+Connection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает новый экземпляр контекста с использованием существующего соединения с базой данных.\+Соединение не будет освобождено при освобождении контекста, если {\itshape context\+Owns\+Connection}  является false. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em existing\+Connection} & Существующее соединение, которое будет использоваться новым контекстом.\\
+\hline
+{\em context\+Owns\+Connection} & Если задано значение true, соединение освобождается при освобождении контекста. В противном случае за освобождение соединения отвечает вызывающая сторона.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_abdd838c185df21475f09e9beca06bb82}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_abdd838c185df21475f09e9beca06bb82}} 
+\index{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}!Repository\+Data\+Context@{Repository\+Data\+Context}}
+\index{Repository\+Data\+Context@{Repository\+Data\+Context}!Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}}
+\subsubsection{\texorpdfstring{Repository\+Data\+Context()}{RepositoryDataContext()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context.\+Repository\+Data\+Context (\begin{DoxyParamCaption}\item[{Db\+Connection}]{existing\+Connection,  }\item[{Db\+Compiled\+Model}]{model,  }\item[{bool}]{context\+Owns\+Connection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает новый экземпляр контекста с использованием существующего соединения с базой данных и инициализирует его из заданной модели.\+Соединение не будет освобождено при освобождении контекста, если {\itshape context\+Owns\+Connection}  является false. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em existing\+Connection} & Существующее соединение, которое будет использоваться новым контекстом.\\
+\hline
+{\em model} & Модель, которая будет поддерживать данный контекст.\\
+\hline
+{\em context\+Owns\+Connection} & Если задано значение true, соединение освобождается при освобождении контекста. В противном случае за освобождение соединения отвечает вызывающая сторона.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a57c71a0b2e0268654012be65ac1156e5}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a57c71a0b2e0268654012be65ac1156e5}} 
+\index{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}!Repository\+Data\+Context@{Repository\+Data\+Context}}
+\index{Repository\+Data\+Context@{Repository\+Data\+Context}!Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}}
+\subsubsection{\texorpdfstring{Repository\+Data\+Context()}{RepositoryDataContext()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context.\+Repository\+Data\+Context (\begin{DoxyParamCaption}\item[{Object\+Context}]{object\+Context,  }\item[{bool}]{db\+Context\+Owns\+Object\+Context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Создает новый экземпляр контекста на основе существующего объекта Object\+Context. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em object\+Context} & Существующий объект Object\+Context, который будет заключен в новый контекст.\\
+\hline
+{\em db\+Context\+Owns\+Object\+Context} & Если задано значение true, Object\+Context освобождается при освобождении Db\+Context. В противном случае за освобождение соединения отвечает вызывающая сторона.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a53f442bd751680668b83cc07d95fd1d1}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a53f442bd751680668b83cc07d95fd1d1}} 
+\index{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}!Get\+Table\+Name@{Get\+Table\+Name}}
+\index{Get\+Table\+Name@{Get\+Table\+Name}!Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}}
+\subsubsection{\texorpdfstring{Get\+Table\+Name()}{GetTableName()}}
+{\footnotesize\ttfamily string Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context.\+Get\+Table\+Name (\begin{DoxyParamCaption}\item[{Type}]{type }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Аргументы}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a969e07d6e4ba25b186f85f37481238f7}\label{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context_a969e07d6e4ba25b186f85f37481238f7}} 
+\index{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}!Get\+Table\+Names@{Get\+Table\+Names}}
+\index{Get\+Table\+Names@{Get\+Table\+Names}!Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context@{Security\+::\+Entity\+Dal\+::\+Base\+::\+Repository\+Data\+Context}}
+\subsubsection{\texorpdfstring{Get\+Table\+Names()}{GetTableNames()}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Security.\+Entity\+Dal.\+Base.\+Repository\+Data\+Context.\+Get\+Table\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает список имен всех сущностей, т.\+к. как они представлены в БД 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Entity\+Dal/\+Base/Repository\+Data\+Context.\+cs\end{DoxyCompactItemize}

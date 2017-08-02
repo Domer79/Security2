@@ -1,0 +1,74 @@
+﻿@using System.Web.Optimization
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="MySecurityApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <script src="~/scripts/itisExports.js" type="text/javascript"></script>
+
+    <title>Система управления доступом - ПСС. Платформа</title>
+</head>
+<body>
+
+        @RenderBody()
+
+    @Styles.Render("~/styles/angular-material")
+    @Styles.Render("~/styles/bootstrap")
+    @Styles.Render("~/styles/pss_styles")
+    @Scripts.Render("~/scripts/angular-material-package")
+    @Scripts.Render("~/scripts/angular-ui-router")
+    @Scripts.Render("~/scripts/security")
+        <script src="~/scripts/Application.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var mySecurityApp = angular.module("MySecurityApp", ["SecurityApp"]);
+        mySecurityApp.config(function($stateProvider) {
+            $stateProvider.decorator('parent', function (internalStateObj, parentFn) {
+                // This fn is called by StateBuilder each time a state is registered
+
+                // The first arg is the internal state. Capture it and add an accessor to public state object.
+                internalStateObj.self.$$state = function () { return internalStateObj; };
+
+                // pass through to default .parent() function
+                return parentFn(internalStateObj);
+            });
+        });
+
+        mySecurityApp.run(function ($state, $trace) {
+
+            //todo: Включить для трассировки
+            //$trace.enable('TRANSITION');
+
+//            $state.defaultErrorHandler(function() {
+                /* do nothing */
+                //https://github.com/angular-ui/ui-router/issues/2977
+//            });
+        });
+        
+        var leftPanelHeight = window.screen.height * 0.7;
+
+    </script>
+
+    @RenderSection("angularscript", false)
+
+    <style>
+        md-input-container {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        md-dialog {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+
+</body>
+
+</html>

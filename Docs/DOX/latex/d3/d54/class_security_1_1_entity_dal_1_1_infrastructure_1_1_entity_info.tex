@@ -1,0 +1,191 @@
+\hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{}\section{Шаблон класса Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info$<$ T\+Entity $>$}
+\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}\index{Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info$<$ T\+Entity $>$@{Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info$<$ T\+Entity $>$}}
+
+
+Класс информатор для сущности  
+
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a77aa0e0dbb82cd1a6a2efb9a10700235}{Entity\+Info} (\hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context}{Repository\+Data\+Context} context)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \end{DoxyCompactList}\item 
+Expression$<$ Func$<$ T\+Entity, T\+Key $>$ $>$ \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_ae2a059a47208059f58c05d316aef50a9}{Get\+Member\+Access$<$ T\+Key $>$} ()
+\begin{DoxyCompactList}\small\item\em Возвращает выражение для ключа сущности \end{DoxyCompactList}\item 
+Expression$<$ Func$<$ T\+Entity, T\+Key $>$ $>$ \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_aaeae67737bdb3fb3a060a72007268ffb}{Get\+Member\+Access$<$ T\+Key $>$} (string column\+Name)
+\begin{DoxyCompactList}\small\item\em Возвращает выражение для свойства сущности \end{DoxyCompactList}\item 
+Expression$<$ Func$<$ T\+Entity, object $>$ $>$ \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a00fbeaff893bc743c782586ae88e5070}{Get\+Member\+Access} (string column\+Name)
+\begin{DoxyCompactList}\small\item\em Возвращает выражение для свойства сущности, тип которого неизвестен \end{DoxyCompactList}\item 
+Property\+Info \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_ae3d711d7f937ceca72fb9970fba30677}{Get\+Key\+Info} ()
+\begin{DoxyCompactList}\small\item\em Возвращает информацию о ключе \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a33cdc95217b297c5270b71baec8e71d3}{Key\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Возвращает имя свойства, помеченного атрибутом Key\+Attribute \end{DoxyCompactList}\item 
+string \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_ab325cd6803fd1ed5f5e57792b83ca098}{Entity\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Имя сущности \end{DoxyCompactList}\item 
+string \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_aa6fea198687d571bb309a59771aab2be}{Table\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Имя сопоставленной таблицы в базе данных \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс информатор для сущности 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Entity} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Согласование типов]\begin{description}
+\item[{\em T\+Entity} : {\em class}]\end{description}
+\end{Desc}
+
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a77aa0e0dbb82cd1a6a2efb9a10700235}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a77aa0e0dbb82cd1a6a2efb9a10700235}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}!Entity\+Info@{Entity\+Info}}
+\index{Entity\+Info@{Entity\+Info}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}}
+\subsubsection{\texorpdfstring{Entity\+Info()}{EntityInfo()}}
+{\footnotesize\ttfamily \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info}$<$ T\+Entity $>$.\hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{Entity\+Info} (\begin{DoxyParamCaption}\item[{\hyperlink{class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context}{Repository\+Data\+Context}}]{context }\end{DoxyParamCaption})}
+
+
+
+Конструктор класса 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em context} & Контекст БД\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Argument\+Null\+Exception} & Если контекст равен null\\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_ae3d711d7f937ceca72fb9970fba30677}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_ae3d711d7f937ceca72fb9970fba30677}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}!Get\+Key\+Info@{Get\+Key\+Info}}
+\index{Get\+Key\+Info@{Get\+Key\+Info}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}}
+\subsubsection{\texorpdfstring{Get\+Key\+Info()}{GetKeyInfo()}}
+{\footnotesize\ttfamily Property\+Info \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info}$<$ T\+Entity $>$.Get\+Key\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает информацию о ключе 
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает объект типа Property\+Info
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a00fbeaff893bc743c782586ae88e5070}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a00fbeaff893bc743c782586ae88e5070}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}!Get\+Member\+Access@{Get\+Member\+Access}}
+\index{Get\+Member\+Access@{Get\+Member\+Access}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}}
+\subsubsection{\texorpdfstring{Get\+Member\+Access()}{GetMemberAccess()}}
+{\footnotesize\ttfamily Expression$<$Func$<$T\+Entity, object$>$ $>$ \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info}$<$ T\+Entity $>$.Get\+Member\+Access (\begin{DoxyParamCaption}\item[{string}]{column\+Name }\end{DoxyParamCaption})}
+
+
+
+Возвращает выражение для свойства сущности, тип которого неизвестен 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em column\+Name} & Имя свойства\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Выражение вида 
+\begin{DoxyCode}
+p => p.Key
+\end{DoxyCode}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_ae2a059a47208059f58c05d316aef50a9}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_ae2a059a47208059f58c05d316aef50a9}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}!Get\+Member\+Access$<$ T\+Key $>$@{Get\+Member\+Access$<$ T\+Key $>$}}
+\index{Get\+Member\+Access$<$ T\+Key $>$@{Get\+Member\+Access$<$ T\+Key $>$}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}}
+\subsubsection{\texorpdfstring{Get\+Member\+Access$<$ T\+Key $>$()}{GetMemberAccess< TKey >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Expression$<$Func$<$T\+Entity, T\+Key$>$ $>$ \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info}$<$ T\+Entity $>$.\hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a00fbeaff893bc743c782586ae88e5070}{Get\+Member\+Access}$<$ T\+Key $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает выражение для ключа сущности 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Key} & Тип ключа\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Возвращает}
+Выражение вида 
+\begin{DoxyCode}
+p => p.Key
+\end{DoxyCode}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_aaeae67737bdb3fb3a060a72007268ffb}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_aaeae67737bdb3fb3a060a72007268ffb}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}!Get\+Member\+Access$<$ T\+Key $>$@{Get\+Member\+Access$<$ T\+Key $>$}}
+\index{Get\+Member\+Access$<$ T\+Key $>$@{Get\+Member\+Access$<$ T\+Key $>$}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}}
+\subsubsection{\texorpdfstring{Get\+Member\+Access$<$ T\+Key $>$()}{GetMemberAccess< TKey >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Expression$<$Func$<$T\+Entity, T\+Key$>$ $>$ \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info}$<$ T\+Entity $>$.\hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a00fbeaff893bc743c782586ae88e5070}{Get\+Member\+Access}$<$ T\+Key $>$ (\begin{DoxyParamCaption}\item[{string}]{column\+Name }\end{DoxyParamCaption})}
+
+
+
+Возвращает выражение для свойства сущности 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Key} & Тип свойства\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em column\+Name} & Имя свойства\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Выражение вида 
+\begin{DoxyCode}
+p => p.Key
+\end{DoxyCode}
+
+\end{DoxyReturn}
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_ab325cd6803fd1ed5f5e57792b83ca098}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_ab325cd6803fd1ed5f5e57792b83ca098}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}!Entity\+Name@{Entity\+Name}}
+\index{Entity\+Name@{Entity\+Name}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}}
+\subsubsection{\texorpdfstring{Entity\+Name}{EntityName}}
+{\footnotesize\ttfamily string \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info}$<$ T\+Entity $>$.Entity\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Имя сущности 
+
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a33cdc95217b297c5270b71baec8e71d3}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_a33cdc95217b297c5270b71baec8e71d3}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}!Key\+Name@{Key\+Name}}
+\index{Key\+Name@{Key\+Name}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}}
+\subsubsection{\texorpdfstring{Key\+Name}{KeyName}}
+{\footnotesize\ttfamily string \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info}$<$ T\+Entity $>$.Key\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Возвращает имя свойства, помеченного атрибутом Key\+Attribute 
+
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_aa6fea198687d571bb309a59771aab2be}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info_aa6fea198687d571bb309a59771aab2be}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}!Table\+Name@{Table\+Name}}
+\index{Table\+Name@{Table\+Name}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Entity\+Info}}
+\subsubsection{\texorpdfstring{Table\+Name}{TableName}}
+{\footnotesize\ttfamily string \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}{Security.\+Entity\+Dal.\+Infrastructure.\+Entity\+Info}$<$ T\+Entity $>$.Table\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Имя сопоставленной таблицы в базе данных 
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Entity\+Dal/\+Infrastructure/Entity\+Info.\+cs\end{DoxyCompactItemize}

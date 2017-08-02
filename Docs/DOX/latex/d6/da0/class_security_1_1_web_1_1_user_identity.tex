@@ -1,0 +1,116 @@
+\hypertarget{class_security_1_1_web_1_1_user_identity}{}\section{Класс Security.\+Web.\+User\+Identity}
+\label{class_security_1_1_web_1_1_user_identity}\index{Security.\+Web.\+User\+Identity@{Security.\+Web.\+User\+Identity}}
+
+
+Удостоверение пользователя. Определяет основные возможности объекта удостоверения.  
+
+
+Граф наследования\+:Security.\+Web.\+User\+Identity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d6/da0/class_security_1_1_web_1_1_user_identity}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_security_1_1_web_1_1_user_identity_a447a644ce2e32871ca00e55be99c02ed}\label{class_security_1_1_web_1_1_user_identity_a447a644ce2e32871ca00e55be99c02ed}} 
+{\bfseries User\+Identity} (string login, string application\+Name)
+\item 
+override string \hyperlink{class_security_1_1_web_1_1_user_identity_a000a7083c53a09f5a6d82ab9f16fc50c}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em Возвращает имя текущего пользователя \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_security_1_1_web_1_1_user_identity_a432b449be24dbfb4d8495bf15d6ac1e8}{Name} =$>$ \hyperlink{class_security_1_1_web_1_1_user_identity_a0569265b4eb6d169cd2271600e642fcf}{User} == null ? \char`\"{}\char`\"{} \+: \$\char`\"{}\{User.\+Last\+Name\} \{User.\+First\+Name\}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Получает имя текущего пользователя. \end{DoxyCompactList}\item 
+string \hyperlink{class_security_1_1_web_1_1_user_identity_a7cf0a542015f4dc80e657662d605c7ad}{Authentication\+Type} =$>$ Forms\+Authentication.\+Is\+Enabled ? \char`\"{}Forms\char`\"{} \+: \char`\"{}Unknown\char`\"{}
+\begin{DoxyCompactList}\small\item\em Возвращает тип проверки подлинности. \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_web_1_1_user_identity_a65b6fa7f0c23c0aeac354cb36e19da0c}{Is\+Authenticated} =$>$ \hyperlink{class_security_1_1_web_1_1_user_identity_a0569265b4eb6d169cd2271600e642fcf}{User} != null
+\begin{DoxyCompactList}\small\item\em Возвращает значение, указывающее, прошел ли пользователь проверку подлинности. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} \hyperlink{class_security_1_1_web_1_1_user_identity_a0569265b4eb6d169cd2271600e642fcf}{User}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Профиль пользователя \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Удостоверение пользователя. Определяет основные возможности объекта удостоверения. 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_user_identity_a000a7083c53a09f5a6d82ab9f16fc50c}\label{class_security_1_1_web_1_1_user_identity_a000a7083c53a09f5a6d82ab9f16fc50c}} 
+\index{Security\+::\+Web\+::\+User\+Identity@{Security\+::\+Web\+::\+User\+Identity}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Security\+::\+Web\+::\+User\+Identity@{Security\+::\+Web\+::\+User\+Identity}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}}
+{\footnotesize\ttfamily override string Security.\+Web.\+User\+Identity.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает имя текущего пользователя 
+
+\begin{DoxyReturn}{Возвращает}
+A string that represents the current object. 
+\end{DoxyReturn}
+
+
+\subsection{Данные класса}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_user_identity_a7cf0a542015f4dc80e657662d605c7ad}\label{class_security_1_1_web_1_1_user_identity_a7cf0a542015f4dc80e657662d605c7ad}} 
+\index{Security\+::\+Web\+::\+User\+Identity@{Security\+::\+Web\+::\+User\+Identity}!Authentication\+Type@{Authentication\+Type}}
+\index{Authentication\+Type@{Authentication\+Type}!Security\+::\+Web\+::\+User\+Identity@{Security\+::\+Web\+::\+User\+Identity}}
+\subsubsection{\texorpdfstring{Authentication\+Type}{AuthenticationType}}
+{\footnotesize\ttfamily string Security.\+Web.\+User\+Identity.\+Authentication\+Type =$>$ Forms\+Authentication.\+Is\+Enabled ? \char`\"{}Forms\char`\"{} \+: \char`\"{}Unknown\char`\"{}}
+
+
+
+Возвращает тип проверки подлинности. 
+
+\begin{DoxyReturn}{Возвращает}
+Тип проверки подлинности, используемый для идентификации пользователя. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_user_identity_a65b6fa7f0c23c0aeac354cb36e19da0c}\label{class_security_1_1_web_1_1_user_identity_a65b6fa7f0c23c0aeac354cb36e19da0c}} 
+\index{Security\+::\+Web\+::\+User\+Identity@{Security\+::\+Web\+::\+User\+Identity}!Is\+Authenticated@{Is\+Authenticated}}
+\index{Is\+Authenticated@{Is\+Authenticated}!Security\+::\+Web\+::\+User\+Identity@{Security\+::\+Web\+::\+User\+Identity}}
+\subsubsection{\texorpdfstring{Is\+Authenticated}{IsAuthenticated}}
+{\footnotesize\ttfamily bool Security.\+Web.\+User\+Identity.\+Is\+Authenticated =$>$ \hyperlink{class_security_1_1_web_1_1_user_identity_a0569265b4eb6d169cd2271600e642fcf}{User} != null}
+
+
+
+Возвращает значение, указывающее, прошел ли пользователь проверку подлинности. 
+
+\begin{DoxyReturn}{Возвращает}
+true, если пользователь был аутентифицирован; в противном случае false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_user_identity_a432b449be24dbfb4d8495bf15d6ac1e8}\label{class_security_1_1_web_1_1_user_identity_a432b449be24dbfb4d8495bf15d6ac1e8}} 
+\index{Security\+::\+Web\+::\+User\+Identity@{Security\+::\+Web\+::\+User\+Identity}!Name@{Name}}
+\index{Name@{Name}!Security\+::\+Web\+::\+User\+Identity@{Security\+::\+Web\+::\+User\+Identity}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily string Security.\+Web.\+User\+Identity.\+Name =$>$ \hyperlink{class_security_1_1_web_1_1_user_identity_a0569265b4eb6d169cd2271600e642fcf}{User} == null ? \char`\"{}\char`\"{} \+: \$\char`\"{}\{User.\+Last\+Name\} \{User.\+First\+Name\}\char`\"{}}
+
+
+
+Получает имя текущего пользователя. 
+
+\begin{DoxyReturn}{Возвращает}
+Имя пользователя, от имени которого выполняется код. 
+\end{DoxyReturn}
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_user_identity_a0569265b4eb6d169cd2271600e642fcf}\label{class_security_1_1_web_1_1_user_identity_a0569265b4eb6d169cd2271600e642fcf}} 
+\index{Security\+::\+Web\+::\+User\+Identity@{Security\+::\+Web\+::\+User\+Identity}!User@{User}}
+\index{User@{User}!Security\+::\+Web\+::\+User\+Identity@{Security\+::\+Web\+::\+User\+Identity}}
+\subsubsection{\texorpdfstring{User}{User}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} Security.\+Web.\+User\+Identity.\+User\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Профиль пользователя 
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Web/User\+Identity.\+cs\end{DoxyCompactItemize}

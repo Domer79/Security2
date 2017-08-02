@@ -1,0 +1,20 @@
+﻿<div ng-controller="RoleGrantsController">
+
+    <section layout="row">
+        <md-button ng-click="showAddGrantsDialog($event)">
+            Добавить
+        </md-button>
+        <md-button ng-click="confirm($event)" ng-if="selectedExist()">
+            Удалить
+        </md-button>
+    </section>
+
+    <md-content class='md-padding'>
+        <md-list flex>
+            <md-list-item class="" ng-repeat="item in items" ng-click='itemClick($event, item)' ng-class="{itemselected:item.selected}">
+                {{item.SecObject}}
+            </md-list-item>
+        </md-list>
+    </md-content>
+
+</div>

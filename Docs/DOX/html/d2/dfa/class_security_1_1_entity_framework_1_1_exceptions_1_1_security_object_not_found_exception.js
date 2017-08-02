@@ -1,0 +1,4 @@
+var class_security_1_1_entity_framework_1_1_exceptions_1_1_security_object_not_found_exception =
+[
+    [ "SecurityObjectNotFoundException", "d2/dfa/class_security_1_1_entity_framework_1_1_exceptions_1_1_security_object_not_found_exception.html#ab5159f5f675cec1f5798466cd58da91b", null ]
+];

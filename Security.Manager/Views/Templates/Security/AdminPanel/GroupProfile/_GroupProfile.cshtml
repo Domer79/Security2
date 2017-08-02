@@ -1,0 +1,20 @@
+﻿<md-content>
+
+    <md-card md-theme-watch>
+        <md-card-title>
+        </md-card-title>
+
+        <md-input-container>
+            <label>Имя</label>
+            <input ng-model="item.Name" ng-change="saveProfile()" ng-model-options="{updateOn: 'blur'}" required/>
+            <div ng-messages="item.Name.$error">
+                <div ng-message="required">Обязательно для заполнения</div>
+            </div>
+        </md-input-container> <br />
+        <md-input-container>
+            <label>Описание</label>
+            <input ng-model="item.Description" ng-change="saveProfile()" ng-model-options="{updateOn: 'blur'}" />
+        </md-input-container> <br />
+    </md-card>
+
+</md-content>

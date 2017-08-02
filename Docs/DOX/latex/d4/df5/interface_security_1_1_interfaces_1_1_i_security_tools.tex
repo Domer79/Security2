@@ -1,0 +1,359 @@
+\hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools}{}\section{Интерфейс Security.\+Interfaces.\+I\+Security\+Tools}
+\label{interface_security_1_1_interfaces_1_1_i_security_tools}\index{Security.\+Interfaces.\+I\+Security\+Tools@{Security.\+Interfaces.\+I\+Security\+Tools}}
+
+
+Дополнительный инструментарий для ядра системы доступа  
+
+
+Граф наследования\+:Security.\+Interfaces.\+I\+Security\+Tools\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/df5/interface_security_1_1_interfaces_1_1_i_security_tools}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_a744adcef9183e1a92ddbc475d05f23ce}{Check\+Access} (string member, string sec\+Object\+Name, string access\+Type, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Проверка доступа \end{DoxyCompactList}\item 
+void \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_ae401d07ed80380d95638be5f61b23716}{Add\+Roles\+To\+Member} (string member\+Name, string\mbox{[}$\,$\mbox{]} role\+Names, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Добавляет роли role\+Names участнику member\+Name \end{DoxyCompactList}\item 
+void \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_a0e167725f3e0ca5f4e8c23a742c8e8f4}{Delete\+Roles\+From\+Member} (string member\+Name, string\mbox{[}$\,$\mbox{]} role\+Names, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Удаляет роли у участника безопасности \end{DoxyCompactList}\item 
+void \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_a4d0a0d91c4f3d93c87ac678d4dd4e859}{Add\+Members\+To\+Role} (string role\+Name, string\mbox{[}$\,$\mbox{]} member\+Names, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Устанавливает роль для участников безопасности \end{DoxyCompactList}\item 
+void \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_acc5d44efa581c891fed28548fc95a4dc}{Delete\+Members\+From\+Role} (string role\+Name, string\mbox{[}$\,$\mbox{]} member\+Names, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Удаляет роль у участников безопасности \end{DoxyCompactList}\item 
+void \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_a6e6611d633949c2ec8f1a1c26bffa0c3}{Add\+Users\+To\+Group} (string group\+Name, string\mbox{[}$\,$\mbox{]} logins)
+\begin{DoxyCompactList}\small\item\em Добавляет пользователей в группу group\+Name \end{DoxyCompactList}\item 
+void \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_ab485af1bb5beed54b2e0979cdde89bf3}{Delete\+Users\+From\+Group} (string group\+Name, string\mbox{[}$\,$\mbox{]} logins)
+\begin{DoxyCompactList}\small\item\em Удаляет пользователей из группы \end{DoxyCompactList}\item 
+void \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_a98b41488f3151d21d3301f22cc0d3ece}{Add\+Groups\+To\+User} (string user\+Name, string\mbox{[}$\,$\mbox{]} group\+Names)
+\begin{DoxyCompactList}\small\item\em Добавляет пользователя в группы \end{DoxyCompactList}\item 
+void \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_added0cc516586d965fbed16d84d1b97f}{Delete\+Groups\+From\+User} (string user\+Name, string\mbox{[}$\,$\mbox{]} group\+Names)
+\begin{DoxyCompactList}\small\item\em Удаляет пользователя из групп group\+Names \end{DoxyCompactList}\item 
+bool \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_a102a74725900d13544f22353a239ed45}{Set\+Password} (string login, string password)
+\begin{DoxyCompactList}\small\item\em Устанвливает пароль пользователю \end{DoxyCompactList}\item 
+bool \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_a26ab5bc4b978b996a6442968289467bb}{User\+Validate} (string login, string password)
+\begin{DoxyCompactList}\small\item\em Производит идентификацию пользователя \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_log}{I\+Log} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_aaf51a25b2c2a0e2242b6dca221638de5}{Log} (string message)
+\begin{DoxyCompactList}\small\item\em Запись сообщения в лог \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_log}{I\+Log} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_ad76598f70498efa049a8cc6a60da9908}{Get\+Log\+By\+Id} (int id\+Log)
+\begin{DoxyCompactList}\small\item\em Возвращает запись из журнала по идентификатору \end{DoxyCompactList}\item 
+Task$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_log}{I\+Log} $>$ \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_a43d1289cbb80b392be815479e48b9764}{Log\+Async} (string message)
+\begin{DoxyCompactList}\small\item\em Запись сообщения в лог \end{DoxyCompactList}\item 
+I\+Enumerable$<$ string $>$ \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_a362e0c9e028821edf5bbb3a8b210e856}{Get\+Allow\+All\+Security\+Objects} (string access\+Type, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Возвращает разрешенные для пользователя объекты безопасности с указанием типа доступа \end{DoxyCompactList}\item 
+I\+Enumerable$<$ string $>$ \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools_a6580f39f21207c7f2238a5b6a54fbddb}{Get\+Allow\+Security\+Objects} (string login, string access\+Type, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Возвращает разрешенные для пользователя объекты безопасности с указанием типа доступа \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Дополнительный инструментарий для ядра системы доступа 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_a98b41488f3151d21d3301f22cc0d3ece}\label{interface_security_1_1_interfaces_1_1_i_security_tools_a98b41488f3151d21d3301f22cc0d3ece}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Add\+Groups\+To\+User@{Add\+Groups\+To\+User}}
+\index{Add\+Groups\+To\+User@{Add\+Groups\+To\+User}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Add\+Groups\+To\+User()}{AddGroupsToUser()}}
+{\footnotesize\ttfamily void Security.\+Interfaces.\+I\+Security\+Tools.\+Add\+Groups\+To\+User (\begin{DoxyParamCaption}\item[{string}]{user\+Name,  }\item[{string \mbox{[}$\,$\mbox{]}}]{group\+Names }\end{DoxyParamCaption})}
+
+
+
+Добавляет пользователя в группы 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em user\+Name} & Пользователь\\
+\hline
+{\em group\+Names} & Список групп\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_a4d0a0d91c4f3d93c87ac678d4dd4e859}\label{interface_security_1_1_interfaces_1_1_i_security_tools_a4d0a0d91c4f3d93c87ac678d4dd4e859}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Add\+Members\+To\+Role@{Add\+Members\+To\+Role}}
+\index{Add\+Members\+To\+Role@{Add\+Members\+To\+Role}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Add\+Members\+To\+Role()}{AddMembersToRole()}}
+{\footnotesize\ttfamily void Security.\+Interfaces.\+I\+Security\+Tools.\+Add\+Members\+To\+Role (\begin{DoxyParamCaption}\item[{string}]{role\+Name,  }\item[{string \mbox{[}$\,$\mbox{]}}]{member\+Names,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Устанавливает роль для участников безопасности 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em role\+Name} & Роль\\
+\hline
+{\em member\+Names} & Список участников безопасности\\
+\hline
+{\em app\+Name} & Наименование приложения\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_ae401d07ed80380d95638be5f61b23716}\label{interface_security_1_1_interfaces_1_1_i_security_tools_ae401d07ed80380d95638be5f61b23716}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Add\+Roles\+To\+Member@{Add\+Roles\+To\+Member}}
+\index{Add\+Roles\+To\+Member@{Add\+Roles\+To\+Member}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Add\+Roles\+To\+Member()}{AddRolesToMember()}}
+{\footnotesize\ttfamily void Security.\+Interfaces.\+I\+Security\+Tools.\+Add\+Roles\+To\+Member (\begin{DoxyParamCaption}\item[{string}]{member\+Name,  }\item[{string \mbox{[}$\,$\mbox{]}}]{role\+Names,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Добавляет роли role\+Names участнику member\+Name 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em member\+Name} & \\
+\hline
+{\em app\+Name} & Наименование приложения\\
+\hline
+{\em role\+Names} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_a6e6611d633949c2ec8f1a1c26bffa0c3}\label{interface_security_1_1_interfaces_1_1_i_security_tools_a6e6611d633949c2ec8f1a1c26bffa0c3}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Add\+Users\+To\+Group@{Add\+Users\+To\+Group}}
+\index{Add\+Users\+To\+Group@{Add\+Users\+To\+Group}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Add\+Users\+To\+Group()}{AddUsersToGroup()}}
+{\footnotesize\ttfamily void Security.\+Interfaces.\+I\+Security\+Tools.\+Add\+Users\+To\+Group (\begin{DoxyParamCaption}\item[{string}]{group\+Name,  }\item[{string \mbox{[}$\,$\mbox{]}}]{logins }\end{DoxyParamCaption})}
+
+
+
+Добавляет пользователей в группу group\+Name 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em group\+Name} & Группа\\
+\hline
+{\em logins} & Список пользователей\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_a744adcef9183e1a92ddbc475d05f23ce}\label{interface_security_1_1_interfaces_1_1_i_security_tools_a744adcef9183e1a92ddbc475d05f23ce}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Check\+Access@{Check\+Access}}
+\index{Check\+Access@{Check\+Access}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Check\+Access()}{CheckAccess()}}
+{\footnotesize\ttfamily bool Security.\+Interfaces.\+I\+Security\+Tools.\+Check\+Access (\begin{DoxyParamCaption}\item[{string}]{member,  }\item[{string}]{sec\+Object\+Name,  }\item[{string}]{access\+Type,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Проверка доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em member} & Логин\\
+\hline
+{\em sec\+Object\+Name} & Объект безопасности\\
+\hline
+{\em access\+Type} & Тип доступа\\
+\hline
+{\em app\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_added0cc516586d965fbed16d84d1b97f}\label{interface_security_1_1_interfaces_1_1_i_security_tools_added0cc516586d965fbed16d84d1b97f}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Delete\+Groups\+From\+User@{Delete\+Groups\+From\+User}}
+\index{Delete\+Groups\+From\+User@{Delete\+Groups\+From\+User}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Delete\+Groups\+From\+User()}{DeleteGroupsFromUser()}}
+{\footnotesize\ttfamily void Security.\+Interfaces.\+I\+Security\+Tools.\+Delete\+Groups\+From\+User (\begin{DoxyParamCaption}\item[{string}]{user\+Name,  }\item[{string \mbox{[}$\,$\mbox{]}}]{group\+Names }\end{DoxyParamCaption})}
+
+
+
+Удаляет пользователя из групп group\+Names 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em user\+Name} & Пользователь\\
+\hline
+{\em group\+Names} & Список групп\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_acc5d44efa581c891fed28548fc95a4dc}\label{interface_security_1_1_interfaces_1_1_i_security_tools_acc5d44efa581c891fed28548fc95a4dc}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Delete\+Members\+From\+Role@{Delete\+Members\+From\+Role}}
+\index{Delete\+Members\+From\+Role@{Delete\+Members\+From\+Role}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Delete\+Members\+From\+Role()}{DeleteMembersFromRole()}}
+{\footnotesize\ttfamily void Security.\+Interfaces.\+I\+Security\+Tools.\+Delete\+Members\+From\+Role (\begin{DoxyParamCaption}\item[{string}]{role\+Name,  }\item[{string \mbox{[}$\,$\mbox{]}}]{member\+Names,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Удаляет роль у участников безопасности 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em role\+Name} & Роль\\
+\hline
+{\em member\+Names} & Список участников безопасности\\
+\hline
+{\em app\+Name} & Наименование приложения\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_a0e167725f3e0ca5f4e8c23a742c8e8f4}\label{interface_security_1_1_interfaces_1_1_i_security_tools_a0e167725f3e0ca5f4e8c23a742c8e8f4}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Delete\+Roles\+From\+Member@{Delete\+Roles\+From\+Member}}
+\index{Delete\+Roles\+From\+Member@{Delete\+Roles\+From\+Member}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Delete\+Roles\+From\+Member()}{DeleteRolesFromMember()}}
+{\footnotesize\ttfamily void Security.\+Interfaces.\+I\+Security\+Tools.\+Delete\+Roles\+From\+Member (\begin{DoxyParamCaption}\item[{string}]{member\+Name,  }\item[{string \mbox{[}$\,$\mbox{]}}]{role\+Names,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Удаляет роли у участника безопасности 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em member\+Name} & Участник безопасности\\
+\hline
+{\em role\+Names} & Список ролей\\
+\hline
+{\em app\+Name} & Наименование приложения\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_ab485af1bb5beed54b2e0979cdde89bf3}\label{interface_security_1_1_interfaces_1_1_i_security_tools_ab485af1bb5beed54b2e0979cdde89bf3}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Delete\+Users\+From\+Group@{Delete\+Users\+From\+Group}}
+\index{Delete\+Users\+From\+Group@{Delete\+Users\+From\+Group}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Delete\+Users\+From\+Group()}{DeleteUsersFromGroup()}}
+{\footnotesize\ttfamily void Security.\+Interfaces.\+I\+Security\+Tools.\+Delete\+Users\+From\+Group (\begin{DoxyParamCaption}\item[{string}]{group\+Name,  }\item[{string \mbox{[}$\,$\mbox{]}}]{logins }\end{DoxyParamCaption})}
+
+
+
+Удаляет пользователей из группы 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em group\+Name} & Группа\\
+\hline
+{\em logins} & Список пользователей\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_a362e0c9e028821edf5bbb3a8b210e856}\label{interface_security_1_1_interfaces_1_1_i_security_tools_a362e0c9e028821edf5bbb3a8b210e856}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Get\+Allow\+All\+Security\+Objects@{Get\+Allow\+All\+Security\+Objects}}
+\index{Get\+Allow\+All\+Security\+Objects@{Get\+Allow\+All\+Security\+Objects}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Get\+Allow\+All\+Security\+Objects()}{GetAllowAllSecurityObjects()}}
+{\footnotesize\ttfamily I\+Enumerable$<$string$>$ Security.\+Interfaces.\+I\+Security\+Tools.\+Get\+Allow\+All\+Security\+Objects (\begin{DoxyParamCaption}\item[{string}]{access\+Type,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Возвращает разрешенные для пользователя объекты безопасности с указанием типа доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em access\+Type} & Тип доступа\\
+\hline
+{\em app\+Name} & Наименование приложения\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_a6580f39f21207c7f2238a5b6a54fbddb}\label{interface_security_1_1_interfaces_1_1_i_security_tools_a6580f39f21207c7f2238a5b6a54fbddb}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Get\+Allow\+Security\+Objects@{Get\+Allow\+Security\+Objects}}
+\index{Get\+Allow\+Security\+Objects@{Get\+Allow\+Security\+Objects}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Get\+Allow\+Security\+Objects()}{GetAllowSecurityObjects()}}
+{\footnotesize\ttfamily I\+Enumerable$<$string$>$ Security.\+Interfaces.\+I\+Security\+Tools.\+Get\+Allow\+Security\+Objects (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{access\+Type,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Возвращает разрешенные для пользователя объекты безопасности с указанием типа доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя\\
+\hline
+{\em access\+Type} & Тип доступа\\
+\hline
+{\em app\+Name} & Наименование приложения\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_ad76598f70498efa049a8cc6a60da9908}\label{interface_security_1_1_interfaces_1_1_i_security_tools_ad76598f70498efa049a8cc6a60da9908}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Get\+Log\+By\+Id@{Get\+Log\+By\+Id}}
+\index{Get\+Log\+By\+Id@{Get\+Log\+By\+Id}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Get\+Log\+By\+Id()}{GetLogById()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_log}{I\+Log} Security.\+Interfaces.\+I\+Security\+Tools.\+Get\+Log\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id\+Log }\end{DoxyParamCaption})}
+
+
+
+Возвращает запись из журнала по идентификатору 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em id\+Log} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_aaf51a25b2c2a0e2242b6dca221638de5}\label{interface_security_1_1_interfaces_1_1_i_security_tools_aaf51a25b2c2a0e2242b6dca221638de5}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Log@{Log}}
+\index{Log@{Log}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_log}{I\+Log} Security.\+Interfaces.\+I\+Security\+Tools.\+Log (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})}
+
+
+
+Запись сообщения в лог 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Строка сообщения\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_a43d1289cbb80b392be815479e48b9764}\label{interface_security_1_1_interfaces_1_1_i_security_tools_a43d1289cbb80b392be815479e48b9764}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Log\+Async@{Log\+Async}}
+\index{Log\+Async@{Log\+Async}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Log\+Async()}{LogAsync()}}
+{\footnotesize\ttfamily Task$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_log}{I\+Log}$>$ Security.\+Interfaces.\+I\+Security\+Tools.\+Log\+Async (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})}
+
+
+
+Запись сообщения в лог 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Строка сообщения\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_a102a74725900d13544f22353a239ed45}\label{interface_security_1_1_interfaces_1_1_i_security_tools_a102a74725900d13544f22353a239ed45}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!Set\+Password@{Set\+Password}}
+\index{Set\+Password@{Set\+Password}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{Set\+Password()}{SetPassword()}}
+{\footnotesize\ttfamily bool Security.\+Interfaces.\+I\+Security\+Tools.\+Set\+Password (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{password }\end{DoxyParamCaption})}
+
+
+
+Устанвливает пароль пользователю 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя\\
+\hline
+{\em password} & Пароль\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_tools_a26ab5bc4b978b996a6442968289467bb}\label{interface_security_1_1_interfaces_1_1_i_security_tools_a26ab5bc4b978b996a6442968289467bb}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}!User\+Validate@{User\+Validate}}
+\index{User\+Validate@{User\+Validate}!Security\+::\+Interfaces\+::\+I\+Security\+Tools@{Security\+::\+Interfaces\+::\+I\+Security\+Tools}}
+\subsubsection{\texorpdfstring{User\+Validate()}{UserValidate()}}
+{\footnotesize\ttfamily bool Security.\+Interfaces.\+I\+Security\+Tools.\+User\+Validate (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{password }\end{DoxyParamCaption})}
+
+
+
+Производит идентификацию пользователя 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя\\
+\hline
+{\em password} & Пароль\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Объявления и описания членов интерфейса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Interfaces/I\+Security\+Tools.\+cs\end{DoxyCompactItemize}

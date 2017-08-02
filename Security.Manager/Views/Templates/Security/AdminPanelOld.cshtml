@@ -1,0 +1,97 @@
+﻿<div layout="column" layout-fill ng-controller="AdminPanelController">
+    <header>
+        <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools" layout="row" flex layout-align="center center">
+                <md-menu-bar>
+                    <md-menu @*md-offset="0 40"*@>
+                        <md-button class="md-icon-button" aria-label="Settings" ng-click="$mdOpenMenu($event)">
+                            <md-icon md-svg-icon="navigation:menu"></md-icon>
+                        </md-button>
+                        <md-menu-content>
+@*                            <md-menu-item>*@
+@*                                <md-button aria-label="Установить объекты безопасности" ng-click="setupSecurityObjects($event)">*@
+@*                                    Установить объекты безопасности*@
+@*                                </md-button>*@
+@*                            </md-menu-item>*@
+                            <md-menu-item>
+                                <md-button aria-label="Объекты безопасности" ng-click="showSecurityObjectsDialog($event)">
+                                    Объекты безопасности
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-divider></md-menu-divider>
+                            <md-menu-item>
+                                <md-menu>
+                                    <md-button ng-click="">
+                                        Приложения
+                                    </md-button>
+                                    <md-menu-content>
+                                        <md-menu-item>
+                                            <md-button ng-click="createApplication($event)">Создать приложение</md-button>
+                                        </md-menu-item>
+                                        <md-menu-divider></md-menu-divider>
+                                        <md-menu-item ng-repeat="app in $ctrl.applications">
+                                            <md-button ng-click="gotoApplication(app.AppName)">{{app.Description}}</md-button>
+                                            <md-button ng-if="app.IdApplication !== 1" class="md-icon-button" ng-click="deleteApp($event, app)">
+                                                <md-icon md-svg-icon="/Content/Images/material-icons/ic_delete_forever_black_18px.svg"></md-icon>
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-menu-bar>
+                <h2>
+                    <span>{{currentApp().Description}}</span>
+                </h2>
+                <span flex></span>
+                <md-menu md-offset="0 40">
+                    <md-button ng-click="$mdOpenMenu($event)">@ViewBag.User</md-button>
+                    <md-menu-content>
+                        <md-menu-item>
+                            <md-button href="@Url.Action("Logout", "Auth")" ng-click="">Выйти</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <md-button aria-label="Журнал">Журнал<md-icon md-svg-icon="images:details" ng-click="openLog($event)"></md-icon></md-button>
+            </div>
+        </md-toolbar>
+    </header>
+
+@*    <main flex style="overflow-y: auto" class="admin-panel">*@
+    <main flex style="overflow-y: auto">
+        <div layout="row">
+            <div flex="40">
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="Пользователи" md-on-select="tabSelect('users')" md-active="false">
+                        <ui-view name="users"></ui-view>
+                    </md-tab>
+                    <md-tab label="Группы" md-on-select="tabSelect('groups')" md-active="false">
+                        <ui-view name="groups"></ui-view>
+                    </md-tab>
+                    <md-tab label="Роли" md-on-select="tabSelect('roles')" md-active="false">
+                        <ui-view name="roles"></ui-view>
+                    </md-tab>
+                </md-tabs>
+            </div>
+            <md-divider vertical></md-divider>
+            <div flex>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="{{tab.name}}" ng-repeat="tab in tabs.current" ng-click="profileTabSelect(tab)" md-active="tab.active">
+                        <md-content class="md-padding">
+                            <ui-view name="tab{{$index}}"></ui-view>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <md-toolbar class="md-scroll-shrink">
+            <div layout="row" layout-align="center center" flex style="padding:10px">
+                <span flex>Система управления доступом - ПСС. Платформа</span>
+                <span>Версия @ViewBag.Version</span>
+            </div>
+        </md-toolbar>
+    </footer>
+</div>

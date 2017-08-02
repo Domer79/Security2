@@ -1,0 +1,30 @@
+﻿<script type="text/ng-template" id="newgroup.tmpl.html">
+    
+    <md-content layout="column" style="padding:10px" ng-controller="AddItemDialogController">
+        <md-input-container>
+            <label>Имя</label>
+            <input ng-model="item.name" />
+        </md-input-container>
+        <md-input-container>
+            <label>Описание</label>
+            <input ng-model="item.description" />
+        </md-input-container>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="dialogCancel()">Отмена</md-button>
+            <md-button ng-click="answer(item)">Сохранить</md-button>
+        </md-dialog-actions>
+    </md-content>
+</script>
+
+<section layout="row">
+    <md-button ng-click="showNewItemDialog($event, {templateUrl:'newgroup.tmpl.html', ctrl: 'AddItemDialogController'})">Добавить</md-button>
+    <md-button ng-click="deleteGroups($event)" ng-if="selectedExist()">Удалить</md-button>
+</section>
+
+<md-content class='md-padding' id="leftpanel">
+    <md-list flex>
+        <md-list-item class="" ng-repeat="group in $ctrl.groups" ng-click='itemClick($event, group)' ng-class="{itemselected:isSelectedItem(group.Name)}">{{group.Name}}</md-list-item>
+    </md-list>
+</md-content>

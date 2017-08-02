@@ -1,0 +1,64 @@
+﻿<script type="text/ng-template" id="newuser.tmpl.html">
+    <md-dialog style="max-width:300px;">
+        <md-content layout="column" style="padding:10px;">
+            <form name="item" ng-submit="submit(item.$valid)">
+                <md-input-container>
+                    <label>Логин</label>
+                    <input ng-model="item.login" required />
+                    <div ng-messages="item.login.$error">
+                        <div ng-message="required">Обязательно для заполнения</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Пароль</label>
+                    <input type="password" ng-model="item.password" required/>
+                    <div ng-messages="item.password.$error">
+                        <div ng-message="required">Обязательно для заполнения</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Подтверждение пароля</label>
+                    <input type="password" ng-model="item.passwordConfirm" required compare-to="item.password" />
+                    <div ng-messages="item.passwordConfirm.$error">
+                        <div ng-message="required">Обязательно для заполнения</div>
+                        <div ng-message="compareTo">Пароли должны совпадать</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Имя</label>
+                    <input ng-model="item.firstName" required/>
+                </md-input-container>
+                <md-input-container>
+                    <label>Фамилия</label>
+                    <input ng-model="item.lastName" required/>
+                </md-input-container>
+                <md-input-container>
+                    <label>Отчество</label>
+                    <input ng-model="item.middleName" />
+                </md-input-container>
+                <md-input-container>
+                    <label>Email</label>
+                    <input ng-model="item.email" type="email" required/>
+                </md-input-container>
+
+                <md-dialog-actions layout="row">
+                    <span flex></span>
+                    <md-button ng-click="dialogCancel()">Отмена</md-button>
+                    <md-button type="submit">Сохранить</md-button>
+                </md-dialog-actions>
+            </form>
+        </md-content>
+    </md-dialog>
+
+</script>
+
+<section layout="row">
+    <md-button ng-click="showNewItemDialog($event, {templateUrl:'newuser.tmpl.html', ctrl: 'AddUserDialogController'})">Добавить</md-button>
+    <md-button ng-click="deleteUsers($event)" ng-if="selectedExist()">Удалить</md-button>
+</section>
+
+<md-content class='md-padding' id="leftpanel">
+    <md-list>
+        <md-list-item ng-repeat='user in $ctrl.users' ng-click='itemClick($event, user)' ng-class="{itemselected:isSelectedItem(user.Login)}">{{user.Login}}</md-list-item>
+    </md-list>
+</md-content>

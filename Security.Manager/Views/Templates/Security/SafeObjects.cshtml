@@ -1,0 +1,26 @@
+﻿<div layout="row" ng-controller="SecurityObjectsController" style="padding-left:10px; ">    
+        <form ng-cloak>
+            <div layout="row" style="padding-bottom: 20px;">
+                <h1 class="md-title ng-binding" style="padding: 10px; font-weight:bold;">Объекты безопасности</h1>
+            </div>
+@*            <div layout="row" style="padding-left:1px;padding-right:3px">*@
+@*                <md-input-container style="width:99%">*@
+@*                    <label>Новый объект безопасности</label>*@
+@*                    <input type="text" name="secObject" ng-model="newSecObject" ng-keyup="addSecObject($event)" />*@
+@*                </md-input-container>*@
+@*            </div>            *@
+            <md-dialog-actions layout="row">
+@*                <span flex></span>*@
+@*                <md-button ng-click="addNewObjects()" ng-disabled="!AddAllow">Добавить</md-button>*@
+                <md-button ng-click="deleteObjects()" ng-disabled="!DeleteAllow">Удалить выбранные объекты ({{SelectedObjectsCount}})</md-button>
+            </md-dialog-actions>
+            <md-divider horizontal></md-divider>            
+            <ui-list>
+                <md-list style="">
+                    <md-list-item ng-repeat="secObject in secObjectList" ng-click="itemClick($event, secObject)" ng-class="{itemselected:secObject.selected}">
+                        {{secObject.ObjectName}} => {{secObject.AccessType.Name}}
+                    </md-list-item>
+                </md-list>                
+            </ui-list>            
+        </form>  
+</div>

@@ -1,0 +1,28 @@
+var class_security_1_1_core_security =
+[
+    [ "CoreSecurity", "d8/daf/class_security_1_1_core_security.html#a086ca03276a1b0402a8306aa8ebee369", null ],
+    [ "CoreSecurity", "d8/daf/class_security_1_1_core_security.html#a87417c45b77507f17661f2596caf0ec7", null ],
+    [ "CoreSecurity", "d8/daf/class_security_1_1_core_security.html#aec2b00266df59a6fb1170d0d5758e078", null ],
+    [ "BeginTransaction", "d8/daf/class_security_1_1_core_security.html#a7dd6592ac290133f4f0182cfef41547b", null ],
+    [ "CheckAccess", "d8/daf/class_security_1_1_core_security.html#a8210ce9453e545a46048a95b1e35837e", null ],
+    [ "CheckAccess", "d8/daf/class_security_1_1_core_security.html#a7a9a64fd5293e9b23afe501c16e71e2b", null ],
+    [ "CheckAccess", "d8/daf/class_security_1_1_core_security.html#ace03c1422a670fd976a9a89af51090ba", null ],
+    [ "CheckAccess", "d8/daf/class_security_1_1_core_security.html#a7e47a82a3d9113388e23988e344d6dbf", null ],
+    [ "Dispose", "d8/daf/class_security_1_1_core_security.html#ae04c044fdd2706f7002c94da9924c2eb", null ],
+    [ "GetAccessTypes", "d8/daf/class_security_1_1_core_security.html#a874a60fc9733766b2530c295a7009aed", null ],
+    [ "GetAllowAllSecurityObjects", "d8/daf/class_security_1_1_core_security.html#acf070051371bf58f0f4b082e5f6b7352", null ],
+    [ "GetAllowSecurityObjects", "d8/daf/class_security_1_1_core_security.html#ad9dd82159ce61eba5ab68fed5167ec87", null ],
+    [ "LogIn", "d8/daf/class_security_1_1_core_security.html#a87672cfd35522b393c3139daa4960258", null ],
+    [ "SaveChanges", "d8/daf/class_security_1_1_core_security.html#a85c19dc69e9698e6d6df724721ae5795", null ],
+    [ "SaveChangesAsync", "d8/daf/class_security_1_1_core_security.html#ac1c356b6ee81025a45d145512dfd41b7", null ],
+    [ "Settings", "d8/daf/class_security_1_1_core_security.html#a93562c3f6277d8462f88e25d8c6b097d", null ],
+    [ "ApplicationCollection", "d8/daf/class_security_1_1_core_security.html#a58b2f3d73cc4d9b241ee874df58600f7", null ],
+    [ "CurrentApplication", "d8/daf/class_security_1_1_core_security.html#a565133c41feb3b5599b0505b97b160fb", null ],
+    [ "GrantCollection", "d8/daf/class_security_1_1_core_security.html#ae606495ba6d6c826855c47c2fdc5f4a3", null ],
+    [ "GroupCollection", "d8/daf/class_security_1_1_core_security.html#ada9f6b2ac17bc46c621bb9acf01aa3ab", null ],
+    [ "MemberCollection", "d8/daf/class_security_1_1_core_security.html#a12a91cfb7b27f3a9fe1d25f7fdebc423", null ],
+    [ "RoleCollection", "d8/daf/class_security_1_1_core_security.html#a2c7e78fa4c6489ab5b9e7d338986954c", null ],
+    [ "SecObjectCollection", "d8/daf/class_security_1_1_core_security.html#a02c72cd60218dcbb8866494ee47cac64", null ],
+    [ "Tools", "d8/daf/class_security_1_1_core_security.html#ad64eb4770dc7bd1c8672580b426a166c", null ],
+    [ "UserCollection", "d8/daf/class_security_1_1_core_security.html#a2cd468b36ea7c64dd98425cb1b221543", null ]
+];
