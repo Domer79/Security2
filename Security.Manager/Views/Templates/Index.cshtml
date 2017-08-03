@@ -1,0 +1,30 @@
+﻿@using System.Web.Optimization
+@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>title</h2>
+
+@Styles.Render("~/styles/angular-material")
+@Scripts.Render("~/scripts/angular-material-package")
+
+<script type="text/javascript">
+    var myapp = angular.module("myapp", [])
+        .controller("TestCtrl", function($scope) {
+            $scope.Name = "Hello World!!!";
+        });
+</script>
+
+<div ng-app="myapp">
+    <div ng-controller="TestCtrl">
+        <h1>{{Name}}</h1>
+        <div ng-include src="'securityObjectsDialog.tmpl.html'">
+
+        </div>
+    </div>
+</div>
+
+@{ Html.RenderPartial("Security/_CommonTemplates"); }

@@ -8,11 +8,12 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Security.Model")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Russia")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Security.Model")]
-[assembly: AssemblyCopyright("Copyright © Russia 2016")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+[assembly: InternalsVisibleTo("Security.EntityFramework")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -20,7 +21,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cc428c6e-87c3-4ff4-b698-adf244a31e38")]
+[assembly: Guid("69f6d882-5a1e-49a9-b10c-a81ad937d188")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,0 +1,87 @@
+\hypertarget{class_security_1_1_web_1_1_http_1_1_authorize_attribute}{}\section{Класс Security.\+Web.\+Http.\+Authorize\+Attribute}
+\label{class_security_1_1_web_1_1_http_1_1_authorize_attribute}\index{Security.\+Web.\+Http.\+Authorize\+Attribute@{Security.\+Web.\+Http.\+Authorize\+Attribute}}
+
+
+Абстрактный класс атрибута авторизации. Осуществляет проверку авторизации пользователя  
+
+
+Граф наследования\+:Security.\+Web.\+Http.\+Authorize\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{df/d67/class_security_1_1_web_1_1_http_1_1_authorize_attribute}
+\end{center}
+\end{figure}
+\subsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a15e5bd8536a063dcdfc1c951b139c737}\label{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a15e5bd8536a063dcdfc1c951b139c737}} 
+{\bfseries Authorize\+Attribute} (string application\+Name)
+\item 
+\hyperlink{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a35c2f1f6e56c2c322bf9c57a4e3873c0}{Authorize\+Attribute} (Assembly call\+Assembly)
+\begin{DoxyCompactList}\small\item\em Конструктор \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a9ada1d5893aaf827a783b7943fa0cd88}\label{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a9ada1d5893aaf827a783b7943fa0cd88}} 
+override bool {\bfseries Is\+Authorized} (Http\+Action\+Context action\+Context)
+\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a98f4e1b46077357f34393b648082b39b}{Object\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Наименование объекта безопасности, для которого требуется запрашивать разрешение на доступ \end{DoxyCompactList}\item 
+string \hyperlink{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a0414cafbcc46d819563bda4be9c6cf64}{Access\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Тип доступа для объекта безопасности \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Абстрактный класс атрибута авторизации. Осуществляет проверку авторизации пользователя 
+
+
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a35c2f1f6e56c2c322bf9c57a4e3873c0}\label{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a35c2f1f6e56c2c322bf9c57a4e3873c0}} 
+\index{Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute}!Authorize\+Attribute@{Authorize\+Attribute}}
+\index{Authorize\+Attribute@{Authorize\+Attribute}!Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{Authorize\+Attribute()}{AuthorizeAttribute()}}
+{\footnotesize\ttfamily Security.\+Web.\+Http.\+Authorize\+Attribute.\+Authorize\+Attribute (\begin{DoxyParamCaption}\item[{Assembly}]{call\+Assembly }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Конструктор 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em call\+Assembly} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Security\+Not\+Supported\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a0414cafbcc46d819563bda4be9c6cf64}\label{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a0414cafbcc46d819563bda4be9c6cf64}} 
+\index{Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute}!Access\+Type@{Access\+Type}}
+\index{Access\+Type@{Access\+Type}!Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{Access\+Type}{AccessType}}
+{\footnotesize\ttfamily string Security.\+Web.\+Http.\+Authorize\+Attribute.\+Access\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Тип доступа для объекта безопасности 
+
+\mbox{\Hypertarget{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a98f4e1b46077357f34393b648082b39b}\label{class_security_1_1_web_1_1_http_1_1_authorize_attribute_a98f4e1b46077357f34393b648082b39b}} 
+\index{Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute}!Object\+Name@{Object\+Name}}
+\index{Object\+Name@{Object\+Name}!Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute@{Security\+::\+Web\+::\+Http\+::\+Authorize\+Attribute}}
+\subsubsection{\texorpdfstring{Object\+Name}{ObjectName}}
+{\footnotesize\ttfamily string Security.\+Web.\+Http.\+Authorize\+Attribute.\+Object\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Наименование объекта безопасности, для которого требуется запрашивать разрешение на доступ 
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Web/\+Http/Authorize\+Attribute.\+cs\end{DoxyCompactItemize}

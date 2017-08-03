@@ -1,0 +1,35 @@
+﻿<div layout="row" ng-controller="SettingsController">
+    <table class="table table-hover table-wide">
+        <thead>
+            <tr>
+                <th>
+                    Системное имя
+                </th>
+                <th>
+                    Описание
+                </th>
+                <th>
+                    Значение
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="setting in Settings">
+                <td>
+                    {{setting.Name}}
+                </td>
+                <td>
+                    {{setting.Description}}
+                </td>
+                <td>
+                    <input ng-model="setting.Value" placeholder="Введите значение" class="ng-pristine ng-valid ng-touched">
+                </td>
+                <td>
+                    <md-button ng-click="SaveSetting(setting)" ng-hide="InProgress(setting)")>Сохранить</md-button>
+                    <md-button ng-click="addNewObjects()" ng-show="InProgress(setting)" ng-readonly="true">В процессе...</md-button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

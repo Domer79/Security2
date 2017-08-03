@@ -1,0 +1,84 @@
+﻿@{
+    Layout = "~/Views/Shared/_SecurityLayout.cshtml";
+}
+
+<div layout="column" layout-fill>
+    <header>
+        <div ng-controller="AppController">
+        <div class="header-content" layout="row">
+            <div class="left-part">
+                <div ng-hide="MainApplicationLink === null">
+                    <a href="{{MainApplicationLink}}">
+                        <div class="logo">
+                        </div>
+                    </a>
+                </div>
+                <div class="subsystem-name" id="app_name_label"></div>
+            </div>
+            <div class="right-part">
+                <div data-server-time="" id="timeShower">@DateTime.Now.ToShortTimeString()
+                </div>
+                <div class="lang-selector">
+                    @* @Html.Action("_LocalizationPartial", "Main", new { area = "LightingSystem" })*@
+                </div>
+                <div class="user-info-container">
+                    <div class="app-menu user-name">
+                        <ul class="menu">
+                            <li>
+                                <span>@ViewBag.User</span>
+                                <ul>
+                                    <li>
+                                        <a href="@Url.Action("Logout", "Auth")" ng-click="">Выйти</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div layout="row" class="app-menu subsystem-menu">
+            <ul class="menu">
+                <li><span ng-click="goToState('adminpanel')">Панель администрирования</span></li>
+                <li><span ng-click="goToState('safeobjects')">Объекты безопасности</span></li>               
+                <li>
+                    <span>Приложения</span>
+                    <ul>
+@*                        <li><a ng-click="createApplication($event)">Создать приложение</a></li>*@
+                        <li ng-repeat="app in Applications">                            
+                            <a href="#" ng-click="gotoApplication(app.AppName)">
+                                {{app.Description}}
+
+                                <md-icon ng-if="app.IdApplication !== 1" class="md-icon-button" ng-click="deleteApp($event, app); $event.stopPropagation();" md-svg-icon="/Content/Images/material-icons/ic_delete_forever_black_18px.svg"></md-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li><span ng-click="goToState('log')"><font ng-show="NewLogMessage" style="color:#ff0000">! </font>Журнал</span></li> 
+                <li><span ng-click="goToState('settings')">Настройки</span></li> 
+            </ul>
+            <span flex></span>
+        </div>
+    </div>
+    </header>
+    <main flex style="overflow-y: auto">
+        <ui-view name="securitymain">
+
+        </ui-view>
+        </main>
+    <footer style="position: relative; height: 20px">
+        <div class="wrapper">
+            <div class="copyr">
+                ©2000—@DateTime.Now.Year.ToString() «Передовые системы самообслуживания». Система управления доступом на базе "ПСС. Платформа"
+                <div class="ver">
+                    Версия <span>@ViewBag.Version. </span>
+
+                    <span>Время сервера</span>&nbsp;
+                    <div style="float:right;" id="dateTimeShower">@DateTime.Now.ToString(System.Globalization.CultureInfo.CurrentCulture)</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+    @{ Html.RenderPartial("Security/_CommonTemplates"); }

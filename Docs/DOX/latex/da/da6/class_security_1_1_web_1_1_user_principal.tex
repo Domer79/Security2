@@ -1,0 +1,73 @@
+\hypertarget{class_security_1_1_web_1_1_user_principal}{}\section{Класс Security.\+Web.\+User\+Principal}
+\label{class_security_1_1_web_1_1_user_principal}\index{Security.\+Web.\+User\+Principal@{Security.\+Web.\+User\+Principal}}
+
+
+Представляет контекст безопасности пользователя, от лица которого выполняется код, включая удостоверение пользователя (I\+Identity) и любые принадлежащие ему роли.  
+
+
+Граф наследования\+:Security.\+Web.\+User\+Principal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{da/da6/class_security_1_1_web_1_1_user_principal}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_security_1_1_web_1_1_user_principal_a98299d23de0f97894651d2f789281270}\label{class_security_1_1_web_1_1_user_principal_a98299d23de0f97894651d2f789281270}} 
+{\bfseries User\+Principal} (string login, string application\+Name)
+\item 
+bool \hyperlink{class_security_1_1_web_1_1_user_principal_a3cf055fe8bf4df333a1285f9d1d33f3a}{Is\+In\+Role} (string role)
+\begin{DoxyCompactList}\small\item\em Проверяет наличие у пользователя роли role \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_security_1_1_web_1_1_user_principal_a085f2aad907d57cce57e75462f38abb1}\label{class_security_1_1_web_1_1_user_principal_a085f2aad907d57cce57e75462f38abb1}} 
+override string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+I\+Identity \hyperlink{class_security_1_1_web_1_1_user_principal_aff69e614d55b6ae2497d8c9e42b08557}{Identity} =$>$ new \hyperlink{class_security_1_1_web_1_1_user_identity}{User\+Identity}(\+\_\+login, \+\_\+application\+Name)
+\begin{DoxyCompactList}\small\item\em Удостоверение пользователя \hyperlink{class_security_1_1_web_1_1_user_identity}{User\+Identity} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Представляет контекст безопасности пользователя, от лица которого выполняется код, включая удостоверение пользователя (I\+Identity) и любые принадлежащие ему роли. 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_user_principal_a3cf055fe8bf4df333a1285f9d1d33f3a}\label{class_security_1_1_web_1_1_user_principal_a3cf055fe8bf4df333a1285f9d1d33f3a}} 
+\index{Security\+::\+Web\+::\+User\+Principal@{Security\+::\+Web\+::\+User\+Principal}!Is\+In\+Role@{Is\+In\+Role}}
+\index{Is\+In\+Role@{Is\+In\+Role}!Security\+::\+Web\+::\+User\+Principal@{Security\+::\+Web\+::\+User\+Principal}}
+\subsubsection{\texorpdfstring{Is\+In\+Role()}{IsInRole()}}
+{\footnotesize\ttfamily bool Security.\+Web.\+User\+Principal.\+Is\+In\+Role (\begin{DoxyParamCaption}\item[{string}]{role }\end{DoxyParamCaption})}
+
+
+
+Проверяет наличие у пользователя роли role 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em role} & Проверяемая роль\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+True, если пользователь имеет данную роль, иначе False
+\end{DoxyReturn}
+
+
+\subsection{Данные класса}
+\mbox{\Hypertarget{class_security_1_1_web_1_1_user_principal_aff69e614d55b6ae2497d8c9e42b08557}\label{class_security_1_1_web_1_1_user_principal_aff69e614d55b6ae2497d8c9e42b08557}} 
+\index{Security\+::\+Web\+::\+User\+Principal@{Security\+::\+Web\+::\+User\+Principal}!Identity@{Identity}}
+\index{Identity@{Identity}!Security\+::\+Web\+::\+User\+Principal@{Security\+::\+Web\+::\+User\+Principal}}
+\subsubsection{\texorpdfstring{Identity}{Identity}}
+{\footnotesize\ttfamily I\+Identity Security.\+Web.\+User\+Principal.\+Identity =$>$ new \hyperlink{class_security_1_1_web_1_1_user_identity}{User\+Identity}(\+\_\+login, \+\_\+application\+Name)}
+
+
+
+Удостоверение пользователя \hyperlink{class_security_1_1_web_1_1_user_identity}{User\+Identity} 
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Web/User\+Principal.\+cs\end{DoxyCompactItemize}

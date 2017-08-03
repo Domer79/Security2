@@ -11,12 +11,22 @@
     <AssemblyName>Security.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugPackage|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\СУНО\IPPS\SecurityPackage\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -29,8 +39,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleasePackage|AnyCPU'">
+    <OutputPath>C:\ItGac\AccessRights\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,28 +63,44 @@
   <ItemGroup>
     <Compile Include="Base\IQueryableCollection.cs" />
     <Compile Include="Base\ISavedCollection.cs" />
+    <Compile Include="Base\ISecurityQueryable.cs" />
     <Compile Include="Collections\IAccessTypeCollection.cs" />
+    <Compile Include="Collections\IApplicationCollection.cs" />
     <Compile Include="Collections\IGrantCollection.cs" />
     <Compile Include="Collections\IGroupCollection.cs" />
     <Compile Include="Collections\IMemberCollection.cs" />
     <Compile Include="Collections\IRoleCollection.cs" />
     <Compile Include="Collections\ISecObjectCollection.cs" />
     <Compile Include="Collections\IUserCollection.cs" />
+    <Compile Include="ISecurityApplicationInfo.cs" />
+    <Compile Include="ISecurityObject.cs" />
+    <Compile Include="ISecurityObjects.cs" />
+    <Compile Include="ISecuritySettings.cs" />
     <Compile Include="ISecurityTools.cs" />
     <Compile Include="ISecurity.cs" />
     <Compile Include="ISecurityFactory.cs" />
+    <Compile Include="ISecurityTransaction.cs" />
     <Compile Include="Model\IAccessType.cs" />
+    <Compile Include="Model\IApplication.cs" />
     <Compile Include="Model\IGrant.cs" />
     <Compile Include="Model\IGroup.cs" />
+    <Compile Include="Model\ILog.cs" />
     <Compile Include="Model\IMember.cs" />
     <Compile Include="Model\IRole.cs" />
     <Compile Include="Model\ISecObject.cs" />
+    <Compile Include="Model\ISetting.cs" />
     <Compile Include="Model\IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\ISecurityWorkUnitTest.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="..\DebugPackageConfiguration.targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\Configuration.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

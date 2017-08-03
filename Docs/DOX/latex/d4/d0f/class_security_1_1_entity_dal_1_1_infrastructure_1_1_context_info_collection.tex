@@ -1,0 +1,92 @@
+\hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection}{}\section{Класс Security.\+Entity\+Dal.\+Infrastructure.\+Context\+Info\+Collection}
+\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection}\index{Security.\+Entity\+Dal.\+Infrastructure.\+Context\+Info\+Collection@{Security.\+Entity\+Dal.\+Infrastructure.\+Context\+Info\+Collection}}
+
+
+Класс, представляющий собой коллекцию классов информаторов контекстов БД  
+
+
+Граф наследования\+:Security.\+Entity\+Dal.\+Infrastructure.\+Context\+Info\+Collection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/d0f/class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection_a44def64b4da0e4d81c8c5c57bcb1a56b}{Add} (Type context\+Type)
+\begin{DoxyCompactList}\small\item\em По типу контекста создает новый класс информатор и добавляет его в коллекцию, если такой тип контекста уже зарегистрирован ничего не делает \end{DoxyCompactList}\item 
+I\+Enumerator$<$ \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info}{Context\+Info} $>$ \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection_a0122f69ad29d73953b2ddcff3009c59d}{Get\+Enumerator} ()
+\begin{DoxyCompactList}\small\item\em Возвращает перечислитель, выполняющий итерацию в коллекции. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info}{Context\+Info} \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection_af147ecc564c120bef48919a2dfa0b093}{this\mbox{[}\+Type context\+Type\mbox{]}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Возвращает информатор по типу контекста \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс, представляющий собой коллекцию классов информаторов контекстов БД 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection_a44def64b4da0e4d81c8c5c57bcb1a56b}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection_a44def64b4da0e4d81c8c5c57bcb1a56b}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection}!Add@{Add}}
+\index{Add@{Add}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection}}
+\subsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Dal.\+Infrastructure.\+Context\+Info\+Collection.\+Add (\begin{DoxyParamCaption}\item[{Type}]{context\+Type }\end{DoxyParamCaption})}
+
+
+
+По типу контекста создает новый класс информатор и добавляет его в коллекцию, если такой тип контекста уже зарегистрирован ничего не делает 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em context\+Type} & Тип контекста\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Argument\+Null\+Exception} & Если context\+Type равен null или, если один из базовых типов не является типом Repository\+Data\+Context\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection_a0122f69ad29d73953b2ddcff3009c59d}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection_a0122f69ad29d73953b2ddcff3009c59d}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection}!Get\+Enumerator@{Get\+Enumerator}}
+\index{Get\+Enumerator@{Get\+Enumerator}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection}}
+\subsubsection{\texorpdfstring{Get\+Enumerator()}{GetEnumerator()}}
+{\footnotesize\ttfamily I\+Enumerator$<$\hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info}{Context\+Info}$>$ Security.\+Entity\+Dal.\+Infrastructure.\+Context\+Info\+Collection.\+Get\+Enumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает перечислитель, выполняющий итерацию в коллекции. 
+
+\begin{DoxyReturn}{Возвращает}
+Интерфейс T\+:\+System.\+Collections.\+Generic.\+I\+Enumerator`1, который может использоваться для перебора элементов коллекции. 
+\end{DoxyReturn}
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection_af147ecc564c120bef48919a2dfa0b093}\label{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection_af147ecc564c120bef48919a2dfa0b093}} 
+\index{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection}!this\mbox{[}\+Type context\+Type\mbox{]}@{this[Type context\+Type]}}
+\index{this\mbox{[}\+Type context\+Type\mbox{]}@{this[Type context\+Type]}!Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection@{Security\+::\+Entity\+Dal\+::\+Infrastructure\+::\+Context\+Info\+Collection}}
+\subsubsection{\texorpdfstring{this[Type context\+Type]}{this[Type contextType]}}
+{\footnotesize\ttfamily \hyperlink{class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info}{Context\+Info} Security.\+Entity\+Dal.\+Infrastructure.\+Context\+Info\+Collection.\+this\mbox{[}Type context\+Type\mbox{]}\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Возвращает информатор по типу контекста 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em context\+Type} & Тип контекста\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Информатор контекста
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Entity\+Dal/\+Infrastructure/Context\+Info\+Collection.\+cs\end{DoxyCompactItemize}

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Security.Permissions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Security.Configurations;
 using Security.FakeData;
@@ -14,9 +15,20 @@ namespace Security.Tests.Tests
     {
         private BaseSecurity _security;
 
-        public FakeSecurityWorkUnitTest()
+        [TestMethod]
+        public void AllTests()
         {
             SecurityInit();
+            AddUserTest();
+            AddGroupTest();
+            AddRoleTest();
+            AddSecObjectTest();
+            AddGrantSelectForSecObject1ToRole1();
+            AddRole1ToUser1Test();
+            LogInTest();
+            LogInFailedTest();
+            CheckAccessTest();
+            CheckAccessWrongTest();
         }
 
         public void SecurityInit()
@@ -33,7 +45,6 @@ namespace Security.Tests.Tests
         /// <summary>
         /// Добавление пользователя
         /// </summary>
-        [TestMethod]
         public void AddUserTest()
         {
             _security.UserCollection.Add(new User() {Login = "User1", Password = "password".GetHashBytes()});
@@ -43,10 +54,18 @@ namespace Security.Tests.Tests
             Assert.IsNotNull(user1);
         }
 
+        public void AddGroupTest()
+        {
+            _security.GroupCollection.Add(new Group() {Name = "Group1", Description = "Группа1"});
+            _security.GroupCollection.SaveChanges();
+            var group1 = _security.GroupCollection.First(e => e.Name == "Group1");
+
+            Assert.IsNotNull(group1);
+        }
+
         /// <summary>
         /// Тест. Добавление роли
         /// </summary>
-        [TestMethod]
         public void AddRoleTest()
         {
             _security.RoleCollection.Add(new Role() {Name = "Role1"});
@@ -59,7 +78,6 @@ namespace Security.Tests.Tests
         /// <summary>
         /// Тест. Добавление объекта безопасности
         /// </summary>
-        [TestMethod]
         public void AddSecObjectTest()
         {
             _security.SecObjectCollection.Add(new SecObject() {ObjectName = "SecObject1"});
@@ -72,10 +90,9 @@ namespace Security.Tests.Tests
         /// <summary>
         /// Тест. Добавление разрешение на операцию Select для объекта на определенную роль
         /// </summary>
-        [TestMethod]
         public void AddGrantSelectForSecObject1ToRole1()
         {
-            _security.AddGrant("Role1", "SecObject1", EAccessType.Select);
+            _security.GrantCollection.Add("Role1", "SecObject1", EAccessType.Select);
 
             Assert.AreEqual("Role1", Data.GrantCollection.First().Role.Name);
             Assert.AreEqual("SecObject1", Data.GrantCollection.First().SecObject.ObjectName);
@@ -85,7 +102,6 @@ namespace Security.Tests.Tests
         /// <summary>
         /// Тест. Предоставление роли пользователю
         /// </summary>
-        [TestMethod]
         public void AddRole1ToUser1Test()
         {
             _security.AddRole("Role1", "User1");
@@ -97,7 +113,6 @@ namespace Security.Tests.Tests
         /// <summary>
         /// Тест. Проверка входа
         /// </summary>
-        [TestMethod]
         public void LogInTest()
         {
             Assert.IsTrue(_security.LogIn("User1", "password"));
@@ -106,7 +121,6 @@ namespace Security.Tests.Tests
         /// <summary>
         /// Тест. Проверка входа с неверным паролем
         /// </summary>
-        [TestMethod]
         public void LogInFailedTest()
         {
             Assert.IsTrue(!_security.LogIn("User1", "wrongpassword"));
@@ -115,7 +129,6 @@ namespace Security.Tests.Tests
         /// <summary>
         /// Тест. Проверка доступа
         /// </summary>
-        [TestMethod]
         public void CheckAccessTest()
         {
             Assert.IsTrue(_security.CheckAccess("User1", "SecObject1", EAccessType.Select));
@@ -124,18 +137,9 @@ namespace Security.Tests.Tests
         /// <summary>
         /// Тест. Проверка запрещенного доступа
         /// </summary>
-        [TestMethod]
         public void CheckAccessWrongTest()
         {
             Assert.IsTrue(!_security.CheckAccess("User1", "SecObject1", EAccessType.Add));
-        }
-
-        [TestMethod]
-        public void RemoveGrantTest()
-        {
-            _security.RemoveGrant("Role1", "SecObject1", EAccessType.Select);
-
-            Assert.AreEqual(0, Data.GrantCollection.Count);
         }
     }
 }

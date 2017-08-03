@@ -1,0 +1,321 @@
+\hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection}{}\section{Класс Security.\+Entity\+Framework.\+Collections.\+User\+Collection}
+\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection}\index{Security.\+Entity\+Framework.\+Collections.\+User\+Collection@{Security.\+Entity\+Framework.\+Collections.\+User\+Collection}}
+
+
+Класс, представляющий собой коллекцию пользователй  
+
+
+Граф наследования\+:Security.\+Entity\+Framework.\+Collections.\+User\+Collection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.276423cm]{dc/d09/class_security_1_1_entity_framework_1_1_collections_1_1_user_collection}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+I\+Enumerator$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_af3ed40f7651260c4415ad8dbe541a57e}{Get\+Enumerator} ()
+\begin{DoxyCompactList}\small\item\em Returns an enumerator that iterates through the collection. \end{DoxyCompactList}\item 
+I\+Queryable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a1c8263a1db7270fbe6ce624681052d64}{As\+No\+Tracking} ()
+\begin{DoxyCompactList}\small\item\em Возвращает коллекцию пользователей, при этом не учитывая полученные данные \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a0de5ed58d21ed103d1d82bd706ede06f}{Add} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} item)
+\begin{DoxyCompactList}\small\item\em Adds an item to the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a6f99a0cc959603ccb6b43c62b35356e8}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Removes all items from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a7c69bd803e64d69d528c837e5de7b6af}{Contains} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} item)
+\begin{DoxyCompactList}\small\item\em Determines whether the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 contains a specific value. \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a16a3852ec4612141cf6750418eeb21a5}{Copy\+To} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User}\mbox{[}$\,$\mbox{]} array, int array\+Index)
+\begin{DoxyCompactList}\small\item\em Copies the elements of the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 to an T\+:\+System.\+Array, starting at a particular T\+:\+System.\+Array index. \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ad61e980cac9eff5b548e412378b0ae4f}{Remove} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} item)
+\begin{DoxyCompactList}\small\item\em Removes the first occurrence of a specific object from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. \end{DoxyCompactList}\item 
+int \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_af8f55c52a436c007a9665b4b2fd974b5}{Save\+Changes} ()
+\begin{DoxyCompactList}\small\item\em Производит сохранение всех изменений в базу данных \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ae5cdf6eacee61676c777293bb5f54cfa}{Update} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} item)
+\begin{DoxyCompactList}\small\item\em Производит обновление элемента в БД \end{DoxyCompactList}\item 
+I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a0c6936660dfede0da76da7147467775c}{Remove\+Range} (I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} $>$ items)
+\begin{DoxyCompactList}\small\item\em Производит удаление элементов представленных коллекцией items \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a5eef1e189b4f4de73b3850cad7eb708b}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Performs application-\/defined tasks associated with freeing, releasing, or resetting unmanaged resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ace2ff754046fed3949887bdb59b842f2}{Count} =$>$ Context.\+Users.\+Count()
+\begin{DoxyCompactList}\small\item\em Gets the number of elements contained in the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a4c19bdcbdfbf3b3dbeb392c57d9657a7}{Is\+Read\+Only} =$>$ true
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only. \end{DoxyCompactList}\item 
+Expression \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a25f0966d52ce11f4c9f6edfbf244d32d}{Expression} =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_user}{User}$>$) Context.\+Users).Expression
+\begin{DoxyCompactList}\small\item\em Gets the expression tree that is associated with the instance of T\+:\+System.\+Linq.\+I\+Queryable. \end{DoxyCompactList}\item 
+Type \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a59ac77647343f73364f927b83a28f46d}{Element\+Type} =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_user}{User}$>$) Context.\+Users).Element\+Type
+\begin{DoxyCompactList}\small\item\em Gets the type of the element(s) that are returned when the expression tree associated with this instance of T\+:\+System.\+Linq.\+I\+Queryable is executed. \end{DoxyCompactList}\item 
+I\+Query\+Provider \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ac14ccfbf6bb46ddac76cddc5fd82e427}{Provider} =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_user}{User}$>$) Context.\+Users).Provider
+\begin{DoxyCompactList}\small\item\em Gets the query provider that is associated with this data source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Класс, представляющий собой коллекцию пользователй 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a0de5ed58d21ed103d1d82bd706ede06f}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a0de5ed58d21ed103d1d82bd706ede06f}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Add@{Add}}
+\index{Add@{Add}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Add (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User}}]{item }\end{DoxyParamCaption})}
+
+
+
+Adds an item to the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & The object to add to the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Not\+Supported\+Exception} & The T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a1c8263a1db7270fbe6ce624681052d64}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a1c8263a1db7270fbe6ce624681052d64}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!As\+No\+Tracking@{As\+No\+Tracking}}
+\index{As\+No\+Tracking@{As\+No\+Tracking}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{As\+No\+Tracking()}{AsNoTracking()}}
+{\footnotesize\ttfamily I\+Queryable$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User}$>$ Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+As\+No\+Tracking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает коллекцию пользователей, при этом не учитывая полученные данные 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_user_collection_a0c07c3db6d4b0123b4713c3ce436ef61}{Security.\+Interfaces.\+Collections.\+I\+User\+Collection}.
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a6f99a0cc959603ccb6b43c62b35356e8}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a6f99a0cc959603ccb6b43c62b35356e8}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Clear@{Clear}}
+\index{Clear@{Clear}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes all items from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Not\+Supported\+Exception} & The T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a7c69bd803e64d69d528c837e5de7b6af}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a7c69bd803e64d69d528c837e5de7b6af}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Contains@{Contains}}
+\index{Contains@{Contains}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Contains (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User}}]{item }\end{DoxyParamCaption})}
+
+
+
+Determines whether the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 contains a specific value. 
+
+\begin{DoxyReturn}{Возвращает}
+true if {\itshape item}  is found in the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1; otherwise, false. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & The object to locate in the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a16a3852ec4612141cf6750418eeb21a5}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a16a3852ec4612141cf6750418eeb21a5}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Copy\+To@{Copy\+To}}
+\index{Copy\+To@{Copy\+To}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Copy\+To()}{CopyTo()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Copy\+To (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} \mbox{[}$\,$\mbox{]}}]{array,  }\item[{int}]{array\+Index }\end{DoxyParamCaption})}
+
+
+
+Copies the elements of the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 to an T\+:\+System.\+Array, starting at a particular T\+:\+System.\+Array index. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em array} & The one-\/dimensional T\+:\+System.\+Array that is the destination of the elements copied from T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. The T\+:\+System.\+Array must have zero-\/based indexing.\\
+\hline
+{\em array\+Index} & The zero-\/based index in {\itshape array}  at which copying begins.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Argument\+Null\+Exception} & {\itshape array}  is null.\\
+\hline
+{\em T\+:\+System.\+Argument\+Out\+Of\+Range\+Exception} & {\itshape array\+Index}  is less than 0.\\
+\hline
+{\em T\+:\+System.\+Argument\+Exception} & The number of elements in the source T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is greater than the available space from {\itshape array\+Index}  to the end of the destination {\itshape array} .\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a5eef1e189b4f4de73b3850cad7eb708b}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a5eef1e189b4f4de73b3850cad7eb708b}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Performs application-\/defined tasks associated with freeing, releasing, or resetting unmanaged resources. 
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_af3ed40f7651260c4415ad8dbe541a57e}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_af3ed40f7651260c4415ad8dbe541a57e}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Get\+Enumerator@{Get\+Enumerator}}
+\index{Get\+Enumerator@{Get\+Enumerator}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Get\+Enumerator()}{GetEnumerator()}}
+{\footnotesize\ttfamily I\+Enumerator$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User}$>$ Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Get\+Enumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an enumerator that iterates through the collection. 
+
+\begin{DoxyReturn}{Возвращает}
+A T\+:\+System.\+Collections.\+Generic.\+I\+Enumerator`1 that can be used to iterate through the collection. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ad61e980cac9eff5b548e412378b0ae4f}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ad61e980cac9eff5b548e412378b0ae4f}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Remove@{Remove}}
+\index{Remove@{Remove}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Remove (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User}}]{item }\end{DoxyParamCaption})}
+
+
+
+Removes the first occurrence of a specific object from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+
+\begin{DoxyReturn}{Возвращает}
+true if {\itshape item}  was successfully removed from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1; otherwise, false. This method also returns false if {\itshape item}  is not found in the original T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & The object to remove from the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Not\+Supported\+Exception} & The T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a0c6936660dfede0da76da7147467775c}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a0c6936660dfede0da76da7147467775c}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Remove\+Range@{Remove\+Range}}
+\index{Remove\+Range@{Remove\+Range}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Remove\+Range()}{RemoveRange()}}
+{\footnotesize\ttfamily I\+Enumerable$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User}$>$ Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Remove\+Range (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User} $>$}]{items }\end{DoxyParamCaption})}
+
+
+
+Производит удаление элементов представленных коллекцией items 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em items} & Коллекция удаляемых элементов\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Коллекцию удаленных элементов
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_af8f55c52a436c007a9665b4b2fd974b5}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_af8f55c52a436c007a9665b4b2fd974b5}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Save\+Changes@{Save\+Changes}}
+\index{Save\+Changes@{Save\+Changes}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Save\+Changes()}{SaveChanges()}}
+{\footnotesize\ttfamily int Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Save\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Производит сохранение всех изменений в базу данных 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ae5cdf6eacee61676c777293bb5f54cfa}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ae5cdf6eacee61676c777293bb5f54cfa}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Update@{Update}}
+\index{Update@{Update}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Update (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_user}{I\+User}}]{item }\end{DoxyParamCaption})}
+
+
+
+Производит обновление элемента в БД 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & Элемент T\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Данные класса}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ace2ff754046fed3949887bdb59b842f2}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ace2ff754046fed3949887bdb59b842f2}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Count@{Count}}
+\index{Count@{Count}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Count}{Count}}
+{\footnotesize\ttfamily int Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Count =$>$ Context.\+Users.\+Count()}
+
+
+
+Gets the number of elements contained in the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+
+\begin{DoxyReturn}{Возвращает}
+The number of elements contained in the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a59ac77647343f73364f927b83a28f46d}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a59ac77647343f73364f927b83a28f46d}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Element\+Type@{Element\+Type}}
+\index{Element\+Type@{Element\+Type}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Element\+Type}{ElementType}}
+{\footnotesize\ttfamily Type Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Element\+Type =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_user}{User}$>$) Context.\+Users).Element\+Type}
+
+
+
+Gets the type of the element(s) that are returned when the expression tree associated with this instance of T\+:\+System.\+Linq.\+I\+Queryable is executed. 
+
+\begin{DoxyReturn}{Возвращает}
+A T\+:\+System.\+Type that represents the type of the element(s) that are returned when the expression tree associated with this object is executed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a25f0966d52ce11f4c9f6edfbf244d32d}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a25f0966d52ce11f4c9f6edfbf244d32d}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Expression@{Expression}}
+\index{Expression@{Expression}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Expression}{Expression}}
+{\footnotesize\ttfamily Expression Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Expression =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_user}{User}$>$) Context.\+Users).Expression}
+
+
+
+Gets the expression tree that is associated with the instance of T\+:\+System.\+Linq.\+I\+Queryable. 
+
+\begin{DoxyReturn}{Возвращает}
+The T\+:\+System.\+Linq.\+Expressions.\+Expression that is associated with this instance of T\+:\+System.\+Linq.\+I\+Queryable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a4c19bdcbdfbf3b3dbeb392c57d9657a7}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_a4c19bdcbdfbf3b3dbeb392c57d9657a7}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Is\+Read\+Only@{Is\+Read\+Only}}
+\index{Is\+Read\+Only@{Is\+Read\+Only}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Is\+Read\+Only}{IsReadOnly}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Is\+Read\+Only =$>$ true}
+
+
+
+Gets a value indicating whether the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only. 
+
+\begin{DoxyReturn}{Возвращает}
+true if the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only; otherwise, false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ac14ccfbf6bb46ddac76cddc5fd82e427}\label{class_security_1_1_entity_framework_1_1_collections_1_1_user_collection_ac14ccfbf6bb46ddac76cddc5fd82e427}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}!Provider@{Provider}}
+\index{Provider@{Provider}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+User\+Collection}}
+\subsubsection{\texorpdfstring{Provider}{Provider}}
+{\footnotesize\ttfamily I\+Query\+Provider Security.\+Entity\+Framework.\+Collections.\+User\+Collection.\+Provider =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_user}{User}$>$) Context.\+Users).Provider}
+
+
+
+Gets the query provider that is associated with this data source. 
+
+\begin{DoxyReturn}{Возвращает}
+The T\+:\+System.\+Linq.\+I\+Query\+Provider that is associated with this data source. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Entity\+Framework/\+Collections/User\+Collection.\+cs\end{DoxyCompactItemize}

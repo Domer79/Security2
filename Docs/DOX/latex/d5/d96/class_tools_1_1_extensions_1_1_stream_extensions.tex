@@ -1,0 +1,76 @@
+\hypertarget{class_tools_1_1_extensions_1_1_stream_extensions}{}\section{Класс Tools.\+Extensions.\+Stream\+Extensions}
+\label{class_tools_1_1_extensions_1_1_stream_extensions}\index{Tools.\+Extensions.\+Stream\+Extensions@{Tools.\+Extensions.\+Stream\+Extensions}}
+\subsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static Stream \hyperlink{class_tools_1_1_extensions_1_1_stream_extensions_ac7d5c6e9c74cb80aa5645882984d9497}{Copy\+To} (this Stream stream, Stream dest\+Stream)
+\begin{DoxyCompactList}\small\item\em Копирует данные из одного потока в другой \end{DoxyCompactList}\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{class_tools_1_1_extensions_1_1_stream_extensions_a8ad66fbc3f6a8110a0af982003b683b0}{Compress} (this Stream source, Stream dest)
+\begin{DoxyCompactList}\small\item\em Сжимает данные (с помощью G\+Zip\+Stream) в потоке и копирует их в другой \end{DoxyCompactList}\item 
+static void \hyperlink{class_tools_1_1_extensions_1_1_stream_extensions_a22c19f0b95ef6910c8645aab213e3524}{De\+Compress} (this Stream source, Stream dest)
+\begin{DoxyCompactList}\small\item\em Деархивирует данные в потоке и полученные данные копирует в поток назначения \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_stream_extensions_a8ad66fbc3f6a8110a0af982003b683b0}\label{class_tools_1_1_extensions_1_1_stream_extensions_a8ad66fbc3f6a8110a0af982003b683b0}} 
+\index{Tools\+::\+Extensions\+::\+Stream\+Extensions@{Tools\+::\+Extensions\+::\+Stream\+Extensions}!Compress@{Compress}}
+\index{Compress@{Compress}!Tools\+::\+Extensions\+::\+Stream\+Extensions@{Tools\+::\+Extensions\+::\+Stream\+Extensions}}
+\subsubsection{\texorpdfstring{Compress()}{Compress()}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} Tools.\+Extensions.\+Stream\+Extensions.\+Compress (\begin{DoxyParamCaption}\item[{this Stream}]{source,  }\item[{Stream}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Сжимает данные (с помощью G\+Zip\+Stream) в потоке и копирует их в другой 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em source} & Исходный поток\\
+\hline
+{\em dest} & Поток назначения\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Возвращает массив байтов сжатых данных
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_stream_extensions_ac7d5c6e9c74cb80aa5645882984d9497}\label{class_tools_1_1_extensions_1_1_stream_extensions_ac7d5c6e9c74cb80aa5645882984d9497}} 
+\index{Tools\+::\+Extensions\+::\+Stream\+Extensions@{Tools\+::\+Extensions\+::\+Stream\+Extensions}!Copy\+To@{Copy\+To}}
+\index{Copy\+To@{Copy\+To}!Tools\+::\+Extensions\+::\+Stream\+Extensions@{Tools\+::\+Extensions\+::\+Stream\+Extensions}}
+\subsubsection{\texorpdfstring{Copy\+To()}{CopyTo()}}
+{\footnotesize\ttfamily static Stream Tools.\+Extensions.\+Stream\+Extensions.\+Copy\+To (\begin{DoxyParamCaption}\item[{this Stream}]{stream,  }\item[{Stream}]{dest\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Копирует данные из одного потока в другой 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em stream} & Исходный поток\\
+\hline
+{\em dest\+Stream} & Поток назначения\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tools_1_1_extensions_1_1_stream_extensions_a22c19f0b95ef6910c8645aab213e3524}\label{class_tools_1_1_extensions_1_1_stream_extensions_a22c19f0b95ef6910c8645aab213e3524}} 
+\index{Tools\+::\+Extensions\+::\+Stream\+Extensions@{Tools\+::\+Extensions\+::\+Stream\+Extensions}!De\+Compress@{De\+Compress}}
+\index{De\+Compress@{De\+Compress}!Tools\+::\+Extensions\+::\+Stream\+Extensions@{Tools\+::\+Extensions\+::\+Stream\+Extensions}}
+\subsubsection{\texorpdfstring{De\+Compress()}{DeCompress()}}
+{\footnotesize\ttfamily static void Tools.\+Extensions.\+Stream\+Extensions.\+De\+Compress (\begin{DoxyParamCaption}\item[{this Stream}]{source,  }\item[{Stream}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Деархивирует данные в потоке и полученные данные копирует в поток назначения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em source} & Исходный поток со сжатыми данными\\
+\hline
+{\em dest} & Поток назначения\\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Tools/\+Extensions/Stream\+Extensions.\+cs\end{DoxyCompactItemize}

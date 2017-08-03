@@ -1,0 +1,114 @@
+\hypertarget{interface_security_1_1_interfaces_1_1_i_security_settings}{}\section{Интерфейс Security.\+Interfaces.\+I\+Security\+Settings}
+\label{interface_security_1_1_interfaces_1_1_i_security_settings}\index{Security.\+Interfaces.\+I\+Security\+Settings@{Security.\+Interfaces.\+I\+Security\+Settings}}
+
+
+Интерфейс настроечных параметров для системы доступа  
+
+
+
+
+Производные классы\+:Security.\+Entity\+Framework.\+Collections.\+Security\+Settings.
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{interface_security_1_1_interfaces_1_1_i_security_settings_a78c883e86e5d04af4fa4f4e4c628f54f}{Get\+Value$<$ T $>$} (string key)
+\begin{DoxyCompactList}\small\item\em Возвращает значение переданного ключа key \end{DoxyCompactList}\item 
+void \hyperlink{interface_security_1_1_interfaces_1_1_i_security_settings_a3766f2cc07be69229f3b170f6e8207c9}{Set\+Value$<$ T $>$} (string key, T value)
+\begin{DoxyCompactList}\small\item\em Устанавливает значения для ключа key \end{DoxyCompactList}\item 
+I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_setting}{I\+Setting} $>$ \hyperlink{interface_security_1_1_interfaces_1_1_i_security_settings_ae613aa8909bd26a80e39c9b6d19e455f}{Get\+System\+Settings} ()
+\begin{DoxyCompactList}\small\item\em Возвращает коллекцю системных настроек \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{interface_security_1_1_interfaces_1_1_i_security_settings_a9ae734614fb951b533f4cb6bcc83cd0b}{this\mbox{[}string key\mbox{]}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Возвращает значение переданного ключа key \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Интерфейс настроечных параметров для системы доступа 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_settings_ae613aa8909bd26a80e39c9b6d19e455f}\label{interface_security_1_1_interfaces_1_1_i_security_settings_ae613aa8909bd26a80e39c9b6d19e455f}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Settings@{Security\+::\+Interfaces\+::\+I\+Security\+Settings}!Get\+System\+Settings@{Get\+System\+Settings}}
+\index{Get\+System\+Settings@{Get\+System\+Settings}!Security\+::\+Interfaces\+::\+I\+Security\+Settings@{Security\+::\+Interfaces\+::\+I\+Security\+Settings}}
+\subsubsection{\texorpdfstring{Get\+System\+Settings()}{GetSystemSettings()}}
+{\footnotesize\ttfamily I\+Enumerable$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_setting}{I\+Setting}$>$ Security.\+Interfaces.\+I\+Security\+Settings.\+Get\+System\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает коллекцю системных настроек 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_settings_a78c883e86e5d04af4fa4f4e4c628f54f}\label{interface_security_1_1_interfaces_1_1_i_security_settings_a78c883e86e5d04af4fa4f4e4c628f54f}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Settings@{Security\+::\+Interfaces\+::\+I\+Security\+Settings}!Get\+Value$<$ T $>$@{Get\+Value$<$ T $>$}}
+\index{Get\+Value$<$ T $>$@{Get\+Value$<$ T $>$}!Security\+::\+Interfaces\+::\+I\+Security\+Settings@{Security\+::\+Interfaces\+::\+I\+Security\+Settings}}
+\subsubsection{\texorpdfstring{Get\+Value$<$ T $>$()}{GetValue< T >()}}
+{\footnotesize\ttfamily T Security.\+Interfaces.\+I\+Security\+Settings.\+Get\+Value$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})}
+
+
+
+Возвращает значение переданного ключа key 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип значения\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em key} & Ключ\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Значение типа T
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_settings_a3766f2cc07be69229f3b170f6e8207c9}\label{interface_security_1_1_interfaces_1_1_i_security_settings_a3766f2cc07be69229f3b170f6e8207c9}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Settings@{Security\+::\+Interfaces\+::\+I\+Security\+Settings}!Set\+Value$<$ T $>$@{Set\+Value$<$ T $>$}}
+\index{Set\+Value$<$ T $>$@{Set\+Value$<$ T $>$}!Security\+::\+Interfaces\+::\+I\+Security\+Settings@{Security\+::\+Interfaces\+::\+I\+Security\+Settings}}
+\subsubsection{\texorpdfstring{Set\+Value$<$ T $>$()}{SetValue< T >()}}
+{\footnotesize\ttfamily void Security.\+Interfaces.\+I\+Security\+Settings.\+Set\+Value$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{key,  }\item[{T}]{value }\end{DoxyParamCaption})}
+
+
+
+Устанавливает значения для ключа key 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип значения\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em key} & Ключ\\
+\hline
+{\em value} & Значение\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_settings_a9ae734614fb951b533f4cb6bcc83cd0b}\label{interface_security_1_1_interfaces_1_1_i_security_settings_a9ae734614fb951b533f4cb6bcc83cd0b}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security\+Settings@{Security\+::\+Interfaces\+::\+I\+Security\+Settings}!this\mbox{[}string key\mbox{]}@{this[string key]}}
+\index{this\mbox{[}string key\mbox{]}@{this[string key]}!Security\+::\+Interfaces\+::\+I\+Security\+Settings@{Security\+::\+Interfaces\+::\+I\+Security\+Settings}}
+\subsubsection{\texorpdfstring{this[string key]}{this[string key]}}
+{\footnotesize\ttfamily string Security.\+Interfaces.\+I\+Security\+Settings.\+this\mbox{[}string key\mbox{]}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Возвращает значение переданного ключа key 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em key} & Ключ\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Значение переданного ключа
+\end{DoxyReturn}
+
+
+Объявления и описания членов интерфейса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Interfaces/I\+Security\+Settings.\+cs\end{DoxyCompactItemize}

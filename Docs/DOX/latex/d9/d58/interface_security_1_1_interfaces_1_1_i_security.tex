@@ -1,0 +1,423 @@
+\hypertarget{interface_security_1_1_interfaces_1_1_i_security}{}\section{Интерфейс Security.\+Interfaces.\+I\+Security}
+\label{interface_security_1_1_interfaces_1_1_i_security}\index{Security.\+Interfaces.\+I\+Security@{Security.\+Interfaces.\+I\+Security}}
+
+
+Интерфейс ядра системы безопасности  
+
+
+Граф наследования\+:Security.\+Interfaces.\+I\+Security\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/d58/interface_security_1_1_interfaces_1_1_i_security}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a85a48460a5d327c495647539670049f8}{Log\+In} (string login, string password)
+\begin{DoxyCompactList}\small\item\em Проверка входа по логину и паролю \end{DoxyCompactList}\item 
+bool \hyperlink{interface_security_1_1_interfaces_1_1_i_security_ad996f672aeed3b4b889707c519e33ddc}{Check\+Access} (string login, string sec\+Object\+Name, Enum access\+Type)
+\begin{DoxyCompactList}\small\item\em Проверка доступа пользователя к объекту безопасности по определенному типу доступа \end{DoxyCompactList}\item 
+bool \hyperlink{interface_security_1_1_interfaces_1_1_i_security_abfc69f75a3d7510094fd41319f8b7c98}{Check\+Access} (string login, string sec\+Object\+Name, Enum access\+Type, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Проверка доступа пользователя к объекту безопасности по определенному типу доступа, с указанием приложения, для которого применяется проверка доступа \end{DoxyCompactList}\item 
+bool \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a8a405b7d7708713fb3ab8cb3b5eb4f11}{Check\+Access} (string login, string sec\+Object\+Name, string access\+Type\+Name)
+\begin{DoxyCompactList}\small\item\em Проверка доступа \end{DoxyCompactList}\item 
+bool \hyperlink{interface_security_1_1_interfaces_1_1_i_security_accc19c3e4a54d9dc283941295f8794f0}{Check\+Access} (string login, string sec\+Object\+Name, string access\+Type\+Name, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Проверка доступа \end{DoxyCompactList}\item 
+I\+Enumerable$<$ string $>$ \hyperlink{interface_security_1_1_interfaces_1_1_i_security_aa7e5e1c0fdd2fe0e3a763750decbcffb}{Get\+Allow\+All\+Security\+Objects} (string access\+Type)
+\begin{DoxyCompactList}\small\item\em Возвращает доступные для пользователя объекты безопасности \end{DoxyCompactList}\item 
+I\+Enumerable$<$ string $>$ \hyperlink{interface_security_1_1_interfaces_1_1_i_security_aef63980964e18a05521826c46040c068}{Get\+Allow\+Security\+Objects} (string login, string access\+Type)
+\begin{DoxyCompactList}\small\item\em Возвращает доступные для пользователя объекты безопасности \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_i_security_transaction}{I\+Security\+Transaction} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_aaa904347683f2b6cac529738094112e1}{Begin\+Transaction} ()
+\begin{DoxyCompactList}\small\item\em Возвращает новую транзакцию для работы с БД \end{DoxyCompactList}\item 
+I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{I\+Access\+Type} $>$ \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a5057c425b04d1c75e8ca9c7b451a1ecf}{Get\+Access\+Types} ()
+\begin{DoxyCompactList}\small\item\em Возвращает коллекцию типов доступа \end{DoxyCompactList}\item 
+int \hyperlink{interface_security_1_1_interfaces_1_1_i_security_ac2cb6f1d06c0684886c94ed6ed88e7da}{Save\+Changes} ()
+\begin{DoxyCompactList}\small\item\em Производит сохранение всех изменений в настройках системы безопасности \end{DoxyCompactList}\item 
+Task$<$ int $>$ \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a73465b9b858b22e2ec8497f903c8f49b}{Save\+Changes\+Async} ()
+\begin{DoxyCompactList}\small\item\em Производит асинхронное сохранение всех изменений в настройках системы безопасности \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_user_collection}{I\+User\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a5bd4b9391e7f1c2cc7705bc0f5a32eef}{User\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция пользователей \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_group_collection}{I\+Group\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a154a804d2664f3fac46d90c5052a7b4f}{Group\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция групп пользователей \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_sec_object_collection}{I\+Sec\+Object\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a5fabf1db303fcb912908cf6519471204}{Sec\+Object\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция объектов безопасности для текущего приложения \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_role_collection}{I\+Role\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_add16f9e37b6c62ebf8ba2b547de93834}{Role\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция ролей для текущего приложения \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_member_collection}{I\+Member\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_ab84782b78ce769b283e3c5a95e1fdc68}{Member\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция участников безопасности \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection}{I\+Grant\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a5e7e7b325519e96ad8b821465fa8e452}{Grant\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция разрешений для текущего приложения \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_application_collection}{I\+Application\+Collection} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a290a992b30692e03bdb7e68d10105e52}{Application\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция приложений, которые обслуживает система \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools}{I\+Security\+Tools} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a24a85144bad620f24ba7c956a4adb9a7}{Tools}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Дополнительные инструменты работы с данными \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_i_security_settings}{I\+Security\+Settings} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a3aa560f3ce4b1ef441f316f861171198}{Settings}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция и инструментарий работы с настройками \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a684f78876930b83d2324fa420bd6cba6}{Current\+Application}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Текущее приложение \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Интерфейс ядра системы безопасности 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_aaa904347683f2b6cac529738094112e1}\label{interface_security_1_1_interfaces_1_1_i_security_aaa904347683f2b6cac529738094112e1}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Begin\+Transaction@{Begin\+Transaction}}
+\index{Begin\+Transaction@{Begin\+Transaction}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Begin\+Transaction()}{BeginTransaction()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_i_security_transaction}{I\+Security\+Transaction} Security.\+Interfaces.\+I\+Security.\+Begin\+Transaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает новую транзакцию для работы с БД 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_a7dd6592ac290133f4f0182cfef41547b}{Security.\+Core\+Security}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_ad996f672aeed3b4b889707c519e33ddc}\label{interface_security_1_1_interfaces_1_1_i_security_ad996f672aeed3b4b889707c519e33ddc}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Check\+Access@{Check\+Access}}
+\index{Check\+Access@{Check\+Access}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Check\+Access()}{CheckAccess()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Security.\+Interfaces.\+I\+Security.\+Check\+Access (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{sec\+Object\+Name,  }\item[{Enum}]{access\+Type }\end{DoxyParamCaption})}
+
+
+
+Проверка доступа пользователя к объекту безопасности по определенному типу доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин\\
+\hline
+{\em sec\+Object\+Name} & Объект безопасности\\
+\hline
+{\em access\+Type} & Тип доступа\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Возвращает true, если доступ для пользователя разрешен
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_a8210ce9453e545a46048a95b1e35837e}{Security.\+Core\+Security}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_abfc69f75a3d7510094fd41319f8b7c98}\label{interface_security_1_1_interfaces_1_1_i_security_abfc69f75a3d7510094fd41319f8b7c98}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Check\+Access@{Check\+Access}}
+\index{Check\+Access@{Check\+Access}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Check\+Access()}{CheckAccess()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Security.\+Interfaces.\+I\+Security.\+Check\+Access (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{sec\+Object\+Name,  }\item[{Enum}]{access\+Type,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Проверка доступа пользователя к объекту безопасности по определенному типу доступа, с указанием приложения, для которого применяется проверка доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин\\
+\hline
+{\em sec\+Object\+Name} & Объект безопасности\\
+\hline
+{\em access\+Type} & Тип доступа\\
+\hline
+{\em app\+Name} & Наименование приложения\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_a7a9a64fd5293e9b23afe501c16e71e2b}{Security.\+Core\+Security}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a8a405b7d7708713fb3ab8cb3b5eb4f11}\label{interface_security_1_1_interfaces_1_1_i_security_a8a405b7d7708713fb3ab8cb3b5eb4f11}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Check\+Access@{Check\+Access}}
+\index{Check\+Access@{Check\+Access}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Check\+Access()}{CheckAccess()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Security.\+Interfaces.\+I\+Security.\+Check\+Access (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{sec\+Object\+Name,  }\item[{string}]{access\+Type\+Name }\end{DoxyParamCaption})}
+
+
+
+Проверка доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин\\
+\hline
+{\em sec\+Object\+Name} & Объект безопасности\\
+\hline
+{\em access\+Type\+Name} & Тип доступа\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Возвращает true, если доступ для пользователя разрешен
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_ace03c1422a670fd976a9a89af51090ba}{Security.\+Core\+Security}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_accc19c3e4a54d9dc283941295f8794f0}\label{interface_security_1_1_interfaces_1_1_i_security_accc19c3e4a54d9dc283941295f8794f0}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Check\+Access@{Check\+Access}}
+\index{Check\+Access@{Check\+Access}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Check\+Access()}{CheckAccess()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Security.\+Interfaces.\+I\+Security.\+Check\+Access (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{sec\+Object\+Name,  }\item[{string}]{access\+Type\+Name,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Проверка доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин\\
+\hline
+{\em sec\+Object\+Name} & Объект безопасности\\
+\hline
+{\em access\+Type\+Name} & Тип доступа\\
+\hline
+{\em app\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_a7e47a82a3d9113388e23988e344d6dbf}{Security.\+Core\+Security}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a5057c425b04d1c75e8ca9c7b451a1ecf}\label{interface_security_1_1_interfaces_1_1_i_security_a5057c425b04d1c75e8ca9c7b451a1ecf}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Get\+Access\+Types@{Get\+Access\+Types}}
+\index{Get\+Access\+Types@{Get\+Access\+Types}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Get\+Access\+Types()}{GetAccessTypes()}}
+{\footnotesize\ttfamily I\+Enumerable$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{I\+Access\+Type}$>$ Security.\+Interfaces.\+I\+Security.\+Get\+Access\+Types (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает коллекцию типов доступа 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_a874a60fc9733766b2530c295a7009aed}{Security.\+Core\+Security}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_aa7e5e1c0fdd2fe0e3a763750decbcffb}\label{interface_security_1_1_interfaces_1_1_i_security_aa7e5e1c0fdd2fe0e3a763750decbcffb}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Get\+Allow\+All\+Security\+Objects@{Get\+Allow\+All\+Security\+Objects}}
+\index{Get\+Allow\+All\+Security\+Objects@{Get\+Allow\+All\+Security\+Objects}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Get\+Allow\+All\+Security\+Objects()}{GetAllowAllSecurityObjects()}}
+{\footnotesize\ttfamily I\+Enumerable$<$string$>$ Security.\+Interfaces.\+I\+Security.\+Get\+Allow\+All\+Security\+Objects (\begin{DoxyParamCaption}\item[{string}]{access\+Type }\end{DoxyParamCaption})}
+
+
+
+Возвращает доступные для пользователя объекты безопасности 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em access\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_acf070051371bf58f0f4b082e5f6b7352}{Security.\+Core\+Security}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_aef63980964e18a05521826c46040c068}\label{interface_security_1_1_interfaces_1_1_i_security_aef63980964e18a05521826c46040c068}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Get\+Allow\+Security\+Objects@{Get\+Allow\+Security\+Objects}}
+\index{Get\+Allow\+Security\+Objects@{Get\+Allow\+Security\+Objects}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Get\+Allow\+Security\+Objects()}{GetAllowSecurityObjects()}}
+{\footnotesize\ttfamily I\+Enumerable$<$string$>$ Security.\+Interfaces.\+I\+Security.\+Get\+Allow\+Security\+Objects (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{access\+Type }\end{DoxyParamCaption})}
+
+
+
+Возвращает доступные для пользователя объекты безопасности 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & \\
+\hline
+{\em access\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_ad9dd82159ce61eba5ab68fed5167ec87}{Security.\+Core\+Security}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a85a48460a5d327c495647539670049f8}\label{interface_security_1_1_interfaces_1_1_i_security_a85a48460a5d327c495647539670049f8}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Log\+In@{Log\+In}}
+\index{Log\+In@{Log\+In}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Log\+In()}{LogIn()}}
+{\footnotesize\ttfamily bool Security.\+Interfaces.\+I\+Security.\+Log\+In (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{password }\end{DoxyParamCaption})}
+
+
+
+Проверка входа по логину и паролю 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & \\
+\hline
+{\em password} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_a87672cfd35522b393c3139daa4960258}{Security.\+Core\+Security}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_ac2cb6f1d06c0684886c94ed6ed88e7da}\label{interface_security_1_1_interfaces_1_1_i_security_ac2cb6f1d06c0684886c94ed6ed88e7da}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Save\+Changes@{Save\+Changes}}
+\index{Save\+Changes@{Save\+Changes}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Save\+Changes()}{SaveChanges()}}
+{\footnotesize\ttfamily int Security.\+Interfaces.\+I\+Security.\+Save\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Производит сохранение всех изменений в настройках системы безопасности 
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает количество затронутых строк
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_a85c19dc69e9698e6d6df724721ae5795}{Security.\+Core\+Security}.
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a73465b9b858b22e2ec8497f903c8f49b}\label{interface_security_1_1_interfaces_1_1_i_security_a73465b9b858b22e2ec8497f903c8f49b}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Save\+Changes\+Async@{Save\+Changes\+Async}}
+\index{Save\+Changes\+Async@{Save\+Changes\+Async}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Save\+Changes\+Async()}{SaveChangesAsync()}}
+{\footnotesize\ttfamily Task$<$int$>$ Security.\+Interfaces.\+I\+Security.\+Save\+Changes\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Производит асинхронное сохранение всех изменений в настройках системы безопасности 
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает количество затронутых строк
+\end{DoxyReturn}
+
+
+Замещается в \hyperlink{class_security_1_1_core_security_ac1c356b6ee81025a45d145512dfd41b7}{Security.\+Core\+Security}.
+
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a290a992b30692e03bdb7e68d10105e52}\label{interface_security_1_1_interfaces_1_1_i_security_a290a992b30692e03bdb7e68d10105e52}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Application\+Collection@{Application\+Collection}}
+\index{Application\+Collection@{Application\+Collection}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Application\+Collection}{ApplicationCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_application_collection}{I\+Application\+Collection} Security.\+Interfaces.\+I\+Security.\+Application\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция приложений, которые обслуживает система 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a684f78876930b83d2324fa420bd6cba6}\label{interface_security_1_1_interfaces_1_1_i_security_a684f78876930b83d2324fa420bd6cba6}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Current\+Application@{Current\+Application}}
+\index{Current\+Application@{Current\+Application}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Current\+Application}{CurrentApplication}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} Security.\+Interfaces.\+I\+Security.\+Current\+Application\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Текущее приложение 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a5e7e7b325519e96ad8b821465fa8e452}\label{interface_security_1_1_interfaces_1_1_i_security_a5e7e7b325519e96ad8b821465fa8e452}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Grant\+Collection@{Grant\+Collection}}
+\index{Grant\+Collection@{Grant\+Collection}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Grant\+Collection}{GrantCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection}{I\+Grant\+Collection} Security.\+Interfaces.\+I\+Security.\+Grant\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция разрешений для текущего приложения 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a154a804d2664f3fac46d90c5052a7b4f}\label{interface_security_1_1_interfaces_1_1_i_security_a154a804d2664f3fac46d90c5052a7b4f}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Group\+Collection@{Group\+Collection}}
+\index{Group\+Collection@{Group\+Collection}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Group\+Collection}{GroupCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_group_collection}{I\+Group\+Collection} Security.\+Interfaces.\+I\+Security.\+Group\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция групп пользователей 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_ab84782b78ce769b283e3c5a95e1fdc68}\label{interface_security_1_1_interfaces_1_1_i_security_ab84782b78ce769b283e3c5a95e1fdc68}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Member\+Collection@{Member\+Collection}}
+\index{Member\+Collection@{Member\+Collection}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Member\+Collection}{MemberCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_member_collection}{I\+Member\+Collection} Security.\+Interfaces.\+I\+Security.\+Member\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция участников безопасности 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_add16f9e37b6c62ebf8ba2b547de93834}\label{interface_security_1_1_interfaces_1_1_i_security_add16f9e37b6c62ebf8ba2b547de93834}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Role\+Collection@{Role\+Collection}}
+\index{Role\+Collection@{Role\+Collection}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Role\+Collection}{RoleCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_role_collection}{I\+Role\+Collection} Security.\+Interfaces.\+I\+Security.\+Role\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция ролей для текущего приложения 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a5fabf1db303fcb912908cf6519471204}\label{interface_security_1_1_interfaces_1_1_i_security_a5fabf1db303fcb912908cf6519471204}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Sec\+Object\+Collection@{Sec\+Object\+Collection}}
+\index{Sec\+Object\+Collection@{Sec\+Object\+Collection}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Sec\+Object\+Collection}{SecObjectCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_sec_object_collection}{I\+Sec\+Object\+Collection} Security.\+Interfaces.\+I\+Security.\+Sec\+Object\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция объектов безопасности для текущего приложения 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a3aa560f3ce4b1ef441f316f861171198}\label{interface_security_1_1_interfaces_1_1_i_security_a3aa560f3ce4b1ef441f316f861171198}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Settings@{Settings}}
+\index{Settings@{Settings}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Settings}{Settings}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_i_security_settings}{I\+Security\+Settings} Security.\+Interfaces.\+I\+Security.\+Settings\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция и инструментарий работы с настройками 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a24a85144bad620f24ba7c956a4adb9a7}\label{interface_security_1_1_interfaces_1_1_i_security_a24a85144bad620f24ba7c956a4adb9a7}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!Tools@{Tools}}
+\index{Tools@{Tools}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{Tools}{Tools}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools}{I\+Security\+Tools} Security.\+Interfaces.\+I\+Security.\+Tools\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Дополнительные инструменты работы с данными 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_i_security_a5bd4b9391e7f1c2cc7705bc0f5a32eef}\label{interface_security_1_1_interfaces_1_1_i_security_a5bd4b9391e7f1c2cc7705bc0f5a32eef}} 
+\index{Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}!User\+Collection@{User\+Collection}}
+\index{User\+Collection@{User\+Collection}!Security\+::\+Interfaces\+::\+I\+Security@{Security\+::\+Interfaces\+::\+I\+Security}}
+\subsubsection{\texorpdfstring{User\+Collection}{UserCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_user_collection}{I\+User\+Collection} Security.\+Interfaces.\+I\+Security.\+User\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция пользователей 
+
+
+
+Объявления и описания членов интерфейса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Interfaces/I\+Security.\+cs\end{DoxyCompactItemize}

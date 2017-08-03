@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.IO.Compression;
 
@@ -6,6 +6,12 @@ namespace Tools.Extensions
 {
     public static class StreamExtensions
     {
+        /// <summary>
+        /// Копирует данные из одного потока в другой
+        /// </summary>
+        /// <param name="stream">Исходный поток</param>
+        /// <param name="destStream">Поток назначения</param>
+        /// <returns></returns>
         public static Stream CopyTo(this Stream stream, Stream destStream)
         {
             if (destStream == null) throw new ArgumentNullException("destStream");
@@ -22,6 +28,12 @@ namespace Tools.Extensions
             return destStream;
         }
 
+        /// <summary>
+        /// Сжимает данные (с помощью <see cref="GZipStream"/>) в потоке и копирует их в другой
+        /// </summary>
+        /// <param name="source">Исходный поток</param>
+        /// <param name="dest">Поток назначения</param>
+        /// <returns>Возвращает массив байтов сжатых данных</returns>
         public static byte[] Compress(this Stream source, Stream dest)
         {
             using (var zipStream = new GZipStream(dest, CompressionMode.Compress, true))
@@ -30,10 +42,10 @@ namespace Tools.Extensions
                 int read;
 
                 if (!source.CanSeek)
-                    throw new InvalidOperationException("������� ����� �� ������������ �������� ������� ��������� ������");
+                    throw new InvalidOperationException("Входной поток не поддерживает смещение позиции указателя чтения");
 
                 if (!dest.CanSeek)
-                    throw new InvalidOperationException("�������� ����� �� ������������ �������� ������� ��������� ������");
+                    throw new InvalidOperationException("Выходной поток не поддерживает смещение позиции указателя чтения");
 
                 source.Seek(0, SeekOrigin.Begin);
 
@@ -51,6 +63,11 @@ namespace Tools.Extensions
 
         }
 
+        /// <summary>
+        /// Деархивирует данные в потоке и полученные данные копирует в поток назначения
+        /// </summary>
+        /// <param name="source">Исходный поток со сжатыми данными</param>
+        /// <param name="dest">Поток назначения</param>
         public static void DeCompress(this Stream source, Stream dest)
         {
             using (var zipStream = new GZipStream(source, CompressionMode.Decompress))
@@ -59,10 +76,10 @@ namespace Tools.Extensions
                 int read;
 
                 if (!source.CanSeek)
-                    throw new InvalidOperationException("������� ����� �� ������������ �������� ������� ��������� ������");
+                    throw new InvalidOperationException("Входной поток не поддерживает смещение позиции указателя чтения");
 
                 if (!dest.CanSeek)
-                    throw new InvalidOperationException("�������� ����� �� ������������ �������� ������� ��������� ������");
+                    throw new InvalidOperationException("Выходной поток не поддерживает смещение позиции указателя чтения");
 
                 source.Seek(0, SeekOrigin.Begin);
 

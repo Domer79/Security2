@@ -1,0 +1,355 @@
+\documentclass[twoside]{book}
+
+% Packages required by doxygen
+\usepackage{fixltx2e}
+\usepackage{calc}
+\usepackage{doxygen}
+\usepackage[export]{adjustbox} % also loads graphicx
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage{multirow}
+\PassOptionsToPackage{warn}{textcomp}
+\usepackage{textcomp}
+\usepackage[nointegrals]{wasysym}
+\usepackage[table]{xcolor}
+
+% NLS support packages
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+
+% Font selection
+\usepackage[T1]{fontenc}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\renewcommand{\familydefault}{\sfdefault}
+\allsectionsfont{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\renewcommand{\DoxyLabelFont}{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+
+% Page & text layout
+\usepackage{geometry}
+\geometry{%
+  a4paper,%
+  top=2.5cm,%
+  bottom=2.5cm,%
+  left=2.5cm,%
+  right=2.5cm%
+}
+\tolerance=750
+\hfuzz=15pt
+\hbadness=750
+\setlength{\emergencystretch}{15pt}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{3ex plus 2ex minus 2ex}
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@parafont%
+  }%
+}
+\renewcommand{\subparagraph}{%
+  \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@subparafont%
+  }%
+}
+\makeatother
+
+% Headers & footers
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead[LE]{\fancyplain{}{\bfseries\thepage}}
+\fancyhead[CE]{\fancyplain{}{}}
+\fancyhead[RE]{\fancyplain{}{\bfseries\leftmark}}
+\fancyhead[LO]{\fancyplain{}{\bfseries\rightmark}}
+\fancyhead[CO]{\fancyplain{}{}}
+\fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
+\fancyfoot[LE]{\fancyplain{}{}}
+\fancyfoot[CE]{\fancyplain{}{}}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Создано системой Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Создано системой Doxygen }}
+\fancyfoot[CO]{\fancyplain{}{}}
+\fancyfoot[RO]{\fancyplain{}{}}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{#1}{}%
+}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection\ #1}%
+}
+
+% Indices & bibliography
+\usepackage{natbib}
+\usepackage[titles]{tocloft}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{5}
+\makeindex
+
+% Hyperlinks (required, but should be loaded last)
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex,pagebackref=true]{hyperref}
+\else
+  \usepackage[ps2pdf,pagebackref=true]{hyperref}
+\fi
+\hypersetup{%
+  colorlinks=true,%
+  linkcolor=blue,%
+  citecolor=blue,%
+  unicode%
+}
+
+% Custom commands
+\newcommand{\clearemptydoublepage}{%
+  \newpage{\pagestyle{empty}\cleardoublepage}%
+}
+
+\usepackage{caption}
+\captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+
+%===== C O N T E N T S =====
+
+\begin{document}
+
+% Titlepage & ToC
+\hypersetup{pageanchor=false,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
+\pagenumbering{alph}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}%
+{\Large Система управления доступа -\/ ПСС, Платформа \\[1ex]\large 2.\+0.\+4.\+3335 }\\
+\vspace*{1cm}
+{\large Создано системой Doxygen 1.8.13}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+%--- Begin generated contents ---
+\chapter{L\+I\+C\+E\+N\+SE}
+\label{md__c_1__t_f_s2__access_rights_packages__newtonsoft_8_json_810_80_82__l_i_c_e_n_s_e}
+\Hypertarget{md__c_1__t_f_s2__access_rights_packages__newtonsoft_8_json_810_80_82__l_i_c_e_n_s_e}
+\input{d5/d18/md__c_1__t_f_s2__access_rights_packages__newtonsoft_8_json_810_80_82__l_i_c_e_n_s_e}
+\chapter{Алфавитный указатель пространств имен}
+\input{namespaces}
+\chapter{Иерархический список классов}
+\input{hierarchy}
+\chapter{Алфавитный указатель классов}
+\input{annotated}
+\chapter{Пространства имен}
+\input{df/d14/namespace_itis}
+\input{df/d2e/namespace_itis_1_1_suo}
+\input{d4/d7b/namespace_itis_1_1_suo_1_1_tests}
+\input{de/df6/namespace_security}
+\input{d6/dec/namespace_security_1_1_configurations}
+\input{db/dfa/namespace_security_1_1_entity_dal}
+\input{da/d05/namespace_security_1_1_entity_dal_1_1_base}
+\input{d6/d10/namespace_security_1_1_entity_dal_1_1_entity_configurations}
+\input{da/dba/namespace_security_1_1_entity_dal_1_1_infrastructure}
+\input{de/d0a/namespace_security_1_1_entity_dal_1_1_migrations}
+\input{dd/d40/namespace_security_1_1_entity_dal_1_1_properties}
+\input{d1/d4d/namespace_security_1_1_entity_framework}
+\input{d1/df4/namespace_security_1_1_entity_framework_1_1_collections}
+\input{df/de5/namespace_security_1_1_entity_framework_1_1_exceptions}
+\input{db/dd3/namespace_security_1_1_entity_framework_1_1_infrastructure}
+\input{d7/d8e/namespace_security_1_1_entity_framework_1_1_tests}
+\input{d7/db3/namespace_security_1_1_entity_framework_1_1_tests_1_1_properties}
+\input{de/df7/namespace_security_1_1_exceptions}
+\input{d5/d1e/namespace_security_1_1_extensions}
+\input{d1/dd6/namespace_security_1_1_interfaces}
+\input{d2/d45/namespace_security_1_1_interfaces_1_1_base}
+\input{d7/d90/namespace_security_1_1_interfaces_1_1_collections}
+\input{d4/de1/namespace_security_1_1_interfaces_1_1_model}
+\input{dc/d76/namespace_security_1_1_interfaces_1_1_tests}
+\input{dd/d7a/namespace_security_1_1_manager}
+\input{d5/d4a/namespace_security_1_1_manager_1_1_app___start}
+\input{d7/da3/namespace_security_1_1_manager_1_1_attributes}
+\input{d1/d6b/namespace_security_1_1_manager_1_1_controllers}
+\input{da/d2e/namespace_security_1_1_manager_1_1_infrastructure}
+\input{d2/d84/namespace_security_1_1_manager_1_1_interfaces}
+\input{d0/dcc/namespace_security_1_1_manager_1_1_models}
+\input{d6/d43/namespace_security_1_1_manager_1_1_models_1_1_security}
+\input{d2/dec/namespace_security_1_1_model}
+\input{db/d8c/namespace_security_1_1_model_1_1_tests}
+\input{df/dd1/namespace_security_1_1_model_1_1_tests_1_1_tools_test}
+\input{d6/d44/namespace_security_1_1_tests}
+\input{d6/d3d/namespace_security_1_1_tests_1_1_tests}
+\input{d5/d75/namespace_security_1_1_web}
+\input{d1/d27/namespace_security_1_1_web_1_1_exceptions}
+\input{df/d29/namespace_security_1_1_web_1_1_extensions}
+\input{d4/d8a/namespace_security_1_1_web_1_1_http}
+\input{d7/dfa/namespace_security_1_1_web_1_1_mvc}
+\input{d4/da0/namespace_tools}
+\input{d4/d11/namespace_tools_1_1_extensions}
+\chapter{Классы}
+\input{d6/de2/class_security_1_1_entity_dal_1_1_migrations_1_1__1}
+\input{dd/d04/class_security_1_1_entity_dal_1_1_migrations_1_1__10}
+\input{d3/d80/class_security_1_1_entity_dal_1_1_migrations_1_1__11}
+\input{d8/df5/class_security_1_1_entity_dal_1_1_migrations_1_1__12}
+\input{d6/d77/class_security_1_1_entity_dal_1_1_migrations_1_1__13}
+\input{df/d14/class_security_1_1_entity_dal_1_1_migrations_1_1__14}
+\input{da/dda/class_security_1_1_entity_dal_1_1_migrations_1_1__15}
+\input{d9/d2d/class_security_1_1_entity_dal_1_1_migrations_1_1__16}
+\input{d9/df9/class_security_1_1_entity_dal_1_1_migrations_1_1__17}
+\input{de/d6f/class_security_1_1_entity_dal_1_1_migrations_1_1__2}
+\input{d4/d41/class_security_1_1_entity_dal_1_1_migrations_1_1__3}
+\input{de/df1/class_security_1_1_entity_dal_1_1_migrations_1_1__4}
+\input{d6/dcb/class_security_1_1_entity_dal_1_1_migrations_1_1__5}
+\input{d0/d06/class_security_1_1_entity_dal_1_1_migrations_1_1__6}
+\input{d3/d48/class_security_1_1_entity_dal_1_1_migrations_1_1__7}
+\input{d8/dea/class_security_1_1_entity_dal_1_1_migrations_1_1__8}
+\input{de/db9/class_security_1_1_entity_dal_1_1_migrations_1_1__9}
+\input{da/d39/class_security_1_1_model_1_1_access_type}
+\input{da/d93/class_security_1_1_entity_framework_1_1_collections_1_1_access_type_collection}
+\input{db/d96/class_security_1_1_entity_dal_1_1_entity_configurations_1_1_access_type_configuration}
+\input{d0/d78/class_security_1_1_exceptions_1_1_access_type_missing_exception}
+\input{d0/dd5/class_security_1_1_tests_1_1_tests_1_1_access_type_unit_test}
+\input{df/d81/class_security_1_1_exceptions_1_1_access_type_valid_exception}
+\input{d8/d71/class_security_1_1_model_1_1_application}
+\input{d2/d27/class_security_1_1_entity_framework_1_1_collections_1_1_application_collection}
+\input{dc/da1/class_security_1_1_entity_dal_1_1_entity_configurations_1_1_application_configuration}
+\input{dd/d99/class_security_1_1_entity_framework_1_1_exceptions_1_1_application_missing_exception}
+\input{da/da8/class_security_1_1_assembly_security_application_info_attribute}
+\input{d4/d86/class_tools_1_1_extensions_1_1_attribute_collection_extension}
+\input{d9/dde/class_security_1_1_manager_1_1_controllers_1_1_auth_controller}
+\input{df/d67/class_security_1_1_web_1_1_http_1_1_authorize_attribute}
+\input{d1/da2/class_security_1_1_web_1_1_mvc_1_1_authorize_attribute}
+\input{df/db8/class_security_1_1_entity_framework_1_1_collections_1_1_base_collection}
+\input{d6/da6/class_security_1_1_entity_dal_1_1_entity_configurations_1_1_base_configuration}
+\input{d5/d1f/class_security_1_1_exceptions_1_1_base_exception}
+\input{da/d0a/class_security_1_1_manager_1_1_base_security_controller}
+\input{d5/d0f/class_security_1_1_manager_1_1_app___start_1_1_bundle_config}
+\input{d4/d58/class_tools_1_1_extensions_1_1_byte_array_extensions}
+\input{de/d04/class_security_1_1_entity_framework_1_1_common_module}
+\input{d1/d5f/class_security_1_1_configurations_1_1_config}
+\input{d0/d9b/class_tools_1_1_extensions_1_1_config_helper}
+\input{d2/ddc/class_security_1_1_model_1_1_tests_1_1_tools_test_1_1_config_helper_tests}
+\input{d8/da5/class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info}
+\input{d4/d0f/class_security_1_1_entity_dal_1_1_infrastructure_1_1_context_info_collection}
+\input{d8/daf/class_security_1_1_core_security}
+\input{da/dce/class_security_1_1_entity_framework_1_1_tests_1_1_di_module}
+\input{d3/d54/class_security_1_1_entity_dal_1_1_infrastructure_1_1_entity_info}
+\input{d0/d35/class_tools_1_1_extensions_1_1_enum_extensions}
+\input{d2/d56/class_security_1_1_manager_1_1_models_1_1_error_result}
+\input{db/d9c/class_tools_1_1_extensions_1_1_exception_extensions}
+\input{d4/d8b/class_security_1_1_web_1_1_exec_security_objects}
+\input{de/db0/class_security_1_1_tests_1_1_tests_1_1_fake_security_work_unit_test}
+\input{dc/de5/class_security_1_1_manager_1_1_global}
+\input{dd/d50/class_security_1_1_model_1_1_grant}
+\input{d0/d05/class_security_1_1_entity_framework_1_1_collections_1_1_grant_collection}
+\input{d5/df7/class_security_1_1_entity_dal_1_1_entity_configurations_1_1_grant_configuration}
+\input{db/d0b/class_security_1_1_manager_1_1_models_1_1_security_1_1_grant_model}
+\input{d3/dba/class_security_1_1_entity_framework_1_1_exceptions_1_1_grant_not_found_exception}
+\input{df/d0e/class_security_1_1_model_1_1_group}
+\input{d7/d04/class_security_1_1_entity_framework_1_1_collections_1_1_group_collection}
+\input{d5/dec/class_security_1_1_entity_dal_1_1_entity_configurations_1_1_group_configuration}
+\input{dc/d50/interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}
+\input{d3/d33/interface_security_1_1_interfaces_1_1_collections_1_1_i_access_type_collection}
+\input{df/d5d/interface_security_1_1_interfaces_1_1_model_1_1_i_application}
+\input{db/d25/interface_security_1_1_interfaces_1_1_collections_1_1_i_application_collection}
+\input{db/db3/class_security_1_1_web_1_1_extensions_1_1_identity}
+\input{d7/d5d/interface_security_1_1_manager_1_1_interfaces_1_1_i_error_result}
+\input{d6/df8/interface_security_1_1_interfaces_1_1_model_1_1_i_grant}
+\input{df/d2c/interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection}
+\input{d5/dbe/interface_security_1_1_interfaces_1_1_model_1_1_i_group}
+\input{d4/ddc/interface_security_1_1_interfaces_1_1_collections_1_1_i_group_collection}
+\input{d2/d73/interface_security_1_1_interfaces_1_1_model_1_1_i_log}
+\input{de/d27/interface_security_1_1_interfaces_1_1_model_1_1_i_member}
+\input{d2/da0/interface_security_1_1_interfaces_1_1_collections_1_1_i_member_collection}
+\input{da/d86/class_security_1_1_entity_dal_1_1_migrations_1_1init}
+\input{d9/dcc/interface_security_1_1_interfaces_1_1_base_1_1_i_queryable_collection}
+\input{d7/dcd/interface_security_1_1_interfaces_1_1_model_1_1_i_role}
+\input{db/d60/interface_security_1_1_interfaces_1_1_collections_1_1_i_role_collection}
+\input{d4/d3b/interface_security_1_1_interfaces_1_1_base_1_1_i_saved_collection}
+\input{d6/d35/interface_security_1_1_interfaces_1_1_model_1_1_i_sec_object}
+\input{db/dd9/interface_security_1_1_interfaces_1_1_collections_1_1_i_sec_object_collection}
+\input{d9/d58/interface_security_1_1_interfaces_1_1_i_security}
+\input{d4/dee/interface_security_1_1_interfaces_1_1_i_security_application_info}
+\input{de/ded/interface_security_1_1_interfaces_1_1_i_security_factory}
+\input{de/d45/interface_security_1_1_interfaces_1_1_i_security_object}
+\input{df/db8/interface_security_1_1_interfaces_1_1_i_security_objects}
+\input{d1/da5/interface_security_1_1_interfaces_1_1_base_1_1_i_security_queryable}
+\input{d8/d9f/interface_security_1_1_interfaces_1_1_i_security_settings}
+\input{d4/df5/interface_security_1_1_interfaces_1_1_i_security_tools}
+\input{d6/d17/interface_security_1_1_interfaces_1_1_i_security_transaction}
+\input{dc/ddf/interface_security_1_1_interfaces_1_1_tests_1_1_i_security_work_unit_test}
+\input{d3/d3e/interface_security_1_1_interfaces_1_1_model_1_1_i_setting}
+\input{dd/d53/interface_security_1_1_interfaces_1_1_model_1_1_i_user}
+\input{db/dce/interface_security_1_1_interfaces_1_1_collections_1_1_i_user_collection}
+\input{df/db0/class_security_1_1_model_1_1_log}
+\input{d3/d0c/class_security_1_1_entity_dal_1_1_entity_configurations_1_1_log_configuration}
+\input{da/d8b/class_security_1_1_manager_1_1_models_1_1_login_model}
+\input{d2/ddc/class_security_1_1_manager_1_1_controllers_1_1_main_controller}
+\input{d7/d43/class_security_1_1_model_1_1_member}
+\input{db/d00/class_security_1_1_entity_framework_1_1_collections_1_1_member_collection}
+\input{d5/d8b/class_security_1_1_entity_dal_1_1_entity_configurations_1_1_member_configuration}
+\input{d6/d95/class_security_1_1_manager_1_1_infrastructure_1_1_newtonsoft_json_result}
+\input{dd/d69/class_security_1_1_manager_1_1_app___start_1_1_ninject_web_common}
+\input{d0/d50/class_tools_1_1_extensions_1_1_object_helper}
+\input{d9/d5a/class_security_1_1_entity_dal_1_1_base_1_1_repository_data_context}
+\input{dd/dad/class_security_1_1_model_1_1_role}
+\input{da/d43/class_security_1_1_entity_framework_1_1_collections_1_1_role_collection}
+\input{d8/d2d/class_security_1_1_manager_1_1_route_config}
+\input{de/d7f/class_security_1_1_model_1_1_sec_object}
+\input{df/d20/class_security_1_1_entity_framework_1_1_collections_1_1_sec_object_collection}
+\input{d1/de2/class_security_1_1_entity_dal_1_1_entity_configurations_1_1_sec_object_configuration}
+\input{d7/d83/class_security_1_1_web_1_1_security_authenticate_http_module}
+\input{d7/dfd/class_security_1_1_manager_1_1_attributes_1_1_security_authorize_attribute}
+\input{d2/d11/class_security_1_1_manager_1_1_app___start_1_1_security_config}
+\input{d1/d91/class_security_1_1_entity_dal_1_1_security_configuration_set_exception}
+\input{d0/da6/class_security_1_1_entity_dal_1_1_security_context}
+\input{d3/d35/class_security_1_1_manager_1_1_controllers_1_1_security_controller}
+\input{da/db9/class_security_1_1_manager_1_1_security_controller_factory}
+\input{d3/dd8/class_security_1_1_entity_framework_1_1_security_factory}
+\input{dc/dca/class_security_1_1_extensions_1_1_security_info_extensions}
+\input{d8/de1/class_security_1_1_exceptions_1_1_security_not_supported_exception}
+\input{d2/dfa/class_security_1_1_entity_framework_1_1_exceptions_1_1_security_object_not_found_exception}
+\input{df/d67/class_security_1_1_entity_framework_1_1_security_transaction}
+\input{d4/d73/class_security_1_1_entity_framework_1_1_tests_1_1_security_work_unit_test}
+\input{d9/dad/class_security_1_1_model_1_1_setting}
+\input{d7/d39/class_security_1_1_entity_dal_1_1_entity_configurations_1_1_setting_configuration}
+\input{d7/d09/class_security_1_1_manager_1_1_controllers_1_1_settings_controller}
+\input{d5/d96/class_tools_1_1_extensions_1_1_stream_extensions}
+\input{dd/d07/class_tools_1_1_extensions_1_1_string_extensions}
+\input{dd/d4d/class_security_1_1_entity_dal_1_1_infrastructure_1_1_system_logs}
+\input{da/d35/class_security_1_1_manager_1_1_controllers_1_1_templates_controller}
+\input{d1/d5d/class_security_1_1_manager_1_1_controllers_1_1_test_controller}
+\input{d4/df6/class_tools_1_1_extensions_1_1_type_extentions}
+\input{d0/d81/class_security_1_1_entity_framework_1_1_tests_1_1_unit_test1}
+\input{da/de3/class_security_1_1_model_1_1_tests_1_1_unit_test1}
+\input{d6/dc2/class_itis_1_1_suo_1_1_tests_1_1_unit_test1}
+\input{d9/dcb/class_security_1_1_model_1_1_user}
+\input{dc/d09/class_security_1_1_entity_framework_1_1_collections_1_1_user_collection}
+\input{d7/da5/class_security_1_1_entity_dal_1_1_entity_configurations_1_1_user_configuration}
+\input{d6/da0/class_security_1_1_web_1_1_user_identity}
+\input{db/d7f/class_security_1_1_manager_1_1_models_1_1_security_1_1_user_model}
+\input{d8/d01/class_security_1_1_entity_framework_1_1_exceptions_1_1_user_not_found_exception}
+\input{da/da6/class_security_1_1_web_1_1_user_principal}
+\input{d1/d3f/class_security_1_1_manager_1_1_web_api_config}
+%--- End generated contents ---
+
+% Index
+\backmatter
+\newpage
+\phantomsection
+\clearemptydoublepage
+\addcontentsline{toc}{chapter}{Алфавитный указатель}
+\printindex
+
+\end{document}

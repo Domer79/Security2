@@ -1,0 +1,131 @@
+\hypertarget{class_security_1_1_model_1_1_access_type}{}\section{Класс Security.\+Model.\+Access\+Type}
+\label{class_security_1_1_model_1_1_access_type}\index{Security.\+Model.\+Access\+Type@{Security.\+Model.\+Access\+Type}}
+
+
+Тип доступа  
+
+
+Граф наследования\+:Security.\+Model.\+Access\+Type\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{da/d39/class_security_1_1_model_1_1_access_type}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_security_1_1_model_1_1_access_type_a02acee54b3fff440e511240f4e81e67a}{Access\+Type} ()
+\begin{DoxyCompactList}\small\item\em Конструктор \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_security_1_1_model_1_1_access_type_a651a5190b2588eba67e56da8c5995446}\label{class_security_1_1_model_1_1_access_type_a651a5190b2588eba67e56da8c5995446}} 
+override string {\bfseries To\+String} ()
+\item 
+override int \hyperlink{class_security_1_1_model_1_1_access_type_a6983c2a9fe39b6ae84316e01f134014a}{Get\+Hash\+Code} ()
+\begin{DoxyCompactList}\small\item\em Serves as the default hash function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_security_1_1_model_1_1_access_type_a063f312592e86d43b87321c94ee1356a}{Id\+Access\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Идентификатор типа доступа в БД \end{DoxyCompactList}\item 
+string \hyperlink{class_security_1_1_model_1_1_access_type_aedfe5970aec5df6c5752f917f7d80641}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Наименование типа доступа, сопоставляется с наименованием перечислителя в клиентском ПО \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_security_1_1_model_1_1_access_type_aa74e02bbc2e6bc7e0802c1570da6a983}\label{class_security_1_1_model_1_1_access_type_aa74e02bbc2e6bc7e0802c1570da6a983}} 
+int {\bfseries Id\+Application}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Hash\+Set$<$ \hyperlink{class_security_1_1_model_1_1_grant}{Grant} $>$ \hyperlink{class_security_1_1_model_1_1_access_type_aa24c2432d288d76e72ecc1cf6eb885a3}{Grants}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Список разрешений \end{DoxyCompactList}\item 
+\hyperlink{class_security_1_1_model_1_1_application}{Application} \hyperlink{class_security_1_1_model_1_1_access_type_a550eb30ec9e7a4b3e01329614d43dcad}{Application}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Приложение \end{DoxyCompactList}\item 
+Hash\+Set$<$ \hyperlink{class_security_1_1_model_1_1_sec_object}{Sec\+Object} $>$ \hyperlink{class_security_1_1_model_1_1_access_type_aad9c922e320edaf15f2f4d74a0b2ecfa}{Sec\+Objects}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Привязанные к типу доступа объекты безопасности \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Тип доступа 
+
+
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_security_1_1_model_1_1_access_type_a02acee54b3fff440e511240f4e81e67a}\label{class_security_1_1_model_1_1_access_type_a02acee54b3fff440e511240f4e81e67a}} 
+\index{Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}!Access\+Type@{Access\+Type}}
+\index{Access\+Type@{Access\+Type}!Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}}
+\subsubsection{\texorpdfstring{Access\+Type()}{AccessType()}}
+{\footnotesize\ttfamily Security.\+Model.\+Access\+Type.\+Access\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Конструктор 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_model_1_1_access_type_a6983c2a9fe39b6ae84316e01f134014a}\label{class_security_1_1_model_1_1_access_type_a6983c2a9fe39b6ae84316e01f134014a}} 
+\index{Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}!Get\+Hash\+Code@{Get\+Hash\+Code}}
+\index{Get\+Hash\+Code@{Get\+Hash\+Code}!Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}}
+\subsubsection{\texorpdfstring{Get\+Hash\+Code()}{GetHashCode()}}
+{\footnotesize\ttfamily override int Security.\+Model.\+Access\+Type.\+Get\+Hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Serves as the default hash function. 
+
+\begin{DoxyReturn}{Возвращает}
+A hash code for the current object. 
+\end{DoxyReturn}
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{class_security_1_1_model_1_1_access_type_a550eb30ec9e7a4b3e01329614d43dcad}\label{class_security_1_1_model_1_1_access_type_a550eb30ec9e7a4b3e01329614d43dcad}} 
+\index{Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}!Application@{Application}}
+\index{Application@{Application}!Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}}
+\subsubsection{\texorpdfstring{Application}{Application}}
+{\footnotesize\ttfamily \hyperlink{class_security_1_1_model_1_1_application}{Application} Security.\+Model.\+Access\+Type.\+Application\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Приложение 
+
+\mbox{\Hypertarget{class_security_1_1_model_1_1_access_type_aa24c2432d288d76e72ecc1cf6eb885a3}\label{class_security_1_1_model_1_1_access_type_aa24c2432d288d76e72ecc1cf6eb885a3}} 
+\index{Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}!Grants@{Grants}}
+\index{Grants@{Grants}!Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}}
+\subsubsection{\texorpdfstring{Grants}{Grants}}
+{\footnotesize\ttfamily Hash\+Set$<$\hyperlink{class_security_1_1_model_1_1_grant}{Grant}$>$ Security.\+Model.\+Access\+Type.\+Grants\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Список разрешений 
+
+\mbox{\Hypertarget{class_security_1_1_model_1_1_access_type_a063f312592e86d43b87321c94ee1356a}\label{class_security_1_1_model_1_1_access_type_a063f312592e86d43b87321c94ee1356a}} 
+\index{Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}!Id\+Access\+Type@{Id\+Access\+Type}}
+\index{Id\+Access\+Type@{Id\+Access\+Type}!Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}}
+\subsubsection{\texorpdfstring{Id\+Access\+Type}{IdAccessType}}
+{\footnotesize\ttfamily int Security.\+Model.\+Access\+Type.\+Id\+Access\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Идентификатор типа доступа в БД 
+
+\mbox{\Hypertarget{class_security_1_1_model_1_1_access_type_aedfe5970aec5df6c5752f917f7d80641}\label{class_security_1_1_model_1_1_access_type_aedfe5970aec5df6c5752f917f7d80641}} 
+\index{Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}!Name@{Name}}
+\index{Name@{Name}!Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily string Security.\+Model.\+Access\+Type.\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Наименование типа доступа, сопоставляется с наименованием перечислителя в клиентском ПО 
+
+\mbox{\Hypertarget{class_security_1_1_model_1_1_access_type_aad9c922e320edaf15f2f4d74a0b2ecfa}\label{class_security_1_1_model_1_1_access_type_aad9c922e320edaf15f2f4d74a0b2ecfa}} 
+\index{Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}!Sec\+Objects@{Sec\+Objects}}
+\index{Sec\+Objects@{Sec\+Objects}!Security\+::\+Model\+::\+Access\+Type@{Security\+::\+Model\+::\+Access\+Type}}
+\subsubsection{\texorpdfstring{Sec\+Objects}{SecObjects}}
+{\footnotesize\ttfamily Hash\+Set$<$\hyperlink{class_security_1_1_model_1_1_sec_object}{Sec\+Object}$>$ Security.\+Model.\+Access\+Type.\+Sec\+Objects\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Привязанные к типу доступа объекты безопасности 
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Model/Access\+Type.\+cs\end{DoxyCompactItemize}

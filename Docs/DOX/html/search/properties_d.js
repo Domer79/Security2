@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['role',['Role',['../d6/df8/interface_security_1_1_interfaces_1_1_model_1_1_i_grant.html#a213d0283361baaa1cae15f56df423ab1',1,'Security.Interfaces.Model.IGrant.Role()'],['../dd/d50/class_security_1_1_model_1_1_grant.html#afa175ae2585ec7ed6c9da8552a8ac2d2',1,'Security.Model.Grant.Role()']]],
+  ['rolecollection',['RoleCollection',['../d8/daf/class_security_1_1_core_security.html#a2c7e78fa4c6489ab5b9e7d338986954c',1,'Security.CoreSecurity.RoleCollection()'],['../d9/d58/interface_security_1_1_interfaces_1_1_i_security.html#add16f9e37b6c62ebf8ba2b547de93834',1,'Security.Interfaces.ISecurity.RoleCollection()']]],
+  ['roles',['Roles',['../df/d5d/interface_security_1_1_interfaces_1_1_model_1_1_i_application.html#a0be854668c5fa137e9be605ab726adea',1,'Security.Interfaces.Model.IApplication.Roles()'],['../de/d27/interface_security_1_1_interfaces_1_1_model_1_1_i_member.html#a21577881d368df8632b3aa1cf827300f',1,'Security.Interfaces.Model.IMember.Roles()'],['../d8/d71/class_security_1_1_model_1_1_application.html#a2fba1599162a13e5e27a3fcf4b45bb0d',1,'Security.Model.Application.Roles()'],['../d7/d43/class_security_1_1_model_1_1_member.html#a5817410b5a16776962d4370ebad391f5',1,'Security.Model.Member.Roles()']]]
+];

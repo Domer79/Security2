@@ -1,0 +1,275 @@
+\hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection}{}\section{Класс Security.\+Entity\+Framework.\+Collections.\+Application\+Collection}
+\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection}\index{Security.\+Entity\+Framework.\+Collections.\+Application\+Collection@{Security.\+Entity\+Framework.\+Collections.\+Application\+Collection}}
+
+
+Определяет коллекцию приложений, зарегистрированных в системе доступа  
+
+
+Граф наследования\+:Security.\+Entity\+Framework.\+Collections.\+Application\+Collection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.068965cm]{d2/d27/class_security_1_1_entity_framework_1_1_collections_1_1_application_collection}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a4d8ecd8412fbd93cfec6fe58714ad5bd}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a4d8ecd8412fbd93cfec6fe58714ad5bd}} 
+{\bfseries Application\+Collection} (\hyperlink{class_security_1_1_entity_dal_1_1_security_context}{Security\+Context} context)
+\item 
+I\+Enumerator$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a6e8eff09b5c48f61908246f9e17ae861}{Get\+Enumerator} ()
+\begin{DoxyCompactList}\small\item\em Returns an enumerator that iterates through the collection. \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_ad4597e37a4157bda5cf46effaaf3f7f5}{Add} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} item)
+\begin{DoxyCompactList}\small\item\em Добавляет в коллекцию новое приложение \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a04fd035187ef54f67576f6a428ca7523}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Произваодит очистку всех приложений \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a55d23c28f629fc2db1fad7ba62f33714}{Contains} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} item)
+\begin{DoxyCompactList}\small\item\em Проверяет содержится ли исходный элемент приложения в коллекции \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_abd644783e0ae7cd9f2e730a8d8991921}{Copy\+To} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application}\mbox{[}$\,$\mbox{]} array, int array\+Index)
+\begin{DoxyCompactList}\small\item\em Copies the elements of the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 to an T\+:\+System.\+Array, starting at a particular T\+:\+System.\+Array index. \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a7612426cd9f9f7dcebb1ca1aeb9cd986}{Remove} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} item)
+\begin{DoxyCompactList}\small\item\em Производит удаление элемента из коллекции \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_adef85e538bfbe1df288513c241b3c199}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Performs application-\/defined tasks associated with freeing, releasing, or resetting unmanaged resources. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a3b0a39f6b252fa6bbfe93c85e06a7144}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a3b0a39f6b252fa6bbfe93c85e06a7144}} 
+int {\bfseries Save\+Changes} ()
+\item 
+void \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a9faf9ac9440cccea84fb29a0d4c67f59}{Update} (\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} item)
+\begin{DoxyCompactList}\small\item\em Производит обновление элемента в БД \end{DoxyCompactList}\item 
+I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} $>$ \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_ad11e3582f6b2b46a6f01756edd246e0f}{Remove\+Range} (I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} $>$ items)
+\begin{DoxyCompactList}\small\item\em Производит удаление элементов представленных коллекцией items \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_aa636f6af9d1397c2229f6aede82fd67c}{Count} =$>$ Context.\+Applications.\+Count()
+\begin{DoxyCompactList}\small\item\em Возвращает количество зарегистрированных приложений \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a55af6df83f3056a9c840fe9add79c9c4}{Is\+Read\+Only} =$>$ true
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only. \end{DoxyCompactList}\item 
+Expression \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a41e255ce668e2507f2ac68ef89ab4a7c}{Expression} =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_application}{Application}$>$) Context.\+Applications).Expression
+\begin{DoxyCompactList}\small\item\em Gets the expression tree that is associated with the instance of T\+:\+System.\+Linq.\+I\+Queryable. \end{DoxyCompactList}\item 
+Type \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a6d57d2a528ece38905825146e3aa076e}{Element\+Type} =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_application}{Application}$>$) Context.\+Applications).Element\+Type
+\begin{DoxyCompactList}\small\item\em Gets the type of the element(s) that are returned when the expression tree associated with this instance of T\+:\+System.\+Linq.\+I\+Queryable is executed. \end{DoxyCompactList}\item 
+I\+Query\+Provider \hyperlink{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a9f3a6a90748e7eefa51160c5c108825e}{Provider} =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_application}{Application}$>$) Context.\+Applications).Provider
+\begin{DoxyCompactList}\small\item\em Gets the query provider that is associated with this data source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Определяет коллекцию приложений, зарегистрированных в системе доступа 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_ad4597e37a4157bda5cf46effaaf3f7f5}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_ad4597e37a4157bda5cf46effaaf3f7f5}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Add@{Add}}
+\index{Add@{Add}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Add (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application}}]{item }\end{DoxyParamCaption})}
+
+
+
+Добавляет в коллекцию новое приложение 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & Экземпляр объекта приложения\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a04fd035187ef54f67576f6a428ca7523}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a04fd035187ef54f67576f6a428ca7523}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Clear@{Clear}}
+\index{Clear@{Clear}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Произваодит очистку всех приложений 
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a55d23c28f629fc2db1fad7ba62f33714}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a55d23c28f629fc2db1fad7ba62f33714}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Contains@{Contains}}
+\index{Contains@{Contains}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Contains (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application}}]{item }\end{DoxyParamCaption})}
+
+
+
+Проверяет содержится ли исходный элемент приложения в коллекции 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_abd644783e0ae7cd9f2e730a8d8991921}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_abd644783e0ae7cd9f2e730a8d8991921}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Copy\+To@{Copy\+To}}
+\index{Copy\+To@{Copy\+To}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Copy\+To()}{CopyTo()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Copy\+To (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} \mbox{[}$\,$\mbox{]}}]{array,  }\item[{int}]{array\+Index }\end{DoxyParamCaption})}
+
+
+
+Copies the elements of the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 to an T\+:\+System.\+Array, starting at a particular T\+:\+System.\+Array index. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em array} & The one-\/dimensional T\+:\+System.\+Array that is the destination of the elements copied from T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1. The T\+:\+System.\+Array must have zero-\/based indexing.\\
+\hline
+{\em array\+Index} & The zero-\/based index in {\itshape array}  at which copying begins.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em T\+:\+System.\+Argument\+Null\+Exception} & {\itshape array}  is null.\\
+\hline
+{\em T\+:\+System.\+Argument\+Out\+Of\+Range\+Exception} & {\itshape array\+Index}  is less than 0.\\
+\hline
+{\em T\+:\+System.\+Argument\+Exception} & The number of elements in the source T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is greater than the available space from {\itshape array\+Index}  to the end of the destination {\itshape array} .\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_adef85e538bfbe1df288513c241b3c199}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_adef85e538bfbe1df288513c241b3c199}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Performs application-\/defined tasks associated with freeing, releasing, or resetting unmanaged resources. 
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a6e8eff09b5c48f61908246f9e17ae861}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a6e8eff09b5c48f61908246f9e17ae861}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Get\+Enumerator@{Get\+Enumerator}}
+\index{Get\+Enumerator@{Get\+Enumerator}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Get\+Enumerator()}{GetEnumerator()}}
+{\footnotesize\ttfamily I\+Enumerator$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application}$>$ Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Get\+Enumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an enumerator that iterates through the collection. 
+
+\begin{DoxyReturn}{Возвращает}
+A T\+:\+System.\+Collections.\+Generic.\+I\+Enumerator`1 that can be used to iterate through the collection. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a7612426cd9f9f7dcebb1ca1aeb9cd986}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a7612426cd9f9f7dcebb1ca1aeb9cd986}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Remove@{Remove}}
+\index{Remove@{Remove}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Remove (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application}}]{item }\end{DoxyParamCaption})}
+
+
+
+Производит удаление элемента из коллекции 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_ad11e3582f6b2b46a6f01756edd246e0f}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_ad11e3582f6b2b46a6f01756edd246e0f}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Remove\+Range@{Remove\+Range}}
+\index{Remove\+Range@{Remove\+Range}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Remove\+Range()}{RemoveRange()}}
+{\footnotesize\ttfamily I\+Enumerable$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application}$>$ Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Remove\+Range (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} $>$}]{items }\end{DoxyParamCaption})}
+
+
+
+Производит удаление элементов представленных коллекцией items 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em items} & Коллекция удаляемых элементов\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Коллекцию удаленных элементов
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a9faf9ac9440cccea84fb29a0d4c67f59}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a9faf9ac9440cccea84fb29a0d4c67f59}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Update@{Update}}
+\index{Update@{Update}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Update (\begin{DoxyParamCaption}\item[{\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application}}]{item }\end{DoxyParamCaption})}
+
+
+
+Производит обновление элемента в БД 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em item} & Элемент T\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Данные класса}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_aa636f6af9d1397c2229f6aede82fd67c}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_aa636f6af9d1397c2229f6aede82fd67c}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Count@{Count}}
+\index{Count@{Count}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Count}{Count}}
+{\footnotesize\ttfamily int Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Count =$>$ Context.\+Applications.\+Count()}
+
+
+
+Возвращает количество зарегистрированных приложений 
+
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a6d57d2a528ece38905825146e3aa076e}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a6d57d2a528ece38905825146e3aa076e}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Element\+Type@{Element\+Type}}
+\index{Element\+Type@{Element\+Type}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Element\+Type}{ElementType}}
+{\footnotesize\ttfamily Type Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Element\+Type =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_application}{Application}$>$) Context.\+Applications).Element\+Type}
+
+
+
+Gets the type of the element(s) that are returned when the expression tree associated with this instance of T\+:\+System.\+Linq.\+I\+Queryable is executed. 
+
+\begin{DoxyReturn}{Возвращает}
+A T\+:\+System.\+Type that represents the type of the element(s) that are returned when the expression tree associated with this object is executed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a41e255ce668e2507f2ac68ef89ab4a7c}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a41e255ce668e2507f2ac68ef89ab4a7c}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Expression@{Expression}}
+\index{Expression@{Expression}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Expression}{Expression}}
+{\footnotesize\ttfamily Expression Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Expression =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_application}{Application}$>$) Context.\+Applications).Expression}
+
+
+
+Gets the expression tree that is associated with the instance of T\+:\+System.\+Linq.\+I\+Queryable. 
+
+\begin{DoxyReturn}{Возвращает}
+The T\+:\+System.\+Linq.\+Expressions.\+Expression that is associated with this instance of T\+:\+System.\+Linq.\+I\+Queryable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a55af6df83f3056a9c840fe9add79c9c4}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a55af6df83f3056a9c840fe9add79c9c4}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Is\+Read\+Only@{Is\+Read\+Only}}
+\index{Is\+Read\+Only@{Is\+Read\+Only}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Is\+Read\+Only}{IsReadOnly}}
+{\footnotesize\ttfamily bool Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Is\+Read\+Only =$>$ true}
+
+
+
+Gets a value indicating whether the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only. 
+
+\begin{DoxyReturn}{Возвращает}
+true if the T\+:\+System.\+Collections.\+Generic.\+I\+Collection`1 is read-\/only; otherwise, false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a9f3a6a90748e7eefa51160c5c108825e}\label{class_security_1_1_entity_framework_1_1_collections_1_1_application_collection_a9f3a6a90748e7eefa51160c5c108825e}} 
+\index{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}!Provider@{Provider}}
+\index{Provider@{Provider}!Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection@{Security\+::\+Entity\+Framework\+::\+Collections\+::\+Application\+Collection}}
+\subsubsection{\texorpdfstring{Provider}{Provider}}
+{\footnotesize\ttfamily I\+Query\+Provider Security.\+Entity\+Framework.\+Collections.\+Application\+Collection.\+Provider =$>$ ((I\+Queryable$<$\hyperlink{class_security_1_1_model_1_1_application}{Application}$>$) Context.\+Applications).Provider}
+
+
+
+Gets the query provider that is associated with this data source. 
+
+\begin{DoxyReturn}{Возвращает}
+The T\+:\+System.\+Linq.\+I\+Query\+Provider that is associated with this data source. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Entity\+Framework/\+Collections/Application\+Collection.\+cs\end{DoxyCompactItemize}

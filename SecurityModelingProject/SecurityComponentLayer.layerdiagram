@@ -1,23 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c01a93ac-8cea-4857-a91c-f681f5fb714c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
   <layers>
-    <layer Id="16238ba2-a497-494d-8d9c-b2abf7c49101" name="Security.Model">
+    <layer Id="cbe29222-6344-4a70-adf3-21cf1ea781b5" name="Security">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="1b2f397f-cef3-4fd3-8807-d7b9b9c18103" direction="Forward">
+          <layerMoniker Id="02a115cb-f501-45c9-a9a1-4461c17d1830" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
       <references>
-        <reference Id="54155f50-464f-4bda-9876-bb1aff4563fb" name="Security.Model">
-          <ArtifactNode Label="Security.Model" Category="CodeSchema_Project" Id="(Assembly=../Security.Model/Security.Model.csproj)">
-            <Category Ref="File" />
-          </ArtifactNode>
-          <ExpandedNode Id="(Assembly=Security.Model)" Label="Security.Model.dll" Category="CodeSchema_Assembly">
-            <Category Ref="FileSystem.Category.FileOfType.dll" />
-            <LinkCategory Ref="Produces" />
-            <LinkCategory Ref="Represents" />
-          </ExpandedNode>
-        </reference>
-      </references>
-    </layer>
-    <layer Id="22ca6840-8725-4c57-bd0e-012d2fece8cf" name="Security">
-      <references>
-        <reference Id="e5ab8127-f9ba-46d8-8c4c-23d24d09a3a8" name="Security">
+        <reference Id="04945297-86fa-44f2-a54b-4e1a218380a5" name="Security">
           <ArtifactNode Label="Security" Category="CodeSchema_Project" Id="(Assembly=../Security/Security.csproj)">
             <Category Ref="File" />
           </ArtifactNode>
@@ -29,9 +20,94 @@
         </reference>
       </references>
     </layer>
-    <layer Id="c543cdc1-4136-4bfd-b93e-48f2d490f044" name="Security.EntityFramework">
+    <layer Id="45518efe-7243-41e5-9a6c-01c6c20becc8" name="Security.EntityDal">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5a03aba4-e827-412a-a5aa-a4df97b6fcea" direction="Forward">
+          <layerMoniker Id="e3b5ce08-c894-439a-8303-57f62aea191e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
       <references>
-        <reference Id="c5fb4678-3535-4aa2-9182-3811b5c56d94" name="Security.EntityFramework">
+        <reference Id="f54b8eb9-af06-4c41-8de8-8369a41187aa" name="Security.EntityDal">
+          <ArtifactNode Label="Security.EntityDal" Category="CodeSchema_Project" Id="(Assembly=../Security.EntityDal/Security.EntityDal.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Security.EntityDal)" Label="Security.EntityDal.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="02a115cb-f501-45c9-a9a1-4461c17d1830" name="Security.Interfaces">
+      <references>
+        <reference Id="1ecfee3b-9fb1-4eb7-8b1e-60664a7f301a" name="Security.Interfaces">
+          <ArtifactNode Label="Security.Interfaces" Category="CodeSchema_Project" Id="(Assembly=../Security.Interfaces/Security.Interfaces.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Security.Interfaces)" Label="Security.Interfaces.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="e3b5ce08-c894-439a-8303-57f62aea191e" name="Security.Model">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="371e8fce-ab35-4fe7-b442-049188f6d092" direction="Forward">
+          <layerMoniker Id="02a115cb-f501-45c9-a9a1-4461c17d1830" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="8d94f2a8-67ca-495a-bcb9-20b1bb900fe1" name="Security.Model">
+          <ArtifactNode Label="Security.Model" Category="CodeSchema_Project" Id="(Assembly=../Security.Model/Security.Model.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Security.Model)" Label="Security.Model.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="a6861dbe-4d5b-4583-80ba-6146da78b3fd" name="Security.Web">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6b37c5a5-23cb-4a52-971c-bc3aa8f1f9bb" direction="Forward">
+          <layerMoniker Id="02a115cb-f501-45c9-a9a1-4461c17d1830" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="c978cd8e-6ddc-430e-8667-554e75ac9b53" direction="Forward">
+          <layerMoniker Id="cbe29222-6344-4a70-adf3-21cf1ea781b5" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="0039f8da-90e1-4b05-b529-4f675733ce53" name="Security.Web">
+          <ArtifactNode Label="Security.Web" Category="CodeSchema_Project" Id="(Assembly=../Security.Web/Security.Web.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Security.Web)" Label="Security.Web.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="27fbba21-4b41-409e-b7a2-96d3e8b93949" name="Security.EntityFramework">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="954cc8a9-9927-4ba2-b43d-486cdd7a4ae4" direction="Forward">
+          <layerMoniker Id="02a115cb-f501-45c9-a9a1-4461c17d1830" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="27edd4aa-c943-4b65-a9fd-691e1e143a81" direction="Forward">
+          <layerMoniker Id="45518efe-7243-41e5-9a6c-01c6c20becc8" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="b3b33953-cc21-4e09-b121-0dd5471b4d7f" direction="Forward">
+          <layerMoniker Id="e3b5ce08-c894-439a-8303-57f62aea191e" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="84c532dc-0128-4e73-87e3-717f3373e886" name="Security.EntityFramework">
           <ArtifactNode Label="Security.EntityFramework" Category="CodeSchema_Project" Id="(Assembly=../Security.EntityFramework/Security.EntityFramework.csproj)">
             <Category Ref="File" />
           </ArtifactNode>
@@ -43,14 +119,30 @@
         </reference>
       </references>
     </layer>
-    <layer Id="1f034f44-b84c-4127-b0ef-a7581f81e717" name="Security.Interfaces">
+    <layer Id="02829dab-2924-4952-a812-f12db7bfdaf7" name="Security.Manager">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="923c52e1-91c3-43b1-8d4c-d515d615bd98" direction="Forward">
+          <layerMoniker Id="cbe29222-6344-4a70-adf3-21cf1ea781b5" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="1c2f8c7d-534b-4ebb-82d6-ef207709b125" direction="Forward">
+          <layerMoniker Id="02a115cb-f501-45c9-a9a1-4461c17d1830" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="82e224c4-6a0d-4dfc-a88d-5a6ca793558d" direction="Forward">
+          <layerMoniker Id="e3b5ce08-c894-439a-8303-57f62aea191e" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="99df24e2-96f7-4564-89bb-5339ccffd288" direction="Forward">
+          <layerMoniker Id="a6861dbe-4d5b-4583-80ba-6146da78b3fd" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4f23d3f8-91db-453a-ada9-96459f88060b" direction="Forward">
+          <layerMoniker Id="27fbba21-4b41-409e-b7a2-96d3e8b93949" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
       <references>
-        <reference Id="136b6318-de67-497d-b8fd-400e021efa38" name="Security.Interfaces">
-          <ArtifactNode Label="Security.Interfaces" Category="CodeSchema_Project" Id="(Assembly=../Security.Interfaces/Security.Interfaces.csproj)">
+        <reference Id="472603f2-2280-4ee8-aa18-1e6d82c2589c" name="Security.Manager">
+          <ArtifactNode Label="Security.Manager" Category="CodeSchema_Project" Id="(Assembly=../Security.Manager/Security.Manager.csproj)">
             <Category Ref="File" />
           </ArtifactNode>
-          <ExpandedNode Id="(Assembly=Security.Interfaces)" Label="Security.Interfaces.dll" Category="CodeSchema_Assembly">
-            <Category Ref="FileSystem.Category.FileOfType.dll" />
+          <ExpandedNode Id="(Assembly=Security.Manager)" Label="Security.Manager.dll" Category="CodeSchema_Assembly">
             <LinkCategory Ref="Produces" />
             <LinkCategory Ref="Represents" />
           </ExpandedNode>

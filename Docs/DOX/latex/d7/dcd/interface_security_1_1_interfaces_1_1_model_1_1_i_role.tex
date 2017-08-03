@@ -1,0 +1,104 @@
+\hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_role}{}\section{Интерфейс Security.\+Interfaces.\+Model.\+I\+Role}
+\label{interface_security_1_1_interfaces_1_1_model_1_1_i_role}\index{Security.\+Interfaces.\+Model.\+I\+Role@{Security.\+Interfaces.\+Model.\+I\+Role}}
+
+
+Объект \char`\"{}Роль\char`\"{}  
+
+
+Граф наследования\+:Security.\+Interfaces.\+Model.\+I\+Role\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d7/dcd/interface_security_1_1_interfaces_1_1_model_1_1_i_role}
+\end{center}
+\end{figure}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a22a4365570974829a0aa04dde23cf64f}{Id\+Role}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Идентификатор роли в БД \end{DoxyCompactList}\item 
+string \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a30342eb8535f6c5f9a268581029ea756}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Наименование \end{DoxyCompactList}\item 
+string \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_role_af765b879a0d7378e8737d4e262c8c6cd}{Description}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Описание \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_role_aec0d3924aabc0d1a5ee198ce786be21f}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_role_aec0d3924aabc0d1a5ee198ce786be21f}} 
+int {\bfseries Id\+Application}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+I\+List$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant} $>$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a3ce53067b9cb4f80be82c3c5192656d0}{Grants}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Список ее разрешений \end{DoxyCompactList}\item 
+I\+List$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_member}{I\+Member} $>$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a983f3e9495d2d6a6e9524c2668c3f56f}{Members}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Список участников, входящих в роль \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_role_adcdcf154adcf01c16074c38a150aca7b}{Application}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Наименование приложения \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Объект \char`\"{}Роль\char`\"{} 
+
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_role_adcdcf154adcf01c16074c38a150aca7b}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_role_adcdcf154adcf01c16074c38a150aca7b}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}!Application@{Application}}
+\index{Application@{Application}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}}
+\subsubsection{\texorpdfstring{Application}{Application}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} Security.\+Interfaces.\+Model.\+I\+Role.\+Application\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Наименование приложения 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_role_af765b879a0d7378e8737d4e262c8c6cd}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_role_af765b879a0d7378e8737d4e262c8c6cd}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}!Description@{Description}}
+\index{Description@{Description}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}}
+\subsubsection{\texorpdfstring{Description}{Description}}
+{\footnotesize\ttfamily string Security.\+Interfaces.\+Model.\+I\+Role.\+Description\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Описание 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a3ce53067b9cb4f80be82c3c5192656d0}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a3ce53067b9cb4f80be82c3c5192656d0}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}!Grants@{Grants}}
+\index{Grants@{Grants}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}}
+\subsubsection{\texorpdfstring{Grants}{Grants}}
+{\footnotesize\ttfamily I\+List$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_grant}{I\+Grant}$>$ Security.\+Interfaces.\+Model.\+I\+Role.\+Grants\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Список ее разрешений 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a22a4365570974829a0aa04dde23cf64f}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a22a4365570974829a0aa04dde23cf64f}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}!Id\+Role@{Id\+Role}}
+\index{Id\+Role@{Id\+Role}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}}
+\subsubsection{\texorpdfstring{Id\+Role}{IdRole}}
+{\footnotesize\ttfamily int Security.\+Interfaces.\+Model.\+I\+Role.\+Id\+Role\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Идентификатор роли в БД 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a983f3e9495d2d6a6e9524c2668c3f56f}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a983f3e9495d2d6a6e9524c2668c3f56f}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}!Members@{Members}}
+\index{Members@{Members}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}}
+\subsubsection{\texorpdfstring{Members}{Members}}
+{\footnotesize\ttfamily I\+List$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_member}{I\+Member}$>$ Security.\+Interfaces.\+Model.\+I\+Role.\+Members\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Список участников, входящих в роль 
+
+\mbox{\Hypertarget{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a30342eb8535f6c5f9a268581029ea756}\label{interface_security_1_1_interfaces_1_1_model_1_1_i_role_a30342eb8535f6c5f9a268581029ea756}} 
+\index{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}!Name@{Name}}
+\index{Name@{Name}!Security\+::\+Interfaces\+::\+Model\+::\+I\+Role@{Security\+::\+Interfaces\+::\+Model\+::\+I\+Role}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily string Security.\+Interfaces.\+Model.\+I\+Role.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Наименование 
+
+
+
+Объявления и описания членов интерфейса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security.\+Interfaces/\+Model/I\+Role.\+cs\end{DoxyCompactItemize}

@@ -1,7 +1,11 @@
-namespace Security.Interfaces.Base
+﻿namespace Security.Interfaces.Base
 {
     public interface ISavedCollection
     {
-        void SaveChanges();
+        /// <summary>
+        /// Производит сохранение всех изменений в базу данных
+        /// </summary>
+        /// <returns></returns>
+        int SaveChanges();
     }
 }

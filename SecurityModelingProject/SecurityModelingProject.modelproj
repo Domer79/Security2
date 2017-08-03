@@ -20,8 +20,39 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'ReleasePackage' ">
+    <OutputPath>bin\ReleasePackage\</OutputPath>
+  </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="UMLCheckAccess.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLCheckAccess.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLCheckAccess.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="UMLComponentDiagram1.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLComponentDiagram1.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLComponentDiagram1.componentdiagram</DependentUpon>
+    </Content>
+    <Content Include="UMLSequenceDiagram1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLSequenceDiagram1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLSequenceDiagram1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UMLSettingsProcess.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLSettingsProcess.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLSettingsProcess.sequencediagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\SecurityModelingProject.uml">
       <SubType>Content</SubType>
@@ -49,13 +80,25 @@
       <Name>Security.Interfaces</Name>
       <Project>{026352e5-2a65-4064-9848-fb60ab1046ac}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Security.EntityDal\Security.EntityDal.csproj">
+      <Name>Security.EntityDal</Name>
+      <Project>{cc428c6e-87c3-4ff4-b698-adf244a31e38}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Security.Manager\Security.Manager.csproj">
+      <Name>Security.Manager</Name>
+      <Project>{c090d941-2315-45b8-bac6-277fcd7b2aba}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Security.Model\Security.Model.csproj">
       <Name>Security.Model</Name>
-      <Project>{cc428c6e-87c3-4ff4-b698-adf244a31e38}</Project>
+      <Project>{69f6d882-5a1e-49a9-b10c-a81ad937d188}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Security.Web\Security.Web.csproj">
+      <Name>Security.Web</Name>
+      <Project>{73775b85-04ea-401d-ad27-667815c066ef}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Security\Security.csproj">
       <Name>Security</Name>
       <Project>{556713e5-2adb-4b4b-8d40-74df9393d33d}</Project>
     </ProjectReference>
-  </ItemGroup>
+  </ItemGroup> 
 </Project>

@@ -1,0 +1,447 @@
+\hypertarget{class_security_1_1_core_security}{}\section{Класс Security.\+Core\+Security}
+\label{class_security_1_1_core_security}\index{Security.\+Core\+Security@{Security.\+Core\+Security}}
+
+
+Представляет ядро системы  
+
+
+Граф наследования\+:Security.\+Core\+Security\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d8/daf/class_security_1_1_core_security}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_security_1_1_core_security_a87417c45b77507f17661f2596caf0ec7}\label{class_security_1_1_core_security_a87417c45b77507f17661f2596caf0ec7}} 
+{\bfseries Core\+Security} (\hyperlink{interface_security_1_1_interfaces_1_1_i_security_application_info}{I\+Security\+Application\+Info} security\+Info)
+\item 
+\mbox{\Hypertarget{class_security_1_1_core_security_aec2b00266df59a6fb1170d0d5758e078}\label{class_security_1_1_core_security_aec2b00266df59a6fb1170d0d5758e078}} 
+{\bfseries Core\+Security} (string app\+Name)
+\item 
+bool \hyperlink{class_security_1_1_core_security_a87672cfd35522b393c3139daa4960258}{Log\+In} (string login, string password)
+\begin{DoxyCompactList}\small\item\em Проверка входа \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_core_security_a8210ce9453e545a46048a95b1e35837e}{Check\+Access} (string login, string sec\+Object\+Name, Enum access\+Type)
+\begin{DoxyCompactList}\small\item\em Проверка доступа \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_core_security_a7a9a64fd5293e9b23afe501c16e71e2b}{Check\+Access} (string login, string sec\+Object\+Name, Enum access\+Type, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Проверка доступа \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_core_security_ace03c1422a670fd976a9a89af51090ba}{Check\+Access} (string login, string sec\+Object\+Name, string access\+Type\+Name)
+\begin{DoxyCompactList}\small\item\em Проверка доступа \end{DoxyCompactList}\item 
+bool \hyperlink{class_security_1_1_core_security_a7e47a82a3d9113388e23988e344d6dbf}{Check\+Access} (string login, string sec\+Object\+Name, string access\+Type\+Name, string app\+Name)
+\begin{DoxyCompactList}\small\item\em Проверка доступа \end{DoxyCompactList}\item 
+I\+Enumerable$<$ string $>$ \hyperlink{class_security_1_1_core_security_acf070051371bf58f0f4b082e5f6b7352}{Get\+Allow\+All\+Security\+Objects} (string access\+Type)
+\begin{DoxyCompactList}\small\item\em Возвращает все объекты безопасности для указанного типа доступа и текущего приложения \end{DoxyCompactList}\item 
+I\+Enumerable$<$ string $>$ \hyperlink{class_security_1_1_core_security_ad9dd82159ce61eba5ab68fed5167ec87}{Get\+Allow\+Security\+Objects} (string login, string access\+Type)
+\begin{DoxyCompactList}\small\item\em Возвращает все доступные для пользователя объекты безопасности для указанного типа доступа и текущего приложения \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_i_security_transaction}{I\+Security\+Transaction} \hyperlink{class_security_1_1_core_security_a7dd6592ac290133f4f0182cfef41547b}{Begin\+Transaction} ()
+\begin{DoxyCompactList}\small\item\em Создает новую транзакцию для работы с БД \end{DoxyCompactList}\item 
+I\+Enumerable$<$ \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{I\+Access\+Type} $>$ \hyperlink{class_security_1_1_core_security_a874a60fc9733766b2530c295a7009aed}{Get\+Access\+Types} ()
+\begin{DoxyCompactList}\small\item\em Возвращает коллекцию типов доступа для текущего приложения \end{DoxyCompactList}\item 
+int \hyperlink{class_security_1_1_core_security_a85c19dc69e9698e6d6df724721ae5795}{Save\+Changes} ()
+\begin{DoxyCompactList}\small\item\em Производит сохранение всех изменений в настройках системы безопасности \end{DoxyCompactList}\item 
+async Task$<$ int $>$ \hyperlink{class_security_1_1_core_security_ac1c356b6ee81025a45d145512dfd41b7}{Save\+Changes\+Async} ()
+\begin{DoxyCompactList}\small\item\em Производит асинхронное сохранение всех изменений в настройках системы безопасности \end{DoxyCompactList}\item 
+void \hyperlink{class_security_1_1_core_security_ae04c044fdd2706f7002c94da9924c2eb}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Уничтожает ресурсы занимаемые ядром системы \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_i_security_settings}{I\+Security\+Settings} \hyperlink{class_security_1_1_core_security_a93562c3f6277d8462f88e25d8c6b097d}{Settings} =$>$ \+\_\+security\+Factory.\+Settings
+\begin{DoxyCompactList}\small\item\em Коллекция и инструментарий работы с настройками \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_user_collection}{I\+User\+Collection} \hyperlink{class_security_1_1_core_security_a2cd468b36ea7c64dd98425cb1b221543}{User\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция пользователей \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_group_collection}{I\+Group\+Collection} \hyperlink{class_security_1_1_core_security_ada9f6b2ac17bc46c621bb9acf01aa3ab}{Group\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция групп пользователей \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_sec_object_collection}{I\+Sec\+Object\+Collection} \hyperlink{class_security_1_1_core_security_a02c72cd60218dcbb8866494ee47cac64}{Sec\+Object\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция объектов безопасности \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_role_collection}{I\+Role\+Collection} \hyperlink{class_security_1_1_core_security_a2c7e78fa4c6489ab5b9e7d338986954c}{Role\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция ролей \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_member_collection}{I\+Member\+Collection} \hyperlink{class_security_1_1_core_security_a12a91cfb7b27f3a9fe1d25f7fdebc423}{Member\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция участников безопасности. Объединяет в себе пользователей и группы пользователей \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection}{I\+Grant\+Collection} \hyperlink{class_security_1_1_core_security_ae606495ba6d6c826855c47c2fdc5f4a3}{Grant\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция разрешений \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_application_collection}{I\+Application\+Collection} \hyperlink{class_security_1_1_core_security_a58b2f3d73cc4d9b241ee874df58600f7}{Application\+Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Коллекция разрешений со ссылкой на идентификатор приложения \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools}{I\+Security\+Tools} \hyperlink{class_security_1_1_core_security_ad64eb4770dc7bd1c8672580b426a166c}{Tools}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Дополнительные инструменты работы с данными \end{DoxyCompactList}\item 
+\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} \hyperlink{class_security_1_1_core_security_a565133c41feb3b5599b0505b97b160fb}{Current\+Application}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Текущее приложение \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Представляет ядро системы 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{class_security_1_1_core_security_a7dd6592ac290133f4f0182cfef41547b}\label{class_security_1_1_core_security_a7dd6592ac290133f4f0182cfef41547b}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Begin\+Transaction@{Begin\+Transaction}}
+\index{Begin\+Transaction@{Begin\+Transaction}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Begin\+Transaction()}{BeginTransaction()}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_i_security_transaction}{I\+Security\+Transaction} Security.\+Core\+Security.\+Begin\+Transaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Создает новую транзакцию для работы с БД 
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает вновь созданную транзакцию
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_aaa904347683f2b6cac529738094112e1}{Security.\+Interfaces.\+I\+Security}.
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a8210ce9453e545a46048a95b1e35837e}\label{class_security_1_1_core_security_a8210ce9453e545a46048a95b1e35837e}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Check\+Access@{Check\+Access}}
+\index{Check\+Access@{Check\+Access}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Check\+Access()}{CheckAccess()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Security.\+Core\+Security.\+Check\+Access (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{sec\+Object\+Name,  }\item[{Enum}]{access\+Type }\end{DoxyParamCaption})}
+
+
+
+Проверка доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин\\
+\hline
+{\em sec\+Object\+Name} & Объект безопасности\\
+\hline
+{\em access\+Type} & Тип доступа\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Возвращает true, если доступ для пользователя разрешен
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_ad996f672aeed3b4b889707c519e33ddc}{Security.\+Interfaces.\+I\+Security}.
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a7a9a64fd5293e9b23afe501c16e71e2b}\label{class_security_1_1_core_security_a7a9a64fd5293e9b23afe501c16e71e2b}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Check\+Access@{Check\+Access}}
+\index{Check\+Access@{Check\+Access}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Check\+Access()}{CheckAccess()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Security.\+Core\+Security.\+Check\+Access (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{sec\+Object\+Name,  }\item[{Enum}]{access\+Type,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Проверка доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин\\
+\hline
+{\em sec\+Object\+Name} & Объект безопасности\\
+\hline
+{\em access\+Type} & Тип доступа\\
+\hline
+{\em app\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Возвращает true, если доступ для пользователя разрешен
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_abfc69f75a3d7510094fd41319f8b7c98}{Security.\+Interfaces.\+I\+Security}.
+
+\mbox{\Hypertarget{class_security_1_1_core_security_ace03c1422a670fd976a9a89af51090ba}\label{class_security_1_1_core_security_ace03c1422a670fd976a9a89af51090ba}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Check\+Access@{Check\+Access}}
+\index{Check\+Access@{Check\+Access}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Check\+Access()}{CheckAccess()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Security.\+Core\+Security.\+Check\+Access (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{sec\+Object\+Name,  }\item[{string}]{access\+Type\+Name }\end{DoxyParamCaption})}
+
+
+
+Проверка доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин\\
+\hline
+{\em sec\+Object\+Name} & Объект безопасности\\
+\hline
+{\em access\+Type\+Name} & Тип доступа\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Возвращает true, если доступ для пользователя разрешен
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a8a405b7d7708713fb3ab8cb3b5eb4f11}{Security.\+Interfaces.\+I\+Security}.
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a7e47a82a3d9113388e23988e344d6dbf}\label{class_security_1_1_core_security_a7e47a82a3d9113388e23988e344d6dbf}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Check\+Access@{Check\+Access}}
+\index{Check\+Access@{Check\+Access}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Check\+Access()}{CheckAccess()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Security.\+Core\+Security.\+Check\+Access (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{sec\+Object\+Name,  }\item[{string}]{access\+Type\+Name,  }\item[{string}]{app\+Name }\end{DoxyParamCaption})}
+
+
+
+Проверка доступа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин\\
+\hline
+{\em sec\+Object\+Name} & Объект безопасности\\
+\hline
+{\em access\+Type\+Name} & Тип доступа\\
+\hline
+{\em app\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Возвращает true, если доступ для пользователя разрешен
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_accc19c3e4a54d9dc283941295f8794f0}{Security.\+Interfaces.\+I\+Security}.
+
+\mbox{\Hypertarget{class_security_1_1_core_security_ae04c044fdd2706f7002c94da9924c2eb}\label{class_security_1_1_core_security_ae04c044fdd2706f7002c94da9924c2eb}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void Security.\+Core\+Security.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Уничтожает ресурсы занимаемые ядром системы 
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a874a60fc9733766b2530c295a7009aed}\label{class_security_1_1_core_security_a874a60fc9733766b2530c295a7009aed}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Get\+Access\+Types@{Get\+Access\+Types}}
+\index{Get\+Access\+Types@{Get\+Access\+Types}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Get\+Access\+Types()}{GetAccessTypes()}}
+{\footnotesize\ttfamily I\+Enumerable$<$\hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_access_type}{I\+Access\+Type}$>$ Security.\+Core\+Security.\+Get\+Access\+Types (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает коллекцию типов доступа для текущего приложения 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a5057c425b04d1c75e8ca9c7b451a1ecf}{Security.\+Interfaces.\+I\+Security}.
+
+\mbox{\Hypertarget{class_security_1_1_core_security_acf070051371bf58f0f4b082e5f6b7352}\label{class_security_1_1_core_security_acf070051371bf58f0f4b082e5f6b7352}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Get\+Allow\+All\+Security\+Objects@{Get\+Allow\+All\+Security\+Objects}}
+\index{Get\+Allow\+All\+Security\+Objects@{Get\+Allow\+All\+Security\+Objects}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Get\+Allow\+All\+Security\+Objects()}{GetAllowAllSecurityObjects()}}
+{\footnotesize\ttfamily I\+Enumerable$<$string$>$ Security.\+Core\+Security.\+Get\+Allow\+All\+Security\+Objects (\begin{DoxyParamCaption}\item[{string}]{access\+Type }\end{DoxyParamCaption})}
+
+
+
+Возвращает все объекты безопасности для указанного типа доступа и текущего приложения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em access\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_aa7e5e1c0fdd2fe0e3a763750decbcffb}{Security.\+Interfaces.\+I\+Security}.
+
+\mbox{\Hypertarget{class_security_1_1_core_security_ad9dd82159ce61eba5ab68fed5167ec87}\label{class_security_1_1_core_security_ad9dd82159ce61eba5ab68fed5167ec87}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Get\+Allow\+Security\+Objects@{Get\+Allow\+Security\+Objects}}
+\index{Get\+Allow\+Security\+Objects@{Get\+Allow\+Security\+Objects}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Get\+Allow\+Security\+Objects()}{GetAllowSecurityObjects()}}
+{\footnotesize\ttfamily I\+Enumerable$<$string$>$ Security.\+Core\+Security.\+Get\+Allow\+Security\+Objects (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{access\+Type }\end{DoxyParamCaption})}
+
+
+
+Возвращает все доступные для пользователя объекты безопасности для указанного типа доступа и текущего приложения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & \\
+\hline
+{\em access\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_aef63980964e18a05521826c46040c068}{Security.\+Interfaces.\+I\+Security}.
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a87672cfd35522b393c3139daa4960258}\label{class_security_1_1_core_security_a87672cfd35522b393c3139daa4960258}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Log\+In@{Log\+In}}
+\index{Log\+In@{Log\+In}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Log\+In()}{LogIn()}}
+{\footnotesize\ttfamily bool Security.\+Core\+Security.\+Log\+In (\begin{DoxyParamCaption}\item[{string}]{login,  }\item[{string}]{password }\end{DoxyParamCaption})}
+
+
+
+Проверка входа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & \\
+\hline
+{\em password} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Возвращает true, если проверка подлинности прошла успешно
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a85a48460a5d327c495647539670049f8}{Security.\+Interfaces.\+I\+Security}.
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a85c19dc69e9698e6d6df724721ae5795}\label{class_security_1_1_core_security_a85c19dc69e9698e6d6df724721ae5795}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Save\+Changes@{Save\+Changes}}
+\index{Save\+Changes@{Save\+Changes}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Save\+Changes()}{SaveChanges()}}
+{\footnotesize\ttfamily int Security.\+Core\+Security.\+Save\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Производит сохранение всех изменений в настройках системы безопасности 
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает количество затронутых строк
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_ac2cb6f1d06c0684886c94ed6ed88e7da}{Security.\+Interfaces.\+I\+Security}.
+
+\mbox{\Hypertarget{class_security_1_1_core_security_ac1c356b6ee81025a45d145512dfd41b7}\label{class_security_1_1_core_security_ac1c356b6ee81025a45d145512dfd41b7}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Save\+Changes\+Async@{Save\+Changes\+Async}}
+\index{Save\+Changes\+Async@{Save\+Changes\+Async}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Save\+Changes\+Async()}{SaveChangesAsync()}}
+{\footnotesize\ttfamily async Task$<$int$>$ Security.\+Core\+Security.\+Save\+Changes\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Производит асинхронное сохранение всех изменений в настройках системы безопасности 
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает количество затронутых строк
+\end{DoxyReturn}
+
+
+Замещает \hyperlink{interface_security_1_1_interfaces_1_1_i_security_a73465b9b858b22e2ec8497f903c8f49b}{Security.\+Interfaces.\+I\+Security}.
+
+
+
+\subsection{Данные класса}
+\mbox{\Hypertarget{class_security_1_1_core_security_a93562c3f6277d8462f88e25d8c6b097d}\label{class_security_1_1_core_security_a93562c3f6277d8462f88e25d8c6b097d}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Settings@{Settings}}
+\index{Settings@{Settings}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Settings}{Settings}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_i_security_settings}{I\+Security\+Settings} Security.\+Core\+Security.\+Settings =$>$ \+\_\+security\+Factory.\+Settings}
+
+
+
+Коллекция и инструментарий работы с настройками 
+
+
+
+\subsection{Полный список свойств}
+\mbox{\Hypertarget{class_security_1_1_core_security_a58b2f3d73cc4d9b241ee874df58600f7}\label{class_security_1_1_core_security_a58b2f3d73cc4d9b241ee874df58600f7}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Application\+Collection@{Application\+Collection}}
+\index{Application\+Collection@{Application\+Collection}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Application\+Collection}{ApplicationCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_application_collection}{I\+Application\+Collection} Security.\+Core\+Security.\+Application\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция разрешений со ссылкой на идентификатор приложения 
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a565133c41feb3b5599b0505b97b160fb}\label{class_security_1_1_core_security_a565133c41feb3b5599b0505b97b160fb}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Current\+Application@{Current\+Application}}
+\index{Current\+Application@{Current\+Application}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Current\+Application}{CurrentApplication}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_model_1_1_i_application}{I\+Application} Security.\+Core\+Security.\+Current\+Application\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Текущее приложение 
+
+\mbox{\Hypertarget{class_security_1_1_core_security_ae606495ba6d6c826855c47c2fdc5f4a3}\label{class_security_1_1_core_security_ae606495ba6d6c826855c47c2fdc5f4a3}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Grant\+Collection@{Grant\+Collection}}
+\index{Grant\+Collection@{Grant\+Collection}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Grant\+Collection}{GrantCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_grant_collection}{I\+Grant\+Collection} Security.\+Core\+Security.\+Grant\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция разрешений 
+
+\mbox{\Hypertarget{class_security_1_1_core_security_ada9f6b2ac17bc46c621bb9acf01aa3ab}\label{class_security_1_1_core_security_ada9f6b2ac17bc46c621bb9acf01aa3ab}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Group\+Collection@{Group\+Collection}}
+\index{Group\+Collection@{Group\+Collection}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Group\+Collection}{GroupCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_group_collection}{I\+Group\+Collection} Security.\+Core\+Security.\+Group\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция групп пользователей 
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a12a91cfb7b27f3a9fe1d25f7fdebc423}\label{class_security_1_1_core_security_a12a91cfb7b27f3a9fe1d25f7fdebc423}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Member\+Collection@{Member\+Collection}}
+\index{Member\+Collection@{Member\+Collection}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Member\+Collection}{MemberCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_member_collection}{I\+Member\+Collection} Security.\+Core\+Security.\+Member\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция участников безопасности. Объединяет в себе пользователей и группы пользователей 
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a2c7e78fa4c6489ab5b9e7d338986954c}\label{class_security_1_1_core_security_a2c7e78fa4c6489ab5b9e7d338986954c}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Role\+Collection@{Role\+Collection}}
+\index{Role\+Collection@{Role\+Collection}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Role\+Collection}{RoleCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_role_collection}{I\+Role\+Collection} Security.\+Core\+Security.\+Role\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция ролей 
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a02c72cd60218dcbb8866494ee47cac64}\label{class_security_1_1_core_security_a02c72cd60218dcbb8866494ee47cac64}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Sec\+Object\+Collection@{Sec\+Object\+Collection}}
+\index{Sec\+Object\+Collection@{Sec\+Object\+Collection}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Sec\+Object\+Collection}{SecObjectCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_sec_object_collection}{I\+Sec\+Object\+Collection} Security.\+Core\+Security.\+Sec\+Object\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция объектов безопасности 
+
+\mbox{\Hypertarget{class_security_1_1_core_security_ad64eb4770dc7bd1c8672580b426a166c}\label{class_security_1_1_core_security_ad64eb4770dc7bd1c8672580b426a166c}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!Tools@{Tools}}
+\index{Tools@{Tools}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{Tools}{Tools}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_i_security_tools}{I\+Security\+Tools} Security.\+Core\+Security.\+Tools\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Дополнительные инструменты работы с данными 
+
+\mbox{\Hypertarget{class_security_1_1_core_security_a2cd468b36ea7c64dd98425cb1b221543}\label{class_security_1_1_core_security_a2cd468b36ea7c64dd98425cb1b221543}} 
+\index{Security\+::\+Core\+Security@{Security\+::\+Core\+Security}!User\+Collection@{User\+Collection}}
+\index{User\+Collection@{User\+Collection}!Security\+::\+Core\+Security@{Security\+::\+Core\+Security}}
+\subsubsection{\texorpdfstring{User\+Collection}{UserCollection}}
+{\footnotesize\ttfamily \hyperlink{interface_security_1_1_interfaces_1_1_collections_1_1_i_user_collection}{I\+User\+Collection} Security.\+Core\+Security.\+User\+Collection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Коллекция пользователей 
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+T\+F\+S2/\+Access\+Rights/\+Security/Core\+Security.\+cs\end{DoxyCompactItemize}

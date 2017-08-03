@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tools.Extensions
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public  static class ConfigHelper
     {
+        /// <summary>
+        /// Получает значение параметра секции appSettings из файла web.config
+        /// </summary>
+        /// <typeparam name="T">Тип для преобразования полученного значения</typeparam>
+        /// <param name="parameterName">Наименование параметра</param>
+        /// <returns></returns>
         public static T GetAppSettings<T>(string parameterName)
         {
             var appSetting = ConfigurationManager.AppSettings[parameterName];

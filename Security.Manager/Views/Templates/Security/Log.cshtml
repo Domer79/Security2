@@ -1,0 +1,27 @@
+﻿
+<div ng-controller="LogController" style="margin-top:40px; padding-left:10px; ">   
+    <div layout="row" style="padding-bottom: 20px;">
+        <h1 class="md-title ng-binding" style="padding: 10px; font-weight:bold;">Журнал</h1>
+    </div>    
+        @*<div layout="row" flex ng-repeat="log in logs" style="min-height: 20px">
+            <a href="{{log.link}}" ng-if="log.link" class="sec-log" target="_blank" ng-click="logClick(log)">{{log.message.substr(0, 60)}}...</a>
+            <span ng-if="!log.link">{{log.message.substr(0, 60)}}...</span>
+        </div>*@  
+    <div layout="row">
+        <div flex="15">
+        <ui-list>
+            <md-list>
+                <md-list-item ng-repeat="log in logs" ng-click="logClick(log)" style="min-height: 20px">
+                    {{log.message.substr(0, 40)}}...
+                </md-list-item>
+            </md-list>
+        </ui-list>
+        <div ng-show="logs.length === 0">
+            Не найдено ни одной записи
+        </div>
+      </div>    
+    <md-divider vertical></md-divider>
+    <div flex ng-bind-html="LogInfo">        
+    </div>
+
+</div>

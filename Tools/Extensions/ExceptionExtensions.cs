@@ -30,6 +30,11 @@ namespace Tools.Extensions
             }
         }
 
+        /// <summary>
+        /// Получает полное сообщение об ошибке со всех внутренних исключений
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
         public static string GetErrorMessage(this Exception e)
         {
             if (e == null)
