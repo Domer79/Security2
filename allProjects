@@ -1,0 +1,16 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="8">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="304" endPos="304" selMode="0" lang="XML" encoding="-1" filename="E:\TFS\AccessRights\Configuration.targets" backupFilePath="" originalFileLastModifTimestamp="1479223780" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1488" startPos="1441" endPos="1441" selMode="0" lang="XML" encoding="-1" filename="E:\TFS\AccessRights\Security\Security.csproj" backupFilePath="" originalFileLastModifTimestamp="1479223780" />
+            <File firstVisibleLine="27" xOffset="0" scrollWidth="1488" startPos="1783" endPos="1783" selMode="0" lang="XML" encoding="-1" filename="E:\TFS\AccessRights\Security.EntityDal\Security.EntityDal.csproj" backupFilePath="" originalFileLastModifTimestamp="1479223780" />
+            <File firstVisibleLine="20" xOffset="0" scrollWidth="1488" startPos="1795" endPos="1795" selMode="0" lang="XML" encoding="-1" filename="E:\TFS\AccessRights\Security.EntityFramework\Security.EntityFramework.csproj" backupFilePath="" originalFileLastModifTimestamp="1479275208" />
+            <File firstVisibleLine="26" xOffset="0" scrollWidth="1488" startPos="1753" endPos="1753" selMode="0" lang="XML" encoding="-1" filename="E:\TFS\AccessRights\Security.Interfaces\Security.Interfaces.csproj" backupFilePath="" originalFileLastModifTimestamp="1479275208" />
+            <File firstVisibleLine="16" xOffset="0" scrollWidth="1488" startPos="1775" endPos="1775" selMode="0" lang="XML" encoding="-1" filename="E:\TFS\AccessRights\Security.Model\Security.Model.csproj" backupFilePath="" originalFileLastModifTimestamp="1479223780" />
+            <File firstVisibleLine="25" xOffset="0" scrollWidth="1488" startPos="1771" endPos="1771" selMode="0" lang="XML" encoding="-1" filename="E:\TFS\AccessRights\Security.Web\Security.Web.csproj" backupFilePath="" originalFileLastModifTimestamp="1479223780" />
+            <File firstVisibleLine="12" xOffset="0" scrollWidth="1488" startPos="1757" endPos="1721" selMode="0" lang="XML" encoding="-1" filename="E:\TFS\AccessRights\Tools\Tools.csproj" backupFilePath="" originalFileLastModifTimestamp="1479223625" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1488" startPos="0" endPos="0" selMode="0" lang="&#x041E;&#x0431;&#x044B;&#x0447;&#x043D;&#x044B;&#x0439; &#x0422;&#x0435;&#x043A;&#x0441;&#x0442;" encoding="-1" filename="E:\TFS\AccessRights\Security.SupportInfo\Security.SupportInfo.csproj" backupFilePath="" originalFileLastModifTimestamp="1479365404" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>
