@@ -1,0 +1,1241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DataScript" xml:space="preserve">
+    <value>set identity_insert sec.Applications on
+if not exists(select 1 from sec.Applications where appName = N'Default')
+	Insert into sec.Applications(idApplication, appName, description) values(1, N'Default', N'Приложение по умолчанию')
+set identity_insert sec.Applications off</value>
+  </data>
+  <data name="DatabaseInited" xml:space="preserve">
+    <value>ALTER DATABASE [SecurityDev] SET COMPATIBILITY_LEVEL = 100
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [SecurityDev].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [SecurityDev] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [SecurityDev] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [SecurityDev] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [SecurityDev] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [SecurityDev] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [SecurityDev] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [SecurityDev] SET AUTO_CREATE_STATISTICS ON 
+GO
+ALTER DATABASE [SecurityDev] SET AUTO_SHRINK ON 
+GO
+ALTER DATABASE [SecurityDev] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [SecurityDev] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [SecurityDev] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [SecurityDev] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [SecurityDev] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [SecurityDev] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [SecurityDev] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [SecurityDev] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [SecurityDev] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [SecurityDev] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [SecurityDev] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [SecurityDev] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [SecurityDev] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [SecurityDev] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [SecurityDev] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [SecurityDev] SET RECOVERY FULL 
+GO
+ALTER DATABASE [SecurityDev] SET  MULTI_USER 
+GO
+ALTER DATABASE [SecurityDev] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [SecurityDev] SET DB_CHAINING OFF 
+GO
+--Для версии MSSQL от 110
+--ALTER DATABASE [SecurityDev] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+--GO
+--ALTER DATABASE [SecurityDev] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+--GO
+EXEC sys.sp_db_vardecimal_storage_format N'SecurityDev', N'ON'
+GO
+USE [SecurityDev]
+GO
+
+/* Для внедрения в существующую базу данных копировать отсюда */
+
+/****** Object:  Schema [sec]    Script Date: 14.04.2015 11:08:44 ******/
+CREATE SCHEMA [sec]
+GO
+/****** Object:  StoredProcedure [sec].[AddGrant]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+--exec [dbo].[Grant_Insert] @IdSecObject=6,@IdRole=1,@IdAccessType=11,@ObjectName=NULL,@RoleName=NULL,@AccessName=NULL
+create procedure [sec].[AddGrant]
+	@IdSecObject int,
+	@IdRole int,
+	@IdAccessType int
+as
+set nocount on
+insert into sec.Grants(idSecObject, idRole, idAccessType) values(@IdSecObject, @IdRole, @IdAccessType)
+
+GO
+/****** Object:  StoredProcedure [sec].[AddGroup]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [sec].[AddGroup]
+	@name nvarchar(200),
+	@description nvarchar(max)
+as
+set nocount on
+
+declare @idMember int
+
+insert into Members(name) values(@name)
+select @idMember = SCOPE_IDENTITY()
+insert into Groups(idMember, description) values(@idMember, @description)
+select @idMember as idMember
+
+GO
+/****** Object:  StoredProcedure [sec].[AddUser]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [sec].[AddUser]
+	@login nvarchar(200),
+    @firstName nvarchar(200),
+    @lastName nvarchar(200),
+    @middleName nvarchar(200),
+    @email nvarchar(450),
+    @status bit,
+    @dateCreated datetime2,
+    @lastActivityDate datetime2
+as
+set nocount on
+
+declare @idMember int
+
+insert into Members(name) values(@login)
+select @idMember = SCOPE_IDENTITY()
+
+if @dateCreated is null
+    set @dateCreated = GETDATE()
+
+insert into Users(idMember, firstName, lastName, middleName, email, status, dateCreated, lastActivityDate) 
+    values(@idMember, @firstName, @lastName, @middleName, @email, @status, @dateCreated, @lastActivityDate)
+
+select @idMember as idMember
+
+GO
+/****** Object:  StoredProcedure [sec].[DeleteGrant]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [sec].[DeleteGrant]
+	@IdSecObject int,
+	@IdRole int,
+	@IdAccessType int
+as
+set nocount on
+delete from sec.Grants where idSecObject = @IdSecObject and idRole = @IdRole and idAccessType = @IdAccessType
+GO
+/****** Object:  StoredProcedure [sec].[DeleteGroup]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [sec].[DeleteGroup]
+	@idMember int
+as
+set nocount on
+delete from sec.UserGroups where idGroup = @idMember
+delete from sec.Members where idMember = @idMember
+GO
+/****** Object:  StoredProcedure [sec].[DeleteUser]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [sec].[DeleteUser]
+	@idMember int
+as
+set nocount on
+delete from sec.Members where idMember = @idMember
+GO
+/****** Object:  StoredProcedure [sec].[SetIdentificationMode]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [sec].[SetIdentificationMode]
+	@mode nvarchar(100)
+as
+set nocount on
+if not exists(select 1 from sec.Settings where name = 'identification_mode')
+	insert into sec.Settings(name, value) values('identification_mode', @mode)
+else
+	update sec.Settings set value = @mode where name = 'identification_mode'
+GO
+/****** Object:  StoredProcedure [sec].[SetPassword]    Script Date: 24.11.2016 17:10:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [sec].[SetPassword]
+    @login nvarchar(200),
+    @password varbinary(max)
+as
+update sec.Users set password = @password where idMember = (select idMember from sec.Members where name = @login)
+GO
+/****** Object:  StoredProcedure [sec].[UpdateGrant]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [sec].[UpdateGrant]
+	@IdSecObject int,
+	@IdRole int,
+	@IdAccessType int
+as
+set nocount on
+raiserror('not_modified', 16, 1)
+
+GO
+/****** Object:  StoredProcedure [sec].[UpdateGroup]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [sec].[UpdateGroup]
+	@idMember int,
+	@name nvarchar(200),
+	@description nvarchar(max)
+as
+set nocount on
+update sec.Members set name = @name where idMember = @idMember
+update sec.Groups set description = @description where idMember = @idMember
+
+GO
+/****** Object:  StoredProcedure [sec].[UpdateUser]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [sec].[UpdateUser]
+	@idMember int,
+	@login nvarchar(200),
+    @firstName nvarchar(200),
+    @lastName nvarchar(200),
+    @middleName nvarchar(200),
+    @email nvarchar(450),
+    @status bit,
+    @dateCreated datetime2,
+    @lastActivityDate datetime2
+as
+set nocount on
+update sec.Members set name = @login where idMember = @idMember
+update 
+    sec.Users 
+set 
+    firstName = @firstName, 
+    lastName = @lastName, 
+    middleName = @middleName, 
+    email = @email, 
+    status = @status, 
+    dateCreated = @dateCreated, 
+    lastActivityDate = @lastActivityDate 
+where 
+    idMember = @idMember
+
+GO
+
+
+
+/****** Object:  StoredProcedure [dbo].[GrantToPublic]    Script Date: 13.11.2016 14:35:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [sec].[GrantToPublic]
+    @toPrint BIT = 1
+AS
+SET NOCOUNT ON
+BEGIN
+
+DECLARE @str VARCHAR(4000)
+DECLARE @stmt NVARCHAR(MAX)
+DECLARE @crlf VARCHAR(50)
+
+SET @stmt = ''
+SET @crlf = /*CHAR(13) + 'GO' +*/ CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)
+
+DECLARE grantcursor CURSOR
+FOR 
+SELECT 'GRANT EXEC ON [' + schm.name + '].[' + p.name + '] TO PUBLIC;' FROM sys.procedures p inner join sys.schemas schm on p.schema_id = schm.schema_id WHERE LOWER(p.name) &lt;&gt; 'granttopublic'
+UNION ALL
+SELECT 'GRANT SELECT, UPDATE, INSERT, DELETE ON [' + schm.name + '].[' + p.name + '] TO PUBLIC;' FROM sys.tables p inner join sys.schemas schm on p.schema_id = schm.schema_id
+UNION ALL
+SELECT 'GRANT SELECT ON [' + schm.name + '].[' + p.name + '] TO PUBLIC;' FROM sys.views p inner join sys.schemas schm on p.schema_id = schm.schema_id
+UNION ALL
+select 'GRANT EXEC ON [' + schm.name + '].[' + p.name + '] TO PUBLIC;' from sys.objects p inner join sys.schemas schm on p.schema_id = schm.schema_id where type_desc = 'SQL_SCALAR_FUNCTION'
+
+    OPEN grantcursor
+    FETCH NEXT FROM grantcursor INTO @str
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+		IF @toPrint = 1
+		BEGIN
+			IF LEN(@stmt + @str) &gt; 4000
+			BEGIN
+				PRINT @stmt
+				SET @stmt = ''
+			END
+		END
+
+        SET @stmt += @str
+        IF @toPrint = 1
+			SET @stmt += @crlf
+        FETCH NEXT FROM grantcursor INTO @str
+    END
+
+    CLOSE grantcursor
+    DEALLOCATE grantcursor
+
+IF @toPrint = 0 
+    EXEC sp_executesql @stmt
+ELSE
+    PRINT @stmt
+
+END
+
+/****** Object:  UserDefinedFunction [sec].[GetIdentificationMode]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create function [sec].[GetIdentificationMode]()
+returns nvarchar(max)
+as
+begin
+	return sec.GetSettings('identification_mode')
+end
+GO
+/****** Object:  UserDefinedFunction [sec].[GetSettings]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create function [sec].[GetSettings](@name nvarchar(100))
+returns nvarchar(max)
+as
+begin
+	declare @value nvarchar(max)
+
+	select @value = value from sec.Settings where name = @name
+
+	return @value
+end
+
+GO
+/****** Object:  UserDefinedFunction [sec].[IsAllowById]    Script Date: 25.04.2015 2:54:23 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+create function [sec].[IsAllowById](@idSecObject int, @idMember int, @idAccessType int)
+returns bit
+as
+begin
+    return sec.IsAllowById1(@idSecObject, @idMember, @idAccessType);
+end
+
+GO
+
+/****** Object:  UserDefinedFunction [sec].[IsAllowById1]    Script Date: 02.12.2016 15:03:18 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+create function [sec].[IsAllowById1](@idSecObject int, @idMember int, @idAccessType int)
+returns bit
+as
+begin
+	declare @result bit = 0
+
+	--Сначала проверяем доступ, если участником безопасности является группа
+	if not exists(select 1 from sec.Users where idMember = @idMember)
+	begin
+		if exists
+				(
+					select
+						1
+					from
+						sec.Grants gr inner join sec.SecObjects so 
+					on
+						gr.idSecObject = so.idSecObject inner join sec.RoleOfMembers rof 
+					on
+						gr.idRole = rof.idRole 
+					where 
+						so.idSecObject = @idSecObject
+						and rof.idMember = @idMember
+						and idAccessType = @idAccessType
+				)
+		begin
+			set @result = 1
+		end
+		
+		return @result
+	end
+
+	--Проверяем доступ по списку всех групп, в которых состоит пользователь, не забывая при этом вклювить самого пользователя в этот список
+    if exists(select 1 from sec.Users where idMember = @idMember and status = 0)
+        return cast(0 as bit)
+
+	if exists
+			(
+				select
+					1
+				from
+					sec.Grants gr inner join sec.SecObjects so 
+				on
+					gr.idSecObject = so.idSecObject inner join sec.RoleOfMembers rof 
+				on
+					gr.idRole = rof.idRole 
+				where 
+					so.idSecObject = @idSecObject
+					and rof.idMember in (select idGroup from sec.UserGroups where idUser = @idMember union all select idMember from sec.Users where idMember = @idMember)
+					and idAccessType = @idAccessType
+			)
+	begin
+		set @result = 1
+	end
+
+	return @result
+end
+GO
+
+/****** Object:  UserDefinedFunction [sec].[IsAllowByName]    Script Date: 25.04.2015 2:54:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE function [sec].[IsAllowByName](@secObject nvarchar(200), @member nvarchar(200), @accessType nvarchar(300))
+returns bit
+as
+begin
+declare @idSecObject int = (select idSecObject from sec.SecObjects where ObjectName = @secObject)
+declare @idMember int = (select idMember from sec.Members where name = @member)
+declare @idAccessType int = (select idAccessType from sec.AccessTypes where name = @accessType)
+
+return sec.IsAllowById(@idSecObject, @idMember, @idAccessType)
+end
+
+GO
+/****** Object:  Table [sec].[Grants]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [sec].[Grants](
+	[idSecObject] [int] NOT NULL,
+	[idRole] [int] NOT NULL,
+	[idAccessType] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[idSecObject] ASC,
+	[idRole] ASC,
+	[idAccessType] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [sec].[Groups]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [sec].[Groups](
+	[idMember] [int] NOT NULL PRIMARY KEY,
+	[description] [nvarchar](max) NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [sec].[Roles]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [sec].[Roles](
+	[idRole] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](200) NOT NULL,
+	[description] [nvarchar](max) NULL
+PRIMARY KEY CLUSTERED 
+(
+	[idRole] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [sec].[Users]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [sec].[Users](
+	[idMember] [int] NOT NULL PRIMARY KEY,
+	[password] [varbinary](max) NULL,
+    firstName nvarchar(200) not null,
+    lastName nvarchar(200) not null,
+    middleName nvarchar(200) null,
+    email nvarchar(450) not null,
+    status bit not null default 0,
+    dateCreated datetime2 not null default getdate(),
+    lastActivityDate datetime2 null
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [sec].[AccessTypes]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [sec].[AccessTypes](
+	[idAccessType] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](300) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[idAccessType] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [sec].[Members]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [sec].[Members](
+	[idMember] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](200) NOT NULL
+
+PRIMARY KEY CLUSTERED 
+(
+	[idMember] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [sec].[MemberRoles]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [sec].[MemberRoles](
+	[idMember] [int] NOT NULL,
+	[idRole] [int] NOT NULL,
+ CONSTRAINT [PK_MemberRole] PRIMARY KEY CLUSTERED 
+(
+	[idMember] ASC,
+	[idRole] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [sec].[SecObjects]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [sec].[SecObjects](
+	[idSecObject] [int] IDENTITY(1,1) NOT NULL,
+	[ObjectName] [nvarchar](200) NOT NULL,
+	[Type] [nvarchar](100) NULL,
+	[Discriminator] [nvarchar](200) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[idSecObject] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [sec].[Settings]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [sec].[Settings](
+	[idSettings] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](100) NOT NULL,
+	[value] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[idSettings] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [sec].[UserGroups]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [sec].[UserGroups](
+	[idUser] [int] NOT NULL,
+	[idGroup] [int] NOT NULL,
+ CONSTRAINT [PK_UserGroups] PRIMARY KEY CLUSTERED 
+(
+	[idUser] ASC,
+	[idGroup] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+Create table sec.Logs
+(
+	idLog int not null primary key identity,
+	message nvarchar(max) not null,
+    dateCreated Datetime2 not null default(GETDATE())
+)
+go
+
+/***** View sec.UsersView ******/
+if exists(select * from sys.views v inner join sys.schemas sch on v.schema_id = sch.schema_id where v.name = 'UsersView' and sch.name = 'sec')
+drop view sec.UsersView
+go
+
+create view sec.UsersView
+as
+select
+    m.idMember,
+    m.name as login,
+    u.firstName,
+    u.lastName,
+    u.middleName,
+    u.email,
+    u.status,
+    u.dateCreated,
+    u.lastActivityDate
+from 
+    sec.Users u 
+        inner join sec.Members m on u.idMember = m.idMember
+
+go
+
+/***** View sec.GroupsView ******/
+if exists(select * from sys.views v inner join sys.schemas sch on v.schema_id = sch.schema_id where v.name = 'GroupsView' and sch.name = 'sec')
+    drop view sec.GroupsView
+go
+
+create view sec.GroupsView
+as
+select
+    m.*,
+    g.description
+from 
+    sec.Groups g
+        inner join sec.Members m on g.idMember = m.idMember
+
+go
+
+/****** Object:  View [sec].[RoleOfMember]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE view [sec].[RoleOfMembers]
+as
+select
+	r.idRole,
+	r.name roleName,
+	r.description roleDescription,
+	m.idMember,
+	m.name memberName
+from
+	sec.Roles r inner join sec.MemberRoles mr 
+on 
+	r.idRole = mr.idRole inner join sec.Members m
+on
+	mr.idMember = m.idMember
+
+GO
+
+
+/****** Object:  Index [UQ_Group_idMember]    Script Date: 14.04.2015 11:08:44 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_Group_idMember] ON [sec].[Groups]
+(
+	[idMember] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [UQ_Role_Name]    Script Date: 14.04.2015 11:08:44 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_Role_Name] ON [sec].[Roles]
+(
+	[name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [UQ_User_idMember]    Script Date: 14.04.2015 11:08:44 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_User_idMember] ON [sec].[Users]
+(
+	[idMember] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [UQ_Users_Email]    Script Date: 23.11.2016 10:30:45 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_Users_Email] ON [sec].[Users]
+(
+	[email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [UQ_AccessType_AccessName]    Script Date: 14.04.2015 11:08:44 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_AccessType_AccessName] ON [sec].[AccessTypes]
+(
+	[name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [UQ_Member_Name]    Script Date: 14.04.2015 11:08:44 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_Member_Name] ON [sec].[Members]
+(
+	[name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [UQ_SecObject_ObjectName]    Script Date: 14.04.2015 11:08:44 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_SecObject_ObjectName] ON [sec].[SecObjects]
+(
+	[ObjectName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [UQ_Settings_Name]    Script Date: 14.04.2015 11:08:44 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_Settings_Name] ON [sec].[Settings]
+(
+	[name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE [sec].[Grants]  WITH CHECK ADD  CONSTRAINT [FK_Grants_AccessTypes] FOREIGN KEY([idAccessType])
+REFERENCES [sec].[AccessTypes] ([idAccessType])
+ON DELETE CASCADE
+GO
+ALTER TABLE [sec].[Grants] CHECK CONSTRAINT [FK_Grants_AccessTypes]
+GO
+ALTER TABLE [sec].[Grants]  WITH CHECK ADD  CONSTRAINT [FK_Grants_Roles] FOREIGN KEY([idRole])
+REFERENCES [sec].[Roles] ([idRole])
+ON DELETE CASCADE
+GO
+ALTER TABLE [sec].[Grants] CHECK CONSTRAINT [FK_Grants_Roles]
+GO
+ALTER TABLE [sec].[Grants]  WITH CHECK ADD  CONSTRAINT [FK_Grants_SecObjects] FOREIGN KEY([idSecObject])
+REFERENCES [sec].[SecObjects] ([idSecObject])
+ON DELETE CASCADE
+GO
+ALTER TABLE [sec].[Grants] CHECK CONSTRAINT [FK_Grants_SecObjects]
+GO
+ALTER TABLE [sec].[Groups]  WITH CHECK ADD  CONSTRAINT [FK_Groups_Members] FOREIGN KEY([idMember])
+REFERENCES [sec].[Members] ([idMember])
+ON DELETE CASCADE
+GO
+ALTER TABLE [sec].[Groups] CHECK CONSTRAINT [FK_Groups_Members]
+GO
+ALTER TABLE [sec].[Users]  WITH CHECK ADD  CONSTRAINT [FK_Users_Members] FOREIGN KEY([idMember])
+REFERENCES [sec].[Members] ([idMember])
+ON DELETE CASCADE
+GO
+ALTER TABLE [sec].[Users] CHECK CONSTRAINT [FK_Users_Members]
+GO
+ALTER TABLE [sec].[MemberRoles]  WITH CHECK ADD  CONSTRAINT [FK_MemberRoles_Members] FOREIGN KEY([idMember])
+REFERENCES [sec].[Members] ([idMember])
+ON DELETE CASCADE
+GO
+ALTER TABLE [sec].[MemberRoles] CHECK CONSTRAINT [FK_MemberRoles_Members]
+GO
+ALTER TABLE [sec].[MemberRoles]  WITH CHECK ADD  CONSTRAINT [FK_MemberRoles_Roles] FOREIGN KEY([idRole])
+REFERENCES [sec].[Roles] ([idRole])
+ON DELETE CASCADE
+GO
+ALTER TABLE [sec].[MemberRoles] CHECK CONSTRAINT [FK_MemberRoles_Roles]
+GO
+ALTER TABLE [sec].[UserGroups]  WITH CHECK ADD  CONSTRAINT [FK_UserGroups_Groups] FOREIGN KEY([idGroup])
+REFERENCES [sec].[Groups] ([idMember])
+
+GO
+ALTER TABLE [sec].[UserGroups] CHECK CONSTRAINT [FK_UserGroups_Groups]
+GO
+ALTER TABLE [sec].[UserGroups]  WITH CHECK ADD  CONSTRAINT [FK_UserGroups_Users] FOREIGN KEY([idUser])
+REFERENCES [sec].[Users] ([idMember])
+ON DELETE CASCADE
+GO
+ALTER TABLE [sec].[UserGroups] CHECK CONSTRAINT [FK_UserGroups_Users]
+GO
+/****** Object:  Trigger [sec].[OnDeleteGroup]    Script Date: 14.04.2015 11:08:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE trigger [sec].[OnDeleteGroup] on [sec].[Groups]
+after delete
+as
+set nocount on
+
+--Ограничение на удаление записи в sec.Groups, если не удалена запись в sec.Member
+if exists(select 1 from sec.Members where idMember in (select idMember from deleted))
+	begin
+		raiserror('fk_member_error', 16, 10)
+		rollback
+		return
+	end
+
+delete from sec.UserGroups where idGroup in (select idGroup from deleted)
+
+GO
+/****** Object:  Trigger [sec].[OnDeleteGroup]    Script Date: 29.04.2015 8:51:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE trigger [sec].[OnDeleteUser] on [sec].[Users]
+after delete
+as
+set nocount on
+
+--Ограничение на удаление записи в sec.Users, если не удалена запись в sec.Member
+if exists(select 1 from sec.Members where idMember in (select idMember from deleted))
+	begin
+		raiserror('fk_member_error', 16, 10)
+		rollback
+		return
+	end
+
+GO
+
+/*** Triggers instead of insert, update, delete on UsersView ***/
+
+if exists(select 1 from sys.triggers where name = 'OnInsertUsersView')
+    drop trigger sec.OnInsertUsersView
+go
+
+create trigger sec.OnInsertUsersView on sec.UsersView
+instead of insert
+as
+
+insert into sec.Members(name) select login from inserted
+insert into sec.Users(idMember, firstName, lastName, middleName, email, status, dateCreated, lastActivityDate) 
+    select 
+        m.idMember, 
+        ins.firstName, 
+        ins.lastName, 
+        ins.middleName, 
+        ins.email, 
+        ins.status, 
+        ins.dateCreated, 
+        ins.lastActivityDate 
+    from 
+        Members m inner join inserted ins 
+    on 
+        m.name = ins.login
+
+select SCOPE_IDENTITY()
+GO
+
+if exists(select 1 from sys.triggers where name = 'OnUpdateUsersView')
+    drop trigger sec.OnUpdateUsersView
+go
+
+create trigger sec.OnUpdateUsersView on sec.UsersView
+instead of update
+as
+
+update sec.Members set name = inserted.login from inserted where inserted.idMember = sec.Members.idMember 
+update sec.Users set 
+    firstName =  ins.firstName, 
+    lastName =  ins.lastName, 
+    middleName =  ins.middleName, 
+    email =  ins.email, 
+    status =  ins.status, 
+    dateCreated =  ins.dateCreated, 
+    lastActivityDate = ins.lastActivityDate
+from 
+    inserted ins 
+where ins.idMember = sec.Users.idMember
+
+go
+
+if exists(select 1 from sys.triggers where name = 'OnDeleteUsersView')
+    drop trigger sec.OnDeleteUsersView
+go
+
+create trigger sec.OnDeleteUsersView on sec.UsersView
+instead of delete
+as
+
+delete from sec.Members where idMember in (select idMember from deleted)
+go
+
+/******/
+
+/*** Triggers instead of insert, update, delete on GroupsView ***/
+
+if exists(select 1 from sys.triggers where name = 'OnInsertGroupsView')
+    drop trigger sec.OnInsertGroupsView
+go
+
+if exists(select 1 from sys.triggers where name = 'OnUpdateGroupsView')
+    drop trigger sec.OnUpdateGroupsView
+go
+
+if exists(select 1 from sys.triggers where name = 'OnDeleteGroupsView')
+    drop trigger sec.OnDeleteGroupsView
+go
+
+create trigger OnInsertGroupsView on sec.GroupsView
+instead of insert
+as
+
+insert into sec.Members(name) select name from inserted
+insert into sec.Groups(idMember, description) select m.idMember, ins.description from Members m inner join inserted ins on m.name = ins.name
+go
+
+create trigger sec.OnUpdateGroupsView on sec.GroupsView
+instead of update
+as
+
+update sec.Members set name = inserted.name from inserted where inserted.idMember = sec.Members.idMember 
+update sec.Groups set description = inserted.description from inserted where inserted.idMember = sec.Groups.idMember
+go
+
+create trigger [sec].[OnDeleteGroupsView] on [sec].[GroupsView]
+instead of delete
+as
+delete from sec.UserGroups where idGroup in (select idMember from deleted)
+delete from sec.Members where idMember in (select idMember from deleted)
+go
+
+/******/
+
+USE [master]
+GO
+ALTER DATABASE [SecurityDev] SET  READ_WRITE 
+GO
+
+use [SecurityDev]
+go
+
+/*Сущность приложения sec.Applications*/
+
+create table sec.Applications
+(
+	idApplication int not null primary key identity,
+	appName nvarchar(200) not null,
+	description nvarchar(max)
+)
+go
+
+create unique index UQ_Application_Name on sec.Applications (appName asc)
+go
+
+set identity_insert sec.Applications on
+Insert into sec.Applications(idApplication, appName, description) values(1, N'Default', N'Приложение по умолчанию')
+set identity_insert sec.Applications off
+go
+
+Alter table sec.Roles
+add idApplication int not null
+go
+
+alter table sec.SecObjects
+add idApplication int not null
+go
+
+Alter table sec.AccessTypes
+add idApplication int not null
+go
+
+/****** Object:  Index [UQ_Role_Name]    Script Date: 14.04.2015 11:08:44 ******/
+if exists(select 1 from sys.indexes where name = N'UQ_Role_Name' and OBJECT_NAME(object_id) = N'Roles')
+begin
+	DROP INDEX [UQ_Role_Name] ON [sec].[Roles];
+end
+
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_Role_Name] ON [sec].[Roles]
+(
+	[name] ASC, [idApplication] asc
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+
+/****** Object:  Index [UQ_SecObject_ObjectName]    Script Date: 14.04.2015 11:08:44 ******/
+if exists(select 1 from sys.indexes where name = N'UQ_SecObject_ObjectName' and OBJECT_NAME(object_id) = N'SecObjects')
+begin
+	DROP INDEX [UQ_SecObject_ObjectName] ON [sec].[SecObjects];
+end
+
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_SecObject_ObjectName] ON [sec].[SecObjects]
+(
+	[ObjectName] ASC, [idApplication] asc
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+/****** Object:  Index [UQ_AccessType_AccessName]    Script Date: 14.04.2015 11:08:44 ******/
+if exists(select 1 from sys.indexes where name = N'UQ_AccessType_AccessName' and OBJECT_NAME(object_id) = N'AccessTypes')
+begin
+	DROP INDEX [UQ_AccessType_AccessName] ON [sec].[AccessTypes];
+end
+
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_AccessType_AccessName] ON [sec].[AccessTypes]
+(
+	[Name] ASC, [idApplication] asc
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+alter table sec.Roles
+add constraint FK_Roles_Applications foreign key(idApplication) references sec.Applications(idApplication) on delete cascade,
+constraint DF_IdApplication_Roles default 1 for idApplication
+go
+
+alter table sec.AccessTypes
+add constraint FK_AccessTypes_Applications foreign key(idApplication) references sec.Applications(idApplication) on delete no action,
+constraint DF_IdApplication_AccessTypes default 1 for idApplication
+go
+
+alter table sec.SecObjects
+add constraint FK_SecObjects_Applications foreign key(idApplication) references sec.Applications(idApplication) on delete no action,
+constraint DF_IdApplication_SecObjects default 1 for idApplication
+go
+
+create procedure sec.AddApp
+	@appName nvarchar(200),
+	@description nvarchar(max)
+as
+insert into sec.Applications values(@appName, @description)
+select SCOPE_IDENTITY() as idApplication
+GO
+
+create procedure sec.UpdateApp
+	@idApplication int,
+	@appName nvarchar(200),
+	@description nvarchar(max)
+as
+Update sec.Applications set appName = @appName, description = @description where idApplication = @idApplication
+go
+
+create procedure sec.DeleteApp
+	@idApplication int
+as
+delete from sec.SecObjects where idApplication = @idApplication
+delete from sec.Applications where idApplication = @idApplication
+go</value>
+  </data>
+  <data name="DataDeleteScript" xml:space="preserve">
+    <value>use SecurityDev
+
+delete sec.Grants
+delete sec.Roles
+delete sec.SecObjects
+delete sec.AccessTypes
+delete sec.Applications where appName &lt;&gt; N'Default'
+delete sec.Members
+delete sec.Logs
+delete sec.Settings</value>
+  </data>
+</root>
