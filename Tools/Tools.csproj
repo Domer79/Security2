@@ -81,6 +81,9 @@
   <PropertyGroup>
     <PreBuildEvent Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -ExecutionPolicy RemoteSigned -file $(SolutionDir)Tools\PreBuild.ps1</PreBuildEvent>
   </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent />
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
